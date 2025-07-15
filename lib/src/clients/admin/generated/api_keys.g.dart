@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../publishable_api_keys.dart';
+part of '../api_keys.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of '../publishable_api_keys.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _PublishableApiKeysResource implements PublishableApiKeysResource {
-  _PublishableApiKeysResource(
+class _ApiKeysResource implements ApiKeysResource {
+  _ApiKeysResource(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -22,8 +22,8 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AdminPublishableApiKeysListRes> list({
-    GetPublishableApiKeysParams? query,
+  Future<AdminGetApiKeysRes> list({
+    GetApiKeysParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
@@ -33,14 +33,14 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminPublishableApiKeysListRes>(Options(
+    final _options = _setStreamType<AdminGetApiKeysRes>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/publishable-api-keys',
+          '/admin/api-keys',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -50,9 +50,9 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysListRes _value;
+    late AdminGetApiKeysRes _value;
     try {
-      _value = AdminPublishableApiKeysListRes.fromJson(_result.data!);
+      _value = AdminGetApiKeysRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -61,86 +61,8 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
   }
 
   @override
-  Future<AdminPublishableApiKeysRes> create(
-    AdminPostPublishableApiKeysReq request, {
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(request.toJson());
-    final _options = _setStreamType<AdminPublishableApiKeysRes>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/admin/publishable-api-keys',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysRes _value;
-    try {
-      _value = AdminPublishableApiKeysRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminPublishableApiKeysRes> retrieve(
-    String id, {
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminPublishableApiKeysRes>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/admin/publishable-api-keys/${id}',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysRes _value;
-    try {
-      _value = AdminPublishableApiKeysRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminPublishableApiKeysRes> update(
-    String id,
-    AdminPostPublishableApiKeysPublishableApiKeyReq body, {
+  Future<AdminGetApiKeysApiKeyRes> create(
+    AdminPostCreateApiKeysApiKeyReq body, {
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
@@ -150,14 +72,14 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<AdminPublishableApiKeysRes>(Options(
-      method: 'PUT',
+    final _options = _setStreamType<AdminGetApiKeysApiKeyRes>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/publishable-api-keys/${id}',
+          '/admin/api-keys',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -167,9 +89,9 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysRes _value;
+    late AdminGetApiKeysApiKeyRes _value;
     try {
-      _value = AdminPublishableApiKeysRes.fromJson(_result.data!);
+      _value = AdminGetApiKeysApiKeyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -178,7 +100,7 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
   }
 
   @override
-  Future<AdminPublishableApiKeyDeleteRes> delete(
+  Future<AdminGetApiKeysApiKeyRes> retrieve(
     String id, {
     Map<String, String>? customHeaders,
   }) async {
@@ -188,14 +110,14 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminPublishableApiKeyDeleteRes>(Options(
-      method: 'DELETE',
+    final _options = _setStreamType<AdminGetApiKeysApiKeyRes>(Options(
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/publishable-api-keys/${id}',
+          '/admin/api-keys/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -205,9 +127,9 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeyDeleteRes _value;
+    late AdminGetApiKeysApiKeyRes _value;
     try {
-      _value = AdminPublishableApiKeyDeleteRes.fromJson(_result.data!);
+      _value = AdminGetApiKeysApiKeyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -216,7 +138,49 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
   }
 
   @override
-  Future<AdminPublishableApiKeysRes> revoke(
+  Future<AdminGetApiKeysApiKeyRes> update(
+    String id,
+    AdminPostUpdateApiKeysApiKeyReq body, {
+    AdminGetFieldsParams? query,
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<AdminGetApiKeysApiKeyRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/admin/api-keys/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminGetApiKeysApiKeyRes _value;
+    try {
+      _value = AdminGetApiKeysApiKeyRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AdminDeleteRes> delete(
     String id, {
     Map<String, String>? customHeaders,
   }) async {
@@ -226,94 +190,14 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminPublishableApiKeysRes>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/admin/publishable-api-keys/${id}/revoke',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysRes _value;
-    try {
-      _value = AdminPublishableApiKeysRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminPublishableApiKeysRes> addSalesChannelsBatch(
-    String id,
-    AdminPostPublishableApiKeySalesChannelsBatchReq payload, {
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(payload.toJson());
-    final _options = _setStreamType<AdminPublishableApiKeysRes>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/admin/publishable-api-keys/${id}/sales-channels/batch',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysRes _value;
-    try {
-      _value = AdminPublishableApiKeysRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminPublishableApiKeysRes> deleteSalesChannelsBatch(
-    String id,
-    AdminDeletePublishableApiKeySalesChannelsBatchReq payload, {
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(payload.toJson());
-    final _options = _setStreamType<AdminPublishableApiKeysRes>(Options(
+    final _options = _setStreamType<AdminDeleteRes>(Options(
       method: 'DELETE',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/publishable-api-keys/${id}/sales-channels/batch',
+          '/admin/api-keys/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -323,9 +207,9 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysRes _value;
+    late AdminDeleteRes _value;
     try {
-      _value = AdminPublishableApiKeysRes.fromJson(_result.data!);
+      _value = AdminDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -334,9 +218,9 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
   }
 
   @override
-  Future<AdminPublishableApiKeysListSalesChannelsRes> listSalesChannels(
+  Future<AdminGetApiKeysApiKeyRes> revoke(
     String id, {
-    GetPublishableApiKeySalesChannelsParams? query,
+    AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
@@ -346,28 +230,68 @@ class _PublishableApiKeysResource implements PublishableApiKeysResource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<AdminPublishableApiKeysListSalesChannelsRes>(Options(
-      method: 'GET',
+    final _options = _setStreamType<AdminGetApiKeysApiKeyRes>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/admin/publishable-api-keys/${id}/sales-channels',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            )));
+        .compose(
+          _dio.options,
+          '/admin/api-keys/${id}/revoke',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPublishableApiKeysListSalesChannelsRes _value;
+    late AdminGetApiKeysApiKeyRes _value;
     try {
-      _value =
-          AdminPublishableApiKeysListSalesChannelsRes.fromJson(_result.data!);
+      _value = AdminGetApiKeysApiKeyRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AdminGetApiKeysApiKeyRes> manageSalesChannels(
+    String id,
+    AdminPostApiKeysManageSalesChannelsReq body, {
+    AdminGetFieldsParams? query,
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<AdminGetApiKeysApiKeyRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/admin/api-keys/${id}/sales-channels',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminGetApiKeysApiKeyRes _value;
+    try {
+      _value = AdminGetApiKeysApiKeyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -1,3 +1,4 @@
+export 'api_key_type.dart';
 export 'authentication_type.dart';
 export 'domain.dart';
 export 'geo_zones_type.dart';

@@ -1,5 +1,6 @@
 export 'additional_item.dart';
 export 'address.dart';
+export 'api_key.dart';
 export 'base_model.dart';
 export 'batch_job.dart';
 export 'cart.dart';
@@ -70,8 +71,6 @@ export 'product_type_tax_rate.dart';
 export 'product_variant.dart';
 export 'product_variant_inventory_item.dart';
 export 'product_variant_option.dart';
-export 'publishable_api_key.dart';
-export 'publishable_api_key_sales_channel.dart';
 export 'refund.dart';
 export 'region.dart';
 export 'requests/requests.dart';

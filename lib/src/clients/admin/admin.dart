@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:medusa_js_dart/src/clients/admin/api_keys.dart';
 import 'package:medusa_js_dart/src/clients/admin/auth.dart';
 import 'package:medusa_js_dart/src/clients/admin/batch_jobs.dart';
 import 'package:medusa_js_dart/src/clients/admin/collections.dart';
@@ -26,7 +27,6 @@ import 'package:medusa_js_dart/src/clients/admin/product_tags.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_types.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_variants.dart';
 import 'package:medusa_js_dart/src/clients/admin/products.dart';
-import 'package:medusa_js_dart/src/clients/admin/publishable_api_keys.dart';
 import 'package:medusa_js_dart/src/clients/admin/regions.dart';
 import 'package:medusa_js_dart/src/clients/admin/reservations.dart';
 import 'package:medusa_js_dart/src/clients/admin/return_reasons.dart';
@@ -71,7 +71,7 @@ class Admin {
     pricePreference = PricePreferenceResource(dio);
     productVariants = ProductsVariantsResource(dio);
     products = ProductsResource(dio);
-    publishableApiKeys = PublishableApiKeysResource(dio);
+    apiKeys = ApiKeysResource(dio);
     regions = RegionsResource(dio);
     reservations = ReservationsResource(dio);
     returnReasons = ReturnReasonsResource(dio);
@@ -143,7 +143,7 @@ class Admin {
 
   late final ProductsVariantsResource productVariants;
 
-  late final PublishableApiKeysResource publishableApiKeys;
+  late final ApiKeysResource apiKeys;
 
   late final RegionsResource regions;
 

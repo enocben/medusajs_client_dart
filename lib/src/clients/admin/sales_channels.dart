@@ -1,10 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_js_dart/src/models/params/admin_get_sales_channels_params.dart';
-import 'package:medusa_js_dart/src/models/requests/admin_post_sales_channels_req.dart';
-import 'package:medusa_js_dart/src/models/requests/admin_post_sales_channels_sales_channel_req.dart';
-import 'package:medusa_js_dart/src/models/responses/admin_sales_channels_delete_res.dart';
-import 'package:medusa_js_dart/src/models/responses/admin_sales_channels_list_res.dart';
-import 'package:medusa_js_dart/src/models/responses/admin_sales_channels_res.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'generated/sales_channels.g.dart';
@@ -23,6 +18,7 @@ abstract class SalesChannelsResource {
   @POST('/admin/sales-channels')
   Future<AdminSalesChannelsRes> create(
     @Body() AdminPostSalesChannelsReq request, {
+      @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -32,18 +28,27 @@ abstract class SalesChannelsResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
-  @PUT('/admin/sales-channels/{salesChannelId}')
+  @POST('/admin/sales-channels/{salesChannelId}')
   Future<AdminSalesChannelsRes> update(
     @Path('salesChannelId') String salesChannelId,
     @Body() AdminPostSalesChannelsSalesChannelReq body,
-    @Extras() Map<String, String>? customHeaders,
+    {
+      @Queries() AdminGetFieldsParams? query,
+      @Extras() Map<String, String>? customHeaders,}
+  );
+
+  @POST('/admin/sales-channels/{salesChannelId}/products')
+  Future<AdminSalesChannelsRes> manageProducts(
+    @Path('salesChannelId') String salesChannelId,
+    @Body() AdminPostSalesChannelsManageProductsReq body,
+    {
+      @Queries() AdminGetFieldsParams? query,
+      @Extras() Map<String, String>? customHeaders,}
   );
 
   @DELETE('/admin/sales-channels/{salesChannelId}')
   Future<AdminSalesChannelsDeleteRes> delete(
     @Path('salesChannelId') String salesChannelId,
-    @Extras() Map<String, String>? customHeaders,
+    {@Extras() Map<String, String>? customHeaders,}
   );
-
-  // TODO: Add missing methods
 }

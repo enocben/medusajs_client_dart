@@ -9,7 +9,7 @@ part of '../admin_get_sales_channels_params.dart';
 AdminGetSalesChannelsParams _$AdminGetSalesChannelsParamsFromJson(
         Map<String, dynamic> json) =>
     AdminGetSalesChannelsParams(
-      id: json['id'] as String?,
+      id: (json['id'] as List<dynamic>?)?.map((e) => e as String).toList(),
       name: json['name'] as String?,
       description: json['description'] as String?,
       q: json['q'] as String?,
@@ -27,6 +27,13 @@ AdminGetSalesChannelsParams _$AdminGetSalesChannelsParamsFromJson(
       limit: (json['limit'] as num?)?.toInt(),
       expand: json['expand'] as String?,
       fields: json['fields'] as String?,
+      locationId: (json['location_id'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      publishableKeyId: (json['publishable_key_id'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      isDisabled: json['is_disabled'] as bool?,
     );
 
 Map<String, dynamic> _$AdminGetSalesChannelsParamsToJson(
@@ -44,4 +51,8 @@ Map<String, dynamic> _$AdminGetSalesChannelsParamsToJson(
       if (instance.limit case final value?) 'limit': value,
       if (instance.expand case final value?) 'expand': value,
       if (instance.fields case final value?) 'fields': value,
+      if (instance.locationId case final value?) 'location_id': value,
+      if (instance.publishableKeyId case final value?)
+        'publishable_key_id': value,
+      if (instance.isDisabled case final value?) 'is_disabled': value,
     };

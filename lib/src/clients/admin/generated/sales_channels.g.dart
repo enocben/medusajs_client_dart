@@ -63,11 +63,13 @@ class _SalesChannelsResource implements SalesChannelsResource {
   @override
   Future<AdminSalesChannelsRes> create(
     AdminPostSalesChannelsReq request, {
+    AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -140,18 +142,20 @@ class _SalesChannelsResource implements SalesChannelsResource {
   @override
   Future<AdminSalesChannelsRes> update(
     String salesChannelId,
-    AdminPostSalesChannelsSalesChannelReq body,
+    AdminPostSalesChannelsSalesChannelReq body, {
+    AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
-  ) async {
+  }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
     final _options = _setStreamType<AdminSalesChannelsRes>(Options(
-      method: 'PUT',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
@@ -178,10 +182,52 @@ class _SalesChannelsResource implements SalesChannelsResource {
   }
 
   @override
-  Future<AdminSalesChannelsDeleteRes> delete(
+  Future<AdminSalesChannelsRes> manageProducts(
     String salesChannelId,
+    AdminPostSalesChannelsManageProductsReq body, {
+    AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
-  ) async {
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<AdminSalesChannelsRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/admin/sales-channels/${salesChannelId}/products',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminSalesChannelsRes _value;
+    try {
+      _value = AdminSalesChannelsRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AdminSalesChannelsDeleteRes> delete(
+    String salesChannelId, {
+    Map<String, String>? customHeaders,
+  }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
