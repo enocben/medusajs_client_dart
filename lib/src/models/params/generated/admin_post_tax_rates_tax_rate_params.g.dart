@@ -9,15 +9,11 @@ part of '../admin_post_tax_rates_tax_rate_params.dart';
 AdminPostTaxRatesTaxRateParams _$AdminPostTaxRatesTaxRateParamsFromJson(
         Map<String, dynamic> json) =>
     AdminPostTaxRatesTaxRateParams(
-      fields:
-          (json['fields'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      expand:
-          (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      fields: json['fields'] as String?,
     );
 
 Map<String, dynamic> _$AdminPostTaxRatesTaxRateParamsToJson(
         AdminPostTaxRatesTaxRateParams instance) =>
     <String, dynamic>{
       if (instance.fields case final value?) 'fields': value,
-      if (instance.expand case final value?) 'expand': value,
     };

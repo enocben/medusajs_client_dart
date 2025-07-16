@@ -8,11 +8,11 @@ part of '../tax_provider.dart';
 
 TaxProvider _$TaxProviderFromJson(Map<String, dynamic> json) => TaxProvider(
       id: json['id'] as String,
-      isInstalled: json['is_installed'] as bool,
+      isEnabled: json['is_enabled'] as bool,
     );
 
 Map<String, dynamic> _$TaxProviderToJson(TaxProvider instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'is_installed': instance.isInstalled,
+      'is_enabled': instance.isEnabled,
     };

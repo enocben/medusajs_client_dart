@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../tax_rates.dart';
+part of '../tax_region.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of '../tax_rates.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _TaxRatesResource implements TaxRatesResource {
-  _TaxRatesResource(
+class _TaxRegionResource implements TaxRegionResource {
+  _TaxRegionResource(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -22,26 +22,26 @@ class _TaxRatesResource implements TaxRatesResource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AdminTaxRatesListRes> list({
-    AdminGetTaxRatesParams? query,
+  Future<TaxRegionRes> retrieve(
+    String taxRegionId, {
+    AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
-    queryParameters.addAll(customHeaders ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminTaxRatesListRes>(Options(
+    final _options = _setStreamType<TaxRegionRes>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/tax-rates',
+          '/admin/tax-regions/${taxRegionId}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -51,9 +51,9 @@ class _TaxRatesResource implements TaxRatesResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminTaxRatesListRes _value;
+    late TaxRegionRes _value;
     try {
-      _value = AdminTaxRatesListRes.fromJson(_result.data!);
+      _value = TaxRegionRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -62,9 +62,8 @@ class _TaxRatesResource implements TaxRatesResource {
   }
 
   @override
-  Future<AdminTaxRatesRes> create(
-    AdminPostTaxRatesReq request, {
-    AdminPostTaxRatesParams? query,
+  Future<TaxRegionsRes> list({
+    AdminGetTaxRegionsParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
@@ -73,16 +72,15 @@ class _TaxRatesResource implements TaxRatesResource {
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(request.toJson());
-    final _options = _setStreamType<AdminTaxRatesRes>(Options(
-      method: 'POST',
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<TaxRegionsRes>(Options(
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/tax-rates',
+          '/admin/tax-regions',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -92,9 +90,9 @@ class _TaxRatesResource implements TaxRatesResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminTaxRatesRes _value;
+    late TaxRegionsRes _value;
     try {
-      _value = AdminTaxRatesRes.fromJson(_result.data!);
+      _value = TaxRegionsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -103,9 +101,8 @@ class _TaxRatesResource implements TaxRatesResource {
   }
 
   @override
-  Future<AdminTaxRatesRes> createRule(
-    String taxRateId,
-    TaxRateRule request, {
+  Future<TaxRegionRes> create(
+    AdminPostCreateTaxRegionReq body, {
     AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
   }) async {
@@ -116,15 +113,15 @@ class _TaxRatesResource implements TaxRatesResource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(request.toJson());
-    final _options = _setStreamType<AdminTaxRatesRes>(Options(
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<TaxRegionRes>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/tax-rates/${taxRateId}/rules',
+          '/admin/tax-regions',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -134,9 +131,9 @@ class _TaxRatesResource implements TaxRatesResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminTaxRatesRes _value;
+    late TaxRegionRes _value;
     try {
-      _value = AdminTaxRatesRes.fromJson(_result.data!);
+      _value = TaxRegionRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -145,50 +142,10 @@ class _TaxRatesResource implements TaxRatesResource {
   }
 
   @override
-  Future<AdminTaxRatesRes> retrieve(
-    String taxRateId, {
-    AdminGetTaxRatesTaxRateParams? query,
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminTaxRatesRes>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/admin/tax-rates/${taxRateId}',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminTaxRatesRes _value;
-    try {
-      _value = AdminTaxRatesRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminTaxRatesRes> update(
-    String taxRateId,
-    AdminPostTaxRatesTaxRateReq body, {
-    AdminPostTaxRatesTaxRateParams? query,
+  Future<TaxRegionRes> update(
+    String taxRegionId,
+    AdminPostUpdateTaxRegionReq body, {
+    AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
@@ -199,14 +156,14 @@ class _TaxRatesResource implements TaxRatesResource {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<AdminTaxRatesRes>(Options(
+    final _options = _setStreamType<TaxRegionRes>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/tax-rates/${taxRateId}',
+          '/admin/tax-regions/${taxRegionId}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -216,9 +173,9 @@ class _TaxRatesResource implements TaxRatesResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminTaxRatesRes _value;
+    late TaxRegionRes _value;
     try {
-      _value = AdminTaxRatesRes.fromJson(_result.data!);
+      _value = TaxRegionRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -227,8 +184,8 @@ class _TaxRatesResource implements TaxRatesResource {
   }
 
   @override
-  Future<AdminTaxRatesDeleteRes> delete(
-    String taxRateId, {
+  Future<AdminDeleteRes> delete(
+    String taxRegionId, {
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
@@ -237,14 +194,14 @@ class _TaxRatesResource implements TaxRatesResource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminTaxRatesDeleteRes>(Options(
+    final _options = _setStreamType<AdminDeleteRes>(Options(
       method: 'DELETE',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/admin/tax-rates/${taxRateId}',
+          '/admin/tax-regions/${taxRegionId}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -254,48 +211,9 @@ class _TaxRatesResource implements TaxRatesResource {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminTaxRatesDeleteRes _value;
+    late AdminDeleteRes _value;
     try {
-      _value = AdminTaxRatesDeleteRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminTaxRatesDeleteRes> deleteRule(
-    String taxRateId,
-    String ruleId, {
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminTaxRatesDeleteRes>(Options(
-      method: 'DELETE',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/admin/tax-rates/${taxRateId}/rules/${ruleId}',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminTaxRatesDeleteRes _value;
-    try {
-      _value = AdminTaxRatesDeleteRes.fromJson(_result.data!);
+      _value = AdminDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

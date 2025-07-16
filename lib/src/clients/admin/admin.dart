@@ -38,6 +38,7 @@ import 'package:medusa_js_dart/src/clients/admin/stock_locations.dart';
 import 'package:medusa_js_dart/src/clients/admin/stores.dart';
 import 'package:medusa_js_dart/src/clients/admin/swaps.dart';
 import 'package:medusa_js_dart/src/clients/admin/tax_rates.dart';
+import 'package:medusa_js_dart/src/clients/admin/tax_region.dart';
 import 'package:medusa_js_dart/src/clients/admin/uploads.dart';
 import 'package:medusa_js_dart/src/clients/admin/users.dart';
 import 'package:medusa_js_dart/src/clients/admin/variants.dart';
@@ -83,11 +84,11 @@ class Admin {
     stores = StoresResource(dio);
     swaps = SwapsResource(dio);
     taxRates = TaxRatesResource(dio);
+    taxRegions = TaxRegionResource(dio);
     uploads = UploadsResource(dio);
     users = UsersResource(dio);
     variants = VariantsResource(dio);
   }
-
 
   late final AuthResource auth;
 
@@ -166,6 +167,8 @@ class Admin {
   late final SwapsResource swaps;
 
   late final TaxRatesResource taxRates;
+
+  late final TaxRegionResource taxRegions;
 
   late final UploadsResource uploads;
 

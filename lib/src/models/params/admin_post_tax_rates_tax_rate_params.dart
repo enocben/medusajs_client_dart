@@ -4,14 +4,12 @@ part 'generated/admin_post_tax_rates_tax_rate_params.g.dart';
 
 @JsonSerializable()
 class AdminPostTaxRatesTaxRateParams {
-  AdminPostTaxRatesTaxRateParams({this.fields, this.expand});
+  AdminPostTaxRatesTaxRateParams({this.fields});
 
   factory AdminPostTaxRatesTaxRateParams.fromJson(Map<String, dynamic> json) =>
       _$AdminPostTaxRatesTaxRateParamsFromJson(json);
 
-  List<String>? fields;
-
-  List<String>? expand;
+  String? fields;
 
   Map<String, dynamic> toJson() => _$AdminPostTaxRatesTaxRateParamsToJson(this);
 }

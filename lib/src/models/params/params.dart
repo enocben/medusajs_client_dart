@@ -46,6 +46,7 @@ export 'admin_get_stock_locations_params.dart';
 export 'admin_get_swaps_params.dart';
 export 'admin_get_tax_rates_params.dart';
 export 'admin_get_tax_rates_tax_rate_params.dart';
+export 'admin_get_tax_regions_params.dart';
 export 'admin_get_users_params.dart';
 export 'admin_get_variant_params.dart';
 export 'admin_get_variants_params.dart';

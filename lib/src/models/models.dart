@@ -97,6 +97,8 @@ export 'swap.dart';
 export 'tax_line.dart';
 export 'tax_provider.dart';
 export 'tax_rate.dart';
+export 'tax_rate_rule.dart';
+export 'tax_region.dart';
 export 'tracking_link.dart';
 export 'user.dart';
 export 'variant_inventory.dart';

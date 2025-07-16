@@ -9,28 +9,24 @@ part of '../admin_post_tax_rates_tax_rate_req.dart';
 AdminPostTaxRatesTaxRateReq _$AdminPostTaxRatesTaxRateReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostTaxRatesTaxRateReq(
-      code: json['code'] as String,
-      name: json['name'] as String,
-      regionId: json['region_id'] as String,
-      rate: (json['rate'] as num).toDouble(),
-      products:
-          (json['products'] as List<dynamic>).map((e) => e as String).toList(),
-      shippingOptions: (json['shipping_options'] as List<dynamic>)
-          .map((e) => e as String)
+      code: json['code'] as String?,
+      name: json['name'] as String?,
+      rate: (json['rate'] as num?)?.toInt(),
+      rules: (json['rules'] as List<dynamic>?)
+          ?.map((e) => TaxRateRule.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productTypes: (json['product_types'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+      isDefault: json['is_default'] as bool?,
+      isCombinable: json['is_combinable'] as bool?,
     );
 
 Map<String, dynamic> _$AdminPostTaxRatesTaxRateReqToJson(
         AdminPostTaxRatesTaxRateReq instance) =>
     <String, dynamic>{
-      'code': instance.code,
-      'name': instance.name,
-      'region_id': instance.regionId,
-      'rate': instance.rate,
-      'products': instance.products,
-      'shipping_options': instance.shippingOptions,
-      'product_types': instance.productTypes,
+      if (instance.code case final value?) 'code': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.rate case final value?) 'rate': value,
+      if (instance.rules?.map((e) => e.toJson()).toList() case final value?)
+        'rules': value,
+      if (instance.isDefault case final value?) 'is_default': value,
+      if (instance.isCombinable case final value?) 'is_combinable': value,
     };

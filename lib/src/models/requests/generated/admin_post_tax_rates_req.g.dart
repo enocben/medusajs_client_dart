@@ -11,16 +11,14 @@ AdminPostTaxRatesReq _$AdminPostTaxRatesReqFromJson(
     AdminPostTaxRatesReq(
       code: json['code'] as String,
       name: json['name'] as String,
-      regionId: json['region_id'] as String,
-      rate: (json['rate'] as num).toDouble(),
-      products:
-          (json['products'] as List<dynamic>).map((e) => e as String).toList(),
-      shippingOptions: (json['shipping_options'] as List<dynamic>)
-          .map((e) => e as String)
+      taxRegionId: json['tax_region_id'] as String,
+      rate: (json['rate'] as num?)?.toInt(),
+      rules: (json['rules'] as List<dynamic>?)
+          ?.map((e) => TaxRateRule.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productTypes: (json['product_types'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+      metadata: json['metadata'] as Map<String, dynamic>?,
+      isCombinable: json['is_combinable'] as bool?,
+      isDefault: json['is_default'] as bool?,
     );
 
 Map<String, dynamic> _$AdminPostTaxRatesReqToJson(
@@ -28,9 +26,11 @@ Map<String, dynamic> _$AdminPostTaxRatesReqToJson(
     <String, dynamic>{
       'code': instance.code,
       'name': instance.name,
-      'region_id': instance.regionId,
-      'rate': instance.rate,
-      'products': instance.products,
-      'shipping_options': instance.shippingOptions,
-      'product_types': instance.productTypes,
+      'tax_region_id': instance.taxRegionId,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.isCombinable case final value?) 'is_combinable': value,
+      if (instance.isDefault case final value?) 'is_default': value,
+      if (instance.rules?.map((e) => e.toJson()).toList() case final value?)
+        'rules': value,
+      if (instance.rate case final value?) 'rate': value,
     };

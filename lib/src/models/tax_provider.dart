@@ -7,16 +7,16 @@ part 'generated/tax_provider.g.dart';
 class TaxProvider {
   TaxProvider({
     required this.id,
-    required this.isInstalled,
+    required this.isEnabled,
   });
   factory TaxProvider.fromJson(Map<String, dynamic> json) =>
       _$TaxProviderFromJson(json);
 
   Map<String, dynamic> toJson() => _$TaxProviderToJson(this);
 
-  /// The ID of the tax provider as given by the tax service.
+  /// The tax provider's ID.
   final String id;
 
-  /// Whether the tax service is installed in the current version. If a tax service is no longer installed, the `isInstalled` attribute is set to `false`.
-  final bool isInstalled;
+  /// Whether the tax provider is enabled in the Medusa application.
+  final bool isEnabled;
 }

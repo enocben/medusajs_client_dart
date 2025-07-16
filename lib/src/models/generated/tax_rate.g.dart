@@ -8,51 +8,38 @@ part of '../tax_rate.dart';
 
 TaxRate _$TaxRateFromJson(Map<String, dynamic> json) => TaxRate(
       id: json['id'] as String,
-      rate: (json['rate'] as num?)?.toDouble(),
-      code: json['code'] as String?,
+      code: json['code'] as String,
       name: json['name'] as String,
-      regionId: json['region_id'] as String,
-      region: json['region'] == null
-          ? null
-          : Region.fromJson(json['region'] as Map<String, dynamic>),
-      products: (json['products'] as List<dynamic>?)
-          ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      productTypes: (json['product_types'] as List<dynamic>?)
-          ?.map((e) => ProductType.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      shippingOptions: (json['shipping_options'] as List<dynamic>?)
-          ?.map((e) => ShippingOption.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      productCount: (json['product_count'] as num?)?.toInt(),
-      productTypeCount: (json['product_type_count'] as num?)?.toInt(),
-      shippingOptionCount: (json['shipping_option_count'] as num?)?.toInt(),
+      isCombinable: json['is_combinable'] as bool,
+      isDefault: json['is_default'] as bool,
       createdAt: json['created_at'] as String,
       updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
+      createdBy: json['created_by'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
-    );
+      taxRegionId: json['tax_region_id'] as String,
+      taxRegion: json['tax_region'] == null
+          ? null
+          : TaxRegion.fromJson(json['tax_region'] as Map<String, dynamic>),
+      rules: (json['rules'] as List<dynamic>?)
+          ?.map((e) => TaxRateRule.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    )..rate = json['rate'] as num?;
 
 Map<String, dynamic> _$TaxRateToJson(TaxRate instance) => <String, dynamic>{
       'id': instance.id,
       if (instance.rate case final value?) 'rate': value,
-      if (instance.code case final value?) 'code': value,
+      'code': instance.code,
       'name': instance.name,
-      'region_id': instance.regionId,
-      if (instance.region?.toJson() case final value?) 'region': value,
-      if (instance.products?.map((e) => e.toJson()).toList() case final value?)
-        'products': value,
-      if (instance.productTypes?.map((e) => e.toJson()).toList()
-          case final value?)
-        'product_types': value,
-      if (instance.shippingOptions?.map((e) => e.toJson()).toList()
-          case final value?)
-        'shipping_options': value,
-      if (instance.productCount case final value?) 'product_count': value,
-      if (instance.productTypeCount case final value?)
-        'product_type_count': value,
-      if (instance.shippingOptionCount case final value?)
-        'shipping_option_count': value,
+      if (instance.metadata case final value?) 'metadata': value,
+      'tax_region_id': instance.taxRegionId,
+      'is_combinable': instance.isCombinable,
+      'is_default': instance.isDefault,
       'created_at': instance.createdAt,
       'updated_at': instance.updatedAt,
-      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.deletedAt case final value?) 'deleted_at': value,
+      if (instance.createdBy case final value?) 'created_by': value,
+      if (instance.taxRegion?.toJson() case final value?) 'tax_region': value,
+      if (instance.rules?.map((e) => e.toJson()).toList() case final value?)
+        'rules': value,
     };

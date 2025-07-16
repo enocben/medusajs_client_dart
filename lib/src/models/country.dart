@@ -7,7 +7,7 @@ part 'generated/country.g.dart';
 @JsonSerializable()
 class Country {
   /// Constructor
-  Country({
+  const Country({
     this.id,
     this.iso2,
     this.iso3,
@@ -24,26 +24,26 @@ class Country {
   Map<String, dynamic> toJson() => _$CountryToJson(this);
 
   /// The country's ID
-  String? id;
+  final String? id;
 
   /// The 2 character ISO code of the country in lower case
-  String? iso2;
+  final String? iso2;
 
   /// The 2 character ISO code of the country in lower case
-  String? iso3;
+  final String? iso3;
 
   /// The numerical ISO code for the country.
-  String? numCode;
+  final String? numCode;
 
   /// The normalized country name in upper case.
-  String? name;
+  final String? name;
 
   /// The country name appropriate for display.
-  String displayName;
+  final String displayName;
 
   /// The region ID this country is associated with.
-  String? regionId;
+  final String? regionId;
 
   /// The details of the region the country is associated with.
-  Region? region;
+  final Region? region;
 }

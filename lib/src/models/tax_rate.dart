@@ -1,8 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medusa_js_dart/src/models/product.dart';
-import 'package:medusa_js_dart/src/models/product_type.dart';
-import 'package:medusa_js_dart/src/models/region.dart';
-import 'package:medusa_js_dart/src/models/shipping_option.dart';
+import 'package:medusa_js_dart/src/models/models.dart';
 
 part 'generated/tax_rate.g.dart';
 
@@ -11,68 +8,63 @@ part 'generated/tax_rate.g.dart';
 class TaxRate {
   TaxRate({
     required this.id,
-    this.rate,
-    this.code,
+    required this.code,
     required this.name,
-    required this.regionId,
-    this.region,
-    this.products,
-    this.productTypes,
-    this.shippingOptions,
-    this.productCount,
-    this.productTypeCount,
-    this.shippingOptionCount,
+    required this.isCombinable,
+    required this.isDefault,
     required this.createdAt,
     required this.updatedAt,
+    this.deletedAt,
+    this.createdBy,
     this.metadata,
+    required this.taxRegionId,
+    this.taxRegion,
+    this.rules,
   });
   factory TaxRate.fromJson(Map<String, dynamic> json) =>
       _$TaxRateFromJson(json);
 
   Map<String, dynamic> toJson() => _$TaxRateToJson(this);
 
-  /// The tax rate's ID
-  late String id;
+  /// The tax rate's ID.
+  String id;
 
-  /// The numeric rate to charge
-  double? rate;
+  /// The rate to charge.
+  num? rate;
 
-  /// A code to identify the tax type by
-  String? code;
+  /// The code the tax rate is identified by.
+  String code;
 
-  /// A human friendly name for the tax
-  late String name;
+  /// The tax rate's name.
+  String name;
 
-  /// The ID of the region that the rate belongs to.
-  late String regionId;
-
-  /// The details of the region that the rate belongs to.
-  Region? region;
-
-  /// The details of the products that belong to this tax rate.
-  List<Product>? products;
-
-  /// The details of the product types that belong to this tax rate.
-  List<ProductType>? productTypes;
-
-  /// The details of the shipping options that belong to this tax rate.
-  List<ShippingOption>? shippingOptions;
-
-  /// The count of products
-  int? productCount;
-
-  /// The count of product types
-  int? productTypeCount;
-
-  /// The count of shipping options
-  int? shippingOptionCount;
-
-  /// The date with timezone at which the resource was created.
-  late String createdAt;
-
-  /// The date with timezone at which the resource was updated.
-  late String updatedAt;
-
-  /// An optional key-value map with additional details
+  /// The tax rate's metadata, can hold custom key-value pairs.
   Map<String, dynamic>? metadata;
+
+  /// The ID of the tax region this rate belongs to.
+  String taxRegionId;
+
+  /// Whether the tax rate should be combined with parent rates.
+  bool isCombinable;
+
+  /// Whether this tax rate is the default in the tax region.
+  bool isDefault;
+
+  /// The date the tax rate was created.
+  String createdAt;
+
+  /// The date the tax rate was updated.
+  String updatedAt;
+
+  /// The date the tax rate was deleted.
+  String? deletedAt;
+
+  /// The ID of the user that created the tax rate.
+  String? createdBy;
+
+  /// The tax region's details.
+  TaxRegion? taxRegion;
+
+  /// The tax rate's rules.
+  List<TaxRateRule>? rules;
 }

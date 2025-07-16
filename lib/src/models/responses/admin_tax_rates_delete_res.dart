@@ -14,7 +14,12 @@ class AdminTaxRatesDeleteRes {
 
   Map<String, dynamic> toJson() => _$AdminTaxRatesDeleteResToJson(this);
 
+  /// The tax rate's ID.
   final String id;
+
+  /// The name of the deleted object.
   final String object;
+
+  /// Whether the tax rate was deleted.
   final bool deleted;
 }
