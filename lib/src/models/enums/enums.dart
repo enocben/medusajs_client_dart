@@ -5,4 +5,5 @@ export 'geo_zones_type.dart';
 export 'price_list_status.dart';
 export 'price_list_type.dart';
 export 'price_type.dart';
+export 'promotion_enums.dart';
 export 'rules_operator.dart';
