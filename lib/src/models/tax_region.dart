@@ -1,9 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/tax_rate.dart';
 
 part 'generated/tax_region.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class TaxRegion {
   TaxRegion(
       {required this.id,
