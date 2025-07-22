@@ -8,6 +8,7 @@ environment:
   sdk: '^3.3.0'
 
 dependencies:
+  copy_with_extension: ^6.0.0
   dio: ^5.4.1
   dio_smart_retry: ^5.0.0
   json_annotation: ^4.8.1
@@ -20,3 +21,4 @@ dev_dependencies:
   lint: ^2.0.0
   retrofit_generator: ^8.1.0
   test: ^1.25.2
+  copy_with_extension_gen: ^6.0.0
