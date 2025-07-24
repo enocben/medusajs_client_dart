@@ -194,8 +194,10 @@ Promotion _$PromotionFromJson(Map<String, dynamic> json) => Promotion(
       rules: (json['rules'] as List<dynamic>?)
           ?.map((e) => PromotionRule.fromJson(e as Map<String, dynamic>))
           .toList(),
-      applicationMethod: $enumDecodeNullable(
-          _$PromotionApplicationMethodEnumMap, json['application_method']),
+      applicationMethod: json['application_method'] == null
+          ? null
+          : PromotionApplicationMethod.fromJson(
+              json['application_method'] as Map<String, dynamic>),
       campaign: json['campaign'] == null
           ? null
           : PromotionCampaign.fromJson(
@@ -214,8 +216,7 @@ Map<String, dynamic> _$PromotionToJson(Promotion instance) => <String, dynamic>{
       if (instance.code case final value?) 'code': value,
       if (instance.rules?.map((e) => e.toJson()).toList() case final value?)
         'rules': value,
-      if (_$PromotionApplicationMethodEnumMap[instance.applicationMethod]
-          case final value?)
+      if (instance.applicationMethod?.toJson() case final value?)
         'application_method': value,
       if (instance.campaign?.toJson() case final value?) 'campaign': value,
     };
@@ -229,9 +230,4 @@ const _$PromotionStatusEnumMap = {
 const _$PromotionTypeEnumMap = {
   PromotionType.standard: 'standard',
   PromotionType.buyget: 'buyget',
-};
-
-const _$PromotionApplicationMethodEnumMap = {
-  PromotionApplicationMethod.fixed: 'fixed',
-  PromotionApplicationMethod.percentage: 'percentage',
 };

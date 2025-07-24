@@ -7,10 +7,16 @@ enum PromotionStatus { draft, active, inactive }
 enum PromotionType { standard, buyget }
 
 @JsonEnum(fieldRename: FieldRename.snake)
-enum PromotionTagetType { items, shippingMethods, order }
+enum PromotionTargetType { items, shippingMethods, order }
 
 @JsonEnum(fieldRename: FieldRename.snake)
-enum PromotionApplicationMethod { fixed, percentage }
+enum PromotionApplicationMethodType { fixed, percentage }
 
 @JsonEnum(fieldRename: FieldRename.snake)
 enum PromotionBudgetType { spend, usage }
+
+@JsonEnum(fieldRename: FieldRename.kebab)
+enum PromotionRuleType { rules, targetRules, buyRules }
+
+@JsonEnum(fieldRename: FieldRename.snake)
+enum ApplicationMethodAllocation { each, across }

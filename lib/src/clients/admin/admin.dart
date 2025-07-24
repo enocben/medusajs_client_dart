@@ -22,6 +22,7 @@ import 'package:medusa_js_dart/src/clients/admin/payments.dart';
 import 'package:medusa_js_dart/src/clients/admin/price_lists.dart';
 import 'package:medusa_js_dart/src/clients/admin/price_preference.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_categories.dart';
+import 'package:medusa_js_dart/src/clients/admin/promotions.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_options.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_tags.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_types.dart';
@@ -66,6 +67,7 @@ class Admin {
     payments = PaymentsResource(dio);
     priceLists = PriceListsResource(dio);
     productCategories = ProductCategoriesResource(dio);
+    promotions = PromotionsResource(dio);
     productTags = ProductTagsResource(dio);
     productTypes = ProductTypesResource(dio);
     productOptions = ProductsOptionsResource(dio);
@@ -133,6 +135,8 @@ class Admin {
   late final PriceListsResource priceLists;
 
   late final ProductCategoriesResource productCategories;
+
+  late final PromotionsResource promotions;
 
   late final ProductTagsResource productTags;
 

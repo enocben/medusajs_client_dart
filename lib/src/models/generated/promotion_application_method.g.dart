@@ -17,7 +17,7 @@ abstract class _$PromotionApplicationMethodCWProxy {
 
   PromotionApplicationMethod currencyCode(String? currencyCode);
 
-  PromotionApplicationMethod targetType(PromotionTagetType? targetType);
+  PromotionApplicationMethod targetType(PromotionTargetType? targetType);
 
   PromotionApplicationMethod type(PromotionApplicationMethod? type);
 
@@ -39,7 +39,7 @@ abstract class _$PromotionApplicationMethodCWProxy {
     num? buyRulesMinQuantity,
     num? maxQuantity,
     String? currencyCode,
-    PromotionTagetType? targetType,
+    PromotionTargetType? targetType,
     PromotionApplicationMethod? type,
     List<PromotionRule>? buyRules,
     List<PromotionRule>? targetRules,
@@ -74,7 +74,7 @@ class _$PromotionApplicationMethodCWProxyImpl
       this(currencyCode: currencyCode);
 
   @override
-  PromotionApplicationMethod targetType(PromotionTagetType? targetType) =>
+  PromotionApplicationMethod targetType(PromotionTargetType? targetType) =>
       this(targetType: targetType);
 
   @override
@@ -137,7 +137,7 @@ class _$PromotionApplicationMethodCWProxyImpl
       targetType: targetType == const $CopyWithPlaceholder()
           ? _value.targetType
           // ignore: cast_nullable_to_non_nullable
-          : targetType as PromotionTagetType?,
+          : targetType as PromotionTargetType?,
       type: type == const $CopyWithPlaceholder()
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
@@ -177,8 +177,8 @@ PromotionApplicationMethod _$PromotionApplicationMethodFromJson(
       buyRulesMinQuantity: json['buy_rules_min_quantity'] as num?,
       maxQuantity: json['max_quantity'] as num?,
       currencyCode: json['currency_code'] as String?,
-      targetType:
-          $enumDecodeNullable(_$PromotionTagetTypeEnumMap, json['target_type']),
+      targetType: $enumDecodeNullable(
+          _$PromotionTargetTypeEnumMap, json['target_type']),
       type: json['type'] == null
           ? null
           : PromotionApplicationMethod.fromJson(
@@ -202,7 +202,7 @@ Map<String, dynamic> _$PromotionApplicationMethodToJson(
         'buy_rules_min_quantity': value,
       if (instance.maxQuantity case final value?) 'max_quantity': value,
       if (instance.currencyCode case final value?) 'currency_code': value,
-      if (_$PromotionTagetTypeEnumMap[instance.targetType] case final value?)
+      if (_$PromotionTargetTypeEnumMap[instance.targetType] case final value?)
         'target_type': value,
       if (instance.type?.toJson() case final value?) 'type': value,
       if (instance.buyRules?.map((e) => e.toJson()).toList() case final value?)
@@ -213,8 +213,8 @@ Map<String, dynamic> _$PromotionApplicationMethodToJson(
       if (instance.promotion case final value?) 'promotion': value,
     };
 
-const _$PromotionTagetTypeEnumMap = {
-  PromotionTagetType.items: 'items',
-  PromotionTagetType.shippingMethods: 'shipping_methods',
-  PromotionTagetType.order: 'order',
+const _$PromotionTargetTypeEnumMap = {
+  PromotionTargetType.items: 'items',
+  PromotionTargetType.shippingMethods: 'shipping_methods',
+  PromotionTargetType.order: 'order',
 };

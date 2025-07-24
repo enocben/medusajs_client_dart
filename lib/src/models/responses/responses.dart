@@ -19,6 +19,7 @@ export 'admin_customers_res.dart';
 export 'admin_delete_customer_address_res.dart';
 export 'admin_delete_product_tag_res.dart';
 export 'admin_delete_products_from_collection_res.dart';
+export 'admin_delete_promotion_rules_batch_res.dart';
 export 'admin_delete_res.dart';
 export 'admin_delete_shipping_profile_res.dart';
 export 'admin_delete_uploads_res.dart';

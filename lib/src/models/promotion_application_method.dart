@@ -1,6 +1,7 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medusa_js_dart/medusa_js_dart.dart';
+import 'package:medusa_js_dart/src/models/enums/enums.dart';
+import 'package:medusa_js_dart/src/models/promotion_rule.dart';
 
 part 'generated/promotion_application_method.g.dart';
 
@@ -46,7 +47,7 @@ class PromotionApplicationMethod {
   /// items mean the promotion applies to the cart's items;
   /// shipping_methods means the promotion applies to the cart's shipping methods;
   /// order means the promotion applies on the entire order.
-  PromotionTagetType? targetType;
+  PromotionTargetType? targetType;
 
   /// The application method's type. If it's fixed, the promotion discounts a fixed amount.
   /// If it's percentage, the promotion discounts a percentage.
