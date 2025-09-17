@@ -46,7 +46,10 @@ PricedVariant _$PricedVariantFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
       purchasable: json['purchasable'] as bool?,
       originalPrice: (json['original_price'] as num?)?.toDouble(),
-      calculatedPrice: (json['calculated_price'] as num?)?.toDouble(),
+      calculatedPrice: json['calculated_price'] == null
+          ? null
+          : CalculatedPrice.fromJson(
+              json['calculated_price'] as Map<String, dynamic>),
       originalPriceInclTax:
           (json['original_price_incl_tax'] as num?)?.toDouble(),
       calculatedPriceInclTax:
@@ -94,8 +97,9 @@ Map<String, dynamic> _$PricedVariantToJson(PricedVariant instance) =>
       if (instance.deletedAt case final value?) 'deleted_at': value,
       if (instance.metadata case final value?) 'metadata': value,
       if (instance.purchasable case final value?) 'purchasable': value,
+      if (instance.calculatedPrice?.toJson() case final value?)
+        'calculated_price': value,
       if (instance.originalPrice case final value?) 'original_price': value,
-      if (instance.calculatedPrice case final value?) 'calculated_price': value,
       if (instance.originalPriceInclTax case final value?)
         'original_price_incl_tax': value,
       if (instance.calculatedPriceInclTax case final value?)

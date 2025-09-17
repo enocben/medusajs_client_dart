@@ -19,12 +19,12 @@ AdminPostPromotionsApplicationReq _$AdminPostPromotionsApplicationReqFromJson(
       applyToQuantity: json['apply_to_quantity'] as num?,
       buyRulesMinQuantity: json['buy_rules_min_quantity'] as num?,
       buyRules: (json['buy_rules'] as List<dynamic>?)
-          ?.map((e) =>
-              AdminPostPromotionRuleReq.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => AdminPostCreatePromotionRuleReq.fromJson(
+              e as Map<String, dynamic>))
           .toList(),
       targetRules: (json['target_rules'] as List<dynamic>?)
-          ?.map((e) =>
-              AdminPostPromotionRuleReq.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => AdminPostCreatePromotionRuleReq.fromJson(
+              e as Map<String, dynamic>))
           .toList(),
       allocation: $enumDecodeNullable(
           _$ApplicationMethodAllocationEnumMap, json['allocation']),

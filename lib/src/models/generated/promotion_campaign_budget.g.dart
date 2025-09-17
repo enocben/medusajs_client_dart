@@ -11,9 +11,9 @@ abstract class _$PromotionCampaignBudgetCWProxy {
 
   PromotionCampaignBudget type(PromotionBudgetType type);
 
-  PromotionCampaignBudget currencyCode(String currencyCode);
+  PromotionCampaignBudget currencyCode(String? currencyCode);
 
-  PromotionCampaignBudget limit(num limit);
+  PromotionCampaignBudget limit(num? limit);
 
   PromotionCampaignBudget used(num used);
 
@@ -26,8 +26,8 @@ abstract class _$PromotionCampaignBudgetCWProxy {
   PromotionCampaignBudget call({
     String id,
     PromotionBudgetType type,
-    String currencyCode,
-    num limit,
+    String? currencyCode,
+    num? limit,
     num used,
   });
 }
@@ -46,11 +46,11 @@ class _$PromotionCampaignBudgetCWProxyImpl
   PromotionCampaignBudget type(PromotionBudgetType type) => this(type: type);
 
   @override
-  PromotionCampaignBudget currencyCode(String currencyCode) =>
+  PromotionCampaignBudget currencyCode(String? currencyCode) =>
       this(currencyCode: currencyCode);
 
   @override
-  PromotionCampaignBudget limit(num limit) => this(limit: limit);
+  PromotionCampaignBudget limit(num? limit) => this(limit: limit);
 
   @override
   PromotionCampaignBudget used(num used) => this(used: used);
@@ -82,11 +82,11 @@ class _$PromotionCampaignBudgetCWProxyImpl
       currencyCode: currencyCode == const $CopyWithPlaceholder()
           ? _value.currencyCode
           // ignore: cast_nullable_to_non_nullable
-          : currencyCode as String,
+          : currencyCode as String?,
       limit: limit == const $CopyWithPlaceholder()
           ? _value.limit
           // ignore: cast_nullable_to_non_nullable
-          : limit as num,
+          : limit as num?,
       used: used == const $CopyWithPlaceholder()
           ? _value.used
           // ignore: cast_nullable_to_non_nullable
@@ -111,8 +111,8 @@ PromotionCampaignBudget _$PromotionCampaignBudgetFromJson(
     PromotionCampaignBudget(
       id: json['id'] as String,
       type: $enumDecode(_$PromotionBudgetTypeEnumMap, json['type']),
-      currencyCode: json['currency_code'] as String,
-      limit: json['limit'] as num,
+      currencyCode: json['currency_code'] as String?,
+      limit: json['limit'] as num?,
       used: json['used'] as num,
     );
 
@@ -121,8 +121,8 @@ Map<String, dynamic> _$PromotionCampaignBudgetToJson(
     <String, dynamic>{
       'id': instance.id,
       'type': _$PromotionBudgetTypeEnumMap[instance.type]!,
-      'currency_code': instance.currencyCode,
-      'limit': instance.limit,
+      if (instance.currencyCode case final value?) 'currency_code': value,
+      if (instance.limit case final value?) 'limit': value,
       'used': instance.used,
     };
 

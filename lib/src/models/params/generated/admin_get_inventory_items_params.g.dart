@@ -19,7 +19,7 @@ AdminGetInventoryItemsParams _$AdminGetInventoryItemsParamsFromJson(
           ? null
           : LocationLevelsReqParam.fromJson(
               json['location_levels'] as Map<String, dynamic>),
-      id: json['id'] as String?,
+      id: (json['id'] as List<dynamic>?)?.map((e) => e as String).toList(),
       sku: json['sku'] as String?,
       originCountry: json['origin_country'] as String?,
       midCode: json['mid_code'] as String?,

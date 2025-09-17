@@ -193,9 +193,9 @@ AdminPostProductsReqVariant _$AdminPostProductsReqVariantFromJson(
       prices: (json['prices'] as List<dynamic>?)
           ?.map((e) => Price.fromJson(e as Map<String, dynamic>))
           .toList(),
-      options: (json['options'] as List<dynamic>?)
-          ?.map((e) => ProductVariantOption.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      options: (json['options'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
     );
 
 Map<String, dynamic> _$AdminPostProductsReqVariantToJson(
@@ -219,6 +219,5 @@ Map<String, dynamic> _$AdminPostProductsReqVariantToJson(
       if (instance.metadata case final value?) 'metadata': value,
       if (instance.prices?.map((e) => e.toJson()).toList() case final value?)
         'prices': value,
-      if (instance.options?.map((e) => e.toJson()).toList() case final value?)
-        'options': value,
+      if (instance.options case final value?) 'options': value,
     };

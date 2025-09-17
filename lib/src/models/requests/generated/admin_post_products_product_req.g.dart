@@ -19,20 +19,17 @@ AdminPostProductsProductReq _$AdminPostProductsProductReqFromJson(
       thumbnail: json['thumbnail'] as String?,
       handle: json['handle'] as String?,
       status: json['status'] as String?,
-      type: json['type'] == null
-          ? null
-          : AdminPostProductsProductReqType.fromJson(
-              json['type'] as Map<String, dynamic>),
+      typeId: json['type_id'] as String?,
       collectionId: json['collection_id'] as String?,
       tags: (json['tags'] as List<dynamic>?)
-          ?.map((e) => AdminPostProductsProductReqTag.fromJson(
-              e as Map<String, dynamic>))
+          ?.map((e) => AdminPostProductById.fromJson(e as Map<String, dynamic>))
           .toList(),
       salesChannels: (json['sales_channels'] as List<dynamic>?)
-          ?.map((e) => AdminPostProductsProductReqSalesChannel.fromJson(
-              e as Map<String, dynamic>))
+          ?.map((e) => AdminPostProductById.fromJson(e as Map<String, dynamic>))
           .toList(),
-      categories: json['categories'] as List<dynamic>?,
+      categories: (json['categories'] as List<dynamic>?)
+          ?.map((e) => AdminPostProductById.fromJson(e as Map<String, dynamic>))
+          .toList(),
       variants: (json['variants'] as List<dynamic>?)
           ?.map((e) => AdminPostProductsProductReqVariant.fromJson(
               e as Map<String, dynamic>))
@@ -45,6 +42,7 @@ AdminPostProductsProductReq _$AdminPostProductsProductReqFromJson(
       originCountry: json['origin_country'] as String?,
       midCode: json['mid_code'] as String?,
       material: json['material'] as String?,
+      shippingProfileId: json['shipping_profile_id'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -60,14 +58,16 @@ Map<String, dynamic> _$AdminPostProductsProductReqToJson(
       if (instance.thumbnail case final value?) 'thumbnail': value,
       if (instance.handle case final value?) 'handle': value,
       if (instance.status case final value?) 'status': value,
-      if (instance.type?.toJson() case final value?) 'type': value,
+      if (instance.typeId case final value?) 'type_id': value,
       if (instance.collectionId case final value?) 'collection_id': value,
       if (instance.tags?.map((e) => e.toJson()).toList() case final value?)
         'tags': value,
       if (instance.salesChannels?.map((e) => e.toJson()).toList()
           case final value?)
         'sales_channels': value,
-      if (instance.categories case final value?) 'categories': value,
+      if (instance.categories?.map((e) => e.toJson()).toList()
+          case final value?)
+        'categories': value,
       if (instance.variants?.map((e) => e.toJson()).toList() case final value?)
         'variants': value,
       if (instance.weight case final value?) 'weight': value,
@@ -78,7 +78,21 @@ Map<String, dynamic> _$AdminPostProductsProductReqToJson(
       if (instance.originCountry case final value?) 'origin_country': value,
       if (instance.midCode case final value?) 'mid_code': value,
       if (instance.material case final value?) 'material': value,
+      if (instance.shippingProfileId case final value?)
+        'shipping_profile_id': value,
       if (instance.metadata case final value?) 'metadata': value,
+    };
+
+AdminPostProductById _$AdminPostProductByIdFromJson(
+        Map<String, dynamic> json) =>
+    AdminPostProductById(
+      id: json['id'] as String,
+    );
+
+Map<String, dynamic> _$AdminPostProductByIdToJson(
+        AdminPostProductById instance) =>
+    <String, dynamic>{
+      'id': instance.id,
     };
 
 AdminPostImageUrlReq _$AdminPostImageUrlReqFromJson(

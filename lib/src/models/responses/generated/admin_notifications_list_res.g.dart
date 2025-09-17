@@ -15,6 +15,7 @@ AdminNotificationsListRes _$AdminNotificationsListResFromJson(
       count: (json['count'] as num).toInt(),
       offset: (json['offset'] as num).toInt(),
       limit: (json['limit'] as num).toInt(),
+      estimateCount: json['estimate_count'] as num?,
     );
 
 Map<String, dynamic> _$AdminNotificationsListResToJson(
@@ -24,4 +25,5 @@ Map<String, dynamic> _$AdminNotificationsListResToJson(
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,
+      if (instance.estimateCount case final value?) 'estimate_count': value,
     };

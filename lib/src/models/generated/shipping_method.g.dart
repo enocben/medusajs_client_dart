@@ -44,6 +44,26 @@ ShippingMethod _$ShippingMethodFromJson(Map<String, dynamic> json) =>
       subtotal: (json['subtotal'] as num?)?.toDouble(),
       total: (json['total'] as num?)?.toDouble(),
       taxTotal: (json['tax_total'] as num?)?.toDouble(),
+      name: json['name'] as String?,
+      amount: (json['amount'] as num?)?.toDouble(),
+      isTaxInclusive: json['is_tax_inclusive'] as bool?,
+      metadata: json['metadata'] as Map<String, dynamic>?,
+      originalTotal: (json['original_total'] as num?)?.toDouble(),
+      originalSubtotal: (json['original_subtotal'] as num?)?.toDouble(),
+      originalTaxTotal: (json['original_tax_total'] as num?)?.toDouble(),
+      discountTotal: (json['discount_total'] as num?)?.toDouble(),
+      discountTaxTotal: (json['discount_tax_total'] as num?)?.toDouble(),
+      createdAt: json['created_at'] as String?,
+      updatedAt: json['updated_at'] as String?,
+      detail: json['detail'] == null
+          ? null
+          : ShippingMethodDetail.fromJson(
+              json['detail'] as Map<String, dynamic>),
+      adjustments: (json['adjustments'] as List<dynamic>?)
+          ?.map((e) =>
+              ShippingMethodAdjustment.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      description: json['description'] as String?,
     );
 
 Map<String, dynamic> _$ShippingMethodToJson(ShippingMethod instance) =>
@@ -71,4 +91,23 @@ Map<String, dynamic> _$ShippingMethodToJson(ShippingMethod instance) =>
       if (instance.subtotal case final value?) 'subtotal': value,
       if (instance.total case final value?) 'total': value,
       if (instance.taxTotal case final value?) 'tax_total': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.amount case final value?) 'amount': value,
+      if (instance.isTaxInclusive case final value?) 'is_tax_inclusive': value,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.originalTotal case final value?) 'original_total': value,
+      if (instance.originalSubtotal case final value?)
+        'original_subtotal': value,
+      if (instance.originalTaxTotal case final value?)
+        'original_tax_total': value,
+      if (instance.discountTotal case final value?) 'discount_total': value,
+      if (instance.discountTaxTotal case final value?)
+        'discount_tax_total': value,
+      if (instance.createdAt case final value?) 'created_at': value,
+      if (instance.updatedAt case final value?) 'updated_at': value,
+      if (instance.detail?.toJson() case final value?) 'detail': value,
+      if (instance.adjustments?.map((e) => e.toJson()).toList()
+          case final value?)
+        'adjustments': value,
+      if (instance.description case final value?) 'description': value,
     };

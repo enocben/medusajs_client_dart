@@ -13,12 +13,12 @@ AdminPostPromotionsBuyRulesBatchReq
               ?.map((e) => e as String)
               .toList(),
           update: (json['update'] as List<dynamic>?)
-              ?.map((e) =>
-                  AdminPostPromotionRuleReq.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => AdminPostUpdatePromotionRuleReq.fromJson(
+                  e as Map<String, dynamic>))
               .toList(),
           create: (json['create'] as List<dynamic>?)
-              ?.map((e) =>
-                  AdminPostPromotionRuleReq.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => AdminPostCreatePromotionRuleReq.fromJson(
+                  e as Map<String, dynamic>))
               .toList(),
         );
 

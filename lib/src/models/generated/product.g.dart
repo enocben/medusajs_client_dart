@@ -34,10 +34,10 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       profiles: (json['profiles'] as List<dynamic>?)
           ?.map((e) => ShippingProfile.fromJson(e as Map<String, dynamic>))
           .toList(),
-      weight: (json['weight'] as num?)?.toDouble(),
-      length: (json['length'] as num?)?.toDouble(),
-      height: (json['height'] as num?)?.toDouble(),
-      width: (json['width'] as num?)?.toDouble(),
+      weight: json['weight'] as String?,
+      length: json['length'] as String?,
+      height: json['height'] as String?,
+      width: json['width'] as String?,
       hsCode: json['hs_code'] as String?,
       originCountry: json['origin_country'] as String?,
       midCode: json['mid_code'] as String?,
@@ -63,7 +63,10 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       updatedAt: json['updated_at'] as String,
       deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
-    );
+    )..shippingProfile = json['shipping_profile'] == null
+        ? null
+        : ShippingProfile.fromJson(
+            json['shipping_profile'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
       'id': instance.id,
@@ -85,6 +88,8 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
       if (instance.profile?.toJson() case final value?) 'profile': value,
       if (instance.profiles?.map((e) => e.toJson()).toList() case final value?)
         'profiles': value,
+      if (instance.shippingProfile?.toJson() case final value?)
+        'shipping_profile': value,
       if (instance.weight case final value?) 'weight': value,
       if (instance.length case final value?) 'length': value,
       if (instance.height case final value?) 'height': value,

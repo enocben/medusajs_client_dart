@@ -9,13 +9,13 @@ part of '../product_variant_option.dart';
 ProductVariantOption _$ProductVariantOptionFromJson(
         Map<String, dynamic> json) =>
     ProductVariantOption(
-      optionId: json['option_id'] as String,
+      key: json['key'] as String,
       value: json['value'] as String,
     );
 
 Map<String, dynamic> _$ProductVariantOptionToJson(
         ProductVariantOption instance) =>
     <String, dynamic>{
-      'option_id': instance.optionId,
+      'key': instance.key,
       'value': instance.value,
     };

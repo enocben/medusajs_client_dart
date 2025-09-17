@@ -16,8 +16,8 @@ ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) =>
       isInternal: json['is_internal'] as bool,
       isActive: json['is_active'] as bool,
       rank: (json['rank'] as num?)?.toInt(),
-      categoryChildren: (json['category_children'] as List<dynamic>)
-          .map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
+      categoryChildren: (json['category_children'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
           .toList(),
       parentCategoryId: json['parent_category_id'] as String?,
       parentCategory: json['parent_category'] == null
@@ -42,8 +42,8 @@ Map<String, dynamic> _$ProductCategoryToJson(ProductCategory instance) =>
       'is_internal': instance.isInternal,
       'is_active': instance.isActive,
       if (instance.rank case final value?) 'rank': value,
-      'category_children':
-          instance.categoryChildren.map((e) => e.toJson()).toList(),
+      if (instance.categoryChildren case final value?)
+        'category_children': value,
       if (instance.parentCategoryId case final value?)
         'parent_category_id': value,
       if (instance.parentCategory?.toJson() case final value?)

@@ -95,5 +95,5 @@ const _$RulesOperatorEnumMap = {
   RulesOperator.ne: 'ne',
   RulesOperator.lte: 'lte',
   RulesOperator.gte: 'gte',
-  RulesOperator.nin: 'nin',
+  RulesOperator.includes: 'in',
 };

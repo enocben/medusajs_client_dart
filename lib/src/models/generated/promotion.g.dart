@@ -21,6 +21,8 @@ abstract class _$PromotionCWProxy {
 
   Promotion isAutomatic(bool? isAutomatic);
 
+  Promotion isTaxInclusive(bool? isTaxInclusive);
+
   Promotion type(PromotionType type);
 
   Promotion code(String? code);
@@ -45,6 +47,7 @@ abstract class _$PromotionCWProxy {
     PromotionStatus status,
     String? campaignId,
     bool? isAutomatic,
+    bool? isTaxInclusive,
     PromotionType type,
     String? code,
     List<PromotionRule>? rules,
@@ -81,6 +84,10 @@ class _$PromotionCWProxyImpl implements _$PromotionCWProxy {
   Promotion isAutomatic(bool? isAutomatic) => this(isAutomatic: isAutomatic);
 
   @override
+  Promotion isTaxInclusive(bool? isTaxInclusive) =>
+      this(isTaxInclusive: isTaxInclusive);
+
+  @override
   Promotion type(PromotionType type) => this(type: type);
 
   @override
@@ -112,6 +119,7 @@ class _$PromotionCWProxyImpl implements _$PromotionCWProxy {
     Object? status = const $CopyWithPlaceholder(),
     Object? campaignId = const $CopyWithPlaceholder(),
     Object? isAutomatic = const $CopyWithPlaceholder(),
+    Object? isTaxInclusive = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? code = const $CopyWithPlaceholder(),
     Object? rules = const $CopyWithPlaceholder(),
@@ -147,6 +155,10 @@ class _$PromotionCWProxyImpl implements _$PromotionCWProxy {
           ? _value.isAutomatic
           // ignore: cast_nullable_to_non_nullable
           : isAutomatic as bool?,
+      isTaxInclusive: isTaxInclusive == const $CopyWithPlaceholder()
+          ? _value.isTaxInclusive
+          // ignore: cast_nullable_to_non_nullable
+          : isTaxInclusive as bool?,
       type: type == const $CopyWithPlaceholder()
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
@@ -189,6 +201,7 @@ Promotion _$PromotionFromJson(Map<String, dynamic> json) => Promotion(
       status: $enumDecode(_$PromotionStatusEnumMap, json['status']),
       campaignId: json['campaign_id'] as String?,
       isAutomatic: json['is_automatic'] as bool?,
+      isTaxInclusive: json['is_tax_inclusive'] as bool?,
       type: $enumDecode(_$PromotionTypeEnumMap, json['type']),
       code: json['code'] as String?,
       rules: (json['rules'] as List<dynamic>?)
@@ -212,6 +225,7 @@ Map<String, dynamic> _$PromotionToJson(Promotion instance) => <String, dynamic>{
       'status': _$PromotionStatusEnumMap[instance.status]!,
       if (instance.campaignId case final value?) 'campaign_id': value,
       if (instance.isAutomatic case final value?) 'is_automatic': value,
+      if (instance.isTaxInclusive case final value?) 'is_tax_inclusive': value,
       'type': _$PromotionTypeEnumMap[instance.type]!,
       if (instance.code case final value?) 'code': value,
       if (instance.rules?.map((e) => e.toJson()).toList() case final value?)
