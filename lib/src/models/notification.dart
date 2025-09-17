@@ -1,27 +1,24 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medusa_js_dart/src/models/customer.dart';
-import 'package:medusa_js_dart/src/models/notification_provider.dart';
 
 part 'generated/notification.g.dart';
 
 /// A notification is an alert sent, typically to customers, using the installed Notification Provider as a reaction to internal events such as `order.placed`. Notifications can be resent.
 @JsonSerializable()
 class Notification {
-  Notification({
-    required this.id,
-    required this.to,
-    required this.channel,
-    this.template,
-    this.providerId,
-    this.createdAt,
-    this.externalId,
-    this.originalNotificationId,
-    this.receiverId,
-    this.resourceId,
-    this.resourceType,
-    this.triggerType,
-    this.data
-  });
+  Notification(
+      {required this.id,
+      required this.to,
+      required this.channel,
+      this.template,
+      this.providerId,
+      this.createdAt,
+      this.externalId,
+      this.originalNotificationId,
+      this.receiverId,
+      this.resourceId,
+      this.resourceType,
+      this.triggerType,
+      this.data});
   factory Notification.fromJson(Map<String, dynamic> json) =>
       _$NotificationFromJson(json);
 
@@ -30,7 +27,7 @@ class Notification {
   /// The notification's ID.
   String id;
 
-  /// Where to send the notification to. 
+  /// Where to send the notification to.
   /// For example, if channel is email, this can be an email number.
   String to;
 
@@ -54,7 +51,6 @@ class Notification {
   /// The ID of the original notification, if this notification is resent.
   String? originalNotificationId;
 
-
   /// The ID of the user or customer that's receiving this notification.
   String? receiverId;
 
@@ -73,5 +69,4 @@ class Notification {
 
   /// Data payload to send with the notification.
   Map<String, dynamic>? data;
-
 }

@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/price.dart';
-import 'package:medusa_js_dart/src/models/product_variant_option.dart';
 
 part 'generated/admin_post_products_req.g.dart';
 
