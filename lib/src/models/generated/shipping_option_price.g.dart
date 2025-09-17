@@ -28,19 +28,19 @@ ShippingOptionPrice _$ShippingOptionPriceFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ShippingOptionPriceToJson(
-        ShippingOptionPrice instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.title case final value?) 'title': value,
-      if (instance.currencyCode case final value?) 'currency_code': value,
-      if (instance.amount case final value?) 'amount': value,
-      if (instance.rowAmount?.toJson() case final value?) 'row_amount': value,
-      if (instance.minQuantity case final value?) 'min_quantity': value,
-      if (instance.maxQuantity case final value?) 'max_quantity': value,
-      if (instance.priceSetId case final value?) 'price_set_id': value,
-      'price_rules': instance.priceRules.map((e) => e.toJson()).toList(),
-      'rules_count': instance.rulesCount,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-    };
+  ShippingOptionPrice instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.title case final value?) 'title': value,
+  if (instance.currencyCode case final value?) 'currency_code': value,
+  if (instance.amount case final value?) 'amount': value,
+  if (instance.rowAmount?.toJson() case final value?) 'row_amount': value,
+  if (instance.minQuantity case final value?) 'min_quantity': value,
+  if (instance.maxQuantity case final value?) 'max_quantity': value,
+  if (instance.priceSetId case final value?) 'price_set_id': value,
+  'price_rules': instance.priceRules.map((e) => e.toJson()).toList(),
+  'rules_count': instance.rulesCount,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+};

@@ -7,14 +7,13 @@ part of '../admin_fulfillment_set_res.dart';
 // **************************************************************************
 
 AdminFulfillmentSetRes _$AdminFulfillmentSetResFromJson(
-        Map<String, dynamic> json) =>
-    AdminFulfillmentSetRes(
-      fulfillmentSet: FulfillmentSet.fromJson(
-          json['fulfillment_set'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => AdminFulfillmentSetRes(
+  fulfillmentSet: FulfillmentSet.fromJson(
+    json['fulfillment_set'] as Map<String, dynamic>,
+  ),
+);
 
 Map<String, dynamic> _$AdminFulfillmentSetResToJson(
-        AdminFulfillmentSetRes instance) =>
-    <String, dynamic>{
-      'fulfillment_set': instance.fulfillmentSet.toJson(),
-    };
+  AdminFulfillmentSetRes instance,
+) => <String, dynamic>{'fulfillment_set': instance.fulfillmentSet.toJson()};

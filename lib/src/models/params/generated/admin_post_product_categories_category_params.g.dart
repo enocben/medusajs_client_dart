@@ -7,16 +7,12 @@ part of '../admin_post_product_categories_category_params.dart';
 // **************************************************************************
 
 AdminPostProductCategoriesCategoryParams
-    _$AdminPostProductCategoriesCategoryParamsFromJson(
-            Map<String, dynamic> json) =>
-        AdminPostProductCategoriesCategoryParams(
-          expand: json['expand'] as String,
-          fields: json['fields'] as String,
-        );
+_$AdminPostProductCategoriesCategoryParamsFromJson(Map<String, dynamic> json) =>
+    AdminPostProductCategoriesCategoryParams(
+      expand: json['expand'] as String,
+      fields: json['fields'] as String,
+    );
 
 Map<String, dynamic> _$AdminPostProductCategoriesCategoryParamsToJson(
-        AdminPostProductCategoriesCategoryParams instance) =>
-    <String, dynamic>{
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+  AdminPostProductCategoriesCategoryParams instance,
+) => <String, dynamic>{'expand': instance.expand, 'fields': instance.fields};

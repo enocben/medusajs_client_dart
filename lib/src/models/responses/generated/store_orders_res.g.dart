@@ -12,6 +12,4 @@ StoreOrdersRes _$StoreOrdersResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$StoreOrdersResToJson(StoreOrdersRes instance) =>
-    <String, dynamic>{
-      'order': instance.order.toJson(),
-    };
+    <String, dynamic>{'order': instance.order.toJson()};

@@ -7,25 +7,25 @@ part of '../draft_order.dart';
 // **************************************************************************
 
 DraftOrder _$DraftOrderFromJson(Map<String, dynamic> json) => DraftOrder(
-      id: json['id'] as String,
-      status: json['status'] as String,
-      displayId: json['display_id'] as String,
-      cartId: json['cart_id'] as String?,
-      cart: json['cart'] == null
-          ? null
-          : Cart.fromJson(json['cart'] as Map<String, dynamic>),
-      orderId: json['order_id'] as String?,
-      order: json['order'] == null
-          ? null
-          : Order.fromJson(json['order'] as Map<String, dynamic>),
-      canceledAt: json['canceled_at'] as String?,
-      completedAt: json['completed_at'] as String?,
-      noNotificationOrder: json['no_notification_order'] as bool?,
-      idempotencyKey: json['idempotency_key'] as String?,
-      createdAt: json['created_at'] as String,
-      updatedAt: json['updated_at'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-    );
+  id: json['id'] as String,
+  status: json['status'] as String,
+  displayId: json['display_id'] as String,
+  cartId: json['cart_id'] as String?,
+  cart: json['cart'] == null
+      ? null
+      : Cart.fromJson(json['cart'] as Map<String, dynamic>),
+  orderId: json['order_id'] as String?,
+  order: json['order'] == null
+      ? null
+      : Order.fromJson(json['order'] as Map<String, dynamic>),
+  canceledAt: json['canceled_at'] as String?,
+  completedAt: json['completed_at'] as String?,
+  noNotificationOrder: json['no_notification_order'] as bool?,
+  idempotencyKey: json['idempotency_key'] as String?,
+  createdAt: json['created_at'] as String,
+  updatedAt: json['updated_at'] as String,
+  metadata: json['metadata'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$DraftOrderToJson(DraftOrder instance) =>
     <String, dynamic>{

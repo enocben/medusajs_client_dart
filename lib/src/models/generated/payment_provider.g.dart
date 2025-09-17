@@ -13,7 +13,4 @@ PaymentProvider _$PaymentProviderFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$PaymentProviderToJson(PaymentProvider instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'is_enabled': instance.isEnabled,
-    };
+    <String, dynamic>{'id': instance.id, 'is_enabled': instance.isEnabled};

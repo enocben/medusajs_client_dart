@@ -7,10 +7,8 @@ part of '../tax_region_res.dart';
 // **************************************************************************
 
 TaxRegionRes _$TaxRegionResFromJson(Map<String, dynamic> json) => TaxRegionRes(
-      taxRegion: TaxRegion.fromJson(json['tax_region'] as Map<String, dynamic>),
-    );
+  taxRegion: TaxRegion.fromJson(json['tax_region'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$TaxRegionResToJson(TaxRegionRes instance) =>
-    <String, dynamic>{
-      'tax_region': instance.taxRegion.toJson(),
-    };
+    <String, dynamic>{'tax_region': instance.taxRegion.toJson()};

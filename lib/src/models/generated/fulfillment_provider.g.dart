@@ -13,8 +13,8 @@ FulfillmentProvider _$FulfillmentProviderFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FulfillmentProviderToJson(
-        FulfillmentProvider instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.isEnabled case final value?) 'is_enabled': value,
-    };
+  FulfillmentProvider instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.isEnabled case final value?) 'is_enabled': value,
+};

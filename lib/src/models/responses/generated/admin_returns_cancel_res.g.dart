@@ -7,13 +7,11 @@ part of '../admin_returns_cancel_res.dart';
 // **************************************************************************
 
 AdminReturnsCancelRes _$AdminReturnsCancelResFromJson(
-        Map<String, dynamic> json) =>
-    AdminReturnsCancelRes(
-      order: Order.fromJson(json['order'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => AdminReturnsCancelRes(
+  order: Order.fromJson(json['order'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$AdminReturnsCancelResToJson(
-        AdminReturnsCancelRes instance) =>
-    <String, dynamic>{
-      'order': instance.order.toJson(),
-    };
+  AdminReturnsCancelRes instance,
+) => <String, dynamic>{'order': instance.order.toJson()};

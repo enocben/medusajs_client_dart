@@ -7,9 +7,9 @@ part of '../tax_rate_rule.dart';
 // **************************************************************************
 
 TaxRateRule _$TaxRateRuleFromJson(Map<String, dynamic> json) => TaxRateRule(
-      reference: json['reference'] as String?,
-      referenceId: json['reference_id'] as String?,
-    );
+  reference: json['reference'] as String?,
+  referenceId: json['reference_id'] as String?,
+);
 
 Map<String, dynamic> _$TaxRateRuleToJson(TaxRateRule instance) =>
     <String, dynamic>{

@@ -19,14 +19,14 @@ SupportedCurrencies _$SupportedCurrenciesFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$SupportedCurrenciesToJson(
-        SupportedCurrencies instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'currency_code': instance.currencyCode,
-      'store_id': instance.storeId,
-      'is_default': instance.isDefault,
-      'currency': instance.currency.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-    };
+  SupportedCurrencies instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'currency_code': instance.currencyCode,
+  'store_id': instance.storeId,
+  'is_default': instance.isDefault,
+  'currency': instance.currency.toJson(),
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+};

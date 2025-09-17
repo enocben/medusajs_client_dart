@@ -28,8 +28,9 @@ DateQueryParams _$DateQueryParamsFromJson(Map<String, dynamic> json) =>
       gt: json[r'$gt'] as String?,
       not: (json[r'$not'] as List<dynamic>?)?.map((e) => e as String).toList(),
       nin: (json[r'$nin'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      inside:
-          (json[r'$in'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      inside: (json[r'$in'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       ne: json[r'$ne'] as String?,
       eq: (json[r'$eq'] as List<dynamic>?)?.map((e) => e as String).toList(),
       or: (json[r'$or'] as List<dynamic>?)

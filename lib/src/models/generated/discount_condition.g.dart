@@ -15,7 +15,8 @@ DiscountCondition _$DiscountConditionFromJson(Map<String, dynamic> json) =>
       discountRule: json['discount_rule'] == null
           ? null
           : DiscountRule.fromJson(
-              json['discount_rule'] as Map<String, dynamic>),
+              json['discount_rule'] as Map<String, dynamic>,
+            ),
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -37,30 +38,28 @@ DiscountCondition _$DiscountConditionFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$DiscountConditionToJson(DiscountCondition instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'type': instance.type,
-      'operator': instance.operator,
-      'discount_rule_id': instance.discountRuleId,
-      if (instance.discountRule?.toJson() case final value?)
-        'discount_rule': value,
-      if (instance.products?.map((e) => e.toJson()).toList() case final value?)
-        'products': value,
-      if (instance.productTypes?.map((e) => e.toJson()).toList()
-          case final value?)
-        'product_types': value,
-      if (instance.productTags?.map((e) => e.toJson()).toList()
-          case final value?)
-        'product_tags': value,
-      if (instance.productCollections?.map((e) => e.toJson()).toList()
-          case final value?)
-        'product_collections': value,
-      if (instance.customerGroups?.map((e) => e.toJson()).toList()
-          case final value?)
-        'customer_groups': value,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-      if (instance.metadata case final value?) 'metadata': value,
-    };
+Map<String, dynamic> _$DiscountConditionToJson(
+  DiscountCondition instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'type': instance.type,
+  'operator': instance.operator,
+  'discount_rule_id': instance.discountRuleId,
+  if (instance.discountRule?.toJson() case final value?) 'discount_rule': value,
+  if (instance.products?.map((e) => e.toJson()).toList() case final value?)
+    'products': value,
+  if (instance.productTypes?.map((e) => e.toJson()).toList() case final value?)
+    'product_types': value,
+  if (instance.productTags?.map((e) => e.toJson()).toList() case final value?)
+    'product_tags': value,
+  if (instance.productCollections?.map((e) => e.toJson()).toList()
+      case final value?)
+    'product_collections': value,
+  if (instance.customerGroups?.map((e) => e.toJson()).toList()
+      case final value?)
+    'customer_groups': value,
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+  if (instance.metadata case final value?) 'metadata': value,
+};

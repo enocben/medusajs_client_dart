@@ -12,6 +12,4 @@ AdminCurrenciesRes _$AdminCurrenciesResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminCurrenciesResToJson(AdminCurrenciesRes instance) =>
-    <String, dynamic>{
-      'currency': instance.currency.toJson(),
-    };
+    <String, dynamic>{'currency': instance.currency.toJson()};

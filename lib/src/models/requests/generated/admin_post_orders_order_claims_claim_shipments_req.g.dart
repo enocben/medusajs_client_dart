@@ -7,18 +7,18 @@ part of '../admin_post_orders_order_claims_claim_shipments_req.dart';
 // **************************************************************************
 
 AdminPostOrdersOrderClaimsClaimShipmentsReq
-    _$AdminPostOrdersOrderClaimsClaimShipmentsReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminPostOrdersOrderClaimsClaimShipmentsReq(
-          fulfillmentId: json['fulfillment_id'] as String,
-          trackingNumbers: (json['tracking_numbers'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-        );
+_$AdminPostOrdersOrderClaimsClaimShipmentsReqFromJson(
+  Map<String, dynamic> json,
+) => AdminPostOrdersOrderClaimsClaimShipmentsReq(
+  fulfillmentId: json['fulfillment_id'] as String,
+  trackingNumbers: (json['tracking_numbers'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic> _$AdminPostOrdersOrderClaimsClaimShipmentsReqToJson(
-        AdminPostOrdersOrderClaimsClaimShipmentsReq instance) =>
-    <String, dynamic>{
-      'fulfillment_id': instance.fulfillmentId,
-      if (instance.trackingNumbers case final value?) 'tracking_numbers': value,
-    };
+  AdminPostOrdersOrderClaimsClaimShipmentsReq instance,
+) => <String, dynamic>{
+  'fulfillment_id': instance.fulfillmentId,
+  if (instance.trackingNumbers case final value?) 'tracking_numbers': value,
+};

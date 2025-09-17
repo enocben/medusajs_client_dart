@@ -93,7 +93,6 @@ class _$PromotionCampaignCWProxyImpl implements _$PromotionCampaignCWProxy {
   PromotionCampaign deletedAt(String? deletedAt) => this(deletedAt: deletedAt);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionCampaign(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -187,7 +186,8 @@ PromotionCampaign _$PromotionCampaignFromJson(Map<String, dynamic> json) =>
       budget: json['budget'] == null
           ? null
           : PromotionCampaignBudget.fromJson(
-              json['budget'] as Map<String, dynamic>),
+              json['budget'] as Map<String, dynamic>,
+            ),
       deletedAt: json['deleted_at'] as String?,
     );
 

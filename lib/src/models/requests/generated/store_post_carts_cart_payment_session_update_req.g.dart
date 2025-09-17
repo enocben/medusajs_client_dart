@@ -7,14 +7,12 @@ part of '../store_post_carts_cart_payment_session_update_req.dart';
 // **************************************************************************
 
 StorePostCartsCartPaymentSessionUpdateReq
-    _$StorePostCartsCartPaymentSessionUpdateReqFromJson(
-            Map<String, dynamic> json) =>
-        StorePostCartsCartPaymentSessionUpdateReq(
-          data: json['data'] as Map<String, dynamic>,
-        );
+_$StorePostCartsCartPaymentSessionUpdateReqFromJson(
+  Map<String, dynamic> json,
+) => StorePostCartsCartPaymentSessionUpdateReq(
+  data: json['data'] as Map<String, dynamic>,
+);
 
 Map<String, dynamic> _$StorePostCartsCartPaymentSessionUpdateReqToJson(
-        StorePostCartsCartPaymentSessionUpdateReq instance) =>
-    <String, dynamic>{
-      'data': instance.data,
-    };
+  StorePostCartsCartPaymentSessionUpdateReq instance,
+) => <String, dynamic>{'data': instance.data};

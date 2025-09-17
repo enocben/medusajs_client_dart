@@ -7,15 +7,15 @@ part of '../return_reason.dart';
 // **************************************************************************
 
 ReturnReason _$ReturnReasonFromJson(Map<String, dynamic> json) => ReturnReason(
-      id: json['id'] as String,
-      value: json['value'] as String,
-      label: json['label'] as String,
-      description: json['description'] as String?,
-      createdAt: json['created_at'] as String,
-      updatedAt: json['updated_at'] as String,
-      deletedAt: json['deleted_at'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-    );
+  id: json['id'] as String,
+  value: json['value'] as String,
+  label: json['label'] as String,
+  description: json['description'] as String?,
+  createdAt: json['created_at'] as String,
+  updatedAt: json['updated_at'] as String,
+  deletedAt: json['deleted_at'] as String?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$ReturnReasonToJson(ReturnReason instance) =>
     <String, dynamic>{

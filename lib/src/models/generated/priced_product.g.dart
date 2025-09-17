@@ -244,7 +244,6 @@ class _$PricedProductCWProxyImpl implements _$PricedProductCWProxy {
       this(metadata: metadata);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PricedProduct(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -445,113 +444,115 @@ extension $PricedProductCopyWith on PricedProduct {
 
 PricedProduct _$PricedProductFromJson(Map<String, dynamic> json) =>
     PricedProduct(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      subtitle: json['subtitle'] as String?,
-      description: json['description'] as String?,
-      handle: json['handle'] as String?,
-      isGiftcard: json['is_giftcard'] as bool? ?? false,
-      status: json['status'] as String,
-      images: (json['images'] as List<dynamic>?)
-          ?.map((e) => Image.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      thumbnail: json['thumbnail'] as String?,
-      options: (json['options'] as List<dynamic>?)
-          ?.map((e) => ProductOption.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      variants: (json['variants'] as List<dynamic>?)
-          ?.map((e) => PricedVariant.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      categories: (json['categories'] as List<dynamic>?)
-          ?.map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      profileId: json['profile_id'] as String?,
-      profile: json['profile'] == null
+        id: json['id'] as String,
+        title: json['title'] as String,
+        subtitle: json['subtitle'] as String?,
+        description: json['description'] as String?,
+        handle: json['handle'] as String?,
+        isGiftcard: json['is_giftcard'] as bool? ?? false,
+        status: json['status'] as String,
+        images: (json['images'] as List<dynamic>?)
+            ?.map((e) => Image.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        thumbnail: json['thumbnail'] as String?,
+        options: (json['options'] as List<dynamic>?)
+            ?.map((e) => ProductOption.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        variants: (json['variants'] as List<dynamic>?)
+            ?.map((e) => PricedVariant.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        categories: (json['categories'] as List<dynamic>?)
+            ?.map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        profileId: json['profile_id'] as String?,
+        profile: json['profile'] == null
+            ? null
+            : ShippingProfile.fromJson(json['profile'] as Map<String, dynamic>),
+        profiles: (json['profiles'] as List<dynamic>?)
+            ?.map((e) => ShippingProfile.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        weight: json['weight'] as String?,
+        length: json['length'] as String?,
+        height: json['height'] as String?,
+        width: json['width'] as String?,
+        hsCode: json['hs_code'] as String?,
+        originCountry: json['origin_country'] as String?,
+        midCode: json['mid_code'] as String?,
+        material: json['material'] as String?,
+        collectionId: json['collection_id'] as String?,
+        collection: json['collection'] == null
+            ? null
+            : ProductCollection.fromJson(
+                json['collection'] as Map<String, dynamic>,
+              ),
+        typeId: json['type_id'] as String?,
+        type: json['type'] == null
+            ? null
+            : ProductType.fromJson(json['type'] as Map<String, dynamic>),
+        tags: (json['tags'] as List<dynamic>?)
+            ?.map((e) => ProductTag.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        discountable: json['discountable'] as bool,
+        externalId: json['external_id'] as String?,
+        salesChannels: (json['sales_channels'] as List<dynamic>?)
+            ?.map((e) => SalesChannel.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        createdAt: json['created_at'] as String,
+        updatedAt: json['updated_at'] as String,
+        deletedAt: json['deleted_at'] as String?,
+        metadata: json['metadata'] as Map<String, dynamic>?,
+      )
+      ..shippingProfile = json['shipping_profile'] == null
           ? null
-          : ShippingProfile.fromJson(json['profile'] as Map<String, dynamic>),
-      profiles: (json['profiles'] as List<dynamic>?)
-          ?.map((e) => ShippingProfile.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      weight: json['weight'] as String?,
-      length: json['length'] as String?,
-      height: json['height'] as String?,
-      width: json['width'] as String?,
-      hsCode: json['hs_code'] as String?,
-      originCountry: json['origin_country'] as String?,
-      midCode: json['mid_code'] as String?,
-      material: json['material'] as String?,
-      collectionId: json['collection_id'] as String?,
-      collection: json['collection'] == null
-          ? null
-          : ProductCollection.fromJson(
-              json['collection'] as Map<String, dynamic>),
-      typeId: json['type_id'] as String?,
-      type: json['type'] == null
-          ? null
-          : ProductType.fromJson(json['type'] as Map<String, dynamic>),
-      tags: (json['tags'] as List<dynamic>?)
-          ?.map((e) => ProductTag.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      discountable: json['discountable'] as bool,
-      externalId: json['external_id'] as String?,
-      salesChannels: (json['sales_channels'] as List<dynamic>?)
-          ?.map((e) => SalesChannel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      createdAt: json['created_at'] as String,
-      updatedAt: json['updated_at'] as String,
-      deletedAt: json['deleted_at'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-    )..shippingProfile = json['shipping_profile'] == null
-        ? null
-        : ShippingProfile.fromJson(
-            json['shipping_profile'] as Map<String, dynamic>);
+          : ShippingProfile.fromJson(
+              json['shipping_profile'] as Map<String, dynamic>,
+            );
 
-Map<String, dynamic> _$PricedProductToJson(PricedProduct instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      if (instance.subtitle case final value?) 'subtitle': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.handle case final value?) 'handle': value,
-      'is_giftcard': instance.isGiftcard,
-      'status': instance.status,
-      if (instance.images?.map((e) => e.toJson()).toList() case final value?)
-        'images': value,
-      if (instance.thumbnail case final value?) 'thumbnail': value,
-      if (instance.options?.map((e) => e.toJson()).toList() case final value?)
-        'options': value,
-      if (instance.categories?.map((e) => e.toJson()).toList()
-          case final value?)
-        'categories': value,
-      if (instance.profileId case final value?) 'profile_id': value,
-      if (instance.profile?.toJson() case final value?) 'profile': value,
-      if (instance.profiles?.map((e) => e.toJson()).toList() case final value?)
-        'profiles': value,
-      if (instance.shippingProfile?.toJson() case final value?)
-        'shipping_profile': value,
-      if (instance.weight case final value?) 'weight': value,
-      if (instance.length case final value?) 'length': value,
-      if (instance.height case final value?) 'height': value,
-      if (instance.width case final value?) 'width': value,
-      if (instance.hsCode case final value?) 'hs_code': value,
-      if (instance.originCountry case final value?) 'origin_country': value,
-      if (instance.midCode case final value?) 'mid_code': value,
-      if (instance.material case final value?) 'material': value,
-      if (instance.collectionId case final value?) 'collection_id': value,
-      if (instance.collection?.toJson() case final value?) 'collection': value,
-      if (instance.typeId case final value?) 'type_id': value,
-      if (instance.type?.toJson() case final value?) 'type': value,
-      if (instance.tags?.map((e) => e.toJson()).toList() case final value?)
-        'tags': value,
-      'discountable': instance.discountable,
-      if (instance.externalId case final value?) 'external_id': value,
-      if (instance.salesChannels?.map((e) => e.toJson()).toList()
-          case final value?)
-        'sales_channels': value,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-      if (instance.metadata case final value?) 'metadata': value,
-      if (instance.variants?.map((e) => e.toJson()).toList() case final value?)
-        'variants': value,
-    };
+Map<String, dynamic> _$PricedProductToJson(
+  PricedProduct instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'title': instance.title,
+  if (instance.subtitle case final value?) 'subtitle': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.handle case final value?) 'handle': value,
+  'is_giftcard': instance.isGiftcard,
+  'status': instance.status,
+  if (instance.images?.map((e) => e.toJson()).toList() case final value?)
+    'images': value,
+  if (instance.thumbnail case final value?) 'thumbnail': value,
+  if (instance.options?.map((e) => e.toJson()).toList() case final value?)
+    'options': value,
+  if (instance.categories?.map((e) => e.toJson()).toList() case final value?)
+    'categories': value,
+  if (instance.profileId case final value?) 'profile_id': value,
+  if (instance.profile?.toJson() case final value?) 'profile': value,
+  if (instance.profiles?.map((e) => e.toJson()).toList() case final value?)
+    'profiles': value,
+  if (instance.shippingProfile?.toJson() case final value?)
+    'shipping_profile': value,
+  if (instance.weight case final value?) 'weight': value,
+  if (instance.length case final value?) 'length': value,
+  if (instance.height case final value?) 'height': value,
+  if (instance.width case final value?) 'width': value,
+  if (instance.hsCode case final value?) 'hs_code': value,
+  if (instance.originCountry case final value?) 'origin_country': value,
+  if (instance.midCode case final value?) 'mid_code': value,
+  if (instance.material case final value?) 'material': value,
+  if (instance.collectionId case final value?) 'collection_id': value,
+  if (instance.collection?.toJson() case final value?) 'collection': value,
+  if (instance.typeId case final value?) 'type_id': value,
+  if (instance.type?.toJson() case final value?) 'type': value,
+  if (instance.tags?.map((e) => e.toJson()).toList() case final value?)
+    'tags': value,
+  'discountable': instance.discountable,
+  if (instance.externalId case final value?) 'external_id': value,
+  if (instance.salesChannels?.map((e) => e.toJson()).toList() case final value?)
+    'sales_channels': value,
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+  if (instance.metadata case final value?) 'metadata': value,
+  if (instance.variants?.map((e) => e.toJson()).toList() case final value?)
+    'variants': value,
+};

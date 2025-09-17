@@ -22,17 +22,17 @@ CustomerGroup _$CustomerGroupFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$CustomerGroupToJson(CustomerGroup instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      if (instance.customers?.map((e) => e.toJson()).toList() case final value?)
-        'customers': value,
-      if (instance.priceLists?.map((e) => e.toJson()).toList()
-          case final value?)
-        'price_lists': value,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-      if (instance.metadata case final value?) 'metadata': value,
-    };
+Map<String, dynamic> _$CustomerGroupToJson(
+  CustomerGroup instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  if (instance.customers?.map((e) => e.toJson()).toList() case final value?)
+    'customers': value,
+  if (instance.priceLists?.map((e) => e.toJson()).toList() case final value?)
+    'price_lists': value,
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+  if (instance.metadata case final value?) 'metadata': value,
+};

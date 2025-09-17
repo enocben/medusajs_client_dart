@@ -13,7 +13,4 @@ FulfillmentOption _$FulfillmentOptionFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FulfillmentOptionToJson(FulfillmentOption instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'is_return': instance.isReturn,
-    };
+    <String, dynamic>{'id': instance.id, 'is_return': instance.isReturn};

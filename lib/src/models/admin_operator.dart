@@ -7,11 +7,7 @@ part 'generated/admin_operator.g.dart';
 @JsonSerializable()
 @CopyWith()
 class AdminOperator {
-  AdminOperator(
-      {required this.id,
-      required this.value,
-      required this.label,
-      });
+  AdminOperator({required this.id, required this.value, required this.label});
 
   factory AdminOperator.fromJson(Map<String, dynamic> json) =>
       _$AdminOperatorFromJson(json);
@@ -26,6 +22,4 @@ class AdminOperator {
 
   /// ex: In
   String label;
-
 }
-

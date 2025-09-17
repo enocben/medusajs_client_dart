@@ -13,8 +13,8 @@ GetPaginationParams _$GetPaginationParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GetPaginationParamsToJson(
-        GetPaginationParams instance) =>
-    <String, dynamic>{
-      if (instance.offset case final value?) 'offset': value,
-      if (instance.limit case final value?) 'limit': value,
-    };
+  GetPaginationParams instance,
+) => <String, dynamic>{
+  if (instance.offset case final value?) 'offset': value,
+  if (instance.limit case final value?) 'limit': value,
+};

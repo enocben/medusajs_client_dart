@@ -7,27 +7,27 @@ part of '../invite.dart';
 // **************************************************************************
 
 Invite _$InviteFromJson(Map<String, dynamic> json) => Invite(
-      id: json['id'] as String,
-      userEmail: json['user_email'] as String,
-      role: json['role'] as String?,
-      accepted: json['accepted'] as bool,
-      token: json['token'] as String,
-      expiresAt: json['expires_at'] as String,
-      createdAt: json['created_at'] as String,
-      updatedAt: json['updated_at'] as String,
-      deletedAt: json['deleted_at'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-    );
+  id: json['id'] as String,
+  userEmail: json['user_email'] as String,
+  role: json['role'] as String?,
+  accepted: json['accepted'] as bool,
+  token: json['token'] as String,
+  expiresAt: json['expires_at'] as String,
+  createdAt: json['created_at'] as String,
+  updatedAt: json['updated_at'] as String,
+  deletedAt: json['deleted_at'] as String?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$InviteToJson(Invite instance) => <String, dynamic>{
-      'id': instance.id,
-      'user_email': instance.userEmail,
-      if (instance.role case final value?) 'role': value,
-      'accepted': instance.accepted,
-      'token': instance.token,
-      'expires_at': instance.expiresAt,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-      if (instance.metadata case final value?) 'metadata': value,
-    };
+  'id': instance.id,
+  'user_email': instance.userEmail,
+  if (instance.role case final value?) 'role': value,
+  'accepted': instance.accepted,
+  'token': instance.token,
+  'expires_at': instance.expiresAt,
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+  if (instance.metadata case final value?) 'metadata': value,
+};

@@ -7,18 +7,18 @@ part of '../money_amount.dart';
 // **************************************************************************
 
 MoneyAmount _$MoneyAmountFromJson(Map<String, dynamic> json) => MoneyAmount(
-      id: json['id'] as String,
-      title: json['title'] as String?,
-      currencyCode: json['currency_code'] as String?,
-      amount: (json['amount'] as num?)?.toDouble(),
-      variantId: json['variant_id'] as String?,
-      minQuantity: (json['min_quantity'] as num?)?.toInt(),
-      maxQuantity: (json['max_quantity'] as num?)?.toInt(),
-      priceSetId: json['price_set_id'] as String?,
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
-      deletedAt: json['deleted_at'] as String?,
-    );
+  id: json['id'] as String,
+  title: json['title'] as String?,
+  currencyCode: json['currency_code'] as String?,
+  amount: (json['amount'] as num?)?.toDouble(),
+  variantId: json['variant_id'] as String?,
+  minQuantity: (json['min_quantity'] as num?)?.toInt(),
+  maxQuantity: (json['max_quantity'] as num?)?.toInt(),
+  priceSetId: json['price_set_id'] as String?,
+  createdAt: json['created_at'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  deletedAt: json['deleted_at'] as String?,
+);
 
 Map<String, dynamic> _$MoneyAmountToJson(MoneyAmount instance) =>
     <String, dynamic>{

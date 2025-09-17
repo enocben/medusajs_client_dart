@@ -49,7 +49,6 @@ class _$PromotionAttributeCWProxyImpl implements _$PromotionAttributeCWProxy {
       this(operators: operators);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionAttribute(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -103,11 +102,7 @@ abstract class _$PromotionAttributeOperatorCWProxy {
   /// ```dart
   /// PromotionAttributeOperator(...).copyWith(id: 12, name: "My name")
   /// ````
-  PromotionAttributeOperator call({
-    String id,
-    String value,
-    String label,
-  });
+  PromotionAttributeOperator call({String id, String value, String label});
 }
 
 /// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPromotionAttributeOperator.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPromotionAttributeOperator.copyWith.fieldName(...)`
@@ -127,7 +122,6 @@ class _$PromotionAttributeOperatorCWProxyImpl
   PromotionAttributeOperator label(String label) => this(label: label);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionAttributeOperator(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -173,8 +167,10 @@ PromotionAttribute _$PromotionAttributeFromJson(Map<String, dynamic> json) =>
       value: json['value'] as String,
       label: json['label'] as String,
       operators: (json['operators'] as List<dynamic>)
-          .map((e) =>
-              PromotionAttributeOperator.fromJson(e as Map<String, dynamic>))
+          .map(
+            (e) =>
+                PromotionAttributeOperator.fromJson(e as Map<String, dynamic>),
+          )
           .toList(),
     );
 
@@ -187,17 +183,17 @@ Map<String, dynamic> _$PromotionAttributeToJson(PromotionAttribute instance) =>
     };
 
 PromotionAttributeOperator _$PromotionAttributeOperatorFromJson(
-        Map<String, dynamic> json) =>
-    PromotionAttributeOperator(
-      id: json['id'] as String,
-      value: json['value'] as String,
-      label: json['label'] as String,
-    );
+  Map<String, dynamic> json,
+) => PromotionAttributeOperator(
+  id: json['id'] as String,
+  value: json['value'] as String,
+  label: json['label'] as String,
+);
 
 Map<String, dynamic> _$PromotionAttributeOperatorToJson(
-        PromotionAttributeOperator instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'value': instance.value,
-      'label': instance.label,
-    };
+  PromotionAttributeOperator instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'value': instance.value,
+  'label': instance.label,
+};

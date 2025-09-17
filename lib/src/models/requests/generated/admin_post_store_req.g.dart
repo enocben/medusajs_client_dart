@@ -18,20 +18,20 @@ AdminPostStoreReq _$AdminPostStoreReqFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$AdminPostStoreReqToJson(AdminPostStoreReq instance) =>
-    <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.defaultLocationId case final value?)
-        'default_location_id': value,
-      if (instance.defaultRegionId case final value?)
-        'default_region_id': value,
-      if (instance.defaultSalesChannelId case final value?)
-        'default_sales_channel_id': value,
-      if (instance.supportedCurrencies?.map((e) => e.toJson()).toList()
-          case final value?)
-        'supported_currencies': value,
-      if (instance.metadata case final value?) 'metadata': value,
-    };
+Map<String, dynamic> _$AdminPostStoreReqToJson(
+  AdminPostStoreReq instance,
+) => <String, dynamic>{
+  if (instance.name case final value?) 'name': value,
+  if (instance.defaultLocationId case final value?)
+    'default_location_id': value,
+  if (instance.defaultRegionId case final value?) 'default_region_id': value,
+  if (instance.defaultSalesChannelId case final value?)
+    'default_sales_channel_id': value,
+  if (instance.supportedCurrencies?.map((e) => e.toJson()).toList()
+      case final value?)
+    'supported_currencies': value,
+  if (instance.metadata case final value?) 'metadata': value,
+};
 
 SupportedCurrency _$SupportedCurrencyFromJson(Map<String, dynamic> json) =>
     SupportedCurrency(

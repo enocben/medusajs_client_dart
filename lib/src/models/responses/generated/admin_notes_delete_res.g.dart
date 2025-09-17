@@ -14,9 +14,9 @@ AdminNotesDeleteRes _$AdminNotesDeleteResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminNotesDeleteResToJson(
-        AdminNotesDeleteRes instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'object': instance.object,
-      'deleted': instance.deleted,
-    };
+  AdminNotesDeleteRes instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'object': instance.object,
+  'deleted': instance.deleted,
+};

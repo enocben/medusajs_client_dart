@@ -7,23 +7,23 @@ part of '../admin_post_reservations_req.dart';
 // **************************************************************************
 
 AdminPostReservationsReq _$AdminPostReservationsReqFromJson(
-        Map<String, dynamic> json) =>
-    AdminPostReservationsReq(
-      line_itemId: json['line_item_id'] as String,
-      locationId: json['location_id'] as String,
-      inventory_itemId: json['inventory_item_id'] as String,
-      quantity: (json['quantity'] as num).toInt(),
-      description: json['description'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-    );
+  Map<String, dynamic> json,
+) => AdminPostReservationsReq(
+  lineItemId: json['line_item_id'] as String,
+  locationId: json['location_id'] as String,
+  inventoryItemId: json['inventory_item_id'] as String,
+  quantity: (json['quantity'] as num).toInt(),
+  description: json['description'] as String,
+  metadata: json['metadata'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$AdminPostReservationsReqToJson(
-        AdminPostReservationsReq instance) =>
-    <String, dynamic>{
-      'line_item_id': instance.line_itemId,
-      'location_id': instance.locationId,
-      'inventory_item_id': instance.inventory_itemId,
-      'quantity': instance.quantity,
-      'description': instance.description,
-      if (instance.metadata case final value?) 'metadata': value,
-    };
+  AdminPostReservationsReq instance,
+) => <String, dynamic>{
+  'line_item_id': instance.lineItemId,
+  'location_id': instance.locationId,
+  'inventory_item_id': instance.inventoryItemId,
+  'quantity': instance.quantity,
+  'description': instance.description,
+  if (instance.metadata case final value?) 'metadata': value,
+};

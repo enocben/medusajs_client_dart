@@ -34,8 +34,8 @@ class PricedVariant extends ProductVariant {
     super.deletedAt,
     super.metadata,
     super.purchasable,
+    super.calculatedPrice,
     this.originalPrice,
-    this.calculatedPrice,
     this.originalPriceInclTax,
     this.calculatedPriceInclTax,
     this.originalTax,
@@ -48,9 +48,6 @@ class PricedVariant extends ProductVariant {
   @override
   Map<String, dynamic> toJson() => _$PricedVariantToJson(this);
 
-  /// The calculated price's details.
-  @override
-  CalculatedPrice? calculatedPrice;
   double? originalPrice;
   double? originalPriceInclTax;
   double? calculatedPriceInclTax;

@@ -12,6 +12,4 @@ AdminOrderEditsRes _$AdminOrderEditsResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminOrderEditsResToJson(AdminOrderEditsRes instance) =>
-    <String, dynamic>{
-      'order_edit': instance.orderEdit.toJson(),
-    };
+    <String, dynamic>{'order_edit': instance.orderEdit.toJson()};

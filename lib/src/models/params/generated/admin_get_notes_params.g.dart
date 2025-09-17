@@ -14,9 +14,9 @@ AdminGetNotesParams _$AdminGetNotesParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminGetNotesParamsToJson(
-        AdminGetNotesParams instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'resource_id': instance.resourceId,
-    };
+  AdminGetNotesParams instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'offset': instance.offset,
+  'resource_id': instance.resourceId,
+};

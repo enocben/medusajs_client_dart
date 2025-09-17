@@ -13,7 +13,4 @@ CountryCodeName _$CountryCodeNameFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CountryCodeNameToJson(CountryCodeName instance) =>
-    <String, dynamic>{
-      'label': instance.label,
-      'value': instance.value,
-    };
+    <String, dynamic>{'label': instance.label, 'value': instance.value};

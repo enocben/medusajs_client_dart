@@ -15,14 +15,15 @@ StorePostReturnsReq _$StorePostReturnsReqFromJson(Map<String, dynamic> json) =>
       returnShipping: json['return_shipping'] == null
           ? null
           : ReturnShipping.fromJson(
-              json['return_shipping'] as Map<String, dynamic>),
+              json['return_shipping'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$StorePostReturnsReqToJson(
-        StorePostReturnsReq instance) =>
-    <String, dynamic>{
-      'order_id': instance.orderId,
-      'items': instance.items.map((e) => e.toJson()).toList(),
-      if (instance.returnShipping?.toJson() case final value?)
-        'return_shipping': value,
-    };
+  StorePostReturnsReq instance,
+) => <String, dynamic>{
+  'order_id': instance.orderId,
+  'items': instance.items.map((e) => e.toJson()).toList(),
+  if (instance.returnShipping?.toJson() case final value?)
+    'return_shipping': value,
+};

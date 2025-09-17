@@ -7,13 +7,7 @@ part of '../admin_post_auth_req.dart';
 // **************************************************************************
 
 AdminPostAuthReq _$AdminPostAuthReqFromJson(Map<String, dynamic> json) =>
-    AdminPostAuthReq(
-      json['email'] as String,
-      json['password'] as String,
-    );
+    AdminPostAuthReq(json['email'] as String, json['password'] as String);
 
 Map<String, dynamic> _$AdminPostAuthReqToJson(AdminPostAuthReq instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'password': instance.password,
-    };
+    <String, dynamic>{'email': instance.email, 'password': instance.password};

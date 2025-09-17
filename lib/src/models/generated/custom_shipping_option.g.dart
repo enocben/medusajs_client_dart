@@ -7,15 +7,12 @@ part of '../custom_shipping_option.dart';
 // **************************************************************************
 
 CustomShippingOption _$CustomShippingOptionFromJson(
-        Map<String, dynamic> json) =>
-    CustomShippingOption(
-      optionId: json['option_id'] as String,
-      price: (json['price'] as num).toInt(),
-    );
+  Map<String, dynamic> json,
+) => CustomShippingOption(
+  optionId: json['option_id'] as String,
+  price: (json['price'] as num).toInt(),
+);
 
 Map<String, dynamic> _$CustomShippingOptionToJson(
-        CustomShippingOption instance) =>
-    <String, dynamic>{
-      'option_id': instance.optionId,
-      'price': instance.price,
-    };
+  CustomShippingOption instance,
+) => <String, dynamic>{'option_id': instance.optionId, 'price': instance.price};

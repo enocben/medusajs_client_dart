@@ -14,7 +14,8 @@ FulfillmentSet _$FulfillmentSetFromJson(Map<String, dynamic> json) =>
       location: json['location'] == null
           ? null
           : StockLocationExpandedDTO.fromJson(
-              json['location'] as Map<String, dynamic>),
+              json['location'] as Map<String, dynamic>,
+            ),
       serviceZones: (json['service_zones'] as List<dynamic>?)
           ?.map((e) => ServiceZone.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -23,16 +24,16 @@ FulfillmentSet _$FulfillmentSetFromJson(Map<String, dynamic> json) =>
       deletedAt: json['deleted_at'] as String?,
     );
 
-Map<String, dynamic> _$FulfillmentSetToJson(FulfillmentSet instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.name case final value?) 'name': value,
-      if (instance.type case final value?) 'type': value,
-      if (instance.location?.toJson() case final value?) 'location': value,
-      if (instance.serviceZones?.map((e) => e.toJson()).toList()
-          case final value?)
-        'service_zones': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-    };
+Map<String, dynamic> _$FulfillmentSetToJson(
+  FulfillmentSet instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.name case final value?) 'name': value,
+  if (instance.type case final value?) 'type': value,
+  if (instance.location?.toJson() case final value?) 'location': value,
+  if (instance.serviceZones?.map((e) => e.toJson()).toList() case final value?)
+    'service_zones': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+};

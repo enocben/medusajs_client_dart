@@ -7,14 +7,15 @@ part of '../store_payment_collections_res.dart';
 // **************************************************************************
 
 StorePaymentCollectionsRes _$StorePaymentCollectionsResFromJson(
-        Map<String, dynamic> json) =>
-    StorePaymentCollectionsRes(
-      paymentCollection: PaymentCollection.fromJson(
-          json['payment_collection'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => StorePaymentCollectionsRes(
+  paymentCollection: PaymentCollection.fromJson(
+    json['payment_collection'] as Map<String, dynamic>,
+  ),
+);
 
 Map<String, dynamic> _$StorePaymentCollectionsResToJson(
-        StorePaymentCollectionsRes instance) =>
-    <String, dynamic>{
-      'payment_collection': instance.paymentCollection.toJson(),
-    };
+  StorePaymentCollectionsRes instance,
+) => <String, dynamic>{
+  'payment_collection': instance.paymentCollection.toJson(),
+};

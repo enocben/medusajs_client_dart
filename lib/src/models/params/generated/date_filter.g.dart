@@ -7,25 +7,26 @@ part of '../date_filter.dart';
 // **************************************************************************
 
 DateFilter _$DateFilterFromJson(Map<String, dynamic> json) => DateFilter(
-      lt: json['lt'] as String?,
-      gt: json['gt'] as String?,
-      lte: json['lte'] as String?,
-      gte: json['gte'] as String?,
-      exists: json['exists'] as bool?,
-      contained: (json['contained'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      overlap:
-          (json['overlap'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      fulltext: json['fulltext'] as String?,
-      ilike: json['ilike'] as String?,
-      re: json['re'] as String?,
-      like: json['like'] as String?,
-      nin: (json['nin'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      not: (json['not'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      ne: (json['ne'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      eq: (json['eq'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    );
+  lt: json['lt'] as String?,
+  gt: json['gt'] as String?,
+  lte: json['lte'] as String?,
+  gte: json['gte'] as String?,
+  exists: json['exists'] as bool?,
+  contained: (json['contained'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  overlap: (json['overlap'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  fulltext: json['fulltext'] as String?,
+  ilike: json['ilike'] as String?,
+  re: json['re'] as String?,
+  like: json['like'] as String?,
+  nin: (json['nin'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  not: (json['not'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  ne: (json['ne'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  eq: (json['eq'] as List<dynamic>?)?.map((e) => e as String).toList(),
+);
 
 Map<String, dynamic> _$DateFilterToJson(DateFilter instance) =>
     <String, dynamic>{

@@ -100,7 +100,6 @@ class _$PromotionRuleCWProxyImpl implements _$PromotionRuleCWProxy {
       this(description: description);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionRule(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -191,10 +190,7 @@ abstract class _$PromotionRuleValueCWProxy {
   /// ```dart
   /// PromotionRuleValue(...).copyWith(id: 12, name: "My name")
   /// ````
-  PromotionRuleValue call({
-    String? label,
-    String? value,
-  });
+  PromotionRuleValue call({String? label, String? value});
 }
 
 /// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPromotionRuleValue.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPromotionRuleValue.copyWith.fieldName(...)`
@@ -210,7 +206,6 @@ class _$PromotionRuleValueCWProxyImpl implements _$PromotionRuleValueCWProxy {
   PromotionRuleValue value(String? value) => this(value: value);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionRuleValue(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage

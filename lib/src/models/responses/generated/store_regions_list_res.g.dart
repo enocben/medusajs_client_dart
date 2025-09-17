@@ -17,10 +17,10 @@ StoreRegionsListRes _$StoreRegionsListResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$StoreRegionsListResToJson(
-        StoreRegionsListRes instance) =>
-    <String, dynamic>{
-      'regions': instance.regions.map((e) => e.toJson()).toList(),
-      if (instance.count case final value?) 'count': value,
-      if (instance.offset case final value?) 'offset': value,
-      if (instance.limit case final value?) 'limit': value,
-    };
+  StoreRegionsListRes instance,
+) => <String, dynamic>{
+  'regions': instance.regions.map((e) => e.toJson()).toList(),
+  if (instance.count case final value?) 'count': value,
+  if (instance.offset case final value?) 'offset': value,
+  if (instance.limit case final value?) 'limit': value,
+};

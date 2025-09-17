@@ -7,14 +7,10 @@ part of '../store_post_customers_customer_password_token_req.dart';
 // **************************************************************************
 
 StorePostCustomersCustomerPasswordTokenReq
-    _$StorePostCustomersCustomerPasswordTokenReqFromJson(
-            Map<String, dynamic> json) =>
-        StorePostCustomersCustomerPasswordTokenReq(
-          email: json['email'] as String,
-        );
+_$StorePostCustomersCustomerPasswordTokenReqFromJson(
+  Map<String, dynamic> json,
+) => StorePostCustomersCustomerPasswordTokenReq(email: json['email'] as String);
 
 Map<String, dynamic> _$StorePostCustomersCustomerPasswordTokenReqToJson(
-        StorePostCustomersCustomerPasswordTokenReq instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-    };
+  StorePostCustomersCustomerPasswordTokenReq instance,
+) => <String, dynamic>{'email': instance.email};

@@ -29,18 +29,18 @@ AdminGetUsersParams _$AdminGetUsersParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminGetUsersParamsToJson(
-        AdminGetUsersParams instance) =>
-    <String, dynamic>{
-      if (instance.email case final value?) 'email': value,
-      if (instance.firstName case final value?) 'first_name': value,
-      if (instance.lastName case final value?) 'last_name': value,
-      if (instance.q case final value?) 'q': value,
-      if (instance.order case final value?) 'order': value,
-      if (instance.id case final value?) 'id': value,
-      if (instance.createdAt?.toJson() case final value?) 'created_at': value,
-      if (instance.updatedAt?.toJson() case final value?) 'updated_at': value,
-      if (instance.deletedAt?.toJson() case final value?) 'deleted_at': value,
-      if (instance.offset case final value?) 'offset': value,
-      if (instance.limit case final value?) 'limit': value,
-      if (instance.fields case final value?) 'fields': value,
-    };
+  AdminGetUsersParams instance,
+) => <String, dynamic>{
+  if (instance.email case final value?) 'email': value,
+  if (instance.firstName case final value?) 'first_name': value,
+  if (instance.lastName case final value?) 'last_name': value,
+  if (instance.q case final value?) 'q': value,
+  if (instance.order case final value?) 'order': value,
+  if (instance.id case final value?) 'id': value,
+  if (instance.createdAt?.toJson() case final value?) 'created_at': value,
+  if (instance.updatedAt?.toJson() case final value?) 'updated_at': value,
+  if (instance.deletedAt?.toJson() case final value?) 'deleted_at': value,
+  if (instance.offset case final value?) 'offset': value,
+  if (instance.limit case final value?) 'limit': value,
+  if (instance.fields case final value?) 'fields': value,
+};

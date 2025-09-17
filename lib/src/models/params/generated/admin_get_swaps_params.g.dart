@@ -13,8 +13,5 @@ AdminGetSwapsParams _$AdminGetSwapsParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminGetSwapsParamsToJson(
-        AdminGetSwapsParams instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-    };
+  AdminGetSwapsParams instance,
+) => <String, dynamic>{'limit': instance.limit, 'offset': instance.offset};

@@ -7,17 +7,18 @@ part of '../admin_get_regions_region_fulfillment_options_res.dart';
 // **************************************************************************
 
 AdminGetRegionsRegionFulfillmentOptionsRes
-    _$AdminGetRegionsRegionFulfillmentOptionsResFromJson(
-            Map<String, dynamic> json) =>
-        AdminGetRegionsRegionFulfillmentOptionsRes(
-          fulfillmentOptions: (json['fulfillment_options'] as List<dynamic>)
-              .map((e) => FulfillmentOption.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_$AdminGetRegionsRegionFulfillmentOptionsResFromJson(
+  Map<String, dynamic> json,
+) => AdminGetRegionsRegionFulfillmentOptionsRes(
+  fulfillmentOptions: (json['fulfillment_options'] as List<dynamic>)
+      .map((e) => FulfillmentOption.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$AdminGetRegionsRegionFulfillmentOptionsResToJson(
-        AdminGetRegionsRegionFulfillmentOptionsRes instance) =>
-    <String, dynamic>{
-      'fulfillment_options':
-          instance.fulfillmentOptions.map((e) => e.toJson()).toList(),
-    };
+  AdminGetRegionsRegionFulfillmentOptionsRes instance,
+) => <String, dynamic>{
+  'fulfillment_options': instance.fulfillmentOptions
+      .map((e) => e.toJson())
+      .toList(),
+};

@@ -19,19 +19,18 @@ ShippingOptionRules _$ShippingOptionRulesFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ShippingOptionRulesToJson(
-        ShippingOptionRules instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.attribute case final value?) 'attribute': value,
-      if (_$RulesOperatorEnumMap[instance.operator] case final value?)
-        'operator': value,
-      if (instance.value case final value?) 'value': value,
-      if (instance.shippingOptionId case final value?)
-        'shipping_option_id': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-    };
+  ShippingOptionRules instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.attribute case final value?) 'attribute': value,
+  if (_$RulesOperatorEnumMap[instance.operator] case final value?)
+    'operator': value,
+  if (instance.value case final value?) 'value': value,
+  if (instance.shippingOptionId case final value?) 'shipping_option_id': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+};
 
 const _$RulesOperatorEnumMap = {
   RulesOperator.gt: 'gt',

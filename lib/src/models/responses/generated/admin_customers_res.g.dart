@@ -12,6 +12,4 @@ AdminCustomersRes _$AdminCustomersResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminCustomersResToJson(AdminCustomersRes instance) =>
-    <String, dynamic>{
-      'customer': instance.customer.toJson(),
-    };
+    <String, dynamic>{'customer': instance.customer.toJson()};

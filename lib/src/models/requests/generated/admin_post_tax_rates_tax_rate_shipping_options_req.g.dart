@@ -7,16 +7,14 @@ part of '../admin_post_tax_rates_tax_rate_shipping_options_req.dart';
 // **************************************************************************
 
 AdminPostTaxRatesTaxRateShippingOptionsReq
-    _$AdminPostTaxRatesTaxRateShippingOptionsReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminPostTaxRatesTaxRateShippingOptionsReq(
-          shippingOptions: (json['shipping_options'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-        );
+_$AdminPostTaxRatesTaxRateShippingOptionsReqFromJson(
+  Map<String, dynamic> json,
+) => AdminPostTaxRatesTaxRateShippingOptionsReq(
+  shippingOptions: (json['shipping_options'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic> _$AdminPostTaxRatesTaxRateShippingOptionsReqToJson(
-        AdminPostTaxRatesTaxRateShippingOptionsReq instance) =>
-    <String, dynamic>{
-      'shipping_options': instance.shippingOptions,
-    };
+  AdminPostTaxRatesTaxRateShippingOptionsReq instance,
+) => <String, dynamic>{'shipping_options': instance.shippingOptions};

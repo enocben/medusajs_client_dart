@@ -32,11 +32,11 @@ class AdminPostPromotionsCampaignReq {
   final AdminPostPromotionsCampaignReqBudget? budget;
 
   /// The campaign's start date.
-  /// string <date-time>
+  /// string `<date-time>`
   final String? startsAt;
 
   /// The campaign's end date.
-  /// string <date-time>
+  /// string `<date-time>`
   final String? endsAt;
 }
 

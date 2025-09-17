@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
-import 'package:medusa_js_dart/src/models/requests/admin_post_stock_location_sales_channels_req.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'generated/stock_locations.g.dart';
@@ -19,14 +18,14 @@ abstract class StockLocationsResource {
   @POST('/admin/stock-locations')
   Future<AdminStockLocationsRes> create(
     @Body() AdminPostStockLocationsReq request, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
   @GET('/admin/stock-locations/{stockLocationId}')
   Future<AdminStockLocationsRes> retrieve(
     @Path('stockLocationId') String stockLocationId, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -34,7 +33,7 @@ abstract class StockLocationsResource {
   Future<AdminStockLocationsRes> update(
     @Path('stockLocationId') String stockLocationId,
     @Body() AdminPostStockLocationsLocationReq body, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -42,7 +41,7 @@ abstract class StockLocationsResource {
   Future<AdminStockLocationsRes> addFulfillmentSet(
     @Path('stockLocationId') String stockLocationId,
     @Body() AdminPostStockLocationFulfillmentSetReq body, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -50,7 +49,7 @@ abstract class StockLocationsResource {
   Future<AdminStockLocationsRes> manageFulfillmentProvider(
     @Path('stockLocationId') String stockLocationId,
     @Body() AdminPostStockLocationFulfillmentProvidersReq body, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -58,10 +57,9 @@ abstract class StockLocationsResource {
   Future<AdminStockLocationsRes> manageSalesChannels(
     @Path('stockLocationId') String stockLocationId,
     @Body() AdminPostStockLocationSalesChannelsReq body, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
-
 
   @DELETE('/admin/stock-locations/{stockLocationId}')
   Future<AdminStockLocationsDeleteRes> delete(

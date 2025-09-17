@@ -73,7 +73,6 @@ class _$ExchangeOrderSummaryCWProxyImpl
       this(accountingTotal: accountingTotal);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExchangeOrderSummary(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -134,25 +133,25 @@ extension $ExchangeOrderSummaryCopyWith on ExchangeOrderSummary {
 // **************************************************************************
 
 ExchangeOrderSummary _$ExchangeOrderSummaryFromJson(
-        Map<String, dynamic> json) =>
-    ExchangeOrderSummary(
-      paidTotal: json['paid_total'] as num,
-      refundedTotal: json['refunded_total'] as num,
-      pendingDifference: json['pending_difference'] as num,
-      currentOrderTotal: json['current_order_total'] as num,
-      originalOrderTotal: json['original_order_total'] as num,
-      transactionTotal: json['transaction_total'] as num,
-      accountingTotal: json['accounting_total'] as num,
-    );
+  Map<String, dynamic> json,
+) => ExchangeOrderSummary(
+  paidTotal: json['paid_total'] as num,
+  refundedTotal: json['refunded_total'] as num,
+  pendingDifference: json['pending_difference'] as num,
+  currentOrderTotal: json['current_order_total'] as num,
+  originalOrderTotal: json['original_order_total'] as num,
+  transactionTotal: json['transaction_total'] as num,
+  accountingTotal: json['accounting_total'] as num,
+);
 
 Map<String, dynamic> _$ExchangeOrderSummaryToJson(
-        ExchangeOrderSummary instance) =>
-    <String, dynamic>{
-      'paid_total': instance.paidTotal,
-      'refunded_total': instance.refundedTotal,
-      'pending_difference': instance.pendingDifference,
-      'current_order_total': instance.currentOrderTotal,
-      'original_order_total': instance.originalOrderTotal,
-      'transaction_total': instance.transactionTotal,
-      'accounting_total': instance.accountingTotal,
-    };
+  ExchangeOrderSummary instance,
+) => <String, dynamic>{
+  'paid_total': instance.paidTotal,
+  'refunded_total': instance.refundedTotal,
+  'pending_difference': instance.pendingDifference,
+  'current_order_total': instance.currentOrderTotal,
+  'original_order_total': instance.originalOrderTotal,
+  'transaction_total': instance.transactionTotal,
+  'accounting_total': instance.accountingTotal,
+};

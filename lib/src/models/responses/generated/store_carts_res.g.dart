@@ -7,11 +7,7 @@ part of '../store_carts_res.dart';
 // **************************************************************************
 
 StoreCartsRes _$StoreCartsResFromJson(Map<String, dynamic> json) =>
-    StoreCartsRes(
-      cart: Cart.fromJson(json['cart'] as Map<String, dynamic>),
-    );
+    StoreCartsRes(cart: Cart.fromJson(json['cart'] as Map<String, dynamic>));
 
 Map<String, dynamic> _$StoreCartsResToJson(StoreCartsRes instance) =>
-    <String, dynamic>{
-      'cart': instance.cart.toJson(),
-    };
+    <String, dynamic>{'cart': instance.cart.toJson()};

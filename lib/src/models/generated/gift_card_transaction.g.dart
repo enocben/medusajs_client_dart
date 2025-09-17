@@ -24,15 +24,15 @@ GiftCardTransaction _$GiftCardTransactionFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GiftCardTransactionToJson(
-        GiftCardTransaction instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'gift_card_id': instance.giftCardId,
-      if (instance.giftCard?.toJson() case final value?) 'gift_card': value,
-      'order_id': instance.orderId,
-      if (instance.order?.toJson() case final value?) 'order': value,
-      'amount': instance.amount,
-      'created_at': instance.createdAt,
-      if (instance.isTaxable case final value?) 'is_taxable': value,
-      if (instance.taxRate case final value?) 'tax_rate': value,
-    };
+  GiftCardTransaction instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'gift_card_id': instance.giftCardId,
+  if (instance.giftCard?.toJson() case final value?) 'gift_card': value,
+  'order_id': instance.orderId,
+  if (instance.order?.toJson() case final value?) 'order': value,
+  'amount': instance.amount,
+  'created_at': instance.createdAt,
+  if (instance.isTaxable case final value?) 'is_taxable': value,
+  if (instance.taxRate case final value?) 'tax_rate': value,
+};

@@ -7,15 +7,15 @@ part of '../sales_channel.dart';
 // **************************************************************************
 
 SalesChannel _$SalesChannelFromJson(Map<String, dynamic> json) => SalesChannel(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      description: json['description'] as String?,
-      isDisabled: json['is_disabled'] as bool,
-      createdAt: json['created_at'] as String,
-      updatedAt: json['updated_at'] as String,
-      deletedAt: json['deleted_at'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-    );
+  id: json['id'] as String,
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  isDisabled: json['is_disabled'] as bool,
+  createdAt: json['created_at'] as String,
+  updatedAt: json['updated_at'] as String,
+  deletedAt: json['deleted_at'] as String?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$SalesChannelToJson(SalesChannel instance) =>
     <String, dynamic>{

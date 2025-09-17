@@ -17,12 +17,12 @@ GetOrderEditsParams _$GetOrderEditsParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GetOrderEditsParamsToJson(
-        GetOrderEditsParams instance) =>
-    <String, dynamic>{
-      if (instance.searchTerm case final value?) 'search_term': value,
-      if (instance.orderID case final value?) 'order_i_d': value,
-      if (instance.limit case final value?) 'limit': value,
-      if (instance.offset case final value?) 'offset': value,
-      if (instance.expand case final value?) 'expand': value,
-      if (instance.fields case final value?) 'fields': value,
-    };
+  GetOrderEditsParams instance,
+) => <String, dynamic>{
+  if (instance.searchTerm case final value?) 'search_term': value,
+  if (instance.orderID case final value?) 'order_i_d': value,
+  if (instance.limit case final value?) 'limit': value,
+  if (instance.offset case final value?) 'offset': value,
+  if (instance.expand case final value?) 'expand': value,
+  if (instance.fields case final value?) 'fields': value,
+};

@@ -90,7 +90,6 @@ class _$ExchangeOrderItemAdjustmentCWProxyImpl
   ExchangeOrderItemAdjustment code(String? code) => this(code: code);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExchangeOrderItemAdjustment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -166,31 +165,31 @@ extension $ExchangeOrderItemAdjustmentCopyWith on ExchangeOrderItemAdjustment {
 // **************************************************************************
 
 ExchangeOrderItemAdjustment _$ExchangeOrderItemAdjustmentFromJson(
-        Map<String, dynamic> json) =>
-    ExchangeOrderItemAdjustment(
-      id: json['id'] as String,
-      itemId: json['item_id'] as String,
-      amount: json['amount'] as num,
-      orderId: json['order_id'] as String,
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
-      providerId: json['provider_id'] as String?,
-      promotionId: json['promotion_id'] as String?,
-      description: json['description'] as String?,
-      code: json['code'] as String?,
-    );
+  Map<String, dynamic> json,
+) => ExchangeOrderItemAdjustment(
+  id: json['id'] as String,
+  itemId: json['item_id'] as String,
+  amount: json['amount'] as num,
+  orderId: json['order_id'] as String,
+  createdAt: json['created_at'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  providerId: json['provider_id'] as String?,
+  promotionId: json['promotion_id'] as String?,
+  description: json['description'] as String?,
+  code: json['code'] as String?,
+);
 
 Map<String, dynamic> _$ExchangeOrderItemAdjustmentToJson(
-        ExchangeOrderItemAdjustment instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'item_id': instance.itemId,
-      'amount': instance.amount,
-      'order_id': instance.orderId,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.providerId case final value?) 'provider_id': value,
-      if (instance.promotionId case final value?) 'promotion_id': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.code case final value?) 'code': value,
-    };
+  ExchangeOrderItemAdjustment instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'item_id': instance.itemId,
+  'amount': instance.amount,
+  'order_id': instance.orderId,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.providerId case final value?) 'provider_id': value,
+  if (instance.promotionId case final value?) 'promotion_id': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.code case final value?) 'code': value,
+};

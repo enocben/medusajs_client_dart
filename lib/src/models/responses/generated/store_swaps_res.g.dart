@@ -7,11 +7,7 @@ part of '../store_swaps_res.dart';
 // **************************************************************************
 
 StoreSwapsRes _$StoreSwapsResFromJson(Map<String, dynamic> json) =>
-    StoreSwapsRes(
-      swap: Swap.fromJson(json['swap'] as Map<String, dynamic>),
-    );
+    StoreSwapsRes(swap: Swap.fromJson(json['swap'] as Map<String, dynamic>));
 
 Map<String, dynamic> _$StoreSwapsResToJson(StoreSwapsRes instance) =>
-    <String, dynamic>{
-      'swap': instance.swap.toJson(),
-    };
+    <String, dynamic>{'swap': instance.swap.toJson()};

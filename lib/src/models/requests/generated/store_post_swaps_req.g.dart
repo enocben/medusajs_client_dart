@@ -18,12 +18,12 @@ StorePostSwapsReq _$StorePostSwapsReqFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$StorePostSwapsReqToJson(StorePostSwapsReq instance) =>
-    <String, dynamic>{
-      'order_id': instance.orderId,
-      'return_items': instance.returnItems.map((e) => e.toJson()).toList(),
-      if (instance.returnShippingOption case final value?)
-        'return_shipping_option': value,
-      'additional_items':
-          instance.additionalItems.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$StorePostSwapsReqToJson(
+  StorePostSwapsReq instance,
+) => <String, dynamic>{
+  'order_id': instance.orderId,
+  'return_items': instance.returnItems.map((e) => e.toJson()).toList(),
+  if (instance.returnShippingOption case final value?)
+    'return_shipping_option': value,
+  'additional_items': instance.additionalItems.map((e) => e.toJson()).toList(),
+};

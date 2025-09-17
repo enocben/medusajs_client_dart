@@ -7,14 +7,12 @@ part of '../admin_post_sales_channels_channel_stock_locations_req.dart';
 // **************************************************************************
 
 AdminPostSalesChannelsChannelStockLocationsReq
-    _$AdminPostSalesChannelsChannelStockLocationsReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminPostSalesChannelsChannelStockLocationsReq(
-          locationId: json['location_id'] as String,
-        );
+_$AdminPostSalesChannelsChannelStockLocationsReqFromJson(
+  Map<String, dynamic> json,
+) => AdminPostSalesChannelsChannelStockLocationsReq(
+  locationId: json['location_id'] as String,
+);
 
 Map<String, dynamic> _$AdminPostSalesChannelsChannelStockLocationsReqToJson(
-        AdminPostSalesChannelsChannelStockLocationsReq instance) =>
-    <String, dynamic>{
-      'location_id': instance.locationId,
-    };
+  AdminPostSalesChannelsChannelStockLocationsReq instance,
+) => <String, dynamic>{'location_id': instance.locationId};

@@ -7,16 +7,16 @@ part of '../promotion_rule_params.dart';
 // **************************************************************************
 
 PromotionRuleTypeParams _$PromotionRuleTypeParamsFromJson(
-        Map<String, dynamic> json) =>
-    PromotionRuleTypeParams(
-      ruleType: $enumDecode(_$PromotionRuleTypeEnumMap, json['rule_type']),
-    );
+  Map<String, dynamic> json,
+) => PromotionRuleTypeParams(
+  ruleType: $enumDecode(_$PromotionRuleTypeEnumMap, json['rule_type']),
+);
 
 Map<String, dynamic> _$PromotionRuleTypeParamsToJson(
-        PromotionRuleTypeParams instance) =>
-    <String, dynamic>{
-      'rule_type': _$PromotionRuleTypeEnumMap[instance.ruleType]!,
-    };
+  PromotionRuleTypeParams instance,
+) => <String, dynamic>{
+  'rule_type': _$PromotionRuleTypeEnumMap[instance.ruleType]!,
+};
 
 const _$PromotionRuleTypeEnumMap = {
   PromotionRuleType.rules: 'rules',

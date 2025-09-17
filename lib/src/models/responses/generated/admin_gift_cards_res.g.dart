@@ -12,6 +12,4 @@ AdminGiftCardsRes _$AdminGiftCardsResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminGiftCardsResToJson(AdminGiftCardsRes instance) =>
-    <String, dynamic>{
-      'gift_card': instance.giftCard.toJson(),
-    };
+    <String, dynamic>{'gift_card': instance.giftCard.toJson()};

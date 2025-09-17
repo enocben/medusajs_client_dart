@@ -10,7 +10,8 @@ abstract class _$AdminPostPromotionsRuleValuesReqCWProxy {
   AdminPostPromotionsRuleValuesReq withDeleted(bool? withDeleted);
 
   AdminPostPromotionsRuleValuesReq applicationMethodType(
-      PromotionApplicationMethodType? applicationMethodType);
+    PromotionApplicationMethodType? applicationMethodType,
+  );
 
   AdminPostPromotionsRuleValuesReq promotionType(PromotionType? promotionType);
 
@@ -49,13 +50,13 @@ class _$AdminPostPromotionsRuleValuesReqCWProxyImpl
 
   @override
   AdminPostPromotionsRuleValuesReq applicationMethodType(
-          PromotionApplicationMethodType? applicationMethodType) =>
-      this(applicationMethodType: applicationMethodType);
+    PromotionApplicationMethodType? applicationMethodType,
+  ) => this(applicationMethodType: applicationMethodType);
 
   @override
   AdminPostPromotionsRuleValuesReq promotionType(
-          PromotionType? promotionType) =>
-      this(promotionType: promotionType);
+    PromotionType? promotionType,
+  ) => this(promotionType: promotionType);
 
   @override
   AdminPostPromotionsRuleValuesReq order(String? order) => this(order: order);
@@ -67,7 +68,6 @@ class _$AdminPostPromotionsRuleValuesReqCWProxyImpl
   AdminPostPromotionsRuleValuesReq offset(int? offset) => this(offset: offset);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AdminPostPromotionsRuleValuesReq(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -89,9 +89,9 @@ class _$AdminPostPromotionsRuleValuesReqCWProxyImpl
           : withDeleted as bool?,
       applicationMethodType:
           applicationMethodType == const $CopyWithPlaceholder()
-              ? _value.applicationMethodType
-              // ignore: cast_nullable_to_non_nullable
-              : applicationMethodType as PromotionApplicationMethodType?,
+          ? _value.applicationMethodType
+          // ignore: cast_nullable_to_non_nullable
+          : applicationMethodType as PromotionApplicationMethodType?,
       promotionType: promotionType == const $CopyWithPlaceholder()
           ? _value.promotionType
           // ignore: cast_nullable_to_non_nullable
@@ -125,33 +125,35 @@ extension $AdminPostPromotionsRuleValuesReqCopyWith
 // **************************************************************************
 
 AdminPostPromotionsRuleValuesReq _$AdminPostPromotionsRuleValuesReqFromJson(
-        Map<String, dynamic> json) =>
-    AdminPostPromotionsRuleValuesReq(
-      withDeleted: json['with_deleted'] as bool?,
-      applicationMethodType: $enumDecodeNullable(
-          _$PromotionApplicationMethodTypeEnumMap,
-          json['application_method_type']),
-      promotionType:
-          $enumDecodeNullable(_$PromotionTypeEnumMap, json['promotion_type']),
-      order: json['order'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
-      offset: (json['offset'] as num?)?.toInt(),
-    );
+  Map<String, dynamic> json,
+) => AdminPostPromotionsRuleValuesReq(
+  withDeleted: json['with_deleted'] as bool?,
+  applicationMethodType: $enumDecodeNullable(
+    _$PromotionApplicationMethodTypeEnumMap,
+    json['application_method_type'],
+  ),
+  promotionType: $enumDecodeNullable(
+    _$PromotionTypeEnumMap,
+    json['promotion_type'],
+  ),
+  order: json['order'] as String?,
+  limit: (json['limit'] as num?)?.toInt(),
+  offset: (json['offset'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$AdminPostPromotionsRuleValuesReqToJson(
-        AdminPostPromotionsRuleValuesReq instance) =>
-    <String, dynamic>{
-      if (instance.withDeleted case final value?) 'with_deleted': value,
-      if (_$PromotionApplicationMethodTypeEnumMap[
-              instance.applicationMethodType]
-          case final value?)
-        'application_method_type': value,
-      if (_$PromotionTypeEnumMap[instance.promotionType] case final value?)
-        'promotion_type': value,
-      if (instance.order case final value?) 'order': value,
-      if (instance.limit case final value?) 'limit': value,
-      if (instance.offset case final value?) 'offset': value,
-    };
+  AdminPostPromotionsRuleValuesReq instance,
+) => <String, dynamic>{
+  if (instance.withDeleted case final value?) 'with_deleted': value,
+  if (_$PromotionApplicationMethodTypeEnumMap[instance.applicationMethodType]
+      case final value?)
+    'application_method_type': value,
+  if (_$PromotionTypeEnumMap[instance.promotionType] case final value?)
+    'promotion_type': value,
+  if (instance.order case final value?) 'order': value,
+  if (instance.limit case final value?) 'limit': value,
+  if (instance.offset case final value?) 'offset': value,
+};
 
 const _$PromotionApplicationMethodTypeEnumMap = {
   PromotionApplicationMethodType.fixed: 'fixed',

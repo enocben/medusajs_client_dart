@@ -114,7 +114,6 @@ class _$ExchangeOrderFulfillmentCWProxyImpl
       this(requiresShipping: requiresShipping);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExchangeOrderFulfillment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -205,39 +204,37 @@ extension $ExchangeOrderFulfillmentCopyWith on ExchangeOrderFulfillment {
 // **************************************************************************
 
 ExchangeOrderFulfillment _$ExchangeOrderFulfillmentFromJson(
-        Map<String, dynamic> json) =>
-    ExchangeOrderFulfillment(
-      id: json['id'] as String,
-      locationId: json['location_id'] as String?,
-      packedAt: json['packed_at'] as String?,
-      shippedAt: json['shipped_at'] as String?,
-      deliveredAt: json['delivered_at'] as String?,
-      canceledAt: json['canceled_at'] as String?,
-      data: json['data'] as Map<String, dynamic>?,
-      providerId: json['provider_id'] as String?,
-      shippingOptionId: json['shipping_option_id'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
-      requiresShipping: json['requires_shipping'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => ExchangeOrderFulfillment(
+  id: json['id'] as String,
+  locationId: json['location_id'] as String?,
+  packedAt: json['packed_at'] as String?,
+  shippedAt: json['shipped_at'] as String?,
+  deliveredAt: json['delivered_at'] as String?,
+  canceledAt: json['canceled_at'] as String?,
+  data: json['data'] as Map<String, dynamic>?,
+  providerId: json['provider_id'] as String?,
+  shippingOptionId: json['shipping_option_id'] as String?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
+  createdAt: json['created_at'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  requiresShipping: json['requires_shipping'] as bool?,
+);
 
 Map<String, dynamic> _$ExchangeOrderFulfillmentToJson(
-        ExchangeOrderFulfillment instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.locationId case final value?) 'location_id': value,
-      if (instance.packedAt case final value?) 'packed_at': value,
-      if (instance.shippedAt case final value?) 'shipped_at': value,
-      if (instance.deliveredAt case final value?) 'delivered_at': value,
-      if (instance.canceledAt case final value?) 'canceled_at': value,
-      if (instance.data case final value?) 'data': value,
-      if (instance.providerId case final value?) 'provider_id': value,
-      if (instance.shippingOptionId case final value?)
-        'shipping_option_id': value,
-      if (instance.metadata case final value?) 'metadata': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.requiresShipping case final value?)
-        'requires_shipping': value,
-    };
+  ExchangeOrderFulfillment instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.locationId case final value?) 'location_id': value,
+  if (instance.packedAt case final value?) 'packed_at': value,
+  if (instance.shippedAt case final value?) 'shipped_at': value,
+  if (instance.deliveredAt case final value?) 'delivered_at': value,
+  if (instance.canceledAt case final value?) 'canceled_at': value,
+  if (instance.data case final value?) 'data': value,
+  if (instance.providerId case final value?) 'provider_id': value,
+  if (instance.shippingOptionId case final value?) 'shipping_option_id': value,
+  if (instance.metadata case final value?) 'metadata': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.requiresShipping case final value?) 'requires_shipping': value,
+};

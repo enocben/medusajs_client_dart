@@ -7,16 +7,16 @@ part of '../error.dart';
 // **************************************************************************
 
 Error _$ErrorFromJson(Map<String, dynamic> json) => Error(
-      code: $enumDecodeNullable(_$ErrorCodeEnumMap, json['code']),
-      message: json['message'] as String?,
-      type: $enumDecodeNullable(_$ErrorTypeEnumMap, json['type']),
-    );
+  code: $enumDecodeNullable(_$ErrorCodeEnumMap, json['code']),
+  message: json['message'] as String?,
+  type: $enumDecodeNullable(_$ErrorTypeEnumMap, json['type']),
+);
 
 Map<String, dynamic> _$ErrorToJson(Error instance) => <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.code] case final value?) 'code': value,
-      if (instance.message case final value?) 'message': value,
-      if (_$ErrorTypeEnumMap[instance.type] case final value?) 'type': value,
-    };
+  if (_$ErrorCodeEnumMap[instance.code] case final value?) 'code': value,
+  if (instance.message case final value?) 'message': value,
+  if (_$ErrorTypeEnumMap[instance.type] case final value?) 'type': value,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.invalidStateError: 'invalid_state_error',

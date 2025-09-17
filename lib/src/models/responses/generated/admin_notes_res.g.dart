@@ -7,11 +7,7 @@ part of '../admin_notes_res.dart';
 // **************************************************************************
 
 AdminNotesRes _$AdminNotesResFromJson(Map<String, dynamic> json) =>
-    AdminNotesRes(
-      note: Note.fromJson(json['note'] as Map<String, dynamic>),
-    );
+    AdminNotesRes(note: Note.fromJson(json['note'] as Map<String, dynamic>));
 
 Map<String, dynamic> _$AdminNotesResToJson(AdminNotesRes instance) =>
-    <String, dynamic>{
-      'note': instance.note.toJson(),
-    };
+    <String, dynamic>{'note': instance.note.toJson()};

@@ -12,7 +12,8 @@ ShippingTaxRate _$ShippingTaxRateFromJson(Map<String, dynamic> json) =>
       shippingOption: json['shipping_option'] == null
           ? null
           : ShippingOption.fromJson(
-              json['shipping_option'] as Map<String, dynamic>),
+              json['shipping_option'] as Map<String, dynamic>,
+            ),
       rateId: json['rate_id'] as String,
       taxRate: json['tax_rate'] == null
           ? null

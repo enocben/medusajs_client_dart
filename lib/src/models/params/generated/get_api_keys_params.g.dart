@@ -6,41 +6,38 @@ part of '../get_api_keys_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GetApiKeysParams _$GetApiKeysParamsFromJson(Map<String, dynamic> json) =>
-    GetApiKeysParams(
-      withDeleted: json['with_deleted'] as bool?,
-      or: (json[r'$or'] as List<dynamic>?)
-          ?.map((e) => e as Map<String, dynamic>)
-          .toList(),
-      and: (json[r'$and'] as List<dynamic>?)
-          ?.map((e) => e as Map<String, dynamic>)
-          .toList(),
-      revokedAt: json['revoked_at'] == null
-          ? null
-          : DateQueryParams.fromJson(
-              json['revoked_at'] as Map<String, dynamic>),
-      deletedAt: json['deleted_at'] == null
-          ? null
-          : DateQueryParams.fromJson(
-              json['deleted_at'] as Map<String, dynamic>),
-      updatedAt: json['updated_at'] == null
-          ? null
-          : DateQueryParams.fromJson(
-              json['updated_at'] as Map<String, dynamic>),
-      createdAt: json['created_at'] == null
-          ? null
-          : DateQueryParams.fromJson(
-              json['created_at'] as Map<String, dynamic>),
-      type: json['type'] as String?,
-      token: json['token'],
-      title: json['title'],
-      id: json['id'],
-      q: json['q'] as String?,
-      order: json['order'] as String?,
-      limit: (json['limit'] as num?)?.toInt(),
-      offset: (json['offset'] as num?)?.toInt(),
-      fields: json['fields'] as String?,
-    );
+GetApiKeysParams _$GetApiKeysParamsFromJson(
+  Map<String, dynamic> json,
+) => GetApiKeysParams(
+  withDeleted: json['with_deleted'] as bool?,
+  or: (json[r'$or'] as List<dynamic>?)
+      ?.map((e) => e as Map<String, dynamic>)
+      .toList(),
+  and: (json[r'$and'] as List<dynamic>?)
+      ?.map((e) => e as Map<String, dynamic>)
+      .toList(),
+  revokedAt: json['revoked_at'] == null
+      ? null
+      : DateQueryParams.fromJson(json['revoked_at'] as Map<String, dynamic>),
+  deletedAt: json['deleted_at'] == null
+      ? null
+      : DateQueryParams.fromJson(json['deleted_at'] as Map<String, dynamic>),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateQueryParams.fromJson(json['updated_at'] as Map<String, dynamic>),
+  createdAt: json['created_at'] == null
+      ? null
+      : DateQueryParams.fromJson(json['created_at'] as Map<String, dynamic>),
+  type: json['type'] as String?,
+  token: json['token'],
+  title: json['title'],
+  id: json['id'],
+  q: json['q'] as String?,
+  order: json['order'] as String?,
+  limit: (json['limit'] as num?)?.toInt(),
+  offset: (json['offset'] as num?)?.toInt(),
+  fields: json['fields'] as String?,
+);
 
 Map<String, dynamic> _$GetApiKeysParamsToJson(GetApiKeysParams instance) =>
     <String, dynamic>{

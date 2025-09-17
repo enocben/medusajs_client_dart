@@ -20,15 +20,15 @@ ExchangeTransaction _$ExchangeTransactionFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ExchangeTransactionToJson(
-        ExchangeTransaction instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'order_id': instance.orderId,
-      'amount': instance.amount,
-      'currency_code': instance.currencyCode,
-      'reference': instance.reference,
-      'reference_id': instance.referenceId,
-      if (instance.metadata case final value?) 'metadata': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-    };
+  ExchangeTransaction instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'order_id': instance.orderId,
+  'amount': instance.amount,
+  'currency_code': instance.currencyCode,
+  'reference': instance.reference,
+  'reference_id': instance.referenceId,
+  if (instance.metadata case final value?) 'metadata': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+};

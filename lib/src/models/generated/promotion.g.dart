@@ -104,7 +104,6 @@ class _$PromotionCWProxyImpl implements _$PromotionCWProxy {
   Promotion campaign(PromotionCampaign? campaign) => this(campaign: campaign);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Promotion(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -194,46 +193,46 @@ extension $PromotionCopyWith on Promotion {
 // **************************************************************************
 
 Promotion _$PromotionFromJson(Map<String, dynamic> json) => Promotion(
-      id: json['id'] as String,
-      createdAt: json['created_at'] as String,
-      updatedAt: json['updated_at'] as String,
-      deletedAt: json['deleted_at'] as String?,
-      status: $enumDecode(_$PromotionStatusEnumMap, json['status']),
-      campaignId: json['campaign_id'] as String?,
-      isAutomatic: json['is_automatic'] as bool?,
-      isTaxInclusive: json['is_tax_inclusive'] as bool?,
-      type: $enumDecode(_$PromotionTypeEnumMap, json['type']),
-      code: json['code'] as String?,
-      rules: (json['rules'] as List<dynamic>?)
-          ?.map((e) => PromotionRule.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      applicationMethod: json['application_method'] == null
-          ? null
-          : PromotionApplicationMethod.fromJson(
-              json['application_method'] as Map<String, dynamic>),
-      campaign: json['campaign'] == null
-          ? null
-          : PromotionCampaign.fromJson(
-              json['campaign'] as Map<String, dynamic>),
-    );
+  id: json['id'] as String,
+  createdAt: json['created_at'] as String,
+  updatedAt: json['updated_at'] as String,
+  deletedAt: json['deleted_at'] as String?,
+  status: $enumDecode(_$PromotionStatusEnumMap, json['status']),
+  campaignId: json['campaign_id'] as String?,
+  isAutomatic: json['is_automatic'] as bool?,
+  isTaxInclusive: json['is_tax_inclusive'] as bool?,
+  type: $enumDecode(_$PromotionTypeEnumMap, json['type']),
+  code: json['code'] as String?,
+  rules: (json['rules'] as List<dynamic>?)
+      ?.map((e) => PromotionRule.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  applicationMethod: json['application_method'] == null
+      ? null
+      : PromotionApplicationMethod.fromJson(
+          json['application_method'] as Map<String, dynamic>,
+        ),
+  campaign: json['campaign'] == null
+      ? null
+      : PromotionCampaign.fromJson(json['campaign'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$PromotionToJson(Promotion instance) => <String, dynamic>{
-      'id': instance.id,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-      'status': _$PromotionStatusEnumMap[instance.status]!,
-      if (instance.campaignId case final value?) 'campaign_id': value,
-      if (instance.isAutomatic case final value?) 'is_automatic': value,
-      if (instance.isTaxInclusive case final value?) 'is_tax_inclusive': value,
-      'type': _$PromotionTypeEnumMap[instance.type]!,
-      if (instance.code case final value?) 'code': value,
-      if (instance.rules?.map((e) => e.toJson()).toList() case final value?)
-        'rules': value,
-      if (instance.applicationMethod?.toJson() case final value?)
-        'application_method': value,
-      if (instance.campaign?.toJson() case final value?) 'campaign': value,
-    };
+  'id': instance.id,
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+  'status': _$PromotionStatusEnumMap[instance.status]!,
+  if (instance.campaignId case final value?) 'campaign_id': value,
+  if (instance.isAutomatic case final value?) 'is_automatic': value,
+  if (instance.isTaxInclusive case final value?) 'is_tax_inclusive': value,
+  'type': _$PromotionTypeEnumMap[instance.type]!,
+  if (instance.code case final value?) 'code': value,
+  if (instance.rules?.map((e) => e.toJson()).toList() case final value?)
+    'rules': value,
+  if (instance.applicationMethod?.toJson() case final value?)
+    'application_method': value,
+  if (instance.campaign?.toJson() case final value?) 'campaign': value,
+};
 
 const _$PromotionStatusEnumMap = {
   PromotionStatus.draft: 'draft',

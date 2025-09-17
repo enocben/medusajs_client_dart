@@ -7,13 +7,11 @@ part of '../store_customers_reset_password_res.dart';
 // **************************************************************************
 
 StoreCustomersResetPasswordRes _$StoreCustomersResetPasswordResFromJson(
-        Map<String, dynamic> json) =>
-    StoreCustomersResetPasswordRes(
-      customer: Customer.fromJson(json['customer'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => StoreCustomersResetPasswordRes(
+  customer: Customer.fromJson(json['customer'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$StoreCustomersResetPasswordResToJson(
-        StoreCustomersResetPasswordRes instance) =>
-    <String, dynamic>{
-      'customer': instance.customer.toJson(),
-    };
+  StoreCustomersResetPasswordRes instance,
+) => <String, dynamic>{'customer': instance.customer.toJson()};
