@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/base_product.dart';
 import 'package:medusa_js_dart/src/models/image.dart';
@@ -13,6 +14,7 @@ import 'package:medusa_js_dart/src/models/shipping_profile.dart';
 part 'generated/priced_product.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class PricedProduct extends BaseProduct {
   PricedProduct({
     required super.id,

@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
-import 'package:medusa_js_dart/src/models/requests/admin_post_promotions_req.dart';
 import 'package:medusa_js_dart/src/models/responses/admin_post_promotion_rule_res.dart';
 import 'package:medusa_js_dart/src/models/responses/admin_promotions_list_res.dart';
 import 'package:medusa_js_dart/src/models/responses/admin_promotions_res.dart';
@@ -25,11 +24,17 @@ abstract class PromotionsResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
-  @GET('/admin/promotions/rule-value-options/{rule_type}/{rule_attribute_id}')
+  @GET('/admin/promotions/rule-value-options/{ruleType}/{ruleAttributeId}')
   Future<List<PromotionRRuleValue>> listRuleValues({
-    @Path('rule_type') String ruleType,
-    @Path('rule_attribute_id') String ruleAttributeId,
+    @Path('ruleType') required String ruleType,
+    @Path('ruleAttributeId') required String ruleAttributeId,
     @Queries() AdminPostPromotionsRuleValuesReq? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
+
+  @GET('/admin/promotions/rule-value-options/rules/country')
+  Future<PromoCountryNameRes> listCountries({
+    @Queries() GetPaginationParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -69,6 +74,15 @@ abstract class PromotionsResource {
     @Path('id') String id, {
     @Extras() Map<String, String>? customHeaders,
   });
+
+  @GET('/admin/promotions/{id}/{ruleType}')
+  Future<AdminGetPromotionRulesRes> listRules(
+    @Path('id') String id, 
+    @Path('ruleType') String ruleType,
+    {
+    @Extras() Map<String, String>? customHeaders,
+  });
+
 
   @POST('/admin/promotions/{id}')
   Future<AdminPromotionsRes> update(

@@ -1,10 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medusa_js_dart/src/models/money_amount.dart';
-import 'package:medusa_js_dart/src/models/product.dart';
-import 'package:medusa_js_dart/src/models/product_option_value.dart';
-import 'package:medusa_js_dart/src/models/product_variant.dart';
-import 'package:medusa_js_dart/src/models/product_variant_inventory_item.dart';
-import 'package:medusa_js_dart/src/models/tax_rate.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/priced_variant.g.dart';
 
@@ -53,8 +48,10 @@ class PricedVariant extends ProductVariant {
   @override
   Map<String, dynamic> toJson() => _$PricedVariantToJson(this);
 
+  /// The calculated price's details.
+  @override
+  CalculatedPrice? calculatedPrice;
   double? originalPrice;
-  double? calculatedPrice;
   double? originalPriceInclTax;
   double? calculatedPriceInclTax;
   double? originalTax;

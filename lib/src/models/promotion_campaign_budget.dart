@@ -28,10 +28,10 @@ class PromotionCampaignBudget {
   final PromotionBudgetType type;
 
   /// The budget's currency code.
-  final String currencyCode;
+  final String? currencyCode;
 
   /// The budget's limit.
-  final num limit;
+  final num? limit;
 
   /// How much of the budget has been used. If the limit is spend, this property holds the total amount discounted so far.
   /// If the limit is usage, it holds the number of times the campaign's promotions have been used so far.

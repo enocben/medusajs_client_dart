@@ -16,7 +16,11 @@ enum PromotionApplicationMethodType { fixed, percentage }
 enum PromotionBudgetType { spend, usage }
 
 @JsonEnum(fieldRename: FieldRename.kebab)
-enum PromotionRuleType { rules, targetRules, buyRules }
+enum PromotionRuleType { 
+	rules,
+	targetRules, 
+	buyRules 
+}
 
 @JsonEnum(fieldRename: FieldRename.snake)
 enum ApplicationMethodAllocation { each, across }

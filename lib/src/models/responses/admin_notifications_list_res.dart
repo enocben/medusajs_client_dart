@@ -11,6 +11,7 @@ class AdminNotificationsListRes {
     required this.count,
     required this.offset,
     required this.limit,
+    this.estimateCount,
   });
   factory AdminNotificationsListRes.fromJson(Map<String, dynamic> json) =>
       _$AdminNotificationsListResFromJson(json);
@@ -21,4 +22,7 @@ class AdminNotificationsListRes {
   final int count;
   final int offset;
   final int limit;
+
+  /// The estimated count retrieved from the PostgreSQL query planner, which may be inaccurate.
+  final num? estimateCount;
 }

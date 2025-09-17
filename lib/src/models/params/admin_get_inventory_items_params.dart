@@ -36,7 +36,7 @@ class AdminGetInventoryItemsParams {
   String? order;
   String? q;
   LocationLevelsReqParam? locationLevels;
-  String? id;
+  List<String>? id;
   String? sku;
   String? originCountry;
   String? midCode;

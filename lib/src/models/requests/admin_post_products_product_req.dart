@@ -15,7 +15,7 @@ class AdminPostProductsProductReq {
     this.thumbnail,
     this.handle,
     this.status,
-    this.type,
+    this.typeId,
     this.collectionId,
     this.tags,
     this.salesChannels,
@@ -29,6 +29,7 @@ class AdminPostProductsProductReq {
     this.originCountry,
     this.midCode,
     this.material,
+    this.shippingProfileId,
     this.metadata,
   });
   factory AdminPostProductsProductReq.fromJson(Map<String, dynamic> json) =>
@@ -44,11 +45,11 @@ class AdminPostProductsProductReq {
   final String? thumbnail;
   final String? handle;
   final String? status;
-  final AdminPostProductsProductReqType? type;
+  final String? typeId;
   final String? collectionId;
-  final List<AdminPostProductsProductReqTag>? tags;
-  final List<AdminPostProductsProductReqSalesChannel>? salesChannels;
-  final List<dynamic>? categories;
+  final List<AdminPostProductById>? tags;
+  final List<AdminPostProductById>? salesChannels;
+  final List<AdminPostProductById>? categories;
   final List<AdminPostProductsProductReqVariant>? variants;
   final num? weight;
   final num? length;
@@ -58,7 +59,18 @@ class AdminPostProductsProductReq {
   final String? originCountry;
   final String? midCode;
   final String? material;
+  final String? shippingProfileId;
   final Map<String, dynamic>? metadata;
+}
+
+@JsonSerializable()
+class AdminPostProductById{
+  AdminPostProductById({required this.id});
+  factory AdminPostProductById.fromJson(Map<String, dynamic> json) =>
+      _$AdminPostProductByIdFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostProductByIdToJson(this);
+  final String id;
 }
 
 @JsonSerializable()

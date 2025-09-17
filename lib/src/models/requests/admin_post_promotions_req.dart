@@ -14,6 +14,7 @@ class AdminPostPromotionsReq {
     this.type,
     this.isAutomatic,
     this.code,
+    this.status,
   });
 
   factory AdminPostPromotionsReq.fromJson(Map<String, dynamic> json) =>
@@ -26,13 +27,15 @@ class AdminPostPromotionsReq {
   Map<String, dynamic>? additionalData;
 
   // The promotion's rules.
-  List<AdminPostPromotionRuleReq>? rules;
+  List<AdminPostCreatePromotionRuleReq>? rules;
 
   // The promotion's application method.
   AdminPostPromotionsApplicationReq? applicationMethod;
 
   // The details of a campaign to create and add the promotion to it.
   AdminPostPromotionsCampaignReq? campaign;
+
+  PromotionStatus? status;
 
   // The ID of the campaign that the promotion belongs to.
   String? campaignId;

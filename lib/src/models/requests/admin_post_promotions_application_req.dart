@@ -51,10 +51,10 @@ class AdminPostPromotionsApplicationReq {
   final num? buyRulesMinQuantity;
 
   /// The application method's buy rules.
-  final List<AdminPostPromotionRuleReq>? buyRules;
+  final List<AdminPostCreatePromotionRuleReq>? buyRules;
 
   /// The application method's target rules.
-  final List<AdminPostPromotionRuleReq>? targetRules;
+  final List<AdminPostCreatePromotionRuleReq>? targetRules;
 
   /// The allocation value that indicates whether the associated promotion is applied on each item in a cart or split between the items in the cart.
   final ApplicationMethodAllocation? allocation;

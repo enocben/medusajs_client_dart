@@ -22,8 +22,8 @@ class AdminPostPromotionsBuyRulesBatchReq {
   final List<String>? delete;
 
   /// The details of the updated buy rules.
-  final List<AdminPostPromotionRuleReq>? update;
+  final List<AdminPostUpdatePromotionRuleReq>? update;
 
   /// The details of the created buy rules.
-  final List<AdminPostPromotionRuleReq>? create;
+  final List<AdminPostCreatePromotionRuleReq>? create;
 }

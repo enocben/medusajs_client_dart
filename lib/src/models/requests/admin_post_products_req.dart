@@ -195,5 +195,5 @@ class AdminPostProductsReqVariant {
   String? material;
   Map<String, dynamic>? metadata;
   List<Price>? prices;
-  List<ProductVariantOption>? options;
+  Map<String, String>? options;
 }

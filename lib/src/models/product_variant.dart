@@ -1,13 +1,12 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medusa_js_dart/src/models/money_amount.dart';
-import 'package:medusa_js_dart/src/models/product.dart';
-import 'package:medusa_js_dart/src/models/product_option_value.dart';
-import 'package:medusa_js_dart/src/models/product_variant_inventory_item.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/product_variant.g.dart';
 
 /// A Product Variant represents a Product with a specific set of Product Option configurations. The maximum number of Product Variants that a Product can have is given by the number of available Product Option combinations. A product must at least have one product variant.
 @JsonSerializable()
+@CopyWith()
 class ProductVariant {
   ProductVariant({
     required this.id,
@@ -38,12 +37,16 @@ class ProductVariant {
     this.deletedAt,
     this.metadata,
     this.purchasable,
+    this.calculatedPrice,
   });
 
   factory ProductVariant.fromJson(Map<String, dynamic> json) =>
       _$ProductVariantFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductVariantToJson(this);
+
+  /// The calculated price's details.
+  CalculatedPrice? calculatedPrice;
 
   /// The product variant's ID
   String id;

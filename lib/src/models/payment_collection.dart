@@ -1,86 +1,86 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medusa_js_dart/src/models/currency.dart';
 import 'package:medusa_js_dart/src/models/payment.dart';
+import 'package:medusa_js_dart/src/models/payment_capture.dart';
+import 'package:medusa_js_dart/src/models/payment_provider.dart';
+import 'package:medusa_js_dart/src/models/payment_refund.dart';
 import 'package:medusa_js_dart/src/models/payment_session.dart';
-import 'package:medusa_js_dart/src/models/region.dart';
 
 part 'generated/payment_collection.g.dart';
 
-/// A payment collection allows grouping and managing a list of payments at one. This can be helpful when making additional payment for order edits or integrating installment payments.
+/// Represents a payment collection for an ExchangeOrder.
 @JsonSerializable()
+@CopyWith()
 class PaymentCollection {
   PaymentCollection({
     required this.id,
-    required this.type,
-    required this.status,
-    this.description,
-    required this.amount,
-    this.authorizedAmount,
-    required this.regionId,
-    this.region,
     required this.currencyCode,
-    this.currency,
-    this.paymentSessions,
+    required this.amount,
+    required this.status,
+    this.paymentProviders,
     this.payments,
-    required this.createdBy,
-    required this.createdAt,
-    required this.updatedAt,
-    this.deletedAt,
+    this.paymentSessions,
+    this.refunds,
+    this.captures,
     this.metadata,
+    this.updatedAt,
+    this.createdAt,
+    this.completedAt,
+    this.refundedAmount,
+    this.capturedAmount,
+    this.authorizedAmount,
   });
+
   factory PaymentCollection.fromJson(Map<String, dynamic> json) =>
       _$PaymentCollectionFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentCollectionToJson(this);
 
-  /// The payment collection's ID
-  String id;
+  /// The payment collection's ID.
+  final String id;
 
-  /// The type of the payment collection
-  String type;
+  /// The payment collection's currency code.
+  final String currencyCode;
 
-  /// The status of the payment collection
-  String status;
+  /// The total amount to be paid.
+  final num amount;
 
-  /// Description of the payment collection
-  String? description;
+  /// The payment collection's status ("canceled", "not_paid", "awaiting", "authorized", "partially_authorized", "completed", "failed").
+  final String status;
 
-  /// Amount of the payment collection.
-  double amount;
+  /// The payment providers used to process the payments and sessions.
+  final List<PaymentProvider>? paymentProviders;
 
-  /// Authorized amount of the payment collection.
-  double? authorizedAmount;
+  /// The payment collection's payments.
+  final List<Payment>? payments;
 
-  /// The ID of the region this payment collection is associated with.
-  String regionId;
+  /// The payment collection's payment sessions.
+  final List<PaymentSession>? paymentSessions;
 
-  /// The details of the region this payment collection is associated with.
-  Region? region;
+  /// The details of payment refunds.
+  final List<PaymentRefund>? refunds;
 
-  /// The three character ISO code for the currency this payment collection is associated with.
-  String currencyCode;
+  /// The details of payment captures.
+  final List<PaymentCapture>? captures;
 
-  /// The details of the currency this payment collection is associated with.
-  Currency? currency;
+  /// The payment collection's metadata.
+  final Map<String, dynamic>? metadata;
 
-  /// The details of the payment sessions created as part of the payment collection.
-  List<PaymentSession>? paymentSessions;
+  /// The date the payment collection was updated.
+  final String? updatedAt;
 
-  /// The details of the payments created as part of the payment collection.
-  List<Payment>? payments;
+  /// The date the payment collection was created.
+  final String? createdAt;
 
-  /// The ID of the user that created the payment collection.
-  String createdBy;
+  /// The date the payment collection was completed.
+  final String? completedAt;
 
-  /// The date with timezone at which the resource was created.
-  String createdAt;
+  /// The total refunded amount of the collection's payments.
+  final num? refundedAmount;
 
-  /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  /// The total captured amount of the collection's payments.
+  final num? capturedAmount;
 
-  /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
-
-  /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  /// The total authorized amount of the collection's payments.
+  final num? authorizedAmount;
 }

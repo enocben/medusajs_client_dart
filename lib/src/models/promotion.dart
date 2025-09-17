@@ -15,6 +15,7 @@ class Promotion {
       required this.status,
       this.campaignId,
       this.isAutomatic,
+      this.isTaxInclusive,
       required this.type,
       this.code,
       this.rules,
@@ -46,6 +47,8 @@ class Promotion {
 
   /// Whether the promotion is applied on a cart automatically if it matches the promotion's rules.
   bool? isAutomatic;
+
+  bool? isTaxInclusive;
 
   /// The promotion's type.
   PromotionType type;

@@ -13,7 +13,9 @@ class PromotionApplicationMethod {
       this.applyToQuantity,
       this.buyRulesMinQuantity,
       this.maxQuantity,
+      this.value,
       this.currencyCode,
+      this.allocation,
       this.targetType,
       this.type,
       this.buyRules,
@@ -43,6 +45,14 @@ class PromotionApplicationMethod {
   /// The application method's currency code.
   String? currencyCode;
 
+  /// The amount to be discounted
+  num? value;
+
+  /// How is the promotion amount discounted, each means the discounted
+  /// amout is applied on each applicable item; across means the discouted
+  /// amount is split accross the applicable items
+  ApplicationMethodAllocation? allocation;
+
   /// Which item does the promotion apply to.
   /// items mean the promotion applies to the cart's items;
   /// shipping_methods means the promotion applies to the cart's shipping methods;
@@ -51,7 +61,7 @@ class PromotionApplicationMethod {
 
   /// The application method's type. If it's fixed, the promotion discounts a fixed amount.
   /// If it's percentage, the promotion discounts a percentage.
-  PromotionApplicationMethod? type;
+  PromotionApplicationMethodType? type;
 
   /// The application method's buy rules.
   List<PromotionRule>? buyRules;

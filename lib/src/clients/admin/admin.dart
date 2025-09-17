@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:medusa_js_dart/src/clients/admin/api_keys.dart';
 import 'package:medusa_js_dart/src/clients/admin/auth.dart';
 import 'package:medusa_js_dart/src/clients/admin/batch_jobs.dart';
+import 'package:medusa_js_dart/src/clients/admin/campaigns.dart';
 import 'package:medusa_js_dart/src/clients/admin/collections.dart';
 import 'package:medusa_js_dart/src/clients/admin/currencies.dart';
 import 'package:medusa_js_dart/src/clients/admin/customer_groups.dart';
@@ -9,6 +10,7 @@ import 'package:medusa_js_dart/src/clients/admin/customers.dart';
 import 'package:medusa_js_dart/src/clients/admin/customs.dart';
 import 'package:medusa_js_dart/src/clients/admin/discounts.dart';
 import 'package:medusa_js_dart/src/clients/admin/draft_orders.dart';
+import 'package:medusa_js_dart/src/clients/admin/exchanges.dart';
 import 'package:medusa_js_dart/src/clients/admin/fulfillment_set.dart';
 import 'package:medusa_js_dart/src/clients/admin/gift_cards.dart';
 import 'package:medusa_js_dart/src/clients/admin/inventory_items.dart';
@@ -22,12 +24,12 @@ import 'package:medusa_js_dart/src/clients/admin/payments.dart';
 import 'package:medusa_js_dart/src/clients/admin/price_lists.dart';
 import 'package:medusa_js_dart/src/clients/admin/price_preference.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_categories.dart';
-import 'package:medusa_js_dart/src/clients/admin/promotions.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_options.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_tags.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_types.dart';
 import 'package:medusa_js_dart/src/clients/admin/product_variants.dart';
 import 'package:medusa_js_dart/src/clients/admin/products.dart';
+import 'package:medusa_js_dart/src/clients/admin/promotions.dart';
 import 'package:medusa_js_dart/src/clients/admin/regions.dart';
 import 'package:medusa_js_dart/src/clients/admin/reservations.dart';
 import 'package:medusa_js_dart/src/clients/admin/return_reasons.dart';
@@ -48,6 +50,7 @@ class Admin {
   Admin(Dio dio) {
     auth = AuthResource(dio);
     batchJobs = BatchJobsResource(dio);
+    campaigns = CampaignsRessource(dio);
     collections = CollectionsResource(dio);
     currencies = CurrenciesResource(dio);
     customs = CustomsResource(dio);
@@ -107,6 +110,8 @@ class Admin {
   late final CustomersResource customers;
 
   late final DiscountsResource discounts;
+
+  late final CampaignsRessource campaigns;
 
   late final DraftOrdersResource draftOrders;
 
@@ -169,6 +174,8 @@ class Admin {
   late final StoresResource stores;
 
   late final SwapsResource swaps;
+
+  late final ExchangesResource exchanges;
 
   late final TaxRatesResource taxRates;
 

@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 import 'package:medusa_js_dart/src/models/shipping_option_price.dart';
@@ -6,6 +7,7 @@ import 'package:medusa_js_dart/src/models/shipping_option_rules.dart';
 part 'generated/priced_shipping_option.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class PricedShippingOption {
   PricedShippingOption(this.shippingProfile,
       {required this.id,
@@ -85,7 +87,6 @@ class PricedShippingOption {
   String? deletedAt;
   Map<String, dynamic>? metadata;
 
-  @override
   Map<String, dynamic> toJson() => _$PricedShippingOptionToJson(this);
 }
 

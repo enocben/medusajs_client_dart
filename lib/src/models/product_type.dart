@@ -23,13 +23,13 @@ class ProductType {
   String id;
 
   /// The value that the Product Type represents.
-  String value;
+  String? value;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  String? createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  String? updatedAt;
 
   /// The date with timezone at which the resource was deleted.
   String? deletedAt;
@@ -39,7 +39,7 @@ class ProductType {
 
   @override
   bool operator ==(Object other) {
-    return other is ProductType && other.id == id;
+    return other is ProductType && other.id == id && other.value == value;
   }
 
   @override

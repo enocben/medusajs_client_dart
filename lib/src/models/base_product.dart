@@ -36,6 +36,7 @@ abstract class BaseProduct {
     this.typeId,
     this.type,
     this.tags,
+    this.shippingProfile,
     required this.discountable,
     this.externalId,
     this.salesChannels,
@@ -87,17 +88,20 @@ abstract class BaseProduct {
   /// Available if the relation `profiles` is expanded.
   List<ShippingProfile>? profiles;
 
+  /// The shipping profile's details.
+  ShippingProfile? shippingProfile;
+
   /// The weight of the Product Variant. May be used in shipping rate calculations.
-  double? weight;
+  String? weight;
 
   /// The length of the Product Variant. May be used in shipping rate calculations.
-  double? length;
+  String? length;
 
   /// The height of the Product Variant. May be used in shipping rate calculations.
-  double? height;
+  String? height;
 
   /// The width of the Product Variant. May be used in shipping rate calculations.
-  double? width;
+  String? width;
 
   /// The Harmonized System code of the Product Variant. May be used by Fulfillment Providers to pass customs information to shipping carriers.
   String? hsCode;

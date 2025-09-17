@@ -9,68 +9,69 @@ part 'generated/notification.g.dart';
 class Notification {
   Notification({
     required this.id,
-    this.eventName,
-    required this.resourceType,
-    required this.resourceId,
-    this.customerId,
-    this.customer,
     required this.to,
-    required this.data,
-    this.parentId,
-    this.parentNotification,
-    this.resends,
+    required this.channel,
+    this.template,
     this.providerId,
-    this.provider,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.externalId,
+    this.originalNotificationId,
+    this.receiverId,
+    this.resourceId,
+    this.resourceType,
+    this.triggerType,
+    this.data
   });
   factory Notification.fromJson(Map<String, dynamic> json) =>
       _$NotificationFromJson(json);
 
   Map<String, dynamic> toJson() => _$NotificationToJson(this);
 
-  /// The notification's ID
+  /// The notification's ID.
   String id;
 
-  /// The name of the event that the notification was sent for.
-  String? eventName;
-
-  /// The type of resource that the Notification refers to.
-  String resourceType;
-
-  /// The ID of the resource that the Notification refers to.
-  String resourceId;
-
-  /// The ID of the customer that this notification was sent to.
-  String? customerId;
-
-  /// The details of the customer that this notification was sent to.
-  Customer? customer;
-
-  /// The address that the Notification was sent to. This will usually be an email address, but can represent other addresses such as a chat bot user ID.
+  /// Where to send the notification to. 
+  /// For example, if channel is email, this can be an email number.
   String to;
 
-  /// The data that the Notification was sent with. This contains all the data necessary for the Notification Provider to initiate a resend.
-  Map<String, dynamic> data;
+  /// Through which channel is the notification sent through.
+  ///
+  /// Example: "email"
+  String channel;
 
-  /// The notification's parent ID
-  String? parentId;
+  /// The ID of the template in a third-party service used as the notification's shape.
+  String? template;
 
-  /// The details of the parent notification.
-  Notification? parentNotification;
-
-  /// The details of all resends of the notification.
-  List<Notification>? resends;
-
-  /// The ID of the notification provider used to send the notification.
+  /// The ID of the provider used to send the notification.
   String? providerId;
 
-  /// The notification provider used to send the notification.
-  NotificationProvider? provider;
+  /// The date the notification was created.
+  String? createdAt;
 
-  /// The date with timezone at which the resource was created.
-  String createdAt;
+  /// The ID of the notification in an external or third-party system.
+  String? externalId;
 
-  /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  /// The ID of the original notification, if this notification is resent.
+  String? originalNotificationId;
+
+
+  /// The ID of the user or customer that's receiving this notification.
+  String? receiverId;
+
+  /// The type of the resource that triggered the notification.
+  ///
+  /// Example: "order"
+  String? resourceType;
+
+  /// The ID of the associated resource. For example, if the notification was triggered because an order was created, this would be the ID of the order.
+  String? resourceId;
+
+  /// What triggered this notification.
+  ///
+  /// Example: "order.created"
+  String? triggerType;
+
+  /// Data payload to send with the notification.
+  Map<String, dynamic>? data;
+
 }

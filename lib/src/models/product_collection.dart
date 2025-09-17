@@ -25,7 +25,7 @@ class ProductCollection {
   final String id;
 
   /// The title that the Product Collection is identified by.
-  final String title;
+  final String? title;
 
   /// A unique string that identifies the Product Collection - can for example be used in slug structures.
   final String? handle;
@@ -34,10 +34,10 @@ class ProductCollection {
   final List<PartialProduct>? products;
 
   /// The date with timezone at which the resource was created.
-  final String createdAt;
+  final String? createdAt;
 
   /// The date with timezone at which the resource was updated.
-  final String updatedAt;
+  final String? updatedAt;
 
   /// The date with timezone at which the resource was deleted.
   final String? deletedAt;
