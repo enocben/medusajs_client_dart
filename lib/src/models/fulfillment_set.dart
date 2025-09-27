@@ -11,8 +11,8 @@ class FulfillmentSet {
     this.type,
     this.location,
     this.serviceZones,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.updatedAt,
     this.deletedAt,
   });
 

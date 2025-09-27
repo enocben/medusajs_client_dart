@@ -10,7 +10,7 @@ DecoratedInventoryItemDTO _$DecoratedInventoryItemDTOFromJson(
   Map<String, dynamic> json,
 ) => DecoratedInventoryItemDTO(
   id: json['id'] as String?,
-  sku: json['sku'] as String,
+  sku: json['sku'] as String?,
   hsCode: json['hs_code'] as String?,
   originCountry: json['origin_country'] as String?,
   midCode: json['mid_code'] as String?,
@@ -41,7 +41,7 @@ Map<String, dynamic> _$DecoratedInventoryItemDTOToJson(
   DecoratedInventoryItemDTO instance,
 ) => <String, dynamic>{
   if (instance.id case final value?) 'id': value,
-  'sku': instance.sku,
+  if (instance.sku case final value?) 'sku': value,
   if (instance.hsCode case final value?) 'hs_code': value,
   if (instance.originCountry case final value?) 'origin_country': value,
   if (instance.midCode case final value?) 'mid_code': value,

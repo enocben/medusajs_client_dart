@@ -10,7 +10,7 @@ ResponseInventoryItem _$ResponseInventoryItemFromJson(
   Map<String, dynamic> json,
 ) => ResponseInventoryItem(
   id: json['id'] as String?,
-  sku: json['sku'] as String,
+  sku: json['sku'] as String?,
   hsCode: json['hs_code'] as String?,
   originCountry: json['origin_country'] as String?,
   midCode: json['mid_code'] as String?,
@@ -36,7 +36,7 @@ Map<String, dynamic> _$ResponseInventoryItemToJson(
   ResponseInventoryItem instance,
 ) => <String, dynamic>{
   if (instance.id case final value?) 'id': value,
-  'sku': instance.sku,
+  if (instance.sku case final value?) 'sku': value,
   if (instance.hsCode case final value?) 'hs_code': value,
   if (instance.originCountry case final value?) 'origin_country': value,
   if (instance.midCode case final value?) 'mid_code': value,
@@ -61,7 +61,7 @@ Map<String, dynamic> _$ResponseInventoryItemToJson(
 LocationLevel _$LocationLevelFromJson(Map<String, dynamic> json) =>
     LocationLevel(
       id: json['id'] as String?,
-      sku: json['sku'] as String,
+      sku: json['sku'] as String?,
       hsCode: json['hs_code'] as String?,
       originCountry: json['origin_country'] as String?,
       midCode: json['mid_code'] as String?,
@@ -85,7 +85,7 @@ Map<String, dynamic> _$LocationLevelToJson(
   LocationLevel instance,
 ) => <String, dynamic>{
   if (instance.id case final value?) 'id': value,
-  'sku': instance.sku,
+  if (instance.sku case final value?) 'sku': value,
   if (instance.hsCode case final value?) 'hs_code': value,
   if (instance.originCountry case final value?) 'origin_country': value,
   if (instance.midCode case final value?) 'mid_code': value,

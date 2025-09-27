@@ -86,7 +86,7 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
   @override
   Future<AdminCustomerGroupsRes> retrieve(
     String customerGroupId, {
-    AdminGetCustomerGroupsGroupParams? query,
+    AdminGetFieldsParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
@@ -120,9 +120,9 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
   @override
   Future<AdminCustomerGroupsRes> update(
     String customerGroupId,
-    AdminPostCustomerGroupsGroupReq body,
+    AdminPostCustomerGroupsReq body, {
     Map<String, String>? customHeaders,
-  ) async {
+  }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
@@ -131,7 +131,7 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
     final _options = _setStreamType<AdminCustomerGroupsRes>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/admin/customer-groups/${customerGroupId}',
@@ -152,17 +152,17 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
   }
 
   @override
-  Future<AdminCustomerGroupsDeleteRes> delete(
-    String customerGroupId,
+  Future<AdminDeleteRes> delete(
+    String customerGroupId, {
     Map<String, String>? customHeaders,
-  ) async {
+  }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminCustomerGroupsDeleteRes>(
+    final _options = _setStreamType<AdminDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -173,9 +173,9 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminCustomerGroupsDeleteRes _value;
+    late AdminDeleteRes _value;
     try {
-      _value = AdminCustomerGroupsDeleteRes.fromJson(_result.data!);
+      _value = AdminDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -184,7 +184,7 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
   }
 
   @override
-  Future<AdminCustomerGroupsRes> addCustomers(
+  Future<AdminCustomerGroupsRes> manageCustomers(
     String customerGroupId,
     AdminPostCustomerGroupsGroupCustomersBatchReq body, {
     Map<String, String>? customHeaders,
@@ -200,74 +200,6 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/customer-groups/${customerGroupId}/customers/batch',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminCustomerGroupsRes _value;
-    try {
-      _value = AdminCustomerGroupsRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminCustomerGroupsRes> removeCustomers(
-    String customerGroupId,
-    AdminDeleteCustomerGroupsGroupCustomerBatchReq body, {
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body.toJson());
-    final _options = _setStreamType<AdminCustomerGroupsRes>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/customer-groups/${customerGroupId}/customers/batch',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminCustomerGroupsRes _value;
-    try {
-      _value = AdminCustomerGroupsRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminCustomersListRes> listCustomers(
-    String customerGroupId, {
-    AdminGetCustomersParams? query,
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminCustomersListRes>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
             '/admin/customer-groups/${customerGroupId}/customers',
             queryParameters: queryParameters,
             data: _data,
@@ -275,9 +207,9 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminCustomersListRes _value;
+    late AdminCustomerGroupsRes _value;
     try {
-      _value = AdminCustomersListRes.fromJson(_result.data!);
+      _value = AdminCustomerGroupsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

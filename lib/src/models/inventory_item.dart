@@ -49,13 +49,13 @@ class InventoryItem {
 
   final String? material;
 
-  final int? weight;
+  final double? weight;
 
-  final int? length;
+  final double? length;
 
-  final int? height;
+  final double? height;
 
-  final int? width;
+  final double? width;
 
   final bool requiresShipping;
 

@@ -4,6 +4,7 @@ import 'package:medusa_js_dart/src/clients/admin/auth.dart';
 import 'package:medusa_js_dart/src/clients/admin/batch_jobs.dart';
 import 'package:medusa_js_dart/src/clients/admin/campaigns.dart';
 import 'package:medusa_js_dart/src/clients/admin/collections.dart';
+import 'package:medusa_js_dart/src/clients/admin/commission_resource.dart';
 import 'package:medusa_js_dart/src/clients/admin/currencies.dart';
 import 'package:medusa_js_dart/src/clients/admin/customer_groups.dart';
 import 'package:medusa_js_dart/src/clients/admin/customers.dart';
@@ -31,10 +32,12 @@ import 'package:medusa_js_dart/src/clients/admin/product_variants.dart';
 import 'package:medusa_js_dart/src/clients/admin/products.dart';
 import 'package:medusa_js_dart/src/clients/admin/promotions.dart';
 import 'package:medusa_js_dart/src/clients/admin/regions.dart';
+import 'package:medusa_js_dart/src/clients/admin/requests_resource.dart';
 import 'package:medusa_js_dart/src/clients/admin/reservations.dart';
 import 'package:medusa_js_dart/src/clients/admin/return_reasons.dart';
 import 'package:medusa_js_dart/src/clients/admin/returns.dart';
 import 'package:medusa_js_dart/src/clients/admin/sales_channels.dart';
+import 'package:medusa_js_dart/src/clients/admin/sellers_resource.dart';
 import 'package:medusa_js_dart/src/clients/admin/shipping_options.dart';
 import 'package:medusa_js_dart/src/clients/admin/shipping_profiles.dart';
 import 'package:medusa_js_dart/src/clients/admin/stock_locations.dart';
@@ -93,6 +96,9 @@ class Admin {
     uploads = UploadsResource(dio);
     users = UsersResource(dio);
     variants = VariantsResource(dio);
+    sellers = AdminSellersResource(dio);
+    requests = AdminRequestsResource(dio);
+    commission = AdminCommissionResource(dio);
   }
 
   late final AuthResource auth;
@@ -186,4 +192,10 @@ class Admin {
   late final UsersResource users;
 
   late final VariantsResource variants;
+
+  late final AdminSellersResource sellers;
+
+  late final AdminRequestsResource requests;
+
+  late final AdminCommissionResource commission;
 }

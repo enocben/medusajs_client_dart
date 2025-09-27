@@ -18,6 +18,7 @@ class FulfillmentProvider {
   /// The ID of the fulfillment provider as given by the fulfillment service.
   String id;
 
-  /// Whether the fulfillment service is installed in the current version. If a fulfillment service is no longer installed, the `is_installed` attribute is set to `false`.
+  /// Whether the fulfillment service is installed in the current version. 
+  /// If a fulfillment service is no longer installed, the `is_installed` attribute is set to `false`.
   bool? isEnabled;
 }

@@ -5,14 +5,16 @@ part 'generated/admin_post_customer_groups_group_customers_batch_req.g.dart';
 @JsonSerializable()
 class AdminPostCustomerGroupsGroupCustomersBatchReq {
   AdminPostCustomerGroupsGroupCustomersBatchReq({
-    required this.customerIds,
+    this.add,
+    this.remove
   });
 
   factory AdminPostCustomerGroupsGroupCustomersBatchReq.fromJson(
           Map<String, dynamic> json,) =>
       _$AdminPostCustomerGroupsGroupCustomersBatchReqFromJson(json);
 
-  final List<String> customerIds;
+  final List<String>? add;
+  final List<String>? remove;
 
   Map<String, dynamic> toJson() =>
       _$AdminPostCustomerGroupsGroupCustomersBatchReqToJson(this);

@@ -16,7 +16,7 @@ abstract class ProductsResource {
 
   @GET('/admin/products')
   Future<AdminProductsListRes> list({
-    @Queries(encoded: true) AdminGetProductsParams? query,
+    @Queries(encoded: false) AdminGetProductsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 

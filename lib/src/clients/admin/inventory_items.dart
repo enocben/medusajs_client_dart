@@ -15,6 +15,19 @@ abstract class InventoryItemsResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
+  @GET('/admin/inventory-items/{inventoryItemId}')
+  Future<AdminInventoryItemsRes> retrieve(
+    @Path('inventoryItemId') String inventoryItemId, {
+    @Extras() AdminGetInventoryItemsItemParams? customHeaders,
+  });
+
+  @GET('/admin/inventory-items/{inventoryItemId}/location-levels')
+  Future<AdminGetInventoryLevelsRes> listLocationLevels(
+    @Path('inventoryItemId') String inventoryItemId, {
+    @Queries() AdminGetInventoryLevelsParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
+
   @POST('/admin/inventory-items')
   Future<AdminInventoryItemsRes> create(
     @Body() AdminPostInventoryItemsInventoryItemReq payload, {
@@ -22,29 +35,11 @@ abstract class InventoryItemsResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
-  @GET('/admin/inventory-items/{inventoryItemId}')
-  Future<AdminInventoryItemsRes> retrieve(
-    @Path('inventoryItemId') String inventoryItemId, {
-    @Extras() AdminGetInventoryItemsItemParams? customHeaders,
-  });
-
   @POST('/admin/inventory-items/{inventoryItemId}')
   Future<AdminInventoryItemsRes> update(
     @Path('inventoryItemId') String inventoryItemId,
     @Body() AdminPostInventoryItemsInventoryItemReq body, {
     @Queries() AdminPostInventoryItemsInventoryItemParams? query,
-    @Extras() Map<String, String>? customHeaders,
-  });
-
-  @DELETE('/admin/inventory-items/{inventoryItemId}')
-  Future<AdminInventoryItemsDeleteRes> delete(
-    @Path('inventoryItemId') String inventoryItemId,
-    @Extras() Map<String, String>? customHeaders,
-  );
-
-  @GET('/admin/inventory-items/{inventoryItemId}/location-levels')
-  Future<AdminGetInventoryLevelsRes> listLocationLevels(
-    @Path('inventoryItemId') String inventoryItemId, {
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -65,10 +60,29 @@ abstract class InventoryItemsResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
+  @POST('/admin/inventory-items/location-levels/batch')
+  Future<AdminManageInventoryLevelsGeneralRes> manageInventoryLevelsGeneral(
+    @Body() AdminPostManageInventoryLevelsGeneral body, {
+    @Extras() Map<String, String>? customHeaders,
+  });
+
+  @POST('/admin/inventory-items/{inventoryItemId}/location-levels/batch')
+  Future<AdminManageInventoryLevelsRes> manageInventoryLevels(
+    @Path('inventoryItemId') String inventoryItemId,
+    @Body() AdminPostManageInventoryLevels body, {
+    @Extras() Map<String, String>? customHeaders,
+  });
+
+  @DELETE('/admin/inventory-items/{inventoryItemId}')
+  Future<AdminDeleteRes> delete(
+    @Path('inventoryItemId') String inventoryItemId,
+    @Extras() Map<String, String>? customHeaders,
+  );
+
   @DELETE(
     '/admin/inventory-items/{inventoryItemId}/location-levels/{locationId}',
   )
-  Future<AdminInventoryItemsRes> deleteLocationLevel(
+  Future<AdminDeleteRes> deleteLocationLevel(
     @Path('inventoryItemId') String inventoryItemId,
     @Path('locationId') String locationId, {
     @Extras() Map<String, String>? customHeaders,

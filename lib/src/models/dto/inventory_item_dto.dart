@@ -6,7 +6,7 @@ part 'generated/inventory_item_dto.g.dart';
 class InventoryItemDTO {
   InventoryItemDTO({
     this.id,
-    required this.sku,
+    this.sku,
     this.hsCode,
     this.originCountry,
     this.midCode,
@@ -30,7 +30,7 @@ class InventoryItemDTO {
   Map<String, dynamic> toJson() => _$InventoryItemDTOToJson(this);
 
   String? id;
-  String sku;
+  String? sku;
   String? hsCode;
   String? originCountry;
   String? midCode;

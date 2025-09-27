@@ -9,7 +9,7 @@ part of '../stock_location_address_dto.dart';
 StockLocationAddressDTO _$StockLocationAddressDTOFromJson(
   Map<String, dynamic> json,
 ) => StockLocationAddressDTO(
-  id: json['id'] as String?,
+  id: json['id'] as String,
   address_1: json['address_1'] as String?,
   address_2: json['address_2'] as String?,
   company: json['company'] as String?,
@@ -33,7 +33,7 @@ StockLocationAddressDTO _$StockLocationAddressDTOFromJson(
 Map<String, dynamic> _$StockLocationAddressDTOToJson(
   StockLocationAddressDTO instance,
 ) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
+  'id': instance.id,
   if (instance.address_1 case final value?) 'address_1': value,
   if (instance.address_2 case final value?) 'address_2': value,
   if (instance.company case final value?) 'company': value,

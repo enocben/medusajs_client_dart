@@ -32,7 +32,7 @@ abstract class ReservationsResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
-  @PUT('/admin/reservations/{reservationId}')
+  @POST('/admin/reservations/{reservationId}')
   Future<AdminReservationsRes> update(
     @Path('reservationId') String reservationId,
     @Body() AdminPostReservationsReservationReq body,

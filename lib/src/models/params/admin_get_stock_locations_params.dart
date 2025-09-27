@@ -9,6 +9,8 @@ class AdminGetStockLocationsParams {
   AdminGetStockLocationsParams({
     this.id,
     this.name,
+    this.addressId,
+    this.salesChannelId,
     this.order,
     this.createdAt,
     this.updatedAt,
@@ -17,14 +19,18 @@ class AdminGetStockLocationsParams {
     this.limit,
     this.expand,
     this.fields,
+    this.q,
+    this.withDeleted
   });
   factory AdminGetStockLocationsParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetStockLocationsParamsFromJson(json);
 
   Map<String, dynamic> toJson() => _$AdminGetStockLocationsParamsToJson(this);
 
-  String? id;
-  String? name;
+  List<String>? id;
+  List<String>? name;
+  List<String>? addressId;
+  List<String>? salesChannelId;
   String? order;
   DateFilter? createdAt;
   DateFilter? updatedAt;
@@ -33,4 +39,6 @@ class AdminGetStockLocationsParams {
   int? limit;
   String? expand;
   String? fields;
+  String? q;
+  bool? withDeleted;
 }

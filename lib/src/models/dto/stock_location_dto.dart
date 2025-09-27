@@ -11,8 +11,8 @@ class StockLocationDTO {
     required this.name,
     this.address,
     this.metadata,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.updatedAt,
     this.deletedAt,
   });
   factory StockLocationDTO.fromJson(Map<String, dynamic> json) =>

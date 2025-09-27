@@ -47,8 +47,12 @@ PricedVariant _$PricedVariantFromJson(Map<String, dynamic> json) =>
       deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
       purchasable: json['purchasable'] as bool?,
+      calculatedPrice: json['calculated_price'] == null
+          ? null
+          : CalculatedPrice.fromJson(
+              json['calculated_price'] as Map<String, dynamic>,
+            ),
       originalPrice: (json['original_price'] as num?)?.toDouble(),
-      calculatedPrice: json['calculated_price'],
       originalPriceInclTax: (json['original_price_incl_tax'] as num?)
           ?.toDouble(),
       calculatedPriceInclTax: (json['calculated_price_incl_tax'] as num?)
