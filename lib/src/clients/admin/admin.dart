@@ -5,6 +5,8 @@ import 'package:medusa_js_dart/src/clients/admin/batch_jobs.dart';
 import 'package:medusa_js_dart/src/clients/admin/campaigns.dart';
 import 'package:medusa_js_dart/src/clients/admin/collections.dart';
 import 'package:medusa_js_dart/src/clients/admin/commission_resource.dart';
+import 'package:medusa_js_dart/src/clients/admin/configuration_resource.dart';
+import 'package:medusa_js_dart/src/clients/admin/attributes_resource.dart';
 import 'package:medusa_js_dart/src/clients/admin/currencies.dart';
 import 'package:medusa_js_dart/src/clients/admin/customer_groups.dart';
 import 'package:medusa_js_dart/src/clients/admin/customers.dart';
@@ -99,6 +101,8 @@ class Admin {
     sellers = AdminSellersResource(dio);
     requests = AdminRequestsResource(dio);
     commission = AdminCommissionResource(dio);
+    configuration = AdminConfigurationResource(dio);
+    attributes = AdminAttributesResource(dio);
   }
 
   late final AuthResource auth;
@@ -198,4 +202,8 @@ class Admin {
   late final AdminRequestsResource requests;
 
   late final AdminCommissionResource commission;
+
+  late final AdminConfigurationResource configuration;
+
+  late final AdminAttributesResource attributes;
 }
