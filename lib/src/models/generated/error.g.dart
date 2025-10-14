@@ -3,6 +3,76 @@
 part of '../error.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$ErrorCWProxy {
+  Error code(ErrorCode? code);
+
+  Error message(String? message);
+
+  Error type(ErrorType? type);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Error(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Error(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Error call({ErrorCode? code, String? message, ErrorType? type});
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfError.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfError.copyWith.fieldName(...)`
+class _$ErrorCWProxyImpl implements _$ErrorCWProxy {
+  const _$ErrorCWProxyImpl(this._value);
+
+  final Error _value;
+
+  @override
+  Error code(ErrorCode? code) => this(code: code);
+
+  @override
+  Error message(String? message) => this(message: message);
+
+  @override
+  Error type(ErrorType? type) => this(type: type);
+
+  @override
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Error(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Error(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Error call({
+    Object? code = const $CopyWithPlaceholder(),
+    Object? message = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+  }) {
+    return Error(
+      code: code == const $CopyWithPlaceholder()
+          ? _value.code
+          // ignore: cast_nullable_to_non_nullable
+          : code as ErrorCode?,
+      message: message == const $CopyWithPlaceholder()
+          ? _value.message
+          // ignore: cast_nullable_to_non_nullable
+          : message as String?,
+      type: type == const $CopyWithPlaceholder()
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as ErrorType?,
+    );
+  }
+}
+
+extension $ErrorCopyWith on Error {
+  /// Returns a callable class that can be used as follows: `instanceOfError.copyWith(...)` or like so:`instanceOfError.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ErrorCWProxy get copyWith => _$ErrorCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

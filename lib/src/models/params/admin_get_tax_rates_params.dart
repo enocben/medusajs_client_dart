@@ -1,28 +1,31 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/admin_get_tax_rates_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetTaxRatesParams {
-  AdminGetTaxRatesParams(
-      {this.withDeleted,
-      this.shippingOptionTypeId,
-      this.providerId,
-      this.shippingProfileId,
-      this.serviceZoneId,
-      this.or,
-      this.and,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt,
-      this.taxRegionId,
-      this.fields,
-      this.isDefault,
-      this.limit,
-      this.offset,
-      this.order,
-      this.q});
+  AdminGetTaxRatesParams({
+    this.withDeleted,
+    this.shippingOptionTypeId,
+    this.providerId,
+    this.shippingProfileId,
+    this.serviceZoneId,
+    this.or,
+    this.and,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+    this.taxRegionId,
+    this.fields,
+    this.isDefault,
+    this.limit,
+    this.offset,
+    this.order,
+    this.q,
+  });
   factory AdminGetTaxRatesParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetTaxRatesParamsFromJson(json);
 

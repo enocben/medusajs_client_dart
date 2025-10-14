@@ -1,11 +1,12 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/enums/user_role.dart';
 
 part 'generated/seller_member.g.dart';
 
 @JsonSerializable()
-class SellerMember {
-  SellerMember({
+class SellerMember extends Equatable {
+  const SellerMember({
     required this.id,
     required this.role,
     required this.email,
@@ -21,12 +22,15 @@ class SellerMember {
 
   Map<String, dynamic> toJson() => _$SellerMemberToJson(this);
 
-  String id;
-  SellerMemberRole role;
-  String email;
-  String? name;
-  String? bio;
-  String? photo;
-  String createdAt;
-  String updatedAt;
+  final String id;
+  final SellerMemberRole role;
+  final String email;
+  final String? name;
+  final String? bio;
+  final String? photo;
+  final String createdAt;
+  final String updatedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

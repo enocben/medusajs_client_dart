@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/shipping_method.dart';
 
@@ -5,14 +7,15 @@ part 'generated/shipping_method_tax_line.g.dart';
 
 /// A Shipping Method Tax Line represents the taxes applied on a shipping method in a cart.
 @JsonSerializable()
-class ShippingMethodTaxLine {
-  ShippingMethodTaxLine({
+@CopyWith()
+class ShippingMethodTaxLine extends Equatable {
+  const ShippingMethodTaxLine({
     required this.id,
     this.code,
+    this.shippingMethod,
     required this.name,
     required this.rate,
     required this.shippingMethodId,
-    this.shippingMethod,
     required this.createdAt,
     required this.updatedAt,
     this.metadata,
@@ -23,29 +26,32 @@ class ShippingMethodTaxLine {
   Map<String, dynamic> toJson() => _$ShippingMethodTaxLineToJson(this);
 
   /// The line item tax line's ID
-  String id;
+  final String id;
 
   /// A code to identify the tax type by
-  String? code;
+  final String? code;
 
   /// A human friendly name for the tax
-  String name;
+  final String name;
 
   /// The numeric rate to charge tax by
-  double rate;
+  final double rate;
 
   /// The ID of the line item
-  String shippingMethodId;
+  final String shippingMethodId;
 
   /// The details of the associated shipping method.
-  ShippingMethod? shippingMethod;
+  final ShippingMethod? shippingMethod;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

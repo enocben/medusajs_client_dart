@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/customer.dart';
@@ -13,8 +15,9 @@ import 'package:medusa_js_dart/src/models/shipping_method.dart';
 part 'generated/cart.g.dart';
 
 @JsonSerializable()
-class Cart {
-  Cart({
+@CopyWith()
+class Cart extends Equatable {
+  const Cart({
     required this.id,
     this.email,
     this.billingAddressId,
@@ -62,46 +65,49 @@ class Cart {
 
   Map<String, dynamic> toJson() => _$CartToJson(this);
 
-  String id;
-  String? email;
-  String? billingAddressId;
-  Address? billingAddress;
-  String? shippingAddressId;
-  Address? shippingAddress;
-  List<LineItem>? items;
-  String regionId;
-  Region? region;
-  List<Discount>? discounts;
-  List<GiftCard>? giftCards;
-  String? customerId;
-  Customer? customer;
-  PaymentSession? paymentSession;
-  List<PaymentSession>? paymentSessions;
-  String? paymentId;
-  Payment? payment;
-  List<ShippingMethod>? shippingMethods;
-  String type;
-  String? completedAt;
-  String? paymentAuthorizedAt;
-  String? idempotencyKey;
-  Map<String, dynamic>? context;
-  String? salesChannelId;
-  SalesChannel? salesChannel;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
-  double? shippingTotal;
-  double? discountTotal;
-  double? rawDiscountTotal;
-  double? itemTaxTotal;
-  double? shippingTaxTotal;
-  double? taxTotal;
-  double? refundedTotal;
-  double? total;
-  double? subtotal;
-  double? refundableAmount;
-  double? giftCardTotal;
-  double? giftCardTaxTotal;
-  List<SalesChannel>? salesChannels;
+  final String id;
+  final String? email;
+  final String? billingAddressId;
+  final Address? billingAddress;
+  final String? shippingAddressId;
+  final Address? shippingAddress;
+  final List<LineItem>? items;
+  final String regionId;
+  final Region? region;
+  final List<Discount>? discounts;
+  final List<GiftCard>? giftCards;
+  final String? customerId;
+  final Customer? customer;
+  final PaymentSession? paymentSession;
+  final List<PaymentSession>? paymentSessions;
+  final String? paymentId;
+  final Payment? payment;
+  final List<ShippingMethod>? shippingMethods;
+  final String type;
+  final String? completedAt;
+  final String? paymentAuthorizedAt;
+  final String? idempotencyKey;
+  final Map<String, dynamic>? context;
+  final String? salesChannelId;
+  final SalesChannel? salesChannel;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
+  final double? shippingTotal;
+  final double? discountTotal;
+  final double? rawDiscountTotal;
+  final double? itemTaxTotal;
+  final double? shippingTaxTotal;
+  final double? taxTotal;
+  final double? refundedTotal;
+  final double? total;
+  final double? subtotal;
+  final double? refundableAmount;
+  final double? giftCardTotal;
+  final double? giftCardTaxTotal;
+  final List<SalesChannel>? salesChannels;
+
+  @override
+  List<Object?> get props => [id];
 }

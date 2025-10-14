@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_inventory_levels_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetInventoryLevelsParams {
   AdminGetInventoryLevelsParams({
     this.limit,
@@ -11,7 +13,7 @@ class AdminGetInventoryLevelsParams {
     this.$or,
     this.$and,
     this.fields,
-    this.withDeleted
+    this.withDeleted,
   });
   factory AdminGetInventoryLevelsParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetInventoryLevelsParamsFromJson(json);

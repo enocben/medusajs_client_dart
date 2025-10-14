@@ -1,10 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/inventory_item_dto.g.dart';
 
 @JsonSerializable()
-class InventoryItemDTO {
-  InventoryItemDTO({
+class InventoryItemDTO extends Equatable {
+  const InventoryItemDTO({
     this.id,
     this.sku,
     this.hsCode,
@@ -29,22 +30,26 @@ class InventoryItemDTO {
 
   Map<String, dynamic> toJson() => _$InventoryItemDTOToJson(this);
 
-  String? id;
-  String? sku;
-  String? hsCode;
-  String? originCountry;
-  String? midCode;
-  String? title;
-  String? description;
-  String? thumbnail;
-  String? material;
-  double? weight;
-  double? height;
-  double? width;
-  double? length;
-  bool? requiresShipping;
-  Map<String, dynamic>? metadata;
-  String? createdAt;
-  String? updatedAt;
-  String? deletedAt;
+  final String? id;
+  final String? sku;
+  final String? hsCode;
+  final String? originCountry;
+  final String? midCode;
+  final String? title;
+  final String? description;
+  final String? thumbnail;
+  final String? material;
+  final double? weight;
+  final double? height;
+  final double? width;
+  final double? length;
+  final bool? requiresShipping;
+  final Map<String, dynamic>? metadata;
+  final String? createdAt;
+  final String? updatedAt;
+  final String? deletedAt;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

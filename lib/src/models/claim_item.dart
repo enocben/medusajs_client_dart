@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/claim_image.dart';
 import 'package:medusa_js_dart/src/models/claim_order.dart';
@@ -9,8 +11,9 @@ part 'generated/claim_item.g.dart';
 
 /// A claim item is an item created as part of a claim. It references an item in the order that should be exchanged or refunded.
 @JsonSerializable()
-class ClaimItem {
-  ClaimItem({
+@CopyWith()
+class ClaimItem extends Equatable {
+  const ClaimItem({
     required this.id,
     this.images,
     required this.claimOrderId,
@@ -34,50 +37,53 @@ class ClaimItem {
   Map<String, dynamic> toJson() => _$ClaimItemToJson(this);
 
   /// The claim item's ID
-  String id;
+  final String id;
 
   /// The claim images that are attached to the claim item.
-  List<ClaimImage>? images;
+  final List<ClaimImage>? images;
 
   /// The ID of the claim this item is associated with.
-  String claimOrderId;
+  final String claimOrderId;
 
   /// The details of the claim this item belongs to.
-  ClaimOrder? claimOrder;
+  final ClaimOrder? claimOrder;
 
   /// The ID of the line item that the claim item refers to.
-  String itemId;
+  final String itemId;
 
   /// The details of the line item in the original order that this claim item refers to.
-  LineItem? item;
+  final LineItem? item;
 
   /// The ID of the product variant that is claimed.
-  String variantId;
+  final String variantId;
 
   /// The details of the product variant to potentially replace the item in the original order.
-  ProductVariant? variant;
+  final ProductVariant? variant;
 
   /// The reason for the claim
-  String reason;
+  final String reason;
 
   /// An optional note about the claim, for additional information
-  String? note;
+  final String? note;
 
   /// The quantity of the item that is being claimed; must be less than or equal to the amount purchased in the original order.
-  int quantity;
+  final int quantity;
 
   /// User defined tags for easy filtering and grouping.
-  List<ClaimTag>? tags;
+  final List<ClaimTag>? tags;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

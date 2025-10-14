@@ -24,8 +24,8 @@ Seller _$SellerFromJson(Map<String, dynamic> json) => Seller(
   members: (json['members'] as List<dynamic>?)
       ?.map((e) => SellerMember.fromJson(e as Map<String, dynamic>))
       .toList(),
-  createdAt: json['created_at'] as String,
-  updatedAt: json['updated_at'] as String,
+  createdAt: json['created_at'] as String?,
+  updatedAt: json['updated_at'] as String?,
 );
 
 Map<String, dynamic> _$SellerToJson(Seller instance) => <String, dynamic>{
@@ -45,12 +45,11 @@ Map<String, dynamic> _$SellerToJson(Seller instance) => <String, dynamic>{
   if (instance.taxId case final value?) 'tax_id': value,
   if (instance.members?.map((e) => e.toJson()).toList() case final value?)
     'members': value,
-  'created_at': instance.createdAt,
-  'updated_at': instance.updatedAt,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
 };
 
 const _$StoreStatusEnumMap = {
-  StoreStatus.active: 'active',
-  StoreStatus.inactive: 'inactive',
-  StoreStatus.suspended: 'suspended',
+  StoreStatus.active: 'ACTIVE',
+  StoreStatus.suspended: 'SUSPENDED',
 };

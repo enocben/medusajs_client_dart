@@ -1,10 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart' show ApiKeyType;
 import 'package:medusa_js_dart/src/models/params/date_query_params.dart';
 
 part 'generated/get_api_keys_params.g.dart';
 
 /// Query parameters for GET /admin/api-keys endpoint.
 @JsonSerializable(includeIfNull: false)
+@CopyWith()
 class GetApiKeysParams {
 
   const GetApiKeysParams({
@@ -56,16 +59,16 @@ class GetApiKeysParams {
 
   /// Filter by the API key's type.
   /// Enum: "secret", "publishable"
-  final String? type;
+  final ApiKeyType? type;
 
-  /// token or array of strings
-  final dynamic token;
+  /// Filter by API key tokens.
+  final List<String>? token;
 
-  /// title or array of strings
-  final dynamic title;
+  /// Filter by an API key's title.
+  final List<String>? title;
 
-  /// id or array of strings
-  final dynamic id;
+  /// Filter by an API key's ID.
+  final List<String>? id;
 
   /// A search term to search the API keys' searchable properties.
   final String? q;

@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/product.dart';
 
@@ -5,8 +6,8 @@ part 'generated/product_collection.g.dart';
 
 /// A Product Collection allows grouping together products for promotional purposes. For example, an admin can create a Summer collection, add products to it, and showcase it on the storefront.
 @JsonSerializable()
-class ProductCollection {
-  ProductCollection({
+class ProductCollection extends Equatable {
+  const ProductCollection({
     required this.id,
     required this.title,
     this.handle,
@@ -46,10 +47,5 @@ class ProductCollection {
   final Map<String, dynamic>? metadata;
 
   @override
-  bool operator ==(Object other) {
-    return other is ProductCollection && other.id == id;
-  }
-
-  @override
-  int get hashCode => id.hashCode ^ title.hashCode;
+  List<Object?> get props => [id];
 }

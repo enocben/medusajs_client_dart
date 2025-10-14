@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/customer_group.dart';
@@ -7,8 +9,9 @@ part 'generated/customer.g.dart';
 
 /// A customer can make purchases in your store and manage their profile.
 @JsonSerializable()
-class Customer {
-  Customer({
+@CopyWith()
+class Customer extends Equatable {
+  const Customer({
     required this.id,
     required this.email,
     this.firstName,
@@ -78,4 +81,7 @@ class Customer {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

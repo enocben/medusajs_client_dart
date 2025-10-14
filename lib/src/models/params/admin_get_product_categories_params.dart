@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_product_categories_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetProductCategoriesParams {
   AdminGetProductCategoriesParams({
     this.q,

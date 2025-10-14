@@ -1,4 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/exchange_order_summary.g.dart';
@@ -6,7 +7,7 @@ part 'generated/exchange_order_summary.g.dart';
 /// Summary details for an ExchangeOrder.
 @JsonSerializable()
 @CopyWith()
-class ExchangeOrderSummary {
+class ExchangeOrderSummary extends Equatable {
   const ExchangeOrderSummary({
     required this.paidTotal,
     required this.refundedTotal,
@@ -42,4 +43,15 @@ class ExchangeOrderSummary {
 
   /// The order's total without the credit-line total.
   final num accountingTotal;
+
+  @override
+  List<Object?> get props => [
+    paidTotal,
+    refundedTotal,
+    pendingDifference,
+    currentOrderTotal,
+    originalOrderTotal,
+    transactionTotal,
+    accountingTotal,
+  ];
 }

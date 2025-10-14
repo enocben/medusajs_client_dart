@@ -35,7 +35,40 @@ class AdminGetProductsParams {
   factory AdminGetProductsParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetProductsParamsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminGetProductsParamsToJson(this);
+  Map<String, dynamic> toJson() {
+    final data = <String, dynamic>{};
+
+    void encodeList(String key, List? list) {
+      if (list != null) {
+        for (var i = 0; i < list.length; i++) {
+          data['$key[$i]'] = list[i].toString();
+        }
+      }
+    }
+
+    if (q != null) data['q'] = q;
+    if (discountConditionId != null) {
+      data['discount_condition_id'] = discountConditionId;
+    }
+    if (isGiftcard != null) data['is_giftcard'] = isGiftcard.toString();
+    if (offset != null) data['offset'] = offset;
+    if (limit != null) data['limit'] = limit;
+    if (expand != null) data['expand'] = expand;
+    if (fields != null) data['fields'] = fields;
+    if (order != null) data['order'] = order;
+
+    // encode les listes de manière spécifique
+    encodeList('status', status);
+    encodeList('id', id);
+    encodeList('collection_id', collectionId);
+    encodeList('tags', tags);
+    encodeList('price_list_id', priceListId);
+    encodeList('sales_channel_id', salesChannelId);
+    encodeList('type_id', typeId);
+    encodeList('category_id', categoryId);
+
+    return data;
+  }
 
   String? q;
 

@@ -1,10 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/money_amount.g.dart';
 
 @JsonSerializable()
-class MoneyAmount {
-  MoneyAmount({
+class MoneyAmount extends Equatable {
+  const MoneyAmount({
     required this.id,
     required this.title,
     required this.currencyCode,
@@ -23,15 +24,19 @@ class MoneyAmount {
 
   Map<String, dynamic> toJson() => _$MoneyAmountToJson(this);
 
-  String id;
-  String? title;
-  String? currencyCode;
-  String? variantId;
-  double? amount;
-  int? minQuantity;
-  int? maxQuantity;
-  String? priceSetId;
-  String? createdAt;
-  String? updatedAt;
-  String? deletedAt;
+  final String id;
+  final String? title;
+  final String? currencyCode;
+  final String? variantId;
+  final double? amount;
+  final int? minQuantity;
+  final int? maxQuantity;
+  final String? priceSetId;
+  final String? createdAt;
+  final String? updatedAt;
+  final String? deletedAt;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

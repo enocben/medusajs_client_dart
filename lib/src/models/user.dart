@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/user.g.dart';
 
 /// A User is an administrator who can manage store settings and data.
 @JsonSerializable()
-class User {
-  User({
+@CopyWith()
+class User extends Equatable {
+  const User({
     required this.id,
     required this.email,
     this.firstName,
@@ -21,29 +24,32 @@ class User {
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
   /// The user's ID
-  String id;
+  final String id;
 
   /// The email of the User
-  String email;
+  final String email;
 
   /// The first name of the User
-  String? firstName;
+  final String? firstName;
 
   /// The last name of the User
-  String? lastName;
+  final String? lastName;
 
   /// An API token associated with the user.
-  String? avatarUrl;
+  final String? avatarUrl;
 
   /// The date with timezone at which the resource was created.
-  String? createdAt;
+  final String? createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String? updatedAt;
+  final String? updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

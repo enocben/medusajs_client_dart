@@ -1,4 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart' show PromotionBudgetType;
 
@@ -6,13 +7,14 @@ part 'generated/promotion_campaign_budget.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PromotionCampaignBudget {
-  const PromotionCampaignBudget(
-      {required this.id,
-      required this.type,
-      required this.currencyCode,
-      required this.limit,
-      required this.used});
+class PromotionCampaignBudget extends Equatable {
+  const PromotionCampaignBudget({
+    required this.id,
+    required this.type,
+    required this.currencyCode,
+    required this.limit,
+    required this.used,
+  });
 
   factory PromotionCampaignBudget.fromJson(Map<String, dynamic> json) =>
       _$PromotionCampaignBudgetFromJson(json);
@@ -36,4 +38,8 @@ class PromotionCampaignBudget {
   /// How much of the budget has been used. If the limit is spend, this property holds the total amount discounted so far.
   /// If the limit is usage, it holds the number of times the campaign's promotions have been used so far.
   final num used;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id, type];
 }

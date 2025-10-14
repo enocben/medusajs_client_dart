@@ -1,9 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_js_dart/src/models/requests/admin_post_shipping_profiles_profile_req.dart';
-import 'package:medusa_js_dart/src/models/requests/admin_post_shipping_profiles_req.dart';
-import 'package:medusa_js_dart/src/models/responses/admin_delete_shipping_profile_res.dart';
-import 'package:medusa_js_dart/src/models/responses/admin_shipping_profiles_list_res.dart';
-import 'package:medusa_js_dart/src/models/responses/admin_shipping_profiles_res.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'generated/shipping_profiles.g.dart';
@@ -15,6 +11,7 @@ abstract class ShippingProfilesResource {
 
   @GET('/admin/shipping-profiles')
   Future<AdminShippingProfilesListRes> list({
+    @Queries() AdminGetShippingProfilesParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 

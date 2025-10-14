@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/claim_item.dart';
 
@@ -5,8 +7,9 @@ part 'generated/claim_image.g.dart';
 
 /// The details of an image attached to a claim.
 @JsonSerializable()
-class ClaimImage {
-  ClaimImage({
+@CopyWith()
+class ClaimImage extends Equatable {
+  const ClaimImage({
     required this.id,
     required this.claimItemId,
     this.claimItem,
@@ -22,26 +25,29 @@ class ClaimImage {
   Map<String, dynamic> toJson() => _$ClaimImageToJson(this);
 
   /// The claim image's ID
-  String id;
+  final String id;
 
   /// The ID of the claim item associated with the image
-  String claimItemId;
+  final String claimItemId;
 
   /// The details of the claim item this image is associated with.
-  ClaimItem? claimItem;
+  final ClaimItem? claimItem;
 
   /// The URL of the image
-  String url;
+  final String url;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

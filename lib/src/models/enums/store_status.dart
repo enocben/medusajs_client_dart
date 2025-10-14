@@ -1,8 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
-@JsonEnum(fieldRename: FieldRename.snake)
+@JsonEnum()
 enum StoreStatus {
+  @JsonValue('ACTIVE')
   active,
-  inactive,
+
+  @JsonValue('SUSPENDED')
   suspended,
 }

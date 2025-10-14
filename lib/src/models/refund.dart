@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/order.dart';
 import 'package:medusa_js_dart/src/models/payment.dart';
@@ -6,8 +7,8 @@ part 'generated/refund.g.dart';
 
 /// A refund represents an amount of money transferred back to the customer for a given reason. Refunds may occur in relation to Returns, Swaps, and Claims, but can also be initiated by an admin for an order.
 @JsonSerializable()
-class Refund {
-  Refund({
+class Refund extends Equatable {
+  const Refund({
     required this.id,
     this.orderId,
     this.order,
@@ -26,38 +27,42 @@ class Refund {
   Map<String, dynamic> toJson() => _$RefundToJson(this);
 
   /// The refund's ID
-  String id;
+  final String id;
 
   /// The ID of the order this refund was created for.
-  String? orderId;
+  final String? orderId;
 
   /// The details of the order this refund was created for.
-  Order? order;
+  final Order? order;
 
   /// The payment's ID, if available.
-  String? paymentId;
+  final String? paymentId;
 
   /// The details of the payment associated with the refund.
-  Payment? payment;
+  final Payment? payment;
 
   /// The amount that has been refunded to the Customer.
-  double amount;
+  final double amount;
 
   /// An optional note explaining why the amount was refunded.
-  String? note;
+  final String? note;
 
   /// The reason given for the Refund, will automatically be set when processed as part of a Swap, Claim, or Return.
-  String reason;
+  final String reason;
 
   /// Randomly generated key used to continue the completion of the refund in case of failure.
-  String? idempotencyKey;
+  final String? idempotencyKey;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

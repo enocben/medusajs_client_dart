@@ -3,6 +3,107 @@
 part of '../store_get_collections_params.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$StoreGetCollectionsParamsCWProxy {
+  StoreGetCollectionsParams offset(int? offset);
+
+  StoreGetCollectionsParams limit(int? limit);
+
+  StoreGetCollectionsParams handle(List<String>? handle);
+
+  StoreGetCollectionsParams createdAt(CreatedAtParams? createdAt);
+
+  StoreGetCollectionsParams updatedAt(UpdatedAtParams? updatedAt);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StoreGetCollectionsParams(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// StoreGetCollectionsParams(...).copyWith(id: 12, name: "My name")
+  /// ````
+  StoreGetCollectionsParams call({
+    int? offset,
+    int? limit,
+    List<String>? handle,
+    CreatedAtParams? createdAt,
+    UpdatedAtParams? updatedAt,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStoreGetCollectionsParams.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStoreGetCollectionsParams.copyWith.fieldName(...)`
+class _$StoreGetCollectionsParamsCWProxyImpl
+    implements _$StoreGetCollectionsParamsCWProxy {
+  const _$StoreGetCollectionsParamsCWProxyImpl(this._value);
+
+  final StoreGetCollectionsParams _value;
+
+  @override
+  StoreGetCollectionsParams offset(int? offset) => this(offset: offset);
+
+  @override
+  StoreGetCollectionsParams limit(int? limit) => this(limit: limit);
+
+  @override
+  StoreGetCollectionsParams handle(List<String>? handle) =>
+      this(handle: handle);
+
+  @override
+  StoreGetCollectionsParams createdAt(CreatedAtParams? createdAt) =>
+      this(createdAt: createdAt);
+
+  @override
+  StoreGetCollectionsParams updatedAt(UpdatedAtParams? updatedAt) =>
+      this(updatedAt: updatedAt);
+
+  @override
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StoreGetCollectionsParams(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// StoreGetCollectionsParams(...).copyWith(id: 12, name: "My name")
+  /// ````
+  StoreGetCollectionsParams call({
+    Object? offset = const $CopyWithPlaceholder(),
+    Object? limit = const $CopyWithPlaceholder(),
+    Object? handle = const $CopyWithPlaceholder(),
+    Object? createdAt = const $CopyWithPlaceholder(),
+    Object? updatedAt = const $CopyWithPlaceholder(),
+  }) {
+    return StoreGetCollectionsParams(
+      offset: offset == const $CopyWithPlaceholder()
+          ? _value.offset
+          // ignore: cast_nullable_to_non_nullable
+          : offset as int?,
+      limit: limit == const $CopyWithPlaceholder()
+          ? _value.limit
+          // ignore: cast_nullable_to_non_nullable
+          : limit as int?,
+      handle: handle == const $CopyWithPlaceholder()
+          ? _value.handle
+          // ignore: cast_nullable_to_non_nullable
+          : handle as List<String>?,
+      createdAt: createdAt == const $CopyWithPlaceholder()
+          ? _value.createdAt
+          // ignore: cast_nullable_to_non_nullable
+          : createdAt as CreatedAtParams?,
+      updatedAt: updatedAt == const $CopyWithPlaceholder()
+          ? _value.updatedAt
+          // ignore: cast_nullable_to_non_nullable
+          : updatedAt as UpdatedAtParams?,
+    );
+  }
+}
+
+extension $StoreGetCollectionsParamsCopyWith on StoreGetCollectionsParams {
+  /// Returns a callable class that can be used as follows: `instanceOfStoreGetCollectionsParams.copyWith(...)` or like so:`instanceOfStoreGetCollectionsParams.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$StoreGetCollectionsParamsCWProxy get copyWith =>
+      _$StoreGetCollectionsParamsCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

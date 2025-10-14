@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/region.dart';
 
@@ -5,7 +7,8 @@ part 'generated/country.g.dart';
 
 /// Country details
 @JsonSerializable()
-class Country {
+@CopyWith()
+class Country extends Equatable {
   /// Constructor
   const Country({
     this.id,
@@ -27,9 +30,11 @@ class Country {
   final String? id;
 
   /// The 2 character ISO code of the country in lower case
+  @JsonKey(name: 'iso_2')
   final String? iso2;
 
   /// The 2 character ISO code of the country in lower case
+  @JsonKey(name: 'iso_3')
   final String? iso3;
 
   /// The numerical ISO code for the country.
@@ -46,4 +51,7 @@ class Country {
 
   /// The details of the region the country is associated with.
   final Region? region;
+
+  @override
+  List<Object?> get props => [id, iso2];
 }

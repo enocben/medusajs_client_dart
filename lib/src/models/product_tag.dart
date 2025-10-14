@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/product_tag.g.dart';
 
 /// A Product Tag can be added to Products for easy filtering and grouping.
 @JsonSerializable()
-class ProductTag {
-  ProductTag({
+@CopyWith()
+class ProductTag extends Equatable {
+  const ProductTag({
     required this.id,
     required this.value,
     required this.createdAt,
@@ -35,4 +38,8 @@ class ProductTag {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

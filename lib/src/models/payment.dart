@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
 import 'package:medusa_js_dart/src/models/currency.dart';
@@ -8,8 +10,9 @@ part 'generated/payment.g.dart';
 
 /// A payment is originally created from a payment session. Once a payment session is authorized, the payment is created to represent the authorized amount with a given payment method. Payments can be captured, canceled or refunded. Payments can be made towards orders, swaps, order edits, or other resources.
 @JsonSerializable()
-class Payment {
-  Payment({
+@CopyWith()
+class Payment extends Equatable {
+  const Payment({
     required this.id,
     this.swapId,
     this.swap,
@@ -36,59 +39,62 @@ class Payment {
   Map<String, dynamic> toJson() => _$PaymentToJson(this);
 
   /// The payment's ID
-  String id;
+  final String id;
 
   /// The ID of the swap that this payment was potentially created for.
-  String? swapId;
+  final String? swapId;
 
   /// The details of the swap that this payment was potentially created for.
-  Swap? swap;
+  final Swap? swap;
 
   /// The ID of the cart that the payment session was potentially created for.
-  String? cartId;
+  final String? cartId;
 
   /// The details of the cart that the payment session was potentially created for.
-  Cart? cart;
+  final Cart? cart;
 
   /// The ID of the order that the payment session was potentially created for.
-  String? orderId;
+  final String? orderId;
 
   /// The details of the order that the payment session was potentially created for.
-  Order? order;
+  final Order? order;
 
   /// The amount that the Payment has been authorized for.
-  double amount;
+  final double amount;
 
   /// The 3 character ISO currency code of the payment.
-  String currencyCode;
+  final String currencyCode;
 
   /// The details of the currency of the payment.
-  Currency? currency;
+  final Currency? currency;
 
   /// The amount of the original Payment amount that has been refunded back to the Customer.
-  double amountRefunded;
+  final double amountRefunded;
 
   /// The id of the Payment Provider that is responsible for the Payment
-  String providerId;
+  final String providerId;
 
   /// The data required for the Payment Provider to identify, modify and process the Payment. Typically this will be an object that holds an id to the external payment session, but can be an empty object if the Payment Provider doesn't hold any state.
-  Map<String, dynamic> data;
+  final Map<String, dynamic> data;
 
   /// The date with timezone at which the Payment was captured.
-  String? capturedAt;
+  final String? capturedAt;
 
   /// The date with timezone at which the Payment was canceled.
-  String? canceledAt;
+  final String? canceledAt;
 
   /// Randomly generated key used to continue the completion of a payment in case of failure.
-  String? idempotencyKey;
+  final String? idempotencyKey;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

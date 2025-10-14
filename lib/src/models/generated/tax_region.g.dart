@@ -29,6 +29,8 @@ abstract class _$TaxRegionCWProxy {
 
   TaxRegion taxRates(List<TaxRate>? taxRates);
 
+  TaxRegion providerId(String? providerId);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TaxRegion(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -47,6 +49,7 @@ abstract class _$TaxRegionCWProxy {
     String? createdBy,
     List<Map<String, dynamic>>? children,
     List<TaxRate>? taxRates,
+    String? providerId,
   });
 }
 
@@ -93,6 +96,9 @@ class _$TaxRegionCWProxyImpl implements _$TaxRegionCWProxy {
   TaxRegion taxRates(List<TaxRate>? taxRates) => this(taxRates: taxRates);
 
   @override
+  TaxRegion providerId(String? providerId) => this(providerId: providerId);
+
+  @override
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TaxRegion(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -111,6 +117,7 @@ class _$TaxRegionCWProxyImpl implements _$TaxRegionCWProxy {
     Object? createdBy = const $CopyWithPlaceholder(),
     Object? children = const $CopyWithPlaceholder(),
     Object? taxRates = const $CopyWithPlaceholder(),
+    Object? providerId = const $CopyWithPlaceholder(),
   }) {
     return TaxRegion(
       id: id == const $CopyWithPlaceholder()
@@ -157,6 +164,10 @@ class _$TaxRegionCWProxyImpl implements _$TaxRegionCWProxy {
           ? _value.taxRates
           // ignore: cast_nullable_to_non_nullable
           : taxRates as List<TaxRate>?,
+      providerId: providerId == const $CopyWithPlaceholder()
+          ? _value.providerId
+          // ignore: cast_nullable_to_non_nullable
+          : providerId as String?,
     );
   }
 }
@@ -187,6 +198,7 @@ TaxRegion _$TaxRegionFromJson(Map<String, dynamic> json) => TaxRegion(
   taxRates: (json['tax_rates'] as List<dynamic>?)
       ?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>))
       .toList(),
+  providerId: json['provider_id'] as String?,
 );
 
 Map<String, dynamic> _$TaxRegionToJson(TaxRegion instance) => <String, dynamic>{
@@ -202,4 +214,5 @@ Map<String, dynamic> _$TaxRegionToJson(TaxRegion instance) => <String, dynamic>{
   if (instance.children case final value?) 'children': value,
   if (instance.taxRates?.map((e) => e.toJson()).toList() case final value?)
     'tax_rates': value,
+  if (instance.providerId case final value?) 'provider_id': value,
 };

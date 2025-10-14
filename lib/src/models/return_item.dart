@@ -1,14 +1,14 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/return_item.g.dart';
 
 /// A return item represents a line item in an order that is to be returned. It includes details related to the return and the reason behind it.
 @JsonSerializable()
-
 /// Représente un article retourné dans un échange Medusa.
 @JsonSerializable()
-class ReturnItem {
-  ReturnItem({
+class ReturnItem extends Equatable {
+  const ReturnItem({
     required this.id,
     required this.quantity,
     this.receivedQuantity,
@@ -50,4 +50,8 @@ class ReturnItem {
 
   /// L'ID de la raison du retour.
   final String? reasonId;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

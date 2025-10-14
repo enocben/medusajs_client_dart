@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/get_order_edits_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class GetOrderEditsParams {
   GetOrderEditsParams({
     this.searchTerm,

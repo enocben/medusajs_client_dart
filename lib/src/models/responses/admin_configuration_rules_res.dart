@@ -7,9 +7,9 @@ part 'generated/admin_configuration_rules_res.g.dart';
 class AdminConfigurationRulesRes {
   AdminConfigurationRulesRes({
     required this.configurationRules,
-    required this.count,
-    required this.offset,
-    required this.limit,
+    this.count,
+    this.offset,
+    this.limit,
   });
 
   factory AdminConfigurationRulesRes.fromJson(Map<String, dynamic> json) =>
@@ -19,7 +19,7 @@ class AdminConfigurationRulesRes {
 
   @JsonKey(name: 'configuration_rules')
   final List<ConfigurationRule> configurationRules;
-  final int count;
-  final int offset;
-  final int limit;
+  final int? count;
+  final int? offset;
+  final int? limit;
 }

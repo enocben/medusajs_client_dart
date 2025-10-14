@@ -8,7 +8,7 @@ import 'package:medusa_js_dart/src/models/sales_channel.dart';
 import 'package:medusa_js_dart/src/models/shipping_profile.dart';
 
 abstract class BaseProduct {
-  BaseProduct({
+  const BaseProduct({
     required this.id,
     required this.title,
     this.subtitle,
@@ -47,107 +47,107 @@ abstract class BaseProduct {
   });
 
   /// The product's ID
-  String id;
+  final String id;
 
   /// A title that can be displayed for easy identification of the Product.
-  String title;
+  final String title;
 
   /// An optional subtitle that can be used to further specify the Product.
-  String? subtitle;
+  final String? subtitle;
 
   /// A short description of the Product.
-  String? description;
+  final String? description;
 
   /// A unique identifier for the Product (e.g. for slug structure).
-  String? handle;
+  final String? handle;
 
   /// Whether the Product represents a Gift Card. Products that represent Gift Cards will automatically generate a redeemable Gift Card code once they are purchased.
-  bool isGiftcard;
+  final bool isGiftcard;
 
   /// The status of the product
-  String status;
+  final String status;
 
   /// The details of the product's images.
-  List<Image>? images;
+  final List<Image>? images;
 
   /// A URL to an image file that can be used to identify the Product.
-  String? thumbnail;
+  final String? thumbnail;
 
   /// The details of the Product Options that are defined for the Product. The product's variants will have a unique combination of values of the product's options.
-  List<ProductOption>? options;
+  final List<ProductOption>? options;
 
   /// The details of the product categories that this product belongs to.
-  List<ProductCategory>? categories;
+  final List<ProductCategory>? categories;
 
   /// The ID of the shipping profile that the product belongs to. The shipping profile has a set of defined shipping options that can be used to fulfill the product.
-  String? profileId;
+  final String? profileId;
 
   /// The details of the shipping profile that the product belongs to. The shipping profile has a set of defined shipping options that can be used to fulfill the product.
-  ShippingProfile? profile;
+  final ShippingProfile? profile;
 
   /// Available if the relation `profiles` is expanded.
-  List<ShippingProfile>? profiles;
+  final List<ShippingProfile>? profiles;
 
   /// The shipping profile's details.
-  ShippingProfile? shippingProfile;
+  final ShippingProfile? shippingProfile;
 
   /// The weight of the Product Variant. May be used in shipping rate calculations.
-  String? weight;
+  final String? weight;
 
   /// The length of the Product Variant. May be used in shipping rate calculations.
-  String? length;
+  final String? length;
 
   /// The height of the Product Variant. May be used in shipping rate calculations.
-  String? height;
+  final String? height;
 
   /// The width of the Product Variant. May be used in shipping rate calculations.
-  String? width;
+  final String? width;
 
   /// The Harmonized System code of the Product Variant. May be used by Fulfillment Providers to pass customs information to shipping carriers.
-  String? hsCode;
+  final String? hsCode;
 
   /// The country in which the Product Variant was produced. May be used by Fulfillment Providers to pass customs information to shipping carriers.
-  String? originCountry;
+  final String? originCountry;
 
   /// The Manufacturers Identification code that identifies the manufacturer of the Product Variant. May be used by Fulfillment Providers to pass customs information to shipping carriers.
-  String? midCode;
+  final String? midCode;
 
   /// The material and composition that the Product Variant is made of, May be used by Fulfillment Providers to pass customs information to shipping carriers.
-  String? material;
+  final String? material;
 
   /// The ID of the product collection that the product belongs to.
-  String? collectionId;
+  final String? collectionId;
 
   /// The details of the product collection that the product belongs to.
-  ProductCollection? collection;
+  final ProductCollection? collection;
 
   /// The ID of the product type that the product belongs to.
-  String? typeId;
+  final String? typeId;
 
   /// The details of the product type that the product belongs to.
-  ProductType? type;
+  final ProductType? type;
 
   /// The details of the product tags used in this product.
-  List<ProductTag>? tags;
+  final List<ProductTag>? tags;
 
   /// Whether the Product can be discounted. Discounts will not apply to Line Items of this Product when this flag is set to `false`.
-  bool discountable;
+  final bool discountable;
 
   /// The external ID of the product
-  String? externalId;
+  final String? externalId;
 
   /// The details of the sales channels this product is available in.
-  List<SalesChannel>? salesChannels;
+  final List<SalesChannel>? salesChannels;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 }

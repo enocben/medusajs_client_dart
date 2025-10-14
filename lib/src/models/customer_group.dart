@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/customer.dart';
 import 'package:medusa_js_dart/src/models/price_list.dart';
@@ -6,8 +8,9 @@ part 'generated/customer_group.g.dart';
 
 /// A customer group that can be used to organize customers into groups of similar traits.
 @JsonSerializable()
-class CustomerGroup {
-  CustomerGroup({
+@CopyWith()
+class CustomerGroup extends Equatable {
+  const CustomerGroup({
     required this.id,
     required this.name,
     this.customers,
@@ -23,26 +26,29 @@ class CustomerGroup {
   Map<String, dynamic> toJson() => _$CustomerGroupToJson(this);
 
   /// The customer group's ID
-  String id;
+  final String id;
 
   /// The name of the customer group
-  String name;
+  final String name;
 
   /// The details of the customers that belong to the customer group.
-  List<Customer>? customers;
+  final List<Customer>? customers;
 
   /// The price lists that are associated with the customer group.
-  List<PriceList>? priceLists;
+  final List<PriceList>? priceLists;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id, name, createdAt, updatedAt];
 }

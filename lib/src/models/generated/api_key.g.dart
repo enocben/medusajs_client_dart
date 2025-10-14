@@ -3,6 +3,179 @@
 part of '../api_key.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$ApiKeyCWProxy {
+  ApiKey id(String id);
+
+  ApiKey title(String title);
+
+  ApiKey type(ApiKeyType type);
+
+  ApiKey token(String token);
+
+  ApiKey redacted(String redacted);
+
+  ApiKey createdBy(String? createdBy);
+
+  ApiKey revokedBy(String? revokedBy);
+
+  ApiKey createdAt(String? createdAt);
+
+  ApiKey lastUsedAt(String? lastUsedAt);
+
+  ApiKey revokeyAt(String? revokeyAt);
+
+  ApiKey updatedAt(String? updatedAt);
+
+  ApiKey deletedAt(String? deletedAt);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ApiKey(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ApiKey(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ApiKey call({
+    String id,
+    String title,
+    ApiKeyType type,
+    String token,
+    String redacted,
+    String? createdBy,
+    String? revokedBy,
+    String? createdAt,
+    String? lastUsedAt,
+    String? revokeyAt,
+    String? updatedAt,
+    String? deletedAt,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfApiKey.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfApiKey.copyWith.fieldName(...)`
+class _$ApiKeyCWProxyImpl implements _$ApiKeyCWProxy {
+  const _$ApiKeyCWProxyImpl(this._value);
+
+  final ApiKey _value;
+
+  @override
+  ApiKey id(String id) => this(id: id);
+
+  @override
+  ApiKey title(String title) => this(title: title);
+
+  @override
+  ApiKey type(ApiKeyType type) => this(type: type);
+
+  @override
+  ApiKey token(String token) => this(token: token);
+
+  @override
+  ApiKey redacted(String redacted) => this(redacted: redacted);
+
+  @override
+  ApiKey createdBy(String? createdBy) => this(createdBy: createdBy);
+
+  @override
+  ApiKey revokedBy(String? revokedBy) => this(revokedBy: revokedBy);
+
+  @override
+  ApiKey createdAt(String? createdAt) => this(createdAt: createdAt);
+
+  @override
+  ApiKey lastUsedAt(String? lastUsedAt) => this(lastUsedAt: lastUsedAt);
+
+  @override
+  ApiKey revokeyAt(String? revokeyAt) => this(revokeyAt: revokeyAt);
+
+  @override
+  ApiKey updatedAt(String? updatedAt) => this(updatedAt: updatedAt);
+
+  @override
+  ApiKey deletedAt(String? deletedAt) => this(deletedAt: deletedAt);
+
+  @override
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ApiKey(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ApiKey(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ApiKey call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? title = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+    Object? token = const $CopyWithPlaceholder(),
+    Object? redacted = const $CopyWithPlaceholder(),
+    Object? createdBy = const $CopyWithPlaceholder(),
+    Object? revokedBy = const $CopyWithPlaceholder(),
+    Object? createdAt = const $CopyWithPlaceholder(),
+    Object? lastUsedAt = const $CopyWithPlaceholder(),
+    Object? revokeyAt = const $CopyWithPlaceholder(),
+    Object? updatedAt = const $CopyWithPlaceholder(),
+    Object? deletedAt = const $CopyWithPlaceholder(),
+  }) {
+    return ApiKey(
+      id: id == const $CopyWithPlaceholder()
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      title: title == const $CopyWithPlaceholder()
+          ? _value.title
+          // ignore: cast_nullable_to_non_nullable
+          : title as String,
+      type: type == const $CopyWithPlaceholder()
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as ApiKeyType,
+      token: token == const $CopyWithPlaceholder()
+          ? _value.token
+          // ignore: cast_nullable_to_non_nullable
+          : token as String,
+      redacted: redacted == const $CopyWithPlaceholder()
+          ? _value.redacted
+          // ignore: cast_nullable_to_non_nullable
+          : redacted as String,
+      createdBy: createdBy == const $CopyWithPlaceholder()
+          ? _value.createdBy
+          // ignore: cast_nullable_to_non_nullable
+          : createdBy as String?,
+      revokedBy: revokedBy == const $CopyWithPlaceholder()
+          ? _value.revokedBy
+          // ignore: cast_nullable_to_non_nullable
+          : revokedBy as String?,
+      createdAt: createdAt == const $CopyWithPlaceholder()
+          ? _value.createdAt
+          // ignore: cast_nullable_to_non_nullable
+          : createdAt as String?,
+      lastUsedAt: lastUsedAt == const $CopyWithPlaceholder()
+          ? _value.lastUsedAt
+          // ignore: cast_nullable_to_non_nullable
+          : lastUsedAt as String?,
+      revokeyAt: revokeyAt == const $CopyWithPlaceholder()
+          ? _value.revokeyAt
+          // ignore: cast_nullable_to_non_nullable
+          : revokeyAt as String?,
+      updatedAt: updatedAt == const $CopyWithPlaceholder()
+          ? _value.updatedAt
+          // ignore: cast_nullable_to_non_nullable
+          : updatedAt as String?,
+      deletedAt: deletedAt == const $CopyWithPlaceholder()
+          ? _value.deletedAt
+          // ignore: cast_nullable_to_non_nullable
+          : deletedAt as String?,
+    );
+  }
+}
+
+extension $ApiKeyCopyWith on ApiKey {
+  /// Returns a callable class that can be used as follows: `instanceOfApiKey.copyWith(...)` or like so:`instanceOfApiKey.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ApiKeyCWProxy get copyWith => _$ApiKeyCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

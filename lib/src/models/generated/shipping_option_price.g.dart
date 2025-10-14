@@ -3,6 +3,201 @@
 part of '../shipping_option_price.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$ShippingOptionPriceCWProxy {
+  ShippingOptionPrice id(String id);
+
+  ShippingOptionPrice title(String? title);
+
+  ShippingOptionPrice currencyCode(String? currencyCode);
+
+  ShippingOptionPrice amount(num? amount);
+
+  ShippingOptionPrice rowAmount(MoneyAmount? rowAmount);
+
+  ShippingOptionPrice minQuantity(num? minQuantity);
+
+  ShippingOptionPrice maxQuantity(num? maxQuantity);
+
+  ShippingOptionPrice priceSetId(String? priceSetId);
+
+  ShippingOptionPrice priceRules(List<PriceRule> priceRules);
+
+  ShippingOptionPrice rulesCount(num rulesCount);
+
+  ShippingOptionPrice createdAt(String? createdAt);
+
+  ShippingOptionPrice updatedAt(String? updatedAt);
+
+  ShippingOptionPrice deletedAt(String? deletedAt);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ShippingOptionPrice(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ShippingOptionPrice(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ShippingOptionPrice call({
+    String id,
+    String? title,
+    String? currencyCode,
+    num? amount,
+    MoneyAmount? rowAmount,
+    num? minQuantity,
+    num? maxQuantity,
+    String? priceSetId,
+    List<PriceRule> priceRules,
+    num rulesCount,
+    String? createdAt,
+    String? updatedAt,
+    String? deletedAt,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfShippingOptionPrice.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfShippingOptionPrice.copyWith.fieldName(...)`
+class _$ShippingOptionPriceCWProxyImpl implements _$ShippingOptionPriceCWProxy {
+  const _$ShippingOptionPriceCWProxyImpl(this._value);
+
+  final ShippingOptionPrice _value;
+
+  @override
+  ShippingOptionPrice id(String id) => this(id: id);
+
+  @override
+  ShippingOptionPrice title(String? title) => this(title: title);
+
+  @override
+  ShippingOptionPrice currencyCode(String? currencyCode) =>
+      this(currencyCode: currencyCode);
+
+  @override
+  ShippingOptionPrice amount(num? amount) => this(amount: amount);
+
+  @override
+  ShippingOptionPrice rowAmount(MoneyAmount? rowAmount) =>
+      this(rowAmount: rowAmount);
+
+  @override
+  ShippingOptionPrice minQuantity(num? minQuantity) =>
+      this(minQuantity: minQuantity);
+
+  @override
+  ShippingOptionPrice maxQuantity(num? maxQuantity) =>
+      this(maxQuantity: maxQuantity);
+
+  @override
+  ShippingOptionPrice priceSetId(String? priceSetId) =>
+      this(priceSetId: priceSetId);
+
+  @override
+  ShippingOptionPrice priceRules(List<PriceRule> priceRules) =>
+      this(priceRules: priceRules);
+
+  @override
+  ShippingOptionPrice rulesCount(num rulesCount) =>
+      this(rulesCount: rulesCount);
+
+  @override
+  ShippingOptionPrice createdAt(String? createdAt) =>
+      this(createdAt: createdAt);
+
+  @override
+  ShippingOptionPrice updatedAt(String? updatedAt) =>
+      this(updatedAt: updatedAt);
+
+  @override
+  ShippingOptionPrice deletedAt(String? deletedAt) =>
+      this(deletedAt: deletedAt);
+
+  @override
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ShippingOptionPrice(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ShippingOptionPrice(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ShippingOptionPrice call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? title = const $CopyWithPlaceholder(),
+    Object? currencyCode = const $CopyWithPlaceholder(),
+    Object? amount = const $CopyWithPlaceholder(),
+    Object? rowAmount = const $CopyWithPlaceholder(),
+    Object? minQuantity = const $CopyWithPlaceholder(),
+    Object? maxQuantity = const $CopyWithPlaceholder(),
+    Object? priceSetId = const $CopyWithPlaceholder(),
+    Object? priceRules = const $CopyWithPlaceholder(),
+    Object? rulesCount = const $CopyWithPlaceholder(),
+    Object? createdAt = const $CopyWithPlaceholder(),
+    Object? updatedAt = const $CopyWithPlaceholder(),
+    Object? deletedAt = const $CopyWithPlaceholder(),
+  }) {
+    return ShippingOptionPrice(
+      id: id == const $CopyWithPlaceholder()
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      title: title == const $CopyWithPlaceholder()
+          ? _value.title
+          // ignore: cast_nullable_to_non_nullable
+          : title as String?,
+      currencyCode: currencyCode == const $CopyWithPlaceholder()
+          ? _value.currencyCode
+          // ignore: cast_nullable_to_non_nullable
+          : currencyCode as String?,
+      amount: amount == const $CopyWithPlaceholder()
+          ? _value.amount
+          // ignore: cast_nullable_to_non_nullable
+          : amount as num?,
+      rowAmount: rowAmount == const $CopyWithPlaceholder()
+          ? _value.rowAmount
+          // ignore: cast_nullable_to_non_nullable
+          : rowAmount as MoneyAmount?,
+      minQuantity: minQuantity == const $CopyWithPlaceholder()
+          ? _value.minQuantity
+          // ignore: cast_nullable_to_non_nullable
+          : minQuantity as num?,
+      maxQuantity: maxQuantity == const $CopyWithPlaceholder()
+          ? _value.maxQuantity
+          // ignore: cast_nullable_to_non_nullable
+          : maxQuantity as num?,
+      priceSetId: priceSetId == const $CopyWithPlaceholder()
+          ? _value.priceSetId
+          // ignore: cast_nullable_to_non_nullable
+          : priceSetId as String?,
+      priceRules: priceRules == const $CopyWithPlaceholder()
+          ? _value.priceRules
+          // ignore: cast_nullable_to_non_nullable
+          : priceRules as List<PriceRule>,
+      rulesCount: rulesCount == const $CopyWithPlaceholder()
+          ? _value.rulesCount
+          // ignore: cast_nullable_to_non_nullable
+          : rulesCount as num,
+      createdAt: createdAt == const $CopyWithPlaceholder()
+          ? _value.createdAt
+          // ignore: cast_nullable_to_non_nullable
+          : createdAt as String?,
+      updatedAt: updatedAt == const $CopyWithPlaceholder()
+          ? _value.updatedAt
+          // ignore: cast_nullable_to_non_nullable
+          : updatedAt as String?,
+      deletedAt: deletedAt == const $CopyWithPlaceholder()
+          ? _value.deletedAt
+          // ignore: cast_nullable_to_non_nullable
+          : deletedAt as String?,
+    );
+  }
+}
+
+extension $ShippingOptionPriceCopyWith on ShippingOptionPrice {
+  /// Returns a callable class that can be used as follows: `instanceOfShippingOptionPrice.copyWith(...)` or like so:`instanceOfShippingOptionPrice.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ShippingOptionPriceCWProxy get copyWith =>
+      _$ShippingOptionPriceCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

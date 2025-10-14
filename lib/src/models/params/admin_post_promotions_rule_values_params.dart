@@ -6,6 +6,7 @@ part 'generated/admin_post_promotions_rule_values_params.g.dart';
 
 @JsonSerializable()
 @CopyWith()
+@CopyWith()
 class AdminPostPromotionsRuleValuesReq {
   AdminPostPromotionsRuleValuesReq({
     this.withDeleted,
@@ -17,8 +18,8 @@ class AdminPostPromotionsRuleValuesReq {
   });
 
   factory AdminPostPromotionsRuleValuesReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostPromotionsRuleValuesReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostPromotionsRuleValuesReqFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostPromotionsRuleValuesReqToJson(this);

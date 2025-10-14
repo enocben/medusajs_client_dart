@@ -1,13 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/return_shipping.g.dart';
 
 @JsonSerializable()
-class ReturnShipping {
-  ReturnShipping({
-    this.optionId,
-    this.price,
-  });
+class ReturnShipping extends Equatable {
+  const ReturnShipping({this.optionId, this.price});
   factory ReturnShipping.fromJson(Map<String, dynamic> json) =>
       _$ReturnShippingFromJson(json);
 
@@ -15,4 +13,7 @@ class ReturnShipping {
 
   final String? optionId;
   final double? price;
+
+  @override
+  List<Object?> get props => [optionId, price];
 }

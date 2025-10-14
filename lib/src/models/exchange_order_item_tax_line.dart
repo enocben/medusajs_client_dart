@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/exchange_order_item_tax_line.g.dart';
 
 /// Represents a tax line for an ExchangeOrderItem (different from the standard TaxLine).
 @JsonSerializable()
-class ExchangeOrderItemTaxLine {
-  ExchangeOrderItemTaxLine({
+@CopyWith()
+class ExchangeOrderItemTaxLine extends Equatable {
+  const ExchangeOrderItemTaxLine({
     required this.id,
     required this.itemId,
     this.total,
@@ -55,4 +58,7 @@ class ExchangeOrderItemTaxLine {
 
   /// The tax line's description.
   final String? description;
+
+  @override
+  List<Object?> get props => [id];
 }

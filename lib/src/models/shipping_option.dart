@@ -1,17 +1,20 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart' show ShippingProfile;
 import 'package:medusa_js_dart/src/models/enums/price_type.dart';
 import 'package:medusa_js_dart/src/models/fulfillment_provider.dart';
 import 'package:medusa_js_dart/src/models/service_zone.dart';
 import 'package:medusa_js_dart/src/models/shipping_option_detail.dart';
 import 'package:medusa_js_dart/src/models/shipping_option_price.dart';
 import 'package:medusa_js_dart/src/models/shipping_option_rules.dart';
-import 'package:medusa_js_dart/src/models/shipping_profile.dart';
 
 part 'generated/shipping_option.g.dart';
 
 @JsonSerializable()
-class ShippingOption {
-  ShippingOption({
+@CopyWith()
+class ShippingOption extends Equatable {
+  const ShippingOption({
     required this.id,
     required this.name,
     required this.priceType,
@@ -38,15 +41,15 @@ class ShippingOption {
   Map<String, dynamic> toJson() => _$ShippingOptionToJson(this);
 
   /// The shipping option's ID.
-  String id;
+  final String id;
 
   /// The shipping option's name.
-  String? name;
+  final String? name;
 
   /// The shipping option's price type.
   /// If it's flat, the price is fixed and is set in the prices property.
   /// If it's calculated, the price is calculated on checkout by the associated fulfillment provider.
-  PriceType? priceType;
+  final PriceType? priceType;
 
   /// The ID of the service zone this option belongs to.
   final String? serviceZoneId;
@@ -80,10 +83,13 @@ class ShippingOption {
   final List<ShippingOptionPrice>? prices;
 
   /// The shipping option's data, useful for the fulfillment provider handling fulfillments created from this option.
-  Map<String, dynamic>? data;
+  final Map<String, dynamic>? data;
 
-  String? createdAt;
-  String? updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
+  final String? createdAt;
+  final String? updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

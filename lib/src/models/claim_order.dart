@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/claim_item.dart';
@@ -10,8 +12,9 @@ import 'package:medusa_js_dart/src/models/shipping_method.dart';
 part 'generated/claim_order.g.dart';
 
 @JsonSerializable()
-class ClaimOrder {
-  ClaimOrder({
+@CopyWith()
+class ClaimOrder extends Equatable {
+  const ClaimOrder({
     required this.id,
     required this.type,
     required this.paymentStatus,
@@ -39,25 +42,28 @@ class ClaimOrder {
 
   Map<String, dynamic> toJson() => _$ClaimOrderToJson(this);
 
-  String id;
-  String type;
-  String paymentStatus;
-  String fulfillmentStatus;
-  List<ClaimItem> claimItems;
-  List<LineItem> additionalItems;
-  String orderId;
-  Order? order;
-  Return? returnOrder;
-  String? shippingAddressId;
-  Address? shippingAddress;
-  List<ShippingMethod> shippingMethods;
-  List<Fulfillment> fulfillments;
-  double refundAmount;
-  String? canceledAt;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
-  bool noNotification;
-  String? idempotencyKey;
+  final String id;
+  final String type;
+  final String paymentStatus;
+  final String fulfillmentStatus;
+  final List<ClaimItem> claimItems;
+  final List<LineItem> additionalItems;
+  final String orderId;
+  final Order? order;
+  final Return? returnOrder;
+  final String? shippingAddressId;
+  final Address? shippingAddress;
+  final List<ShippingMethod> shippingMethods;
+  final List<Fulfillment> fulfillments;
+  final double refundAmount;
+  final String? canceledAt;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
+  final bool noNotification;
+  final String? idempotencyKey;
+
+  @override
+  List<Object?> get props => [id];
 }

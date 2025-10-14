@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../request.dart';
 
 part 'generated/admin_requests_res.g.dart';

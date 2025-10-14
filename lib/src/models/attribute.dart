@@ -1,12 +1,15 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart' show AttributePossibleValue;
 import 'enums/attribute_ui_component.dart';
-import 'attribute_possible_value.dart';
 
 part 'generated/attribute.g.dart';
 
 @JsonSerializable()
-class Attribute {
-  Attribute({
+@CopyWith()
+class Attribute extends Equatable {
+  const Attribute({
     required this.id,
     required this.name,
     this.description,
@@ -26,23 +29,19 @@ class Attribute {
 
   Map<String, dynamic> toJson() => _$AttributeToJson(this);
 
-  String id;
-  String name;
-  String? description;
-  String? handle;
-  @JsonKey(name: 'is_filterable')
-  bool? isFilterable;
-  @JsonKey(name: 'ui_component')
-  AttributeUIComponent uiComponent;
-  Map<String, dynamic>? metadata;
-  @JsonKey(name: 'possible_values')
-  List<AttributePossibleValue>? possibleValues;
-  @JsonKey(name: 'product_category_ids')
-  List<String>? productCategoryIds;
-  @JsonKey(name: 'created_at')
-  String createdAt;
-  @JsonKey(name: 'updated_at')
-  String updatedAt;
-  @JsonKey(name: 'deleted_at')
-  String? deletedAt;
+  final String id;
+  final String name;
+  final String? description;
+  final String? handle;
+  final bool? isFilterable;
+  final AttributeUIComponent uiComponent;
+  final Map<String, dynamic>? metadata;
+  final List<AttributePossibleValue>? possibleValues;
+  final List<String>? productCategoryIds;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

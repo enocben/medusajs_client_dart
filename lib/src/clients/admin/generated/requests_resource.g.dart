@@ -9,7 +9,9 @@ part of '../requests_resource.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
 class _AdminRequestsResource implements AdminRequestsResource {
-  _AdminRequestsResource(this._dio, {this.baseUrl, this.errorLogger});
+  _AdminRequestsResource(this._dio, {this.baseUrl, this.errorLogger}) {
+    baseUrl ??= '/admin/requests';
+  }
 
   final Dio _dio;
 
@@ -19,13 +21,13 @@ class _AdminRequestsResource implements AdminRequestsResource {
 
   @override
   Future<AdminRequestsRes> list({
-    AdminGetRequestsParams? query,
+    required AdminGetRequestsParams query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
+    queryParameters.addAll(query.toJson());
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -33,7 +35,7 @@ class _AdminRequestsResource implements AdminRequestsResource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/requests',
+            '',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -66,7 +68,7 @@ class _AdminRequestsResource implements AdminRequestsResource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/requests/${id}',
+            '/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -100,7 +102,7 @@ class _AdminRequestsResource implements AdminRequestsResource {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/requests/${id}',
+            '/${id}',
             queryParameters: queryParameters,
             data: _data,
           )

@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
@@ -6,6 +7,7 @@ import 'package:medusa_js_dart/src/models/params/quantity_filter.dart';
 part 'generated/admin_get_reservations_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetReservationsParams {
   AdminGetReservationsParams({
     this.locationId,
@@ -38,11 +40,7 @@ class AdminGetReservationsParams {
 
 @JsonSerializable()
 class ReservationDescriptionFilter {
-  ReservationDescriptionFilter({
-    this.contains,
-    this.startsWith,
-    this.endsWith,
-  });
+  ReservationDescriptionFilter({this.contains, this.startsWith, this.endsWith});
   factory ReservationDescriptionFilter.fromJson(Map<String, dynamic> json) =>
       _$ReservationDescriptionFilterFromJson(json);
 

@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/image.g.dart';
 
 /// An Image is used to store details about uploaded images. Images are uploaded by the File Service, and the URL is provided by the File Service.
 @JsonSerializable()
-class Image {
-  Image({
+@CopyWith()
+class Image extends Equatable {
+  const Image({
     required this.id,
     required this.url,
     required this.createdAt,
@@ -18,20 +21,23 @@ class Image {
   Map<String, dynamic> toJson() => _$ImageToJson(this);
 
   /// The image's ID
-  String id;
+  final String id;
 
   /// The URL at which the image file can be found.
-  String url;
+  final String url;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id, url];
 }

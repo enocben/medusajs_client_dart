@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_notifications_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetNotificationsParams {
   AdminGetNotificationsParams({
     this.offset,
@@ -32,7 +34,7 @@ class AdminGetNotificationsParams {
 
   /// The field to sort the data by. By default, the sort order is ascending. To change the order to descending, prefix the field name with -
   String? order;
-  
+
   /// Search term to apply on the notification's searchable properties.
   String? q;
 

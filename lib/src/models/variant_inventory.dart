@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/response_inventory_item.dart';
 
 part 'generated/variant_inventory.g.dart';
 
 @JsonSerializable()
-class VariantInventory {
-  VariantInventory({
+@CopyWith()
+class VariantInventory extends Equatable {
+  const VariantInventory({
     required this.id,
     required this.inventory,
     required this.salesChannelAvailability,
@@ -16,18 +19,22 @@ class VariantInventory {
   Map<String, dynamic> toJson() => _$VariantInventoryToJson(this);
 
   /// the ID of the variant
-  String id;
+  final String id;
 
   /// The inventory details.
-  ResponseInventoryItem inventory;
+  final ResponseInventoryItem inventory;
 
   /// Details about the variant's inventory availability in sales channels.
-  List<SalesChannelAvailability> salesChannelAvailability;
+  final List<SalesChannelAvailability> salesChannelAvailability;
+
+  @override
+  List<Object?> get props => [id];
 }
 
 @JsonSerializable()
-class SalesChannelAvailability {
-  SalesChannelAvailability({
+@CopyWith()
+class SalesChannelAvailability extends Equatable {
+  const SalesChannelAvailability({
     required this.channelName,
     required this.channelId,
     required this.availableQuantity,
@@ -38,11 +45,14 @@ class SalesChannelAvailability {
   Map<String, dynamic> toJson() => _$SalesChannelAvailabilityToJson(this);
 
   /// Sales channel's name
-  String channelName;
+  final String channelName;
 
   /// Sales channel's ID
-  String channelId;
+  final String channelId;
 
   /// Available quantity in the sales channel
-  int availableQuantity;
+  final int availableQuantity;
+
+  @override
+  List<Object?> get props => [channelName, channelId, availableQuantity];
 }

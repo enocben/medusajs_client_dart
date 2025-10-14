@@ -1,12 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 import 'package:retrofit/retrofit.dart';
-import '../../models/responses/admin_sellers_res.dart';
-import '../../models/responses/admin_seller_res.dart';
-import '../../models/responses/admin_seller_invitation_res.dart';
-import '../../models/params/admin_get_sellers_params.dart';
-import '../../models/params/admin_get_seller_orders_params.dart';
-import '../../models/requests/admin_update_seller_req.dart';
-import '../../models/requests/admin_invite_seller_req.dart';
 
 part 'generated/sellers_resource.g.dart';
 
@@ -37,13 +31,6 @@ abstract class AdminSellersResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
-  /// Delete a seller
-  @DELETE('/admin/sellers/{id}')
-  Future<void> delete(
-    @Path('id') String id, {
-    @Extras() Map<String, String>? customHeaders,
-  });
-
   /// Get seller orders
   @GET('/admin/sellers/{id}/orders')
   Future<dynamic> getOrders(
@@ -54,7 +41,7 @@ abstract class AdminSellersResource {
 
   /// Get seller products
   @GET('/admin/sellers/{id}/products')
-  Future<dynamic> getProducts(
+  Future<AdminProductsListRes> getProducts(
     @Path('id') String id, {
     @Queries() AdminGetSellerOrdersParams? query,
     @Extras() Map<String, String>? customHeaders,
@@ -62,7 +49,7 @@ abstract class AdminSellersResource {
 
   /// Get seller customer groups
   @GET('/admin/sellers/{id}/customer-groups')
-  Future<dynamic> getCustomerGroups(
+  Future<AdminCustomerGroupsListRes> getCustomerGroups(
     @Path('id') String id, {
     @Queries() AdminGetSellerOrdersParams? query,
     @Extras() Map<String, String>? customHeaders,

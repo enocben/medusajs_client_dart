@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_js_dart/src/clients/admin/api_keys.dart';
+import 'package:medusa_js_dart/src/clients/admin/attributes_resource.dart';
 import 'package:medusa_js_dart/src/clients/admin/auth.dart';
 import 'package:medusa_js_dart/src/clients/admin/batch_jobs.dart';
 import 'package:medusa_js_dart/src/clients/admin/campaigns.dart';
 import 'package:medusa_js_dart/src/clients/admin/collections.dart';
 import 'package:medusa_js_dart/src/clients/admin/commission_resource.dart';
 import 'package:medusa_js_dart/src/clients/admin/configuration_resource.dart';
-import 'package:medusa_js_dart/src/clients/admin/attributes_resource.dart';
 import 'package:medusa_js_dart/src/clients/admin/currencies.dart';
 import 'package:medusa_js_dart/src/clients/admin/customer_groups.dart';
 import 'package:medusa_js_dart/src/clients/admin/customers.dart';
@@ -45,6 +45,7 @@ import 'package:medusa_js_dart/src/clients/admin/shipping_profiles.dart';
 import 'package:medusa_js_dart/src/clients/admin/stock_locations.dart';
 import 'package:medusa_js_dart/src/clients/admin/stores.dart';
 import 'package:medusa_js_dart/src/clients/admin/swaps.dart';
+import 'package:medusa_js_dart/src/clients/admin/tax_providers.dart';
 import 'package:medusa_js_dart/src/clients/admin/tax_rates.dart';
 import 'package:medusa_js_dart/src/clients/admin/tax_region.dart';
 import 'package:medusa_js_dart/src/clients/admin/uploads.dart';
@@ -95,6 +96,7 @@ class Admin {
     swaps = SwapsResource(dio);
     taxRates = TaxRatesResource(dio);
     taxRegions = TaxRegionResource(dio);
+    taxProviders = TaxProvidersResource(dio);
     uploads = UploadsResource(dio);
     users = UsersResource(dio);
     variants = VariantsResource(dio);
@@ -190,6 +192,8 @@ class Admin {
   late final TaxRatesResource taxRates;
 
   late final TaxRegionResource taxRegions;
+
+  late final TaxProvidersResource taxProviders;
 
   late final UploadsResource uploads;
 

@@ -1,11 +1,12 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/service_zone.g.dart';
 
 @JsonSerializable()
-class ServiceZone {
-  ServiceZone({
+class ServiceZone extends Equatable {
+  const ServiceZone({
     required this.id,
     required this.name,
     this.fulfillmentSetId,
@@ -43,4 +44,7 @@ class ServiceZone {
   final String? updatedAt;
 
   final String? deleteAt;
+
+  @override
+  List<Object?> get props => [id];
 }

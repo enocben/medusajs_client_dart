@@ -18,7 +18,9 @@ class TaxRegion {
       this.deletedAt,
       this.createdBy,
       this.children,
-      this.taxRates});
+      this.taxRates,
+      this.providerId
+    });
 
   factory TaxRegion.fromJson(Map<String, dynamic> json) =>
       _$TaxRegionFromJson(json);
@@ -58,4 +60,6 @@ class TaxRegion {
 
   /// The tax region's rates.
   List<TaxRate>? taxRates;
+
+  String? providerId;
 }

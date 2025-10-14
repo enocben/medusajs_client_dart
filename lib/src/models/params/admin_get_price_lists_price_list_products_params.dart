@@ -1,9 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 
 part 'generated/admin_get_price_lists_price_list_products_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetPriceListsPriceListProductsParams {
   AdminGetPriceListsPriceListProductsParams({
     this.q,
@@ -27,8 +29,8 @@ class AdminGetPriceListsPriceListProductsParams {
   });
 
   factory AdminGetPriceListsPriceListProductsParams.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminGetPriceListsPriceListProductsParamsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminGetPriceListsPriceListProductsParamsFromJson(json);
 
   String? q;
   String? id;

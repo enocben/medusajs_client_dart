@@ -19,11 +19,13 @@ class _ReturnReasonsResource implements ReturnReasonsResource {
 
   @override
   Future<AdminReturnReasonsListRes> list({
+    AdminGetReturnsReasonsParams? query,
     Map<String, String>? customHeaders,
   }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

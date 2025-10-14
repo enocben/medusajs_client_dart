@@ -42,7 +42,6 @@ Map<String, dynamic> _$AdminUpdateSellerReqToJson(
 };
 
 const _$StoreStatusEnumMap = {
-  StoreStatus.active: 'active',
-  StoreStatus.inactive: 'inactive',
-  StoreStatus.suspended: 'suspended',
+  StoreStatus.active: 'ACTIVE',
+  StoreStatus.suspended: 'SUSPENDED',
 };

@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'enums/configuration_rule_type.dart';
 
 part 'generated/configuration_rule.g.dart';
 
 @JsonSerializable()
-class ConfigurationRule {
-  ConfigurationRule({
+@CopyWith()
+class ConfigurationRule extends Equatable {
+  const ConfigurationRule({
     required this.id,
     required this.ruleType,
     required this.isEnabled,
@@ -18,13 +21,16 @@ class ConfigurationRule {
 
   Map<String, dynamic> toJson() => _$ConfigurationRuleToJson(this);
 
-  String id;
+  final String id;
   @JsonKey(name: 'rule_type')
-  ConfigurationRuleType ruleType;
+  final ConfigurationRuleType ruleType;
   @JsonKey(name: 'is_enabled')
-  bool isEnabled;
+  final bool isEnabled;
   @JsonKey(name: 'created_at')
-  String createdAt;
+  final String createdAt;
   @JsonKey(name: 'updated_at')
-  String updatedAt;
+  final String updatedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

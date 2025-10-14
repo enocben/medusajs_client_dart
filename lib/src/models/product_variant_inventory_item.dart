@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/product_variant.dart';
 
@@ -5,8 +6,8 @@ part 'generated/product_variant_inventory_item.g.dart';
 
 /// A Product Variant Inventory Item links variants with inventory items and denotes the required quantity of the variant.
 @JsonSerializable()
-class ProductVariantInventoryItem {
-  ProductVariantInventoryItem({
+class ProductVariantInventoryItem extends Equatable {
+  const ProductVariantInventoryItem({
     required this.id,
     required this.inventoryItemId,
     required this.variantId,
@@ -44,4 +45,8 @@ class ProductVariantInventoryItem {
 
   /// The date with timezone at which the resource was deleted.
   final String? deletedAt;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/priced_variant.g.dart';
 
 @JsonSerializable()
-class PricedVariant extends ProductVariant {
-  PricedVariant({
+@CopyWith()
+class PricedVariant extends ProductVariant with EquatableMixin {
+  const PricedVariant({
     required super.id,
     required super.title,
     required super.productId,
@@ -48,10 +51,21 @@ class PricedVariant extends ProductVariant {
   @override
   Map<String, dynamic> toJson() => _$PricedVariantToJson(this);
 
-  double? originalPrice;
-  double? originalPriceInclTax;
-  double? calculatedPriceInclTax;
-  double? originalTax;
-  double? calculatedTax;
-  List<TaxRate> taxRates;
+  final double? originalPrice;
+  final double? originalPriceInclTax;
+  final double? calculatedPriceInclTax;
+  final double? originalTax;
+  final double? calculatedTax;
+  final List<TaxRate> taxRates;
+
+  @override
+  List<Object?> get props => [
+        ...super.props,
+        originalPrice,
+        originalPriceInclTax,
+        calculatedPriceInclTax,
+        originalTax,
+        calculatedTax,
+        taxRates,
+      ];
 }

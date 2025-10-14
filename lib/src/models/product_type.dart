@@ -1,10 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/product_type.g.dart';
 
 /// A Product Type can be added to Products for filtering and reporting purposes.
 @JsonSerializable()
-class ProductType {
+@CopyWith()
+class ProductType extends Equatable {
   /// Constructor
   ProductType({
     required this.id,
@@ -20,28 +23,24 @@ class ProductType {
   Map<String, dynamic> toJson() => _$ProductTypeToJson(this);
 
   /// The product type's ID
-  String id;
+  final String id;
 
   /// The value that the Product Type represents.
-  String? value;
+  final String? value;
 
   /// The date with timezone at which the resource was created.
-  String? createdAt;
+  final String? createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String? updatedAt;
+  final String? updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 
   @override
-  bool operator ==(Object other) {
-    return other is ProductType && other.id == id && other.value == value;
-  }
-
-  @override
-  int get hashCode => id.hashCode ^ value.hashCode;
+  // TODO: implement props
+  List<Object?> get props => [id, value];
 }

@@ -1,13 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/additional_item.g.dart';
 
-@JsonSerializable()
-
 /// Représente un nouvel article envoyé lors d'un échange Medusa.
 @JsonSerializable()
-class AdditionalItem {
-  AdditionalItem({
+@CopyWith()
+class AdditionalItem extends Equatable {
+  const AdditionalItem({
     required this.id,
     required this.exchangeId,
     required this.orderId,
@@ -45,4 +46,7 @@ class AdditionalItem {
 
   /// Métadonnées personnalisées.
   final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

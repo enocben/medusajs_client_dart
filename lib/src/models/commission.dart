@@ -1,10 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medusa_js_dart/src/models/enums/commission_status.dart';
+import 'package:medusa_js_dart/src/models/commission_line.dart';
+import 'package:medusa_js_dart/src/models/enums/commission.dart';
 part 'generated/commission.g.dart';
 
 @JsonSerializable()
-class Commission {
-  Commission({
+@CopyWith()
+class Commission extends Equatable {
+  const Commission({
     required this.id,
     required this.sellerId,
     this.totalAmount,
@@ -20,17 +24,19 @@ class Commission {
 
   Map<String, dynamic> toJson() => _$CommissionToJson(this);
 
-  String id;
+  final String id;
   @JsonKey(name: 'seller_id')
-  String sellerId;
+  final String sellerId;
   @JsonKey(name: 'total_amount')
-  String? totalAmount;
-  String? currency;
-  List<dynamic>?
-  lines; // TODO: Replace with List<CommissionLine> after CommissionLine is fixed
-  CommissionStatus status;
+  final String? totalAmount;
+  final String? currency;
+  final List<CommissionLine>? lines;
+  final CommissionStatus status;
   @JsonKey(name: 'created_at')
-  String createdAt;
+  final String createdAt;
   @JsonKey(name: 'updated_at')
-  String updatedAt;
+  final String updatedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

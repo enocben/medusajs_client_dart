@@ -1,22 +1,25 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_addresses_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetAddressesParams {
-  AdminGetAddressesParams(
-      {this.limit,
-      this.offset,
-      this.expand,
-      this.fields,
-      this.q,
-      this.hasAccount,
-      this.order,
-      this.postalCode,
-      this.province,
-      this.countryCode,
-      this.city,
-      this.company});
+  AdminGetAddressesParams({
+    this.limit,
+    this.offset,
+    this.expand,
+    this.fields,
+    this.q,
+    this.hasAccount,
+    this.order,
+    this.postalCode,
+    this.province,
+    this.countryCode,
+    this.city,
+    this.company,
+  });
   factory AdminGetAddressesParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetAddressesParamsFromJson(json);
 
@@ -38,9 +41,7 @@ class AdminGetAddressesParams {
 
 @JsonSerializable()
 class AdminGetAddressParams {
-  AdminGetAddressParams({
-    this.fields,
-  });
+  AdminGetAddressParams({this.fields});
   factory AdminGetAddressParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetAddressParamsFromJson(json);
 

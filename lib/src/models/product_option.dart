@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/product.dart';
 import 'package:medusa_js_dart/src/models/product_option_value.dart';
@@ -6,8 +7,8 @@ part 'generated/product_option.g.dart';
 
 /// A Product Option defines properties that may vary between different variants of a Product. Common Product Options are "Size" and "Color". Admins are free to create any product options.
 @JsonSerializable()
-class ProductOption {
-  ProductOption({
+class ProductOption extends Equatable {
+  const ProductOption({
     required this.id,
     required this.title,
     this.values,
@@ -49,4 +50,8 @@ class ProductOption {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

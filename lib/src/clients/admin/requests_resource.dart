@@ -1,25 +1,23 @@
 import 'package:dio/dio.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 import 'package:retrofit/retrofit.dart';
-import '../../models/responses/admin_requests_res.dart';
-import '../../models/responses/admin_request_res.dart';
-import '../../models/params/admin_get_requests_params.dart';
-import '../../models/requests/admin_review_request_req.dart';
 
 part 'generated/requests_resource.g.dart';
 
-@RestApi()
+@RestApi(baseUrl: '/admin/requests')
 abstract class AdminRequestsResource {
-  factory AdminRequestsResource(Dio dio, {String baseUrl}) = _AdminRequestsResource;
+  factory AdminRequestsResource(Dio dio, {String baseUrl}) =
+      _AdminRequestsResource;
 
-  /// List requests
-  @GET('/admin/requests')
+  // data
+  @GET('')
   Future<AdminRequestsRes> list({
-    @Queries() AdminGetRequestsParams? query,
+    @Queries() required AdminGetRequestsParams query,
     @Extras() Map<String, String>? customHeaders,
   });
 
   /// Get a request
-  @GET('/admin/requests/{id}')
+  @GET('/{id}')
   Future<AdminRequestRes> retrieve(
     @Path('id') String id, {
     @Query('fields') String? fields,
@@ -27,7 +25,7 @@ abstract class AdminRequestsResource {
   });
 
   /// Review a request (accept/reject)
-  @POST('/admin/requests/{id}')
+  @POST('/{id}')
   Future<AdminRequestRes> review(
     @Path('id') String id,
     @Body() AdminReviewRequestReq body, {

@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
@@ -13,8 +15,9 @@ import 'package:medusa_js_dart/src/models/shipping_method.dart';
 part 'generated/swap.g.dart';
 
 @JsonSerializable()
-class Swap {
-  Swap({
+@CopyWith()
+class Swap extends Equatable {
+  const Swap({
     required this.id,
     required this.fulfillmentStatus,
     required this.paymentStatus,
@@ -44,28 +47,31 @@ class Swap {
 
   Map<String, dynamic> toJson() => _$SwapToJson(this);
 
-  String id;
-  FulfillmentStatus fulfillmentStatus;
-  PaymentStatus paymentStatus;
-  String orderId;
-  Order? order;
-  List<LineItem>? additionalItems;
-  Return? returnOrder;
-  List<Fulfillment>? fulfillments;
-  Payment? payment;
-  double? differenceDue;
-  String? shippingAddressId;
-  Address? shippingAddress;
-  List<ShippingMethod>? shippingMethods;
-  String? cartId;
-  Cart? cart;
-  String? confirmedAt;
-  String? canceledAt;
-  bool? noNotification;
-  bool allowBackorder;
-  String? idempotencyKey;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
+  final String id;
+  final FulfillmentStatus fulfillmentStatus;
+  final PaymentStatus paymentStatus;
+  final String orderId;
+  final Order? order;
+  final List<LineItem>? additionalItems;
+  final Return? returnOrder;
+  final List<Fulfillment>? fulfillments;
+  final Payment? payment;
+  final double? differenceDue;
+  final String? shippingAddressId;
+  final Address? shippingAddress;
+  final List<ShippingMethod>? shippingMethods;
+  final String? cartId;
+  final Cart? cart;
+  final String? confirmedAt;
+  final String? canceledAt;
+  final bool? noNotification;
+  final bool allowBackorder;
+  final String? idempotencyKey;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

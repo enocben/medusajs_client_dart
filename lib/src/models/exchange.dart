@@ -1,15 +1,16 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/exchange.g.dart';
 
-@JsonSerializable()
-
 /// Represents an Exchange as defined in the Medusa API Exchange schema.
 /// See: https://docs.medusajs.com/api/admin#exchanges_exchange_schema
 @JsonSerializable()
-class Exchange {
-  Exchange({
+@CopyWith()
+class Exchange extends Equatable {
+  const Exchange({
     required this.id,
     required this.orderId,
     this.returnItems,
@@ -100,4 +101,7 @@ class Exchange {
 
   /// The date the exchange was confirmed.
   final String? confirmedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

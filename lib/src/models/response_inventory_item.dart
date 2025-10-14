@@ -1,11 +1,12 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/dto/inventory_item_dto.dart';
 
 part 'generated/response_inventory_item.g.dart';
 
 @JsonSerializable()
-class ResponseInventoryItem extends InventoryItemDTO {
-  ResponseInventoryItem({
+class ResponseInventoryItem extends InventoryItemDTO with EquatableMixin {
+  const ResponseInventoryItem({
     required super.id,
     required super.sku,
     super.hsCode,
@@ -30,15 +31,19 @@ class ResponseInventoryItem extends InventoryItemDTO {
   factory ResponseInventoryItem.fromJson(Map<String, dynamic> json) =>
       _$ResponseInventoryItemFromJson(json);
 
-  List<LocationLevel>? locationLevels;
+  final List<LocationLevel>? locationLevels;
 
   @override
   Map<String, dynamic> toJson() => _$ResponseInventoryItemToJson(this);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }
 
 @JsonSerializable()
-class LocationLevel extends InventoryItemDTO {
-  LocationLevel({
+class LocationLevel extends InventoryItemDTO with EquatableMixin {
+  const LocationLevel({
     required super.id,
     required super.sku,
     super.hsCode,
@@ -65,5 +70,8 @@ class LocationLevel extends InventoryItemDTO {
   @override
   Map<String, dynamic> toJson() => _$LocationLevelToJson(this);
 
-  int availableQuantity;
+  final int availableQuantity;
+
+  @override
+  List<Object?> get props => [id];
 }

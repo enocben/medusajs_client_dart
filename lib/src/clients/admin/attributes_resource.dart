@@ -1,20 +1,13 @@
 import 'package:dio/dio.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 import 'package:retrofit/retrofit.dart';
-import '../../models/responses/admin_attributes_res.dart';
-import '../../models/responses/admin_attribute_res.dart';
-import '../../models/responses/admin_attribute_values_res.dart';
-import '../../models/responses/admin_attribute_value_res.dart';
-import '../../models/params/admin_get_attributes_params.dart';
-import '../../models/params/admin_get_attribute_values_params.dart';
-import '../../models/requests/admin_create_attribute_req.dart';
-import '../../models/requests/admin_update_attribute_req.dart';
-import '../../models/requests/admin_create_attribute_value_req.dart';
 
 part 'generated/attributes_resource.g.dart';
 
 @RestApi()
 abstract class AdminAttributesResource {
-  factory AdminAttributesResource(Dio dio, {String baseUrl}) = _AdminAttributesResource;
+  factory AdminAttributesResource(Dio dio, {String baseUrl}) =
+      _AdminAttributesResource;
 
   /// List attributes
   @GET('/admin/attributes')
@@ -34,7 +27,7 @@ abstract class AdminAttributesResource {
   @GET('/admin/attributes/{id}')
   Future<AdminAttributeRes> retrieve(
     @Path('id') String id, {
-    @Query('fields') String? fields,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -48,7 +41,7 @@ abstract class AdminAttributesResource {
 
   /// Delete an attribute
   @DELETE('/admin/attributes/{id}')
-  Future<Map<String, dynamic>> delete(
+  Future<AdminDeleteRes> delete(
     @Path('id') String id, {
     @Extras() Map<String, String>? customHeaders,
   });

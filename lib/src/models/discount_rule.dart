@@ -1,3 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/discount_condition.dart';
 import 'package:medusa_js_dart/src/models/enums/discount_type.dart';
@@ -5,8 +7,9 @@ import 'package:medusa_js_dart/src/models/enums/discount_type.dart';
 part 'generated/discount_rule.g.dart';
 
 @JsonSerializable()
-class DiscountRule {
-  DiscountRule({
+@CopyWith()
+class DiscountRule extends Equatable {
+  const DiscountRule({
     required this.id,
     required this.type,
     this.description,
@@ -23,14 +26,17 @@ class DiscountRule {
 
   Map<String, dynamic> toJson() => _$DiscountRuleToJson(this);
 
-  String id;
-  DiscountType type;
-  String? description;
-  double value;
-  String? allocation;
-  List<DiscountCondition>? conditions;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
+  final String id;
+  final DiscountType type;
+  final String? description;
+  final double value;
+  final String? allocation;
+  final List<DiscountCondition>? conditions;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/tax_line.g.dart';
 
 /// A tax line represents the taxes amount applied to a line item.
 @JsonSerializable()
-class TaxLine {
-  TaxLine({
+@CopyWith()
+class TaxLine extends Equatable {
+  const TaxLine({
     required this.id,
     this.code,
     required this.name,
@@ -21,23 +24,26 @@ class TaxLine {
   Map<String, dynamic> toJson() => _$TaxLineToJson(this);
 
   /// The tax line's ID
-  late String id;
+  final String id;
 
   /// A code to identify the tax type by
-  String? code;
+  final String? code;
 
   /// A human friendly name for the tax
-  late String name;
+  final String name;
 
   /// The numeric rate to charge tax by
-  late double rate;
+  final double rate;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

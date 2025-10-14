@@ -13,6 +13,8 @@ abstract class _$TaxRateCWProxy {
 
   TaxRate name(String name);
 
+  TaxRate rate(num? rate);
+
   TaxRate isCombinable(bool isCombinable);
 
   TaxRate isDefault(bool isDefault);
@@ -43,6 +45,7 @@ abstract class _$TaxRateCWProxy {
     String id,
     String code,
     String name,
+    num? rate,
     bool isCombinable,
     bool isDefault,
     String createdAt,
@@ -70,6 +73,9 @@ class _$TaxRateCWProxyImpl implements _$TaxRateCWProxy {
 
   @override
   TaxRate name(String name) => this(name: name);
+
+  @override
+  TaxRate rate(num? rate) => this(rate: rate);
 
   @override
   TaxRate isCombinable(bool isCombinable) => this(isCombinable: isCombinable);
@@ -112,6 +118,7 @@ class _$TaxRateCWProxyImpl implements _$TaxRateCWProxy {
     Object? id = const $CopyWithPlaceholder(),
     Object? code = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
+    Object? rate = const $CopyWithPlaceholder(),
     Object? isCombinable = const $CopyWithPlaceholder(),
     Object? isDefault = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),
@@ -136,6 +143,10 @@ class _$TaxRateCWProxyImpl implements _$TaxRateCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
+      rate: rate == const $CopyWithPlaceholder()
+          ? _value.rate
+          // ignore: cast_nullable_to_non_nullable
+          : rate as num?,
       isCombinable: isCombinable == const $CopyWithPlaceholder()
           ? _value.isCombinable
           // ignore: cast_nullable_to_non_nullable
@@ -194,6 +205,7 @@ TaxRate _$TaxRateFromJson(Map<String, dynamic> json) => TaxRate(
   id: json['id'] as String,
   code: json['code'] as String,
   name: json['name'] as String,
+  rate: json['rate'] as num?,
   isCombinable: json['is_combinable'] as bool,
   isDefault: json['is_default'] as bool,
   createdAt: json['created_at'] as String,
@@ -208,7 +220,7 @@ TaxRate _$TaxRateFromJson(Map<String, dynamic> json) => TaxRate(
   rules: (json['rules'] as List<dynamic>?)
       ?.map((e) => TaxRateRule.fromJson(e as Map<String, dynamic>))
       .toList(),
-)..rate = json['rate'] as num?;
+);
 
 Map<String, dynamic> _$TaxRateToJson(TaxRate instance) => <String, dynamic>{
   'id': instance.id,

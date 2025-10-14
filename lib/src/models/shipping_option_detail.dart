@@ -1,18 +1,22 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/shipping_option_detail.g.dart';
 
 @JsonSerializable()
-class ShippingOptionDetail {
-  ShippingOptionDetail(
-      {required this.id,
-      this.label,
-      this.description,
-      this.code,
-      this.shippingOptionId,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt});
+@CopyWith()
+class ShippingOptionDetail extends Equatable {
+  const ShippingOptionDetail({
+    required this.id,
+    this.label,
+    this.description,
+    this.code,
+    this.shippingOptionId,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+  });
   factory ShippingOptionDetail.fromJson(Map<String, dynamic> json) =>
       _$ShippingOptionDetailFromJson(json);
 
@@ -26,4 +30,7 @@ class ShippingOptionDetail {
   final String? createdAt;
   final String? updatedAt;
   final String? deletedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

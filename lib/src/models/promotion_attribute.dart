@@ -1,12 +1,13 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/promotion_attribute.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PromotionAttribute {
-  PromotionAttribute({
+class PromotionAttribute extends Equatable {
+  const PromotionAttribute({
     required this.id,
     required this.value,
     required this.label,
@@ -32,12 +33,16 @@ class PromotionAttribute {
 
   /// The attribute's operators.
   final List<PromotionAttributeOperator> operators;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id, value];
 }
 
 @JsonSerializable()
 @CopyWith()
-class PromotionAttributeOperator {
-  PromotionAttributeOperator({
+class PromotionAttributeOperator extends Equatable {
+  const PromotionAttributeOperator({
     required this.id,
     required this.value,
     required this.label,
@@ -59,4 +64,8 @@ class PromotionAttributeOperator {
   /// The operator's label.
   /// Example: "In"
   final String label;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id, value];
 }

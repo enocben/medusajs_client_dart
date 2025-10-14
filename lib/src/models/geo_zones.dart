@@ -1,19 +1,21 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/geo_zones.g.dart';
 
 @JsonSerializable()
-class GeoZones {
-  GeoZones(
-      {required this.id,
-      required this.type,
-      this.countryCode,
-      this.provinceCode,
-      this.city,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt});
+class GeoZones extends Equatable {
+  const GeoZones({
+    required this.id,
+    required this.type,
+    this.countryCode,
+    this.provinceCode,
+    this.city,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+  });
 
   factory GeoZones.fromJson(Map<String, dynamic> json) =>
       _$GeoZonesFromJson(json);
@@ -35,4 +37,7 @@ class GeoZones {
   final String? createdAt;
   final String? updatedAt;
   final String? deletedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

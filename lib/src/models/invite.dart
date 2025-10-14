@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/invite.g.dart';
 
 /// An invite is created when an admin user invites a new user to join the store's team. Once the invite is accepted, it's deleted.
 @JsonSerializable()
-class Invite {
-  Invite({
+@CopyWith()
+class Invite extends Equatable {
+  const Invite({
     required this.id,
     required this.userEmail,
     this.role,
@@ -22,32 +25,35 @@ class Invite {
   Map<String, dynamic> toJson() => _$InviteToJson(this);
 
   /// The invite's ID
-  late String id;
+  final String id;
 
   /// The email of the user being invited.
-  late String userEmail;
+  final String userEmail;
 
   /// The user's role. These roles don't change the privileges of the user.
-  String? role;
+  final String? role;
 
   /// Whether the invite was accepted or not.
-  late bool accepted;
+  final bool accepted;
 
   /// The token used to accept the invite.
-  late String token;
+  final String token;
 
   /// The date the invite expires at.
-  late String expiresAt;
+  final String expiresAt;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

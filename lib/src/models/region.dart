@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/country.dart';
 import 'package:medusa_js_dart/src/models/payment_provider.dart';
@@ -5,8 +6,8 @@ import 'package:medusa_js_dart/src/models/payment_provider.dart';
 part 'generated/region.g.dart';
 
 @JsonSerializable()
-class Region {
-  Region({
+class Region extends Equatable {
+  const Region({
     required this.id,
     required this.name,
     required this.currencyCode,
@@ -23,14 +24,18 @@ class Region {
 
   Map<String, dynamic> toJson() => _$RegionToJson(this);
 
-  String id;
-  String name;
-  String currencyCode;
-  bool automaticTaxes;
-  List<Country>? countries;
-  List<PaymentProvider>? paymentProviders;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
+  final String id;
+  final String name;
+  final String currencyCode;
+  final bool automaticTaxes;
+  final List<Country>? countries;
+  final List<PaymentProvider>? paymentProviders;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

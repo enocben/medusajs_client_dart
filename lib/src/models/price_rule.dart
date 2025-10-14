@@ -1,20 +1,24 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/price_rule.g.dart';
 
 @JsonSerializable()
-class PriceRule {
-  PriceRule(
-      {required this.id,
-      this.value,
-      this.operator,
-      this.attribute,
-      this.priceId,
-      this.priority,
-      this.createdAt,
-      this.updatedAt,
-      this.deleteAt});
+@CopyWith()
+class PriceRule extends Equatable {
+  const PriceRule({
+    required this.id,
+    this.value,
+    this.operator,
+    this.attribute,
+    this.priceId,
+    this.priority,
+    this.createdAt,
+    this.updatedAt,
+    this.deleteAt,
+  });
 
   factory PriceRule.fromJson(Map<String, dynamic> json) =>
       _$PriceRuleFromJson(json);
@@ -45,4 +49,8 @@ class PriceRule {
 
   /// The date the price rule was deleted.
   final String? deleteAt;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id];
 }

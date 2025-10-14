@@ -1,4 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/payment_refund.g.dart';
@@ -6,8 +7,8 @@ part 'generated/payment_refund.g.dart';
 /// Represents a refund in a payment collection (Medusa Exchange schema).
 @JsonSerializable()
 @CopyWith()
-class PaymentRefund {
-  PaymentRefund({
+class PaymentRefund extends Equatable {
+  const PaymentRefund({
     required this.id,
     required this.amount,
     required this.createdAt,
@@ -45,4 +46,7 @@ class PaymentRefund {
 
   /// The refund's metadata.
   final Map<String, dynamic>? metadata;
+
+  @override
+  List<Object?> get props => [id];
 }

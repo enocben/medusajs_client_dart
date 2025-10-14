@@ -1,11 +1,14 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/user.dart';
 
 part 'generated/batch_job.g.dart';
 
 @JsonSerializable()
-class BatchJob {
-  BatchJob({
+@CopyWith()
+class BatchJob extends Equatable {
+  const BatchJob({
     required this.id,
     required this.type,
     required this.status,
@@ -29,21 +32,24 @@ class BatchJob {
 
   Map<String, dynamic> toJson() => _$BatchJobToJson(this);
 
-  String id;
-  String type;
-  String status;
-  String createdBy;
-  User createdByUser;
-  Map<String, dynamic> context;
-  bool dryRun;
-  dynamic result;
-  String preProcessedAt;
-  String processingAt;
-  String confirmedAt;
-  String completedAt;
-  String canceledAt;
-  String failedAt;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
+  final String id;
+  final String type;
+  final String status;
+  final String createdBy;
+  final User createdByUser;
+  final Map<String, dynamic> context;
+  final bool dryRun;
+  final dynamic result;
+  final String preProcessedAt;
+  final String processingAt;
+  final String confirmedAt;
+  final String completedAt;
+  final String canceledAt;
+  final String failedAt;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+
+  @override
+  List<Object?> get props => [id];
 }

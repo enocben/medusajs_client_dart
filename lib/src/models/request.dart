@@ -1,19 +1,23 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import 'package:medusa_js_dart/src/models/enums/request_status.dart';
-import 'package:medusa_js_dart/src/models/enums/request_type.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/request.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class Request {
   Request({
     required this.id,
-    required this.type,
     required this.status,
-    this.reviewerNote,
+    required this.data,
     required this.createdAt,
     required this.updatedAt,
+    this.type,
+    this.reviewerNote,
+    this.reviewerId,
+    this.submitterId,
+    this.seller,
   });
 
   factory Request.fromJson(Map<String, dynamic> json) =>
@@ -21,13 +25,14 @@ class Request {
 
   Map<String, dynamic> toJson() => _$RequestToJson(this);
 
-  String id;
-  RequestType type;
-  RequestStatus status;
-  @JsonKey(name: 'reviewer_note')
-  String? reviewerNote;
-  @JsonKey(name: 'created_at')
-  String createdAt;
-  @JsonKey(name: 'updated_at')
-  String updatedAt;
+  final String id;
+  final RequestType? type;
+  final RequestStatus status;
+  final Map<String, dynamic> data;
+  final String? reviewerNote;
+  final String? reviewerId;
+  final String? submitterId;
+  final String createdAt;
+  final String updatedAt;
+  final Seller? seller;
 }

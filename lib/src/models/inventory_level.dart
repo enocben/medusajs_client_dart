@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart' show StockLocationDTO;
-import 'package:medusa_js_dart/src/models/inventory_item.dart';
 
 part 'generated/inventory_level.g.dart';
 
@@ -41,11 +40,12 @@ class InventoryLevel {
   Map<String, dynamic>? metadata;
 
   @override
-  bool operator ==(Object other){
-    return other is InventoryLevel && other.id == id && other.inventoryItemId == inventoryItemId;
+  bool operator ==(Object other) {
+    return other is InventoryLevel &&
+        other.id == id &&
+        other.inventoryItemId == inventoryItemId;
   }
 
   @override
   int get hashCode => id.hashCode ^ inventoryItemId.hashCode;
-
 }

@@ -22,8 +22,8 @@ class Seller {
     this.countryCode,
     this.taxId,
     this.members,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.updatedAt,
   });
 
   factory Seller.fromJson(Map<String, dynamic> json) => _$SellerFromJson(json);
@@ -46,6 +46,6 @@ class Seller {
   String? countryCode;
   String? taxId;
   List<SellerMember>? members;
-  String createdAt;
-  String updatedAt;
+  String? createdAt;
+  String? updatedAt;
 }
