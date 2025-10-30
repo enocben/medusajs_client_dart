@@ -1,12 +1,11 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/attribute_possible_value.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class AttributePossibleValue extends Equatable {
+class AttributePossibleValue {
   const AttributePossibleValue({
     required this.id,
     required this.value,
@@ -32,7 +31,4 @@ class AttributePossibleValue extends Equatable {
   final String createdAt;
   @JsonKey(name: 'updated_at')
   final String updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

@@ -1,22 +1,14 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/base_product.dart';
-import 'package:medusa_js_dart/src/models/image.dart';
-import 'package:medusa_js_dart/src/models/priced_variant.dart';
-import 'package:medusa_js_dart/src/models/product_category.dart';
-import 'package:medusa_js_dart/src/models/product_collection.dart';
-import 'package:medusa_js_dart/src/models/product_option.dart';
-import 'package:medusa_js_dart/src/models/product_tag.dart';
-import 'package:medusa_js_dart/src/models/product_type.dart';
-import 'package:medusa_js_dart/src/models/sales_channel.dart';
-import 'package:medusa_js_dart/src/models/shipping_profile.dart';
+
+import '../../medusa_js_dart.dart';
 
 part 'generated/priced_product.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PricedProduct extends BaseProduct with EquatableMixin {
+class PricedProduct extends BaseProduct {
   const PricedProduct({
     required super.id,
     required super.title,
@@ -54,14 +46,11 @@ class PricedProduct extends BaseProduct with EquatableMixin {
     super.deletedAt,
     super.metadata,
   });
+
   factory PricedProduct.fromJson(Map<String, dynamic> json) =>
       _$PricedProductFromJson(json);
 
   Map<String, dynamic> toJson() => _$PricedProductToJson(this);
 
   final List<PricedVariant>? variants;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

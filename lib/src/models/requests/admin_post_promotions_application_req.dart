@@ -20,8 +20,8 @@ class AdminPostPromotionsApplicationReq {
   });
 
   factory AdminPostPromotionsApplicationReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostPromotionsApplicationReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostPromotionsApplicationReqFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostPromotionsApplicationReqToJson(this);

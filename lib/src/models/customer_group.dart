@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/customer.dart';
 import 'package:medusa_js_dart/src/models/price_list.dart';
@@ -9,7 +8,7 @@ part 'generated/customer_group.g.dart';
 /// A customer group that can be used to organize customers into groups of similar traits.
 @JsonSerializable()
 @CopyWith()
-class CustomerGroup extends Equatable {
+class CustomerGroup {
   const CustomerGroup({
     required this.id,
     required this.name,
@@ -48,7 +47,4 @@ class CustomerGroup extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id, name, createdAt, updatedAt];
 }

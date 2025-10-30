@@ -4,14 +4,13 @@ part 'generated/admin_post_api_keys_manage_sales_channels_req.g.dart';
 
 @JsonSerializable()
 class AdminPostApiKeysManageSalesChannelsReq {
-  AdminPostApiKeysManageSalesChannelsReq({
-    this.add,
-    this.remove,
-  });
-  factory AdminPostApiKeysManageSalesChannelsReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminPostApiKeysManageSalesChannelsReqFromJson(json);
+  AdminPostApiKeysManageSalesChannelsReq({this.add, this.remove});
+  factory AdminPostApiKeysManageSalesChannelsReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostApiKeysManageSalesChannelsReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostApiKeysManageSalesChannelsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostApiKeysManageSalesChannelsReqToJson(this);
 
   /// The sales channels to add to the publishable API key.
   List<String>? add;

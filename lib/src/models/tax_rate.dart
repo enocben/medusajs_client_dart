@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/models.dart';
 
@@ -8,7 +7,7 @@ part 'generated/tax_rate.g.dart';
 /// A Tax Rate can be used to define a custom rate to charge on specified products, product types, and shipping options within a given region.
 @JsonSerializable()
 @CopyWith()
-class TaxRate extends Equatable {
+class TaxRate {
   const TaxRate({
     required this.id,
     required this.code,
@@ -71,7 +70,4 @@ class TaxRate extends Equatable {
 
   /// The tax rate's rules.
   final List<TaxRateRule>? rules;
-
-  @override
-  List<Object?> get props => [id];
 }

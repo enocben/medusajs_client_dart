@@ -5,9 +5,7 @@ part 'generated/admin_attribute_res.g.dart';
 
 @JsonSerializable()
 class AdminAttributeRes {
-  AdminAttributeRes({
-    required this.attribute,
-  });
+  AdminAttributeRes({required this.attribute});
 
   factory AdminAttributeRes.fromJson(Map<String, dynamic> json) =>
       _$AdminAttributeResFromJson(json);

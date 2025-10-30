@@ -7,8 +7,8 @@ class AdminPostOrderEditsEditLineItemsLineItemReq {
   AdminPostOrderEditsEditLineItemsLineItemReq({required this.quantity});
 
   factory AdminPostOrderEditsEditLineItemsLineItemReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostOrderEditsEditLineItemsLineItemReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostOrderEditsEditLineItemsLineItemReqFromJson(json);
 
   final int quantity;
 

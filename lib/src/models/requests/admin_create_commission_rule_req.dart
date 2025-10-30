@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
-import 'package:medusa_js_dart/src/models/commission_rule.dart';
 
 part 'generated/admin_create_commission_rule_req.g.dart';
 
@@ -29,7 +28,6 @@ class AdminCreateCommissionRuleReq {
   bool isActive;
 
   AdminCreateCommissionRuleRateReq rate;
-
 }
 
 @JsonSerializable()
@@ -40,13 +38,15 @@ class AdminCreateCommissionRuleRateReq {
     required this.includeTax,
     this.priceSet,
     this.minPriceSet,
-    this.maxPriceSet
+    this.maxPriceSet,
   });
 
-  factory AdminCreateCommissionRuleRateReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminCreateCommissionRuleRateReqFromJson(json);
+  factory AdminCreateCommissionRuleRateReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminCreateCommissionRuleRateReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminCreateCommissionRuleRateReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminCreateCommissionRuleRateReqToJson(this);
 
   CommissionRuleType type;
   num? percentageRate;
@@ -55,6 +55,4 @@ class AdminCreateCommissionRuleRateReq {
   List<CommissionPriceSet>? priceSet;
   CommissionPriceSet? minPriceSet;
   CommissionPriceSet? maxPriceSet;
-
 }
-

@@ -42,32 +42,23 @@ class Medusa {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          ...?configuration.customHeaders
+          ...?configuration.customHeaders,
         },
       ),
     );
 
     dio.interceptors.add(
-      RetryInterceptor(
-        dio: dio,
-        retries: configuration.maxRetries,
-      ),
+      RetryInterceptor(dio: dio, retries: configuration.maxRetries),
     );
 
     /// TODO: Should we pass the Medusa instance to the interceptors?
     /// It is useful because we can access the configuration and the set*Token methods
     /// and we don't need to recreate the clients we change the configuration.
-    dio.interceptors.add(
-      AuthenticationInterceptor(this),
-    );
+    dio.interceptors.add(AuthenticationInterceptor(this));
 
-    dio.interceptors.add(
-      CustomHeadersInterceptor(),
-    );
+    dio.interceptors.add(CustomHeadersInterceptor());
 
-    dio.interceptors.add(
-      ErrorInterceptor(),
-    );
+    dio.interceptors.add(ErrorInterceptor());
 
     if (configuration.interceptors != null) {
       dio.interceptors.addAll(configuration.interceptors!);

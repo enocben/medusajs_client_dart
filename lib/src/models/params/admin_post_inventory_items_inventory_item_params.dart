@@ -7,8 +7,8 @@ class AdminPostInventoryItemsInventoryItemParams {
   const AdminPostInventoryItemsInventoryItemParams({this.expand, this.fields});
 
   factory AdminPostInventoryItemsInventoryItemParams.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostInventoryItemsInventoryItemParamsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostInventoryItemsInventoryItemParamsFromJson(json);
 
   final String? expand;
   final String? fields;

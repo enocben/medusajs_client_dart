@@ -11,7 +11,9 @@ class AdminPostInvitesInviteAcceptReq {
   final String token;
   final User user;
 
-  factory AdminPostInvitesInviteAcceptReq.fromJson(Map<String, dynamic> json) => _$AdminPostInvitesInviteAcceptReqFromJson(json);
+  factory AdminPostInvitesInviteAcceptReq.fromJson(Map<String, dynamic> json) =>
+      _$AdminPostInvitesInviteAcceptReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostInvitesInviteAcceptReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostInvitesInviteAcceptReqToJson(this);
 }

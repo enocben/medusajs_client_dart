@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/staged_job.g.dart';
@@ -7,7 +6,7 @@ part 'generated/staged_job.g.dart';
 /// A staged job resource
 @JsonSerializable()
 @CopyWith()
-class StagedJob extends Equatable {
+class StagedJob {
   const StagedJob({
     required this.id,
     required this.eventName,
@@ -30,8 +29,4 @@ class StagedJob extends Equatable {
 
   /// The staged job's option
   final Map<String, dynamic>? option;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

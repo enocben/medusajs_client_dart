@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/line_item.dart';
 
@@ -8,7 +7,7 @@ part 'generated/line_item_tax_line.g.dart';
 /// A Line Item Tax Line represents the taxes applied on a line item.
 @JsonSerializable()
 @CopyWith()
-class LineItemTaxLine extends Equatable {
+class LineItemTaxLine {
   const LineItemTaxLine({
     required this.id,
     this.code,
@@ -51,7 +50,4 @@ class LineItemTaxLine extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

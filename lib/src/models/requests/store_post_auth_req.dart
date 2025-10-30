@@ -4,10 +4,7 @@ part 'generated/store_post_auth_req.g.dart';
 
 @JsonSerializable()
 class StorePostAuthReq {
-  StorePostAuthReq({
-    required this.email,
-    required this.password,
-  });
+  StorePostAuthReq({required this.email, required this.password});
   factory StorePostAuthReq.fromJson(Map<String, dynamic> json) =>
       _$StorePostAuthReqFromJson(json);
 

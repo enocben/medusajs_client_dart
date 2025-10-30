@@ -9,11 +9,13 @@ class AdminPostStockLocationFulfillmentSetReq {
     required this.type,
   });
 
-  factory AdminPostStockLocationFulfillmentSetReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminPostStockLocationFulfillmentSetReqFromJson(json);
+  factory AdminPostStockLocationFulfillmentSetReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostStockLocationFulfillmentSetReqFromJson(json);
 
   final String name;
   final String type;
 
-  Map<String, dynamic> toJson() => _$AdminPostStockLocationFulfillmentSetReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostStockLocationFulfillmentSetReqToJson(this);
 }

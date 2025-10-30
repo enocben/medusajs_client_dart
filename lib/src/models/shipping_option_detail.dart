@@ -1,12 +1,11 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/shipping_option_detail.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class ShippingOptionDetail extends Equatable {
+class ShippingOptionDetail {
   const ShippingOptionDetail({
     required this.id,
     this.label,
@@ -30,7 +29,4 @@ class ShippingOptionDetail extends Equatable {
   final String? createdAt;
   final String? updatedAt;
   final String? deletedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

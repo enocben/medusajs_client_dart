@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/fulfillment_provider.g.dart';
@@ -7,7 +6,7 @@ part 'generated/fulfillment_provider.g.dart';
 /// A fulfillment provider represents a fulfillment service installed in the Medusa backend, either through a plugin or backend customizations. It holds the fulfillment service's installation status.
 @JsonSerializable()
 @CopyWith()
-class FulfillmentProvider extends Equatable {
+class FulfillmentProvider {
   const FulfillmentProvider({required this.id, this.isEnabled});
 
   factory FulfillmentProvider.fromJson(Map<String, dynamic> json) =>
@@ -21,7 +20,4 @@ class FulfillmentProvider extends Equatable {
   /// Whether the fulfillment service is installed in the current version.
   /// If a fulfillment service is no longer installed, the `is_installed` attribute is set to `false`.
   final bool? isEnabled;
-
-  @override
-  List<Object?> get props => [id];
 }

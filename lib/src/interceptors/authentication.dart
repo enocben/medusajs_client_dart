@@ -72,8 +72,8 @@ class AuthenticationInterceptor extends Interceptor {
       if (jwtToken != null) {
         final Domain domain =
             response.realUri.path.contains(Domain.admin.toString())
-                ? Domain.admin
-                : Domain.store;
+            ? Domain.admin
+            : Domain.store;
 
         medusa.setJwtToken(domain, jwtToken);
       }

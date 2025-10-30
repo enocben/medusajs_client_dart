@@ -4,10 +4,7 @@ part 'generated/admin_post_service_zone_req.g.dart';
 
 @JsonSerializable()
 class AdminPostServiceZoneReq {
-  AdminPostServiceZoneReq({
-    this.name,
-    this.geoZones,
-  });
+  AdminPostServiceZoneReq({this.name, this.geoZones});
   factory AdminPostServiceZoneReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostServiceZoneReqFromJson(json);
 
@@ -18,12 +15,8 @@ class AdminPostServiceZoneReq {
 }
 
 @JsonSerializable()
-class GeoZoneReq{
-  GeoZoneReq({
-    this.type = 'country',
-    required this.countryCode,
-    this.metadata,
-  });
+class GeoZoneReq {
+  GeoZoneReq({this.type = 'country', required this.countryCode, this.metadata});
   factory GeoZoneReq.fromJson(Map<String, dynamic> json) =>
       _$GeoZoneReqFromJson(json);
 
@@ -32,5 +25,4 @@ class GeoZoneReq{
   String type;
   String countryCode;
   Map<String, dynamic>? metadata;
-
 }

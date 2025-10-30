@@ -8,8 +8,11 @@ part 'generated/product_tags.g.dart';
 
 @RestApi()
 abstract class ProductTagsResource {
-  factory ProductTagsResource(Dio dio,
-      {String baseUrl, ParseErrorLogger? errorLogger}) = _ProductTagsResource;
+  factory ProductTagsResource(
+    Dio dio, {
+    String baseUrl,
+    ParseErrorLogger? errorLogger,
+  }) = _ProductTagsResource;
 
   @GET('/admin/product-tags')
   Future<AdminProductTagsListRes> list({

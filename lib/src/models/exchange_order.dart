@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -8,7 +7,7 @@ part 'generated/exchange_order.g.dart';
 /// Represents the details of an order in the context of an Exchange (not the main Order class).
 @JsonSerializable()
 @CopyWith()
-class ExchangeOrder extends Equatable {
+class ExchangeOrder {
   const ExchangeOrder({
     required this.id,
     this.version,
@@ -55,9 +54,6 @@ class ExchangeOrder extends Equatable {
     this.fulfillments,
     this.paymentCollections,
   });
-
-  @override
-  List<Object?> get props => [id];
 
   factory ExchangeOrder.fromJson(Map<String, dynamic> json) =>
       _$ExchangeOrderFromJson(json);

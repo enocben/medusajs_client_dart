@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/enums/enums.dart';
 
@@ -7,7 +6,7 @@ part 'generated/commission_line.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class CommissionLine extends Equatable {
+class CommissionLine {
   const CommissionLine({
     required this.id,
     required this.sellerId,
@@ -36,7 +35,4 @@ class CommissionLine extends Equatable {
   final CommissionStatus status;
   final String createdAt;
   final String updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

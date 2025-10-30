@@ -1,10 +1,9 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/inventory_item_dto.g.dart';
 
 @JsonSerializable()
-class InventoryItemDTO extends Equatable {
+class InventoryItemDTO {
   const InventoryItemDTO({
     this.id,
     this.sku,
@@ -48,8 +47,4 @@ class InventoryItemDTO extends Equatable {
   final String? createdAt;
   final String? updatedAt;
   final String? deletedAt;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

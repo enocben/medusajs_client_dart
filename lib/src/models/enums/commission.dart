@@ -1,26 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
 
-@JsonEnum(fieldRename: FieldRename.snake)
-enum CommissionStatus {
-  pending,
-  paid,
-  cancelled,
-}
-
+part 'generated/commission.g.dart';
 
 @JsonEnum(fieldRename: FieldRename.snake)
-enum CommissionType {
-  commission,
-  fee,
-  bonus,
-  penalty,
-}
+enum CommissionStatus { pending, paid, cancelled }
 
 @JsonEnum(fieldRename: FieldRename.snake)
-enum CommissionRuleType {
-  flat,
-  percentage
-}
+enum CommissionType { commission, fee, bonus, penalty }
+
+@JsonEnum(fieldRename: FieldRename.snake)
+enum CommissionRuleType { flat, percentage }
 
 @JsonEnum(fieldRename: FieldRename.none, alwaysCreate: true)
 enum CommissionRuleReference {

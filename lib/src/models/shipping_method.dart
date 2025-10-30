@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
 import 'package:medusa_js_dart/src/models/claim_order.dart';
@@ -18,7 +17,7 @@ part 'generated/shipping_method.g.dart';
 /// or a swap that the return is
 @JsonSerializable()
 @CopyWith()
-class ShippingMethod extends Equatable {
+class ShippingMethod {
   const ShippingMethod({
     required this.id,
     required this.shippingOptionId,
@@ -59,9 +58,6 @@ class ShippingMethod extends Equatable {
       _$ShippingMethodFromJson(json);
 
   Map<String, dynamic> toJson() => _$ShippingMethodToJson(this);
-
-  @override
-  List<Object?> get props => [id];
 
   /// The shipping method's ID.
   final String id;

@@ -17,8 +17,10 @@ abstract class UploadsResource {
   });
 
   @DELETE('/admin/uploads/{id}')
-  Future<AdminDeleteUploadsRes> delete(@Path('id') String id,
-      {@Extras() Map<String, String>? customHeaders});
+  Future<AdminDeleteUploadsRes> delete(
+    @Path('id') String id, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   // Todo: Add missing methods
 }

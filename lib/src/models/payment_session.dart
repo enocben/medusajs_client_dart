@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
 
@@ -7,7 +6,7 @@ part 'generated/payment_session.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PaymentSession extends Equatable {
+class PaymentSession {
   const PaymentSession({
     required this.id,
     this.cartId,
@@ -41,7 +40,4 @@ class PaymentSession extends Equatable {
   final String? paymentAuthorizedAt;
   final String createdAt;
   final String updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

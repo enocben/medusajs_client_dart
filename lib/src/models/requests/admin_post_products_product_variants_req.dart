@@ -30,8 +30,8 @@ class AdminPostProductsProductVariantsReq {
   });
 
   factory AdminPostProductsProductVariantsReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostProductsProductVariantsReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductsProductVariantsReqFromJson(json);
 
   String title;
   String? sku;
@@ -63,8 +63,10 @@ class AdminPostProductsProductVariantsReq {
 
 @JsonSerializable()
 class InventoryItems {
-  InventoryItems(
-      {required this.inventoryItemId, required this.requiredQuantity});
+  InventoryItems({
+    required this.inventoryItemId,
+    required this.requiredQuantity,
+  });
 
   factory InventoryItems.fromJson(Map<String, dynamic> json) =>
       _$InventoryItemsFromJson(json);

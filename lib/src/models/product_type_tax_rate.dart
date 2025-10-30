@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/product_type.dart';
 import 'package:medusa_js_dart/src/models/tax_rate.dart';
@@ -9,7 +8,7 @@ part 'generated/product_type_tax_rate.g.dart';
 /// This represents the association between a tax rate and a product type to indicate that the product type is taxed in a different way than the default.
 @JsonSerializable()
 @CopyWith()
-class ProductTypeTaxRate extends Equatable {
+class ProductTypeTaxRate {
   const ProductTypeTaxRate({
     required this.productTypeId,
     this.productType,
@@ -44,8 +43,4 @@ class ProductTypeTaxRate extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [productTypeId, rateId];
 }

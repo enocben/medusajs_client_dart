@@ -6,12 +6,7 @@ part 'generated/quantity_filter.g.dart';
 @JsonSerializable()
 @CopyWith()
 class QuantityFilter {
-  QuantityFilter({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  QuantityFilter({this.lt, this.gt, this.lte, this.gte});
   factory QuantityFilter.fromJson(Map<String, dynamic> json) =>
       _$QuantityFilterFromJson(json);
 

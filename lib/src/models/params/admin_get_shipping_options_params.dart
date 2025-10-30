@@ -41,7 +41,6 @@ class AdminGetShippingOptionsParams {
   /// Filter by whether the shipping option is used by admin users only.
   bool? adminOnly;
 
-
   /// Filter by location IDs to retrieve their associated shipping option.
   List<String>? stockLocationId;
 
@@ -55,7 +54,6 @@ class AdminGetShippingOptionsParams {
   /// Filter by fulfillment provider IDs to retrieve their associated shipping options.
   List<String>? providerId;
 
-
   /// Filter by service zone IDs to retrieve their associated shipping options.
   List<String>? serviceZoneId;
 
@@ -65,8 +63,8 @@ class AdminGetShippingOptionsParams {
   /// Filter by shipping option IDs.
   String? id;
 
-  /// The field to sort the data by. 
-  /// By default, the sort order is ascending. 
+  /// The field to sort the data by.
+  /// By default, the sort order is ascending.
   /// To change the order to descending, prefix the field name with -.
   String? order;
 

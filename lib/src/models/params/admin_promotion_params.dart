@@ -4,8 +4,13 @@ part 'generated/admin_promotion_params.g.dart';
 
 @JsonSerializable()
 class AdminPromotionParams {
-  AdminPromotionParams(
-      {this.fields, this.limit, this.offset, this.order, this.withDeleted});
+  AdminPromotionParams({
+    this.fields,
+    this.limit,
+    this.offset,
+    this.order,
+    this.withDeleted,
+  });
 
   factory AdminPromotionParams.fromJson(Map<String, dynamic> json) =>
       _$AdminPromotionParamsFromJson(json);

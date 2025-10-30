@@ -4,13 +4,14 @@ part 'generated/admin_post_regions_region_countries_req.g.dart';
 
 @JsonSerializable()
 class AdminPostRegionsRegionCountriesReq {
-  AdminPostRegionsRegionCountriesReq({
-    required this.countryCode,
-  });
+  AdminPostRegionsRegionCountriesReq({required this.countryCode});
 
   final String countryCode;
 
-  factory AdminPostRegionsRegionCountriesReq.fromJson(Map<String, dynamic> json) => _$AdminPostRegionsRegionCountriesReqFromJson(json);
+  factory AdminPostRegionsRegionCountriesReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostRegionsRegionCountriesReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostRegionsRegionCountriesReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostRegionsRegionCountriesReqToJson(this);
 }

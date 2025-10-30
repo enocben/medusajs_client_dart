@@ -1,10 +1,9 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/money_amount.g.dart';
 
 @JsonSerializable()
-class MoneyAmount extends Equatable {
+class MoneyAmount {
   const MoneyAmount({
     required this.id,
     required this.title,
@@ -35,8 +34,4 @@ class MoneyAmount extends Equatable {
   final String? createdAt;
   final String? updatedAt;
   final String? deletedAt;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

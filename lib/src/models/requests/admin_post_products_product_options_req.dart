@@ -7,8 +7,8 @@ class AdminPostProductsProductOptionsReq {
   AdminPostProductsProductOptionsReq({required this.title});
 
   factory AdminPostProductsProductOptionsReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostProductsProductOptionsReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductsProductOptionsReqFromJson(json);
 
   String title;
 

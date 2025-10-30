@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/claim_image.dart';
 import 'package:medusa_js_dart/src/models/claim_order.dart';
@@ -12,7 +11,7 @@ part 'generated/claim_item.g.dart';
 /// A claim item is an item created as part of a claim. It references an item in the order that should be exchanged or refunded.
 @JsonSerializable()
 @CopyWith()
-class ClaimItem extends Equatable {
+class ClaimItem {
   const ClaimItem({
     required this.id,
     this.images,
@@ -83,7 +82,4 @@ class ClaimItem extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

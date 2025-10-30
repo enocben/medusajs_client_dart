@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/invite.g.dart';
@@ -7,7 +6,7 @@ part 'generated/invite.g.dart';
 /// An invite is created when an admin user invites a new user to join the store's team. Once the invite is accepted, it's deleted.
 @JsonSerializable()
 @CopyWith()
-class Invite extends Equatable {
+class Invite {
   const Invite({
     required this.id,
     required this.userEmail,
@@ -53,7 +52,4 @@ class Invite extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

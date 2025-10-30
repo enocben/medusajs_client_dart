@@ -13,7 +13,10 @@ class StorePostCartsCartShippingMethodReq {
 
   Map<String, dynamic> data;
 
-  factory StorePostCartsCartShippingMethodReq.fromJson(Map<String, dynamic> json) => _$StorePostCartsCartShippingMethodReqFromJson(json);
+  factory StorePostCartsCartShippingMethodReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$StorePostCartsCartShippingMethodReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$StorePostCartsCartShippingMethodReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StorePostCartsCartShippingMethodReqToJson(this);
 }

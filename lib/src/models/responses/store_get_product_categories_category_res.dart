@@ -6,13 +6,11 @@ part 'generated/store_get_product_categories_category_res.g.dart';
 
 @JsonSerializable()
 class StoreGetProductCategoriesCategoryRes {
-  StoreGetProductCategoriesCategoryRes({
-    required this.productCategory,
-  });
+  StoreGetProductCategoriesCategoryRes({required this.productCategory});
 
   factory StoreGetProductCategoriesCategoryRes.fromJson(
-          Map<String, dynamic> json,) =>
-      _$StoreGetProductCategoriesCategoryResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$StoreGetProductCategoriesCategoryResFromJson(json);
 
   final ProductCategory productCategory;
 

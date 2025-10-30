@@ -1,12 +1,13 @@
 class AdminPostCampaignReq {
-  AdminPostCampaignReq(
-      {this.additionalData,
-      this.promotions,
-      this.startsAt,
-      this.endsAt,
-      this.description,
-      this.campaignIdentifier,
-      this.name});
+  AdminPostCampaignReq({
+    this.additionalData,
+    this.promotions,
+    this.startsAt,
+    this.endsAt,
+    this.description,
+    this.campaignIdentifier,
+    this.name,
+  });
 
   /// Pass additional custom data to the API route.
   /// This data is passed to the underlying workflow under the additional_data parameter.

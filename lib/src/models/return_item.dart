@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/return_item.g.dart';
@@ -7,7 +6,7 @@ part 'generated/return_item.g.dart';
 @JsonSerializable()
 /// Représente un article retourné dans un échange Medusa.
 @JsonSerializable()
-class ReturnItem extends Equatable {
+class ReturnItem {
   const ReturnItem({
     required this.id,
     required this.quantity,
@@ -50,8 +49,4 @@ class ReturnItem extends Equatable {
 
   /// L'ID de la raison du retour.
   final String? reasonId;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

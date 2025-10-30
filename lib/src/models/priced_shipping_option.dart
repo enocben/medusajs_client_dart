@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 import 'package:medusa_js_dart/src/models/shipping_option_price.dart';
@@ -9,7 +8,7 @@ part 'generated/priced_shipping_option.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PricedShippingOption extends Equatable {
+class PricedShippingOption {
   const PricedShippingOption(
     this.shippingProfile, {
     required this.id,
@@ -91,10 +90,6 @@ class PricedShippingOption extends Equatable {
   final Map<String, dynamic>? metadata;
 
   Map<String, dynamic> toJson() => _$PricedShippingOptionToJson(this);
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }
 
 @JsonSerializable()

@@ -1,12 +1,11 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/tax_rate_rule.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class TaxRateRule extends Equatable {
+class TaxRateRule {
   const TaxRateRule({this.reference, this.referenceId});
 
   factory TaxRateRule.fromJson(Map<String, dynamic> json) =>
@@ -19,7 +18,4 @@ class TaxRateRule extends Equatable {
 
   /// The ID of a record in the table that this rule references.
   final String? referenceId;
-
-  @override
-  List<Object?> get props => [reference, referenceId];
 }

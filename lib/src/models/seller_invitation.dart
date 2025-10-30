@@ -1,10 +1,9 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/seller_invitation.g.dart';
 
 @JsonSerializable()
-class SellerInvitation extends Equatable {
+class SellerInvitation {
   const SellerInvitation({
     required this.id,
     required this.email,
@@ -23,7 +22,4 @@ class SellerInvitation extends Equatable {
   final String registrationUrl;
   final String createdAt;
   final String updatedAt;
-
-  @override
-  List<Object?> get props => [id, email];
 }

@@ -5,9 +5,7 @@ part 'generated/admin_exchanges_res.g.dart';
 
 @JsonSerializable()
 class AdminExchangesRes {
-  AdminExchangesRes({
-    required this.exchange,
-  });
+  AdminExchangesRes({required this.exchange});
 
   factory AdminExchangesRes.fromJson(Map<String, dynamic> json) =>
       _$AdminExchangesResFromJson(json);

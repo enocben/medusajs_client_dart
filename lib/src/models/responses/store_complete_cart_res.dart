@@ -4,10 +4,7 @@ part 'generated/store_complete_cart_res.g.dart';
 
 @JsonSerializable()
 class StoreCompleteCartRes {
-  StoreCompleteCartRes({
-    required this.type,
-    required this.data,
-  });
+  StoreCompleteCartRes({required this.type, required this.data});
   factory StoreCompleteCartRes.fromJson(Map<String, dynamic> json) =>
       _$StoreCompleteCartResFromJson(json);
 

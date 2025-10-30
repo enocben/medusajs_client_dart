@@ -1,11 +1,10 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/inventory_item.g.dart';
 
 @JsonSerializable()
-class InventoryItem extends Equatable {
+class InventoryItem {
   const InventoryItem({
     required this.id,
     required this.createdAt,
@@ -31,9 +30,6 @@ class InventoryItem extends Equatable {
       _$InventoryItemFromJson(json);
 
   Map<String, dynamic> toJson() => _$InventoryItemToJson(this);
-
-  @override
-  List<Object?> get props => [id];
 
   final String id;
 

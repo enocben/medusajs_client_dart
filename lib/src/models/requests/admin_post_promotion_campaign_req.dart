@@ -49,8 +49,8 @@ class AdminPostPromotionsCampaignReqBudget {
   });
 
   factory AdminPostPromotionsCampaignReqBudget.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostPromotionsCampaignReqBudgetFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostPromotionsCampaignReqBudgetFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostPromotionsCampaignReqBudgetToJson(this);

@@ -1,11 +1,10 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/enums/user_role.dart';
 
 part 'generated/seller_member.g.dart';
 
 @JsonSerializable()
-class SellerMember extends Equatable {
+class SellerMember {
   const SellerMember({
     required this.id,
     required this.role,
@@ -30,7 +29,4 @@ class SellerMember extends Equatable {
   final String? photo;
   final String createdAt;
   final String updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

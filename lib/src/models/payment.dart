@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
 import 'package:medusa_js_dart/src/models/currency.dart';
@@ -11,7 +10,7 @@ part 'generated/payment.g.dart';
 /// A payment is originally created from a payment session. Once a payment session is authorized, the payment is created to represent the authorized amount with a given payment method. Payments can be captured, canceled or refunded. Payments can be made towards orders, swaps, order edits, or other resources.
 @JsonSerializable()
 @CopyWith()
-class Payment extends Equatable {
+class Payment {
   const Payment({
     required this.id,
     this.swapId,
@@ -94,7 +93,4 @@ class Payment extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

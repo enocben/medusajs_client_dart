@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/response_inventory_item.dart';
 
@@ -7,7 +6,7 @@ part 'generated/variant_inventory.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class VariantInventory extends Equatable {
+class VariantInventory {
   const VariantInventory({
     required this.id,
     required this.inventory,
@@ -26,14 +25,11 @@ class VariantInventory extends Equatable {
 
   /// Details about the variant's inventory availability in sales channels.
   final List<SalesChannelAvailability> salesChannelAvailability;
-
-  @override
-  List<Object?> get props => [id];
 }
 
 @JsonSerializable()
 @CopyWith()
-class SalesChannelAvailability extends Equatable {
+class SalesChannelAvailability {
   const SalesChannelAvailability({
     required this.channelName,
     required this.channelId,
@@ -52,7 +48,4 @@ class SalesChannelAvailability extends Equatable {
 
   /// Available quantity in the sales channel
   final int availableQuantity;
-
-  @override
-  List<Object?> get props => [channelName, channelId, availableQuantity];
 }

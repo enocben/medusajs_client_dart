@@ -8,7 +8,10 @@ class AdminPostTaxRatesTaxRateProductsReq {
 
   List<String> products;
 
-  factory AdminPostTaxRatesTaxRateProductsReq.fromJson(Map<String, dynamic> json) => _$AdminPostTaxRatesTaxRateProductsReqFromJson(json);
+  factory AdminPostTaxRatesTaxRateProductsReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostTaxRatesTaxRateProductsReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostTaxRatesTaxRateProductsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostTaxRatesTaxRateProductsReqToJson(this);
 }

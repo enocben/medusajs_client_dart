@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart' show AttributePossibleValue;
 import 'enums/attribute_ui_component.dart';
@@ -8,7 +7,7 @@ part 'generated/attribute.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class Attribute extends Equatable {
+class Attribute {
   const Attribute({
     required this.id,
     required this.name,
@@ -41,7 +40,4 @@ class Attribute extends Equatable {
   final String createdAt;
   final String updatedAt;
   final String? deletedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

@@ -17,8 +17,7 @@ class AdminPostProductCategoriesCategoryReq {
 
   factory AdminPostProductCategoriesCategoryReq.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$AdminPostProductCategoriesCategoryReqFromJson(json);
+  ) => _$AdminPostProductCategoriesCategoryReqFromJson(json);
 
   String? name;
   String? description;

@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
@@ -16,7 +15,7 @@ part 'generated/swap.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class Swap extends Equatable {
+class Swap {
   const Swap({
     required this.id,
     required this.fulfillmentStatus,
@@ -71,7 +70,4 @@ class Swap extends Equatable {
   final String updatedAt;
   final String? deletedAt;
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

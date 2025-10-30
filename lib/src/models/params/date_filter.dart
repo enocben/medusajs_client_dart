@@ -4,22 +4,23 @@ part 'generated/date_filter.g.dart';
 
 @JsonSerializable()
 class DateFilter {
-  DateFilter(
-      {this.lt,
-      this.gt,
-      this.lte,
-      this.gte,
-      this.exists,
-      this.contained,
-      this.overlap,
-      this.fulltext,
-      this.ilike,
-      this.re,
-      this.like,
-      this.nin,
-      this.not,
-      this.ne,
-      this.eq});
+  DateFilter({
+    this.lt,
+    this.gt,
+    this.lte,
+    this.gte,
+    this.exists,
+    this.contained,
+    this.overlap,
+    this.fulltext,
+    this.ilike,
+    this.re,
+    this.like,
+    this.nin,
+    this.not,
+    this.ne,
+    this.eq,
+  });
   factory DateFilter.fromJson(Map<String, dynamic> json) =>
       _$DateFilterFromJson(json);
 

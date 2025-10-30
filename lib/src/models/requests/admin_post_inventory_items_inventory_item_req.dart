@@ -22,8 +22,7 @@ class AdminPostInventoryItemsInventoryItemReq {
 
   factory AdminPostInventoryItemsInventoryItemReq.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$AdminPostInventoryItemsInventoryItemReqFromJson(json);
+  ) => _$AdminPostInventoryItemsInventoryItemReqFromJson(json);
 
   String? hsCode;
   String? originCountry;

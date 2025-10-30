@@ -10,7 +10,9 @@ class StoreCartShippingOptionsListRes {
 
   final List<PricedShippingOption> shippingOptions;
 
-  factory StoreCartShippingOptionsListRes.fromJson(Map<String, dynamic> json) => _$StoreCartShippingOptionsListResFromJson(json);
+  factory StoreCartShippingOptionsListRes.fromJson(Map<String, dynamic> json) =>
+      _$StoreCartShippingOptionsListResFromJson(json);
 
-  Map<String, dynamic> toJson() => _$StoreCartShippingOptionsListResToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StoreCartShippingOptionsListResToJson(this);
 }

@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -7,7 +6,7 @@ part 'generated/price_rule.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PriceRule extends Equatable {
+class PriceRule {
   const PriceRule({
     required this.id,
     this.value,
@@ -49,8 +48,4 @@ class PriceRule extends Equatable {
 
   /// The date the price rule was deleted.
   final String? deleteAt;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

@@ -64,7 +64,7 @@ class AdminPostProductsProductReq {
 }
 
 @JsonSerializable()
-class AdminPostProductById{
+class AdminPostProductById {
   AdminPostProductById({required this.id});
   factory AdminPostProductById.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductByIdFromJson(json);
@@ -85,10 +85,7 @@ class AdminPostImageUrlReq {
 
 @JsonSerializable()
 class AdminPostProductsProductReqType {
-  AdminPostProductsProductReqType({
-    required this.id,
-    required this.value,
-  });
+  AdminPostProductsProductReqType({required this.id, required this.value});
 
   factory AdminPostProductsProductReqType.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductsProductReqTypeFromJson(json);
@@ -102,10 +99,7 @@ class AdminPostProductsProductReqType {
 
 @JsonSerializable()
 class AdminPostProductsProductReqTag {
-  AdminPostProductsProductReqTag({
-    required this.id,
-    required this.value,
-  });
+  AdminPostProductsProductReqTag({required this.id, required this.value});
 
   factory AdminPostProductsProductReqTag.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductsProductReqTagFromJson(json);
@@ -118,14 +112,11 @@ class AdminPostProductsProductReqTag {
 
 @JsonSerializable()
 class AdminPostProductsProductReqSalesChannel {
-  AdminPostProductsProductReqSalesChannel({
-    required this.id,
-  });
+  AdminPostProductsProductReqSalesChannel({required this.id});
 
   factory AdminPostProductsProductReqSalesChannel.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$AdminPostProductsProductReqSalesChannelFromJson(json);
+  ) => _$AdminPostProductsProductReqSalesChannelFromJson(json);
 
   String id;
 
@@ -161,8 +152,7 @@ class AdminPostProductsProductReqVariant {
 
   factory AdminPostProductsProductReqVariant.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$AdminPostProductsProductReqVariantFromJson(json);
+  ) => _$AdminPostProductsProductReqVariantFromJson(json);
 
   String id;
   String title;

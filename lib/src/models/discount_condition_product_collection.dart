@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/discount_condition.dart';
 import 'package:medusa_js_dart/src/models/product_collection.dart';
@@ -9,7 +8,7 @@ part 'generated/discount_condition_product_collection.g.dart';
 /// This represents the association between a discount condition and a product collection
 @JsonSerializable()
 @CopyWith()
-class DiscountConditionProductCollection extends Equatable {
+class DiscountConditionProductCollection {
   const DiscountConditionProductCollection({
     required this.productCollectionId,
     required this.conditionId,
@@ -47,7 +46,4 @@ class DiscountConditionProductCollection extends Equatable {
 
   Map<String, dynamic> toJson() =>
       _$DiscountConditionProductCollectionToJson(this);
-
-  @override
-  List<Object?> get props => [productCollectionId, conditionId];
 }

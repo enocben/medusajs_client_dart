@@ -5,9 +5,7 @@ part 'generated/admin_configuration_rule_res.g.dart';
 
 @JsonSerializable()
 class AdminConfigurationRuleRes {
-  AdminConfigurationRuleRes({
-    required this.configurationRule,
-  });
+  AdminConfigurationRuleRes({required this.configurationRule});
 
   factory AdminConfigurationRuleRes.fromJson(Map<String, dynamic> json) =>
       _$AdminConfigurationRuleResFromJson(json);

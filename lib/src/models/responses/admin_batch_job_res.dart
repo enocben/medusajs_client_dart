@@ -6,9 +6,7 @@ part 'generated/admin_batch_job_res.g.dart';
 
 @JsonSerializable()
 class AdminBatchJobRes {
-  AdminBatchJobRes({
-    required this.batchJob,
-  });
+  AdminBatchJobRes({required this.batchJob});
   factory AdminBatchJobRes.fromJson(Map<String, dynamic> json) =>
       _$AdminBatchJobResFromJson(json);
 

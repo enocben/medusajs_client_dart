@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/sales_channel.dart';
 
@@ -6,7 +5,7 @@ part 'generated/sales_channel_location.g.dart';
 
 /// This represents the association between a sales channel and a stock locations.
 @JsonSerializable()
-class SalesChannelLocation extends Equatable {
+class SalesChannelLocation {
   const SalesChannelLocation({
     required this.id,
     required this.salesChannelId,
@@ -41,7 +40,4 @@ class SalesChannelLocation extends Equatable {
 
   /// The date with timezone at which the resource was deleted.
   final String? deletedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

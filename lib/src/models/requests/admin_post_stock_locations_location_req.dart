@@ -15,8 +15,7 @@ class AdminPostStockLocationsLocationReq {
 
   factory AdminPostStockLocationsLocationReq.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$AdminPostStockLocationsLocationReqFromJson(json);
+  ) => _$AdminPostStockLocationsLocationReqFromJson(json);
 
   String name;
   String addressId;

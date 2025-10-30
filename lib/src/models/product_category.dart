@@ -74,8 +74,4 @@ class ProductCategory {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

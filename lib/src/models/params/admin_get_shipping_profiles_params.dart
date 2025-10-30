@@ -28,7 +28,6 @@ class AdminGetShippingProfilesParams {
 
   Map<String, dynamic> toJson() => _$AdminGetShippingProfilesParamsToJson(this);
 
-
   /// Whether to include deleted records in the result.
   bool? withDeleted;
   List<Map<String, dynamic>>? $or;
@@ -48,8 +47,8 @@ class AdminGetShippingProfilesParams {
   /// Filter by shipping profile IDs.
   String? id;
 
-  /// The field to sort the data by. 
-  /// By default, the sort order is ascending. 
+  /// The field to sort the data by.
+  /// By default, the sort order is ascending.
   /// To change the order to descending, prefix the field name with -.
   String? order;
 

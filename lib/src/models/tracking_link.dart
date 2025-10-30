@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:medusa_js_dart/src/models/fulfillment.dart';
@@ -9,7 +8,7 @@ part 'generated/tracking_link.g.dart';
 /// A tracking link holds information about tracking numbers for a Fulfillment. Tracking Links can optionally contain a URL that can be visited to see the status of the shipment. Typically, the tracking link is provided from the third-party service integrated through the used fulfillment provider.
 @JsonSerializable()
 @CopyWith()
-class TrackingLink extends Equatable {
+class TrackingLink {
   const TrackingLink({
     required this.id,
     this.url,
@@ -56,7 +55,4 @@ class TrackingLink extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id, url];
 }

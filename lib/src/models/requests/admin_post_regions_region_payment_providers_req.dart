@@ -8,7 +8,10 @@ class AdminPostRegionsRegionPaymentProvidersReq {
 
   String providerId;
 
-  factory AdminPostRegionsRegionPaymentProvidersReq.fromJson(Map<String, dynamic> json) => _$AdminPostRegionsRegionPaymentProvidersReqFromJson(json);
+  factory AdminPostRegionsRegionPaymentProvidersReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostRegionsRegionPaymentProvidersReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostRegionsRegionPaymentProvidersReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostRegionsRegionPaymentProvidersReqToJson(this);
 }

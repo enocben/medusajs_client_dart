@@ -11,8 +11,8 @@ class AdminDeleteProductsFromCollectionRes {
   });
 
   factory AdminDeleteProductsFromCollectionRes.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminDeleteProductsFromCollectionResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminDeleteProductsFromCollectionResFromJson(json);
 
   String id;
   String object;

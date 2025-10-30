@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
 import 'package:medusa_js_dart/src/models/claim_order.dart';
@@ -15,7 +14,7 @@ part 'generated/line_item.g.dart';
 /// Line Items are created when a product is added to a Cart. When Line Items are purchased they will get copied to the resulting order, swap, or claim, and can eventually be referenced in Fulfillments and Returns. Line items may also be used for order edits.
 @JsonSerializable()
 @CopyWith()
-class LineItem extends Equatable {
+class LineItem {
   const LineItem({
     required this.id,
     this.cartId,
@@ -190,7 +189,4 @@ class LineItem extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

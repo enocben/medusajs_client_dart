@@ -9,8 +9,8 @@ class AdminPostProductCategoriesCategoryProductsBatchReq {
   });
 
   factory AdminPostProductCategoriesCategoryProductsBatchReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostProductCategoriesCategoryProductsBatchReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductCategoriesCategoryProductsBatchReqFromJson(json);
 
   List<String> productIds;
 

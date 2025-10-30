@@ -5,15 +5,11 @@ part 'generated/admin_post_price_list_prices_prices_req.g.dart';
 
 @JsonSerializable()
 class AdminPostPriceListPricesPricesReq {
-  AdminPostPriceListPricesPricesReq({
-    this.create,
-    this.update,
-    this.delete,
-  });
+  AdminPostPriceListPricesPricesReq({this.create, this.update, this.delete});
 
   factory AdminPostPriceListPricesPricesReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostPriceListPricesPricesReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostPriceListPricesPricesReqFromJson(json);
 
   final List<Price>? create;
   final List<PriceOptionalFields>? update;

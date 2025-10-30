@@ -15,7 +15,8 @@ class AdminPostCreatePromotionRuleReq {
   factory AdminPostCreatePromotionRuleReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostCreatePromotionRuleReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostCreatePromotionRuleReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostCreatePromotionRuleReqToJson(this);
 
   /// The operator used to check whether the buy rule applies on a cart.
   /// For example, eq means that the cart's value for the specified attribute must match the specified value.
@@ -32,7 +33,6 @@ class AdminPostCreatePromotionRuleReq {
   List<String>? values;
 }
 
-
 @JsonSerializable()
 class AdminPostUpdatePromotionRuleReq {
   AdminPostUpdatePromotionRuleReq({
@@ -46,7 +46,8 @@ class AdminPostUpdatePromotionRuleReq {
   factory AdminPostUpdatePromotionRuleReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostUpdatePromotionRuleReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostUpdatePromotionRuleReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostUpdatePromotionRuleReqToJson(this);
 
   /// The operator used to check whether the buy rule applies on a cart.
   /// For example, eq means that the cart's value for the specified attribute must match the specified value.

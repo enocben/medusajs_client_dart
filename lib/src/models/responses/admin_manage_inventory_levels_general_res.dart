@@ -9,12 +9,12 @@ class AdminManageInventoryLevelsGeneralRes {
     this.create,
     this.update,
     this.delete,
-    this.force
+    this.force,
   });
 
   factory AdminManageInventoryLevelsGeneralRes.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminManageInventoryLevelsGeneralResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminManageInventoryLevelsGeneralResFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminManageInventoryLevelsGeneralResToJson(this);
@@ -30,5 +30,4 @@ class AdminManageInventoryLevelsGeneralRes {
 
   /// Whether to delete specified inventory levels even if they have a non-zero stocked quantity.
   bool? force;
- 
 }

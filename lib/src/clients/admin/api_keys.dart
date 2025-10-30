@@ -6,8 +6,7 @@ part 'generated/api_keys.g.dart';
 
 @RestApi()
 abstract class ApiKeysResource {
-  factory ApiKeysResource(Dio dio, {String baseUrl}) =
-      _ApiKeysResource;
+  factory ApiKeysResource(Dio dio, {String baseUrl}) = _ApiKeysResource;
 
   @GET('/admin/api-keys')
   Future<AdminGetApiKeysRes> list({
@@ -23,7 +22,7 @@ abstract class ApiKeysResource {
 
   @GET('/admin/api-keys/{id}')
   Future<AdminGetApiKeysApiKeyRes> retrieve(
-    @Path('id') String id,{
+    @Path('id') String id, {
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -31,7 +30,7 @@ abstract class ApiKeysResource {
   Future<AdminGetApiKeysApiKeyRes> update(
     @Path('id') String id,
     @Body() AdminPostUpdateApiKeysApiKeyReq body, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -44,7 +43,7 @@ abstract class ApiKeysResource {
   @POST('/admin/api-keys/{id}/revoke')
   Future<AdminGetApiKeysApiKeyRes> revoke(
     @Path('id') String id, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -52,7 +51,7 @@ abstract class ApiKeysResource {
   Future<AdminGetApiKeysApiKeyRes> manageSalesChannels(
     @Path('id') String id,
     @Body() AdminPostApiKeysManageSalesChannelsReq body, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 }

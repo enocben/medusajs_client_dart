@@ -4,15 +4,11 @@ part 'generated/admin_delete_promotion_rules_batch_res.g.dart';
 
 @JsonSerializable()
 class AdminDeletePromotionsBuyRulesBatchRes {
-  AdminDeletePromotionsBuyRulesBatchRes({
-    this.ids,
-    this.object,
-    this.deleted,
-  });
+  AdminDeletePromotionsBuyRulesBatchRes({this.ids, this.object, this.deleted});
 
   factory AdminDeletePromotionsBuyRulesBatchRes.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminDeletePromotionsBuyRulesBatchResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminDeletePromotionsBuyRulesBatchResFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminDeletePromotionsBuyRulesBatchResToJson(this);

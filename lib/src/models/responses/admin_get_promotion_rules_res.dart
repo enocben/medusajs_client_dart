@@ -5,9 +5,7 @@ part 'generated/admin_get_promotion_rules_res.g.dart';
 
 @JsonSerializable()
 class AdminGetPromotionRulesRes {
-  AdminGetPromotionRulesRes({
-        required this.rules,
-  });
+  AdminGetPromotionRulesRes({required this.rules});
 
   factory AdminGetPromotionRulesRes.fromJson(Map<String, dynamic> json) =>
       _$AdminGetPromotionRulesResFromJson(json);
@@ -15,7 +13,4 @@ class AdminGetPromotionRulesRes {
   Map<String, dynamic> toJson() => _$AdminGetPromotionRulesResToJson(this);
 
   List<PromotionRule> rules;
-
 }
-
-

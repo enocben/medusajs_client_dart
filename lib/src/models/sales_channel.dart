@@ -1,11 +1,10 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/sales_channel.g.dart';
 
 /// A Sales Channel is a method a business offers its products for purchase for the customers. For example, a Webshop can be a sales channel, and a mobile app can be another.
 @JsonSerializable()
-class SalesChannel extends Equatable {
+class SalesChannel {
   const SalesChannel({
     required this.id,
     required this.name,
@@ -44,7 +43,4 @@ class SalesChannel extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

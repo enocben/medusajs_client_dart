@@ -8,9 +8,7 @@ class AdminCreateCommissionRuleRes {
   @JsonKey(name: 'commission_rule')
   final AdminCreateCommissionRule commissionRule;
 
-  AdminCreateCommissionRuleRes({
-    required this.commissionRule,
-  });
+  AdminCreateCommissionRuleRes({required this.commissionRule});
 
   factory AdminCreateCommissionRuleRes.fromJson(Map<String, dynamic> json) =>
       _$AdminCreateCommissionRuleResFromJson(json);

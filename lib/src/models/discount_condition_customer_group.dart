@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/customer_group.dart';
 import 'package:medusa_js_dart/src/models/discount_condition.dart';
@@ -9,7 +8,7 @@ part 'generated/discount_condition_customer_group.g.dart';
 /// Associates a discount condition with a customer group
 @JsonSerializable()
 @CopyWith()
-class DiscountConditionCustomerGroup extends Equatable {
+class DiscountConditionCustomerGroup {
   /// Constructor
   const DiscountConditionCustomerGroup({
     required this.customerGroupId,
@@ -45,7 +44,4 @@ class DiscountConditionCustomerGroup extends Equatable {
   final Map<String, dynamic>? metadata;
 
   Map<String, dynamic> toJson() => _$DiscountConditionCustomerGroupToJson(this);
-
-  @override
-  List<Object?> get props => [customerGroupId, conditionId];
 }

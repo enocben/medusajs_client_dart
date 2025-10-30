@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/shipping_option.dart';
 
@@ -8,7 +7,7 @@ part 'generated/shipping_option_requirement.g.dart';
 /// A shipping option requirement defines conditions that a Cart must satisfy for the Shipping Option to be available for usage in the Cart.
 @JsonSerializable()
 @CopyWith()
-class ShippingOptionRequirement extends Equatable {
+class ShippingOptionRequirement {
   const ShippingOptionRequirement({
     required this.id,
     required this.shippingOptionId,
@@ -39,7 +38,4 @@ class ShippingOptionRequirement extends Equatable {
 
   /// The date with timezone at which the resource was deleted.
   final String? deletedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

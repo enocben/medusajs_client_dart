@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/exchange_order_fulfillment.g.dart';
@@ -7,7 +6,7 @@ part 'generated/exchange_order_fulfillment.g.dart';
 /// Represents a fulfillment for an ExchangeOrder.
 @JsonSerializable()
 @CopyWith()
-class ExchangeOrderFulfillment extends Equatable {
+class ExchangeOrderFulfillment {
   const ExchangeOrderFulfillment({
     required this.id,
     this.locationId,
@@ -66,7 +65,4 @@ class ExchangeOrderFulfillment extends Equatable {
 
   /// Whether the fulfillment requires shipping.
   final bool? requiresShipping;
-
-  @override
-  List<Object?> get props => [id];
 }

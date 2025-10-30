@@ -8,15 +8,13 @@ class AdminPostManageInventoryLevels {
     required this.create,
     required this.update,
     required this.delete,
-    this.force
+    this.force,
   });
 
-  factory AdminPostManageInventoryLevels.fromJson(
-          Map<String, dynamic> json,) =>
+  factory AdminPostManageInventoryLevels.fromJson(Map<String, dynamic> json) =>
       _$AdminPostManageInventoryLevelsFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$AdminPostManageInventoryLevelsToJson(this);
+  Map<String, dynamic> toJson() => _$AdminPostManageInventoryLevelsToJson(this);
 
   /// The inventory levels to create.
   List<ManageInventoryLevel> create;
@@ -29,25 +27,20 @@ class AdminPostManageInventoryLevels {
 
   /// Whether to delete specified inventory levels even if they have a non-zero stocked quantity.
   bool? force;
- 
 }
-
 
 @JsonSerializable()
 class ManageInventoryLevel {
   ManageInventoryLevel({
     required this.locationId,
     this.incomingQuantity,
-    this.stockedQuantity
+    this.stockedQuantity,
   });
 
-  factory ManageInventoryLevel.fromJson(
-          Map<String, dynamic> json,) =>
+  factory ManageInventoryLevel.fromJson(Map<String, dynamic> json) =>
       _$ManageInventoryLevelFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$ManageInventoryLevelToJson(this);
-
+  Map<String, dynamic> toJson() => _$ManageInventoryLevelToJson(this);
 
   /// The ID of the associated stock location.
   String locationId;
@@ -57,7 +50,6 @@ class ManageInventoryLevel {
 
   /// The stocked quantity.
   int? stockedQuantity;
- 
 }
 
 @JsonSerializable()
@@ -66,16 +58,14 @@ class UpdateManageInventoryLevel extends ManageInventoryLevel {
     required this.id,
     required super.locationId,
     super.incomingQuantity,
-    super.stockedQuantity
+    super.stockedQuantity,
   });
 
-  factory UpdateManageInventoryLevel.fromJson(
-          Map<String, dynamic> json,) =>
+  factory UpdateManageInventoryLevel.fromJson(Map<String, dynamic> json) =>
       _$UpdateManageInventoryLevelFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$UpdateManageInventoryLevelToJson(this);
-
+  @override
+  Map<String, dynamic> toJson() => _$UpdateManageInventoryLevelToJson(this);
 
   /// The update's ID
   String id;

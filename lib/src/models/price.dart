@@ -1,12 +1,11 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/price.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class Price extends Equatable {
+class Price {
   const Price({
     required this.currencyCode,
     required this.variantId,
@@ -24,15 +23,11 @@ class Price extends Equatable {
   final num amount;
   final int? minQuantity;
   final int? maxQuantity;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [currencyCode, variantId, amount];
 }
 
 @JsonSerializable()
 @CopyWith()
-class PriceOptionalFields extends Equatable {
+class PriceOptionalFields {
   const PriceOptionalFields({
     required this.id,
     required this.variantId,
@@ -60,8 +55,4 @@ class PriceOptionalFields extends Equatable {
   final num? amount;
   final int? minQuantity;
   final int? maxQuantity;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

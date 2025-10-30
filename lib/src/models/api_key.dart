@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/enums/enums.dart';
 
@@ -7,7 +6,7 @@ part 'generated/api_key.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class ApiKey extends Equatable {
+class ApiKey {
   const ApiKey({
     required this.id,
     required this.title,
@@ -65,7 +64,4 @@ class ApiKey extends Equatable {
   final String? deletedAt;
 
   Map<String, dynamic> toJson() => _$ApiKeyToJson(this);
-
-  @override
-  List<Object?> get props => [id];
 }

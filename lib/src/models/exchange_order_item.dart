@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/models.dart';
 
@@ -8,7 +7,7 @@ part 'generated/exchange_order_item.g.dart';
 /// Represents an item within an ExchangeOrder, as per the Medusa Exchange API schema.
 @JsonSerializable()
 @CopyWith()
-class ExchangeOrderItem extends Equatable {
+class ExchangeOrderItem {
   const ExchangeOrderItem({
     required this.id,
     this.title,
@@ -191,7 +190,4 @@ class ExchangeOrderItem extends Equatable {
 
   /// The product variant's details.
   final ProductVariant? variant;
-
-  @override
-  List<Object?> get props => [id];
 }

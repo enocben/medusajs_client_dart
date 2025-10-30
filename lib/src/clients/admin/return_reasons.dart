@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_js_dart/medusa_js_dart.dart' show AdminGetReturnsReasonsParams;
+import 'package:medusa_js_dart/medusa_js_dart.dart'
+    show AdminGetReturnsReasonsParams;
 import 'package:medusa_js_dart/src/models/requests/admin_post_return_reasons_reason_req.dart';
 import 'package:medusa_js_dart/src/models/requests/admin_post_return_reasons_req.dart';
 import 'package:medusa_js_dart/src/models/responses/admin_return_reasons_delete_res.dart';

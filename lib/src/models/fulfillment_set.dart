@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -7,7 +6,7 @@ part 'generated/fulfillment_set.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class FulfillmentSet extends Equatable {
+class FulfillmentSet {
   const FulfillmentSet({
     required this.id,
     this.name,
@@ -30,9 +29,6 @@ class FulfillmentSet extends Equatable {
   final String? createdAt;
   final String? updatedAt;
   final String? deletedAt;
-
-  @override
-  List<Object?> get props => [id];
 
   Map<String, dynamic> toJson() => _$FulfillmentSetToJson(this);
 }

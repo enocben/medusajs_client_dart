@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:medusa_js_dart/src/models/claim_order.dart';
@@ -13,7 +12,7 @@ part 'generated/fulfillment.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class Fulfillment extends Equatable {
+class Fulfillment {
   const Fulfillment({
     required this.id,
     this.claimOrderId,
@@ -106,7 +105,4 @@ class Fulfillment extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

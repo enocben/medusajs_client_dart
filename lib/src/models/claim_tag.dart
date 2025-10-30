@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/claim_tag.g.dart';
@@ -7,7 +6,7 @@ part 'generated/claim_tag.g.dart';
 /// Claim Tags are user defined tags that can be assigned to claim items for easy filtering and grouping.
 @JsonSerializable()
 @CopyWith()
-class ClaimTag extends Equatable {
+class ClaimTag {
   const ClaimTag({
     required this.id,
     required this.value,
@@ -38,7 +37,4 @@ class ClaimTag extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

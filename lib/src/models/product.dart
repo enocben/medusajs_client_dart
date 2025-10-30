@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/base_product.dart';
 import 'package:medusa_js_dart/src/models/image.dart';
@@ -15,7 +14,7 @@ part 'generated/product.g.dart';
 
 /// A product is a saleable item that holds general information such as name or description. It must include at least one Product Variant, where each product variant defines different options to purchase the product with (for example, different sizes or colors). The prices and inventory of the product are defined on the variant level.
 @JsonSerializable()
-class Product extends BaseProduct{
+class Product extends BaseProduct {
   const Product({
     required super.id,
     required super.title,
@@ -65,7 +64,7 @@ class Product extends BaseProduct{
 }
 
 @JsonSerializable()
-class PartialProduct extends Equatable {
+class PartialProduct {
   const PartialProduct({required this.id, this.title});
 
   factory PartialProduct.fromJson(Map<String, dynamic> json) =>
@@ -78,8 +77,4 @@ class PartialProduct extends Equatable {
   final String? title;
 
   Map<String, dynamic> toJson() => _$PartialProductToJson(this);
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id, title];
 }

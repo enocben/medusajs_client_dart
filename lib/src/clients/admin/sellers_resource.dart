@@ -6,7 +6,8 @@ part 'generated/sellers_resource.g.dart';
 
 @RestApi()
 abstract class AdminSellersResource {
-  factory AdminSellersResource(Dio dio, {String baseUrl}) = _AdminSellersResource;
+  factory AdminSellersResource(Dio dio, {String baseUrl}) =
+      _AdminSellersResource;
 
   /// List sellers
   @GET('/admin/sellers')

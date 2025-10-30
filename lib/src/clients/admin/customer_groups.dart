@@ -32,16 +32,15 @@ abstract class CustomerGroupsResource {
   @POST('/admin/customer-groups/{customerGroupId}')
   Future<AdminCustomerGroupsRes> update(
     @Path('customerGroupId') String customerGroupId,
-    @Body() AdminPostCustomerGroupsReq body,{
-      @Extras() Map<String, String>? customHeaders,
-    });
+    @Body() AdminPostCustomerGroupsReq body, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @DELETE('/admin/customer-groups/{customerGroupId}')
   Future<AdminDeleteRes> delete(
-    @Path('customerGroupId') String customerGroupId,{
-      @Extras() Map<String, String>? customHeaders
-    }
-  );
+    @Path('customerGroupId') String customerGroupId, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @POST('/admin/customer-groups/{customerGroupId}/customers')
   Future<AdminCustomerGroupsRes> manageCustomers(

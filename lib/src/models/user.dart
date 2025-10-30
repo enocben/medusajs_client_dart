@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/user.g.dart';
@@ -7,7 +6,7 @@ part 'generated/user.g.dart';
 /// A User is an administrator who can manage store settings and data.
 @JsonSerializable()
 @CopyWith()
-class User extends Equatable {
+class User {
   const User({
     required this.id,
     required this.email,
@@ -49,7 +48,4 @@ class User extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

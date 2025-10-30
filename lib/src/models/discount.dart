@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/discount_rule.dart';
 import 'package:medusa_js_dart/src/models/region.dart';
@@ -9,7 +8,7 @@ part 'generated/discount.g.dart';
 /// A discount can be applied to a cart for promotional purposes.
 @JsonSerializable()
 @CopyWith()
-class Discount extends Equatable {
+class Discount {
   const Discount({
     required this.id,
     required this.code,
@@ -88,7 +87,4 @@ class Discount extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

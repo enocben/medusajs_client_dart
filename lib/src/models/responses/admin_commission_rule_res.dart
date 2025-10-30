@@ -5,9 +5,7 @@ part 'generated/admin_commission_rule_res.g.dart';
 
 @JsonSerializable()
 class AdminCommissionRuleRes {
-  AdminCommissionRuleRes({
-    required this.commissionRule,
-  });
+  AdminCommissionRuleRes({required this.commissionRule});
 
   factory AdminCommissionRuleRes.fromJson(Map<String, dynamic> json) =>
       _$AdminCommissionRuleResFromJson(json);

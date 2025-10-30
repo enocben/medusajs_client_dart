@@ -5,14 +5,12 @@ part 'generated/admin_post_create_api_keys_api_key_req.g.dart';
 
 @JsonSerializable()
 class AdminPostCreateApiKeysApiKeyReq {
-  AdminPostCreateApiKeysApiKeyReq({
-    required this.title,
-    required this.type,
-  });
+  AdminPostCreateApiKeysApiKeyReq({required this.title, required this.type});
   factory AdminPostCreateApiKeysApiKeyReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostCreateApiKeysApiKeyReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostCreateApiKeysApiKeyReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostCreateApiKeysApiKeyReqToJson(this);
 
   String title;
   ApiKeyType type;

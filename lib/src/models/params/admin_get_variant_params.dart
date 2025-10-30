@@ -4,10 +4,7 @@ part 'generated/admin_get_variant_params.g.dart';
 
 @JsonSerializable()
 class AdminGetVariantParams {
-  AdminGetVariantParams({
-    required this.expand,
-    required this.fields,
-  });
+  AdminGetVariantParams({required this.expand, required this.fields});
   factory AdminGetVariantParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetVariantParamsFromJson(json);
 

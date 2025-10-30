@@ -7,8 +7,8 @@ class StorePostCustomersCustomerPasswordTokenReq {
   StorePostCustomersCustomerPasswordTokenReq({required this.email});
 
   factory StorePostCustomersCustomerPasswordTokenReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$StorePostCustomersCustomerPasswordTokenReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$StorePostCustomersCustomerPasswordTokenReqFromJson(json);
 
   final String email;
 

@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/discount.dart';
 import 'package:medusa_js_dart/src/models/line_item.dart';
@@ -9,7 +8,7 @@ part 'generated/line_item_adjustment.g.dart';
 /// A Line Item Adjustment includes details on discounts applied on a line item.
 @JsonSerializable()
 @CopyWith()
-class LineItemAdjustment extends Equatable {
+class LineItemAdjustment {
   const LineItemAdjustment({
     required this.id,
     required this.itemId,
@@ -48,7 +47,4 @@ class LineItemAdjustment extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

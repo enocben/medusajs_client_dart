@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -7,7 +6,7 @@ part 'generated/promotion.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class Promotion extends Equatable {
+class Promotion {
   const Promotion({
     required this.id,
     required this.createdAt,
@@ -67,8 +66,4 @@ class Promotion extends Equatable {
 
   /// The campaign's details.
   final PromotionCampaign? campaign;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

@@ -19,7 +19,10 @@ class AdminPostOrdersOrderClaimsClaimReq {
   bool noNotification;
   Map<String, dynamic>? metadata;
 
-  factory AdminPostOrdersOrderClaimsClaimReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderClaimsClaimReqFromJson(json);
+  factory AdminPostOrdersOrderClaimsClaimReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostOrdersOrderClaimsClaimReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderClaimsClaimReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostOrdersOrderClaimsClaimReqToJson(this);
 }

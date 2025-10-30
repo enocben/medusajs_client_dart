@@ -8,7 +8,10 @@ class AdminDeleteSalesChannelsChannelProductsBatchReq {
 
   List<String> productIds;
 
-  factory AdminDeleteSalesChannelsChannelProductsBatchReq.fromJson(Map<String, dynamic> json) => _$AdminDeleteSalesChannelsChannelProductsBatchReqFromJson(json);
+  factory AdminDeleteSalesChannelsChannelProductsBatchReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminDeleteSalesChannelsChannelProductsBatchReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminDeleteSalesChannelsChannelProductsBatchReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminDeleteSalesChannelsChannelProductsBatchReqToJson(this);
 }

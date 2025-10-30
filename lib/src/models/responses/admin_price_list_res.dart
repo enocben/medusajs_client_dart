@@ -6,9 +6,7 @@ part 'generated/admin_price_list_res.g.dart';
 
 @JsonSerializable()
 class AdminPriceListRes {
-  AdminPriceListRes({
-    required this.priceList,
-  });
+  AdminPriceListRes({required this.priceList});
   factory AdminPriceListRes.fromJson(Map<String, dynamic> json) =>
       _$AdminPriceListResFromJson(json);
 

@@ -6,13 +6,14 @@ part 'generated/admin_inventory_items_location_levels_res.g.dart';
 
 @JsonSerializable()
 class AdminInventoryItemsLocationLevelsRes {
-  AdminInventoryItemsLocationLevelsRes({
-    required this.inventoryItem,
-  });
+  AdminInventoryItemsLocationLevelsRes({required this.inventoryItem});
 
   InventoryItem inventoryItem;
 
-  factory AdminInventoryItemsLocationLevelsRes.fromJson(Map<String, dynamic> json) => _$AdminInventoryItemsLocationLevelsResFromJson(json);
+  factory AdminInventoryItemsLocationLevelsRes.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminInventoryItemsLocationLevelsResFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminInventoryItemsLocationLevelsResToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminInventoryItemsLocationLevelsResToJson(this);
 }

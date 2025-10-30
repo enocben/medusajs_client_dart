@@ -8,12 +8,12 @@ class AdminPostManageInventoryLevelsGeneral {
     required this.create,
     required this.update,
     required this.delete,
-    this.force
+    this.force,
   });
 
   factory AdminPostManageInventoryLevelsGeneral.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostManageInventoryLevelsGeneralFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostManageInventoryLevelsGeneralFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostManageInventoryLevelsGeneralToJson(this);
@@ -29,9 +29,7 @@ class AdminPostManageInventoryLevelsGeneral {
 
   /// Whether to delete specified inventory levels even if they have a non-zero stocked quantity.
   bool? force;
- 
 }
-
 
 @JsonSerializable()
 class ManageInventoryLevelGeneral {
@@ -39,16 +37,13 @@ class ManageInventoryLevelGeneral {
     required this.locationId,
     required this.inventoryItemId,
     this.incomingQuantity,
-    this.stockedQuantity
+    this.stockedQuantity,
   });
 
-  factory ManageInventoryLevelGeneral.fromJson(
-          Map<String, dynamic> json,) =>
+  factory ManageInventoryLevelGeneral.fromJson(Map<String, dynamic> json) =>
       _$ManageInventoryLevelGeneralFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$ManageInventoryLevelGeneralToJson(this);
-
+  Map<String, dynamic> toJson() => _$ManageInventoryLevelGeneralToJson(this);
 
   /// The ID of the associated stock location.
   String locationId;
@@ -61,7 +56,6 @@ class ManageInventoryLevelGeneral {
 
   /// The stocked quantity.
   int? stockedQuantity;
- 
 }
 
 @JsonSerializable()
@@ -71,17 +65,16 @@ class UpdateManageInventoryLevelGeneral extends ManageInventoryLevelGeneral {
     required super.locationId,
     required super.inventoryItemId,
     super.incomingQuantity,
-    super.stockedQuantity
+    super.stockedQuantity,
   });
 
   factory UpdateManageInventoryLevelGeneral.fromJson(
-          Map<String, dynamic> json,) =>
-      _$UpdateManageInventoryLevelGeneralFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$UpdateManageInventoryLevelGeneralFromJson(json);
 
   @override
   Map<String, dynamic> toJson() =>
       _$UpdateManageInventoryLevelGeneralToJson(this);
-
 
   /// The update's ID
   String id;

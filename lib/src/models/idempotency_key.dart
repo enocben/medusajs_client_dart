@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/idempotency_key.g.dart';
@@ -7,7 +6,7 @@ part 'generated/idempotency_key.g.dart';
 /// Idempotency Key is used to continue a process in case of any failure that might occur.
 @JsonSerializable()
 @CopyWith()
-class IdempotencyKey extends Equatable {
+class IdempotencyKey {
   const IdempotencyKey({
     required this.id,
     required this.idempotencyKey,
@@ -54,7 +53,4 @@ class IdempotencyKey extends Equatable {
 
   /// Where to continue from.
   final String recoveryPoint;
-
-  @override
-  List<Object?> get props => [id];
 }

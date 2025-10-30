@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/enums/commission.dart';
 
@@ -7,7 +6,7 @@ part 'generated/commission_rule.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class CommissionRule extends Equatable {
+class CommissionRule {
   const CommissionRule({
     required this.id,
     required this.name,
@@ -60,13 +59,10 @@ class CommissionRule extends Equatable {
 
   final String? createdAt;
   final String? updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }
 
 @JsonSerializable()
-class CommissionPriceSet extends Equatable {
+class CommissionPriceSet {
   const CommissionPriceSet({required this.amount, required this.currencyCode});
 
   factory CommissionPriceSet.fromJson(Map<String, dynamic> json) =>
@@ -76,7 +72,4 @@ class CommissionPriceSet extends Equatable {
 
   final num amount;
   final String currencyCode;
-
-  @override
-  List<Object?> get props => [currencyCode];
 }

@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/customer_group.dart';
 import 'package:medusa_js_dart/src/models/discount_rule.dart';
@@ -13,7 +12,7 @@ part 'generated/discount_condition.g.dart';
 /// Holds rule conditions for when a discount is applicable
 @JsonSerializable()
 @CopyWith()
-class DiscountCondition extends Equatable {
+class DiscountCondition {
   const DiscountCondition({
     required this.id,
     required this.type,
@@ -76,7 +75,4 @@ class DiscountCondition extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

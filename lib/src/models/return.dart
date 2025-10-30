@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -8,7 +7,7 @@ part 'generated/return.g.dart';
 /// A Return holds information about Line Items that a Customer wishes to send back, along with how the items will be returned. Returns can also be used as part of a Swap or a Claim.
 @JsonSerializable()
 @CopyWith()
-class Return extends Equatable {
+class Return {
   const Return({
     required this.id,
     required this.status,
@@ -74,7 +73,4 @@ class Return extends Equatable {
 
   /// The date with timezone at which the resource was updated.
   final String updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

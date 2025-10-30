@@ -35,13 +35,13 @@ abstract class ShippingOptionsResource {
   @POST('/admin/shipping-options/{shippingOptionId}')
   Future<AdminShippingOptionsRes> update(
     @Path('shippingOptionId') String shippingOptionId,
-    @Body() AdminPostShippingOptionsOptionReq body,
-    {@Extras() Map<String, String>? customHeaders}
-  );
+    @Body() AdminPostShippingOptionsOptionReq body, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @DELETE('/admin/shipping-options/{shippingOptionId}')
   Future<AdminShippingOptionsDeleteRes> delete(
-    @Path('shippingOptionId') String shippingOptionId,
-    {@Extras() Map<String, String>? customHeaders}
-  );
+    @Path('shippingOptionId') String shippingOptionId, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 }

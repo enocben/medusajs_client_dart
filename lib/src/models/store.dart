@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/models.dart' show SupportedCurrencies;
 
@@ -8,7 +7,7 @@ part 'generated/store.g.dart';
 /// A store holds the main settings of the commerce shop. By default, only one store is created and used within the Medusa backend. It holds settings related to the name of the store, available currencies, and more.
 @JsonSerializable()
 @CopyWith()
-class Store extends Equatable {
+class Store {
   const Store({
     required this.id,
     required this.name,
@@ -50,7 +49,4 @@ class Store extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

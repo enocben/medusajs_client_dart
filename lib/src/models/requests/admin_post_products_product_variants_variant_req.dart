@@ -49,7 +49,10 @@ class AdminPostProductsProductVariantsVariantReq {
   List<Price>? prices;
   List<ProductOptionValue>? options;
 
-  factory AdminPostProductsProductVariantsVariantReq.fromJson(Map<String, dynamic> json) => _$AdminPostProductsProductVariantsVariantReqFromJson(json);
+  factory AdminPostProductsProductVariantsVariantReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductsProductVariantsVariantReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostProductsProductVariantsVariantReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostProductsProductVariantsVariantReqToJson(this);
 }

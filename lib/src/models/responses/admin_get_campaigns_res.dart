@@ -5,11 +5,12 @@ part 'generated/admin_get_campaigns_res.g.dart';
 
 @JsonSerializable()
 class AdminGetCampaignsRes {
-  const AdminGetCampaignsRes(
-      {required this.campaigns,
-      required this.count,
-      required this.limit,
-      required this.offset});
+  const AdminGetCampaignsRes({
+    required this.campaigns,
+    required this.count,
+    required this.limit,
+    required this.offset,
+  });
 
   factory AdminGetCampaignsRes.fromJson(Map<String, dynamic> json) =>
       _$AdminGetCampaignsResFromJson(json);

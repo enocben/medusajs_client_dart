@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/payment.dart';
 import 'package:medusa_js_dart/src/models/payment_capture.dart';
@@ -12,7 +11,7 @@ part 'generated/payment_collection.g.dart';
 /// Represents a payment collection for an ExchangeOrder.
 @JsonSerializable()
 @CopyWith()
-class PaymentCollection extends Equatable {
+class PaymentCollection {
   const PaymentCollection({
     required this.id,
     required this.currencyCode,
@@ -84,7 +83,4 @@ class PaymentCollection extends Equatable {
 
   /// The total authorized amount of the collection's payments.
   final num? authorizedAmount;
-
-  @override
-  List<Object?> get props => [id];
 }

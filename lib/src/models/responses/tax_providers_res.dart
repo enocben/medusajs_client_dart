@@ -5,11 +5,12 @@ part 'generated/tax_providers_res.g.dart';
 
 @JsonSerializable()
 class TaxProvidersRes {
-  TaxProvidersRes(
-      {required this.taxProviders,
-      required this.count,
-      required this.limit,
-      required this.offset});
+  TaxProvidersRes({
+    required this.taxProviders,
+    required this.count,
+    required this.limit,
+    required this.offset,
+  });
 
   factory TaxProvidersRes.fromJson(Map<String, dynamic> json) =>
       _$TaxProvidersResFromJson(json);

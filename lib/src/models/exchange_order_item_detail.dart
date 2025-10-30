@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/exchange_order_item_detail.g.dart';
@@ -7,7 +6,7 @@ part 'generated/exchange_order_item_detail.g.dart';
 /// Represents the detail of an item in an ExchangeOrderItem.
 @JsonSerializable()
 @CopyWith()
-class ExchangeOrderItemDetail extends Equatable {
+class ExchangeOrderItemDetail {
   const ExchangeOrderItemDetail({
     required this.id,
     required this.itemId,
@@ -66,7 +65,4 @@ class ExchangeOrderItemDetail extends Equatable {
 
   /// The date the detail was updated.
   final String? updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

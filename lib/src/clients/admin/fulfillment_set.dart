@@ -8,35 +8,32 @@ part 'generated/fulfillment_set.g.dart';
 
 @RestApi()
 abstract class FulfillmentSetResource {
-  factory FulfillmentSetResource(Dio dio,
-      {String baseUrl, ParseErrorLogger? errorLogger}) = _FulfillmentSetResource;
-
+  factory FulfillmentSetResource(
+    Dio dio, {
+    String baseUrl,
+    ParseErrorLogger? errorLogger,
+  }) = _FulfillmentSetResource;
 
   @GET('/admin/fulfillment-sets/{fulfillmentSetId}/service-zones/{zoneId}')
   Future<AdminServiceZoneRes> retrieve(
-    @Path('fulfillmentSetId') String fulfillmentSetId, 
-    @Path('zoneId') String zoneId, 
-    {
+    @Path('fulfillmentSetId') String fulfillmentSetId,
+    @Path('zoneId') String zoneId, {
     @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
   @GET('/admin/fulfillment-providers')
-  Future<AdminGetFulfillmentProvidersRes> listFulfillmentProviders(
-    {
+  Future<AdminGetFulfillmentProvidersRes> listFulfillmentProviders({
     @Queries() AdminGetFulfillmentProvidersParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
   @GET('/admin/fulfillment-providers/{fulfillmentProviderId}/options')
   Future<AdminGetFulfillmentOptionsRes> listFulfillmentOptions(
-    @Path('fulfillmentProviderId') String fulfillmentProviderId,
-    {
+    @Path('fulfillmentProviderId') String fulfillmentProviderId, {
     @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
-
-
 
   @POST('/admin/fulfillment-sets/{fulfillmentSetId}/service-zones')
   Future<AdminFulfillmentSetRes> create(
@@ -63,9 +60,8 @@ abstract class FulfillmentSetResource {
 
   @DELETE('/admin/fulfillment-sets/{fulfillmentSetId}/service-zones/{zoneId}')
   Future<AdminDeleteRes> deleteServiceZone(
-    @Path('fulfillmentSetId') String fulfillmentSetId, 
-    @Path('zoneId') String zoneId, 
-    {
+    @Path('fulfillmentSetId') String fulfillmentSetId,
+    @Path('zoneId') String zoneId, {
     @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });

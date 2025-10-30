@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -8,7 +7,7 @@ part 'generated/product_variant.g.dart';
 /// A Product Variant represents a Product with a specific set of Product Option configurations. The maximum number of Product Variants that a Product can have is given by the number of available Product Option combinations. A product must at least have one product variant.
 @JsonSerializable()
 @CopyWith()
-class ProductVariant extends Equatable {
+class ProductVariant {
   const ProductVariant({
     required this.id,
     required this.title,
@@ -139,8 +138,4 @@ class ProductVariant extends Equatable {
   /// - it is backorderable.
   ///
   final bool? purchasable;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

@@ -39,7 +39,7 @@ abstract class _$AdminGetPromotionsParamsCWProxy {
     ApplicationMethodParam? applicationMethod,
   );
 
-  AdminGetPromotionsParams compaignId(List<String>? compaignId);
+  AdminGetPromotionsParams campaignId(List<String>? campaignId);
 
   AdminGetPromotionsParams code(List<String>? code);
 
@@ -64,7 +64,7 @@ abstract class _$AdminGetPromotionsParamsCWProxy {
     DateFilter? createdAt,
     DateFilter? updatedAt,
     ApplicationMethodParam? applicationMethod,
-    List<String>? compaignId,
+    List<String>? campaignId,
     List<String>? code,
   });
 }
@@ -129,8 +129,8 @@ class _$AdminGetPromotionsParamsCWProxyImpl
   ) => this(applicationMethod: applicationMethod);
 
   @override
-  AdminGetPromotionsParams compaignId(List<String>? compaignId) =>
-      this(compaignId: compaignId);
+  AdminGetPromotionsParams campaignId(List<String>? campaignId) =>
+      this(campaignId: campaignId);
 
   @override
   AdminGetPromotionsParams code(List<String>? code) => this(code: code);
@@ -157,7 +157,7 @@ class _$AdminGetPromotionsParamsCWProxyImpl
     Object? createdAt = const $CopyWithPlaceholder(),
     Object? updatedAt = const $CopyWithPlaceholder(),
     Object? applicationMethod = const $CopyWithPlaceholder(),
-    Object? compaignId = const $CopyWithPlaceholder(),
+    Object? campaignId = const $CopyWithPlaceholder(),
     Object? code = const $CopyWithPlaceholder(),
   }) {
     return AdminGetPromotionsParams(
@@ -218,10 +218,10 @@ class _$AdminGetPromotionsParamsCWProxyImpl
           ? _value.applicationMethod
           // ignore: cast_nullable_to_non_nullable
           : applicationMethod as ApplicationMethodParam?,
-      compaignId: compaignId == const $CopyWithPlaceholder()
-          ? _value.compaignId
+      campaignId: campaignId == const $CopyWithPlaceholder()
+          ? _value.campaignId
           // ignore: cast_nullable_to_non_nullable
-          : compaignId as List<String>?,
+          : campaignId as List<String>?,
       code: code == const $CopyWithPlaceholder()
           ? _value.code
           // ignore: cast_nullable_to_non_nullable
@@ -276,7 +276,7 @@ AdminGetPromotionsParams _$AdminGetPromotionsParamsFromJson(
       : ApplicationMethodParam.fromJson(
           json['application_method'] as Map<String, dynamic>,
         ),
-  compaignId: (json['compaign_id'] as List<dynamic>?)
+  campaignId: (json['campaign_id'] as List<dynamic>?)
       ?.map((e) => e as String)
       .toList(),
   code: (json['code'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -301,7 +301,7 @@ Map<String, dynamic> _$AdminGetPromotionsParamsToJson(
   if (instance.updatedAt?.toJson() case final value?) 'updated_at': value,
   if (instance.applicationMethod?.toJson() case final value?)
     'application_method': value,
-  if (instance.compaignId case final value?) 'compaign_id': value,
+  if (instance.campaignId case final value?) 'campaign_id': value,
   if (instance.code case final value?) 'code': value,
 };
 

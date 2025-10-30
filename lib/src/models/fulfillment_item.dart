@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/fulfillment.dart';
 import 'package:medusa_js_dart/src/models/line_item.dart';
@@ -9,7 +8,7 @@ part 'generated/fulfillment_item.g.dart';
 /// This represents the association between a Line Item and a Fulfillment.
 @JsonSerializable()
 @CopyWith()
-class FulfillmentItem extends Equatable {
+class FulfillmentItem {
   const FulfillmentItem({
     required this.fulfillmentId,
     required this.itemId,
@@ -36,7 +35,4 @@ class FulfillmentItem extends Equatable {
 
   /// The quantity of the Line Item that is included in the Fulfillment.
   final int quantity;
-
-  @override
-  List<Object?> get props => [fulfillmentId, itemId];
 }

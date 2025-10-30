@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/product_option.dart';
 import 'package:medusa_js_dart/src/models/product_variant.dart';
@@ -9,7 +8,7 @@ part 'generated/product_option_value.g.dart';
 /// An option value is one of the possible values of a Product Option. Product Variants specify a unique combination of product option values.
 @JsonSerializable()
 @CopyWith()
-class ProductOptionValue extends Equatable {
+class ProductOptionValue {
   const ProductOptionValue({
     required this.id,
     required this.value,
@@ -56,8 +55,4 @@ class ProductOptionValue extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

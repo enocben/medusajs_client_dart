@@ -13,7 +13,10 @@ class AdminPostProductCategoriesCategoryParams {
 
   String fields;
 
-  factory AdminPostProductCategoriesCategoryParams.fromJson(Map<String, dynamic> json) => _$AdminPostProductCategoriesCategoryParamsFromJson(json);
+  factory AdminPostProductCategoriesCategoryParams.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductCategoriesCategoryParamsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostProductCategoriesCategoryParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostProductCategoriesCategoryParamsToJson(this);
 }

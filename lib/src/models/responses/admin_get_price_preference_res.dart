@@ -12,9 +12,7 @@ class AdminGetPricePreferenceRes {
     required this.limit,
   });
 
-  factory AdminGetPricePreferenceRes.fromJson(
-    Map<String, dynamic> json,
-  ) =>
+  factory AdminGetPricePreferenceRes.fromJson(Map<String, dynamic> json) =>
       _$AdminGetPricePreferenceResFromJson(json);
 
   List<PricePreference> pricePreferences;

@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/claim_item.dart';
@@ -13,7 +12,7 @@ part 'generated/claim_order.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class ClaimOrder extends Equatable {
+class ClaimOrder {
   const ClaimOrder({
     required this.id,
     required this.type,
@@ -63,7 +62,4 @@ class ClaimOrder extends Equatable {
   final Map<String, dynamic>? metadata;
   final bool noNotification;
   final String? idempotencyKey;
-
-  @override
-  List<Object?> get props => [id];
 }

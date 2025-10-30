@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/exchange_transaction.g.dart';
@@ -7,7 +6,7 @@ part 'generated/exchange_transaction.g.dart';
 /// Represents a transaction belonging to an Exchange in Medusa.
 @JsonSerializable()
 @CopyWith()
-class ExchangeTransaction extends Equatable {
+class ExchangeTransaction {
   const ExchangeTransaction({
     required this.id,
     required this.orderId,
@@ -50,7 +49,4 @@ class ExchangeTransaction extends Equatable {
 
   /// The date that the transaction was updated.
   final String? updatedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

@@ -12,9 +12,7 @@ class AdminGetInventoryLevelsRes {
     required this.limit,
   });
 
-  factory AdminGetInventoryLevelsRes.fromJson(
-    Map<String, dynamic> json,
-  ) =>
+  factory AdminGetInventoryLevelsRes.fromJson(Map<String, dynamic> json) =>
       _$AdminGetInventoryLevelsResFromJson(json);
 
   List<InventoryLevel> inventoryLevels;

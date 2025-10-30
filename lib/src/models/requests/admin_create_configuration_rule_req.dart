@@ -13,7 +13,8 @@ class AdminCreateConfigurationRuleReq {
   factory AdminCreateConfigurationRuleReq.fromJson(Map<String, dynamic> json) =>
       _$AdminCreateConfigurationRuleReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminCreateConfigurationRuleReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminCreateConfigurationRuleReqToJson(this);
 
   @JsonKey(name: 'rule_type')
   ConfigurationRuleType ruleType;

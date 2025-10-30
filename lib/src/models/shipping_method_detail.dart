@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/shipping_method_detail.g.dart';
@@ -7,7 +6,7 @@ part 'generated/shipping_method_detail.g.dart';
 /// Represents the details of changes to a shipping method in Medusa.
 @JsonSerializable()
 @CopyWith()
-class ShippingMethodDetail extends Equatable {
+class ShippingMethodDetail {
   const ShippingMethodDetail({
     required this.id,
     required this.shippingMethodId,
@@ -46,7 +45,4 @@ class ShippingMethodDetail extends Equatable {
 
   /// The ID of the associated claim.
   final String? claimId;
-
-  @override
-  List<Object?> get props => [id];
 }

@@ -14,7 +14,8 @@ class StorePostCartsCartLineItemsReq {
   final int quantity;
   final Map<String, dynamic>? metadata;
 
-  factory StorePostCartsCartLineItemsReq.fromJson(Map<String, dynamic> json) => _$StorePostCartsCartLineItemsReqFromJson(json);
+  factory StorePostCartsCartLineItemsReq.fromJson(Map<String, dynamic> json) =>
+      _$StorePostCartsCartLineItemsReqFromJson(json);
 
   Map<String, dynamic> toJson() => _$StorePostCartsCartLineItemsReqToJson(this);
 }

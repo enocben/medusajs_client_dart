@@ -9,7 +9,6 @@ part 'generated/get_api_keys_params.g.dart';
 @JsonSerializable(includeIfNull: false)
 @CopyWith()
 class GetApiKeysParams {
-
   const GetApiKeysParams({
     this.withDeleted,
     this.or,

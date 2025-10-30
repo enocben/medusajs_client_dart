@@ -24,7 +24,8 @@ class AdminPostOrdersOrderReturnsReq {
   double refund;
   String locationId;
 
-  factory AdminPostOrdersOrderReturnsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderReturnsReqFromJson(json);
+  factory AdminPostOrdersOrderReturnsReq.fromJson(Map<String, dynamic> json) =>
+      _$AdminPostOrdersOrderReturnsReqFromJson(json);
 
   Map<String, dynamic> toJson() => _$AdminPostOrdersOrderReturnsReqToJson(this);
 }

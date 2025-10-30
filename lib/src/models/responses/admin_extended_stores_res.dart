@@ -5,11 +5,12 @@ part 'generated/admin_extended_stores_res.g.dart';
 
 @JsonSerializable()
 class AdminExtendedStoresRes {
-  AdminExtendedStoresRes(
-      {required this.stores,
-      required this.limit,
-      required this.offset,
-      required this.count});
+  AdminExtendedStoresRes({
+    required this.stores,
+    required this.limit,
+    required this.offset,
+    required this.count,
+  });
   factory AdminExtendedStoresRes.fromJson(Map<String, dynamic> json) =>
       _$AdminExtendedStoresResFromJson(json);
 

@@ -22,7 +22,7 @@ class AdminGetPromotionsParams {
     this.createdAt,
     this.updatedAt,
     this.applicationMethod,
-    this.compaignId,
+    this.campaignId,
     this.code,
   });
 
@@ -64,7 +64,7 @@ class AdminGetPromotionsParams {
   final ApplicationMethodParam? applicationMethod;
 
   /// Filter by campaign IDs to retrieve their associated promotions.
-  final List<String>? compaignId;
+  final List<String>? campaignId;
 
   /// Filter by promotion codes.
   final List<String>? code;

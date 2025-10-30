@@ -4,14 +4,11 @@ part 'generated/admin_post_shipping_profiles_profile_req.g.dart';
 
 @JsonSerializable()
 class AdminPostShippingProfilesProfileReq {
-  AdminPostShippingProfilesProfileReq({
-    this.name,
-    this.type,
-  });
+  AdminPostShippingProfilesProfileReq({this.name, this.type});
 
   factory AdminPostShippingProfilesProfileReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostShippingProfilesProfileReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostShippingProfilesProfileReqFromJson(json);
 
   String? name;
   String? type;

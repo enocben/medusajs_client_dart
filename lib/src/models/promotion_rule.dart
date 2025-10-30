@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/models.dart';
 
@@ -7,7 +6,7 @@ part 'generated/promotion_rule.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PromotionRule extends Equatable {
+class PromotionRule {
   const PromotionRule({
     this.id,
     this.value,
@@ -59,14 +58,11 @@ class PromotionRule extends Equatable {
 
   /// The promotion rule's description.
   final String? description;
-
-  @override
-  List<Object?> get props => [id];
 }
 
 @JsonSerializable()
 @CopyWith()
-class PromotionRuleValue extends Equatable {
+class PromotionRuleValue {
   const PromotionRuleValue({required this.label, this.value});
 
   factory PromotionRuleValue.fromJson(Map<String, dynamic> json) =>
@@ -75,8 +71,4 @@ class PromotionRuleValue extends Equatable {
   final String? value;
 
   Map<String, dynamic> toJson() => _$PromotionRuleValueToJson(this);
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [value];
 }

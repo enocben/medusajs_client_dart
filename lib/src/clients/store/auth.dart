@@ -18,9 +18,7 @@ abstract class AuthResource {
   });
 
   @DELETE('/store/auth')
-  Future<void> deleteSession({
-    @Extras() Map<String, String>? customHeaders,
-  });
+  Future<void> deleteSession({@Extras() Map<String, String>? customHeaders});
 
   @GET('/store/auth')
   Future<StoreAuthRes> getSession({

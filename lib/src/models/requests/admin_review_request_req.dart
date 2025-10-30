@@ -5,10 +5,7 @@ part 'generated/admin_review_request_req.g.dart';
 
 @JsonSerializable()
 class AdminReviewRequestReq {
-  AdminReviewRequestReq({
-    required this.status,
-    required this.reviewerNote,
-  });
+  AdminReviewRequestReq({required this.status, required this.reviewerNote});
 
   factory AdminReviewRequestReq.fromJson(Map<String, dynamic> json) =>
       _$AdminReviewRequestReqFromJson(json);

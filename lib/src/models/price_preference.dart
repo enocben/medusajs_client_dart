@@ -1,12 +1,11 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/price_preference.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PricePreference extends Equatable {
+class PricePreference {
   const PricePreference({
     required this.id,
     this.attribute,
@@ -36,8 +35,4 @@ class PricePreference extends Equatable {
   final String createdAt;
   final String updatedAt;
   final String? deletedAt;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

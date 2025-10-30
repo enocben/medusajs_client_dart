@@ -1,11 +1,4 @@
-import 'package:medusa_js_dart/src/models/image.dart';
-import 'package:medusa_js_dart/src/models/product_category.dart';
-import 'package:medusa_js_dart/src/models/product_collection.dart';
-import 'package:medusa_js_dart/src/models/product_option.dart';
-import 'package:medusa_js_dart/src/models/product_tag.dart';
-import 'package:medusa_js_dart/src/models/product_type.dart';
-import 'package:medusa_js_dart/src/models/sales_channel.dart';
-import 'package:medusa_js_dart/src/models/shipping_profile.dart';
+import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 abstract class BaseProduct {
   const BaseProduct({

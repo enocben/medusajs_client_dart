@@ -1,12 +1,11 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/custom_shipping_option.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class CustomShippingOption extends Equatable {
+class CustomShippingOption {
   const CustomShippingOption({required this.optionId, required this.price});
   factory CustomShippingOption.fromJson(Map<String, dynamic> json) =>
       _$CustomShippingOptionFromJson(json);
@@ -15,7 +14,4 @@ class CustomShippingOption extends Equatable {
 
   final String optionId;
   final int price;
-
-  @override
-  List<Object?> get props => [optionId];
 }

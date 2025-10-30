@@ -4,9 +4,7 @@ part 'generated/store_bearer_auth_res.g.dart';
 
 @JsonSerializable()
 class StoreBearerAuthRes {
-  StoreBearerAuthRes({
-    required this.accessToken,
-  });
+  StoreBearerAuthRes({required this.accessToken});
   factory StoreBearerAuthRes.fromJson(Map<String, dynamic> json) =>
       _$StoreBearerAuthResFromJson(json);
 

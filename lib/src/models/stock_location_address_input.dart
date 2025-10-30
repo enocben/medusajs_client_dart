@@ -1,12 +1,11 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/stock_location_address_input.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class StockLocationAddressInput extends Equatable {
+class StockLocationAddressInput {
   const StockLocationAddressInput({
     required this.address_1,
     this.address_2,
@@ -33,7 +32,4 @@ class StockLocationAddressInput extends Equatable {
   final String? postalCode;
   final String? province;
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [address_1, countryCode];
 }

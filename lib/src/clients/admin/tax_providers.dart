@@ -6,7 +6,8 @@ part 'generated/tax_providers.g.dart';
 
 @RestApi()
 abstract class TaxProvidersResource {
-  factory TaxProvidersResource(Dio dio, {String baseUrl}) = _TaxProvidersResource;
+  factory TaxProvidersResource(Dio dio, {String baseUrl}) =
+      _TaxProvidersResource;
 
   @GET('/admin/tax-providers')
   Future<TaxProvidersRes> list({

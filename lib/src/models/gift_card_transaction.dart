@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/gift_card.dart';
 import 'package:medusa_js_dart/src/models/order.dart';
@@ -9,7 +8,7 @@ part 'generated/gift_card_transaction.g.dart';
 /// Gift Card Transactions are created once a Customer uses a Gift Card to pay for their Order.
 @JsonSerializable()
 @CopyWith()
-class GiftCardTransaction extends Equatable {
+class GiftCardTransaction {
   const GiftCardTransaction({
     required this.id,
     required this.giftCardId,
@@ -52,7 +51,4 @@ class GiftCardTransaction extends Equatable {
 
   /// The tax rate of the transaction
   final double? taxRate;
-
-  @override
-  List<Object?> get props => [id];
 }

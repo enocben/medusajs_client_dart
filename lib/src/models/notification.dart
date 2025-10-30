@@ -1,11 +1,10 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/notification.g.dart';
 
 /// A notification is an alert sent, typically to customers, using the installed Notification Provider as a reaction to internal events such as `order.placed`. Notifications can be resent.
 @JsonSerializable()
-class Notification extends Equatable {
+class Notification {
   const Notification({
     required this.id,
     required this.to,
@@ -71,8 +70,4 @@ class Notification extends Equatable {
 
   /// Data payload to send with the notification.
   final Map<String, dynamic>? data;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

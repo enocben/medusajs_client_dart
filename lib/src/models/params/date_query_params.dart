@@ -5,7 +5,6 @@ part 'generated/date_query_params.g.dart';
 /// Filter fields for *_at query parameters (e.g. created_at, updated_at).
 @JsonSerializable(includeIfNull: false)
 class DateQueryParams {
-
   const DateQueryParams({
     this.exists,
     this.contained,

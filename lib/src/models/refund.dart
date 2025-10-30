@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/order.dart';
 import 'package:medusa_js_dart/src/models/payment.dart';
@@ -7,7 +6,7 @@ part 'generated/refund.g.dart';
 
 /// A refund represents an amount of money transferred back to the customer for a given reason. Refunds may occur in relation to Returns, Swaps, and Claims, but can also be initiated by an admin for an order.
 @JsonSerializable()
-class Refund extends Equatable {
+class Refund {
   const Refund({
     required this.id,
     this.orderId,
@@ -61,8 +60,4 @@ class Refund extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

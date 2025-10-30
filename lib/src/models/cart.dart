@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/customer.dart';
@@ -16,7 +15,7 @@ part 'generated/cart.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class Cart extends Equatable {
+class Cart {
   const Cart({
     required this.id,
     this.email,
@@ -107,7 +106,4 @@ class Cart extends Equatable {
   final double? giftCardTotal;
   final double? giftCardTaxTotal;
   final List<SalesChannel>? salesChannels;
-
-  @override
-  List<Object?> get props => [id];
 }

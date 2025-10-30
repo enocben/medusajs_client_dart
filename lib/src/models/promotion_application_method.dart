@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/enums/enums.dart';
 import 'package:medusa_js_dart/src/models/promotion_rule.dart';
@@ -8,7 +7,7 @@ part 'generated/promotion_application_method.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class PromotionApplicationMethod extends Equatable {
+class PromotionApplicationMethod {
   const PromotionApplicationMethod({
     required this.id,
     this.applyToQuantity,
@@ -72,8 +71,4 @@ class PromotionApplicationMethod extends Equatable {
   final List<PromotionRule>? targetRules;
 
   final Map<String, dynamic>? promotion;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

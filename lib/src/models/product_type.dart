@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/product_type.g.dart';
@@ -7,7 +6,7 @@ part 'generated/product_type.g.dart';
 /// A Product Type can be added to Products for filtering and reporting purposes.
 @JsonSerializable()
 @CopyWith()
-class ProductType extends Equatable {
+class ProductType {
   /// Constructor
   ProductType({
     required this.id,
@@ -39,8 +38,4 @@ class ProductType extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id, value];
 }

@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/user.dart';
 
@@ -7,7 +6,7 @@ part 'generated/batch_job.g.dart';
 
 @JsonSerializable()
 @CopyWith()
-class BatchJob extends Equatable {
+class BatchJob {
   const BatchJob({
     required this.id,
     required this.type,
@@ -49,7 +48,4 @@ class BatchJob extends Equatable {
   final String createdAt;
   final String updatedAt;
   final String? deletedAt;
-
-  @override
-  List<Object?> get props => [id];
 }

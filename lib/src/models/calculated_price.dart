@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/calculated_price.g.dart';
@@ -7,7 +6,7 @@ part 'generated/calculated_price.g.dart';
 /// Represents the calculated price details for a product variant.
 @JsonSerializable()
 @CopyWith()
-class CalculatedPrice extends Equatable {
+class CalculatedPrice {
   const CalculatedPrice({
     required this.id,
     this.calculatedAmount,
@@ -71,7 +70,4 @@ class CalculatedPrice extends Equatable {
 
   /// Whether the calculated price belongs to a price list.
   final bool? isCalculatedPricePriceList;
-
-  @override
-  List<Object?> get props => [id];
 }

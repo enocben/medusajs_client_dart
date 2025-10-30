@@ -5,10 +5,7 @@ part 'generated/notification_provider.g.dart';
 /// A notification provider represents a notification service installed in the Medusa backend, either through a plugin or backend customizations. It holds the notification service's installation status.
 @JsonSerializable()
 class NotificationProvider {
-  NotificationProvider({
-    required this.id,
-    required this.isInstalled,
-  });
+  NotificationProvider({required this.id, required this.isInstalled});
   factory NotificationProvider.fromJson(Map<String, dynamic> json) =>
       _$NotificationProviderFromJson(json);
 

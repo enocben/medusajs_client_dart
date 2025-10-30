@@ -45,8 +45,8 @@ class AdminGetProductsVariantsParams {
   /// The product variant's barcode.
   List<String>? barcode;
 
-  /// The field to sort the data by. 
-  /// By default, the sort order is ascending. 
+  /// The field to sort the data by.
+  /// By default, the sort order is ascending.
   /// To change the order to descending, prefix the field name with -.
   String? order;
 

@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
 import 'package:medusa_js_dart/src/models/order.dart';
@@ -9,7 +8,7 @@ part 'generated/draft_order.g.dart';
 /// A draft order is created by an admin without direct involvement of the customer. Once its payment is marked as captured, it is transformed into an order.
 @JsonSerializable()
 @CopyWith()
-class DraftOrder extends Equatable {
+class DraftOrder {
   const DraftOrder({
     required this.id,
     required this.status,
@@ -72,7 +71,4 @@ class DraftOrder extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  List<Object?> get props => [id];
 }

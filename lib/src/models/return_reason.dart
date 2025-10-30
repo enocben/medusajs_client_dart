@@ -1,11 +1,10 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/return_reason.g.dart';
 
 /// A Return Reason is a value defined by an admin. It can be used on Return Items in order to indicate why a Line Item was returned.
 @JsonSerializable()
-class ReturnReason extends Equatable {
+class ReturnReason {
   const ReturnReason({
     required this.id,
     required this.value,
@@ -45,8 +44,4 @@ class ReturnReason extends Equatable {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => [id];
 }

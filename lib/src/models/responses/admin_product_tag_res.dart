@@ -5,9 +5,7 @@ part 'generated/admin_product_tag_res.g.dart';
 
 @JsonSerializable()
 class AdminProductTagRes {
-  AdminProductTagRes({
-    required this.productTag,
-  });
+  AdminProductTagRes({required this.productTag});
 
   factory AdminProductTagRes.fromJson(Map<String, dynamic> json) =>
       _$AdminProductTagResFromJson(json);

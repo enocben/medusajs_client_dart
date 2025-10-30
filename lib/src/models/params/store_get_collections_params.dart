@@ -31,12 +31,7 @@ class StoreGetCollectionsParams {
 
 @JsonSerializable()
 class CreatedAtParams {
-  CreatedAtParams({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  CreatedAtParams({this.lt, this.gt, this.lte, this.gte});
   factory CreatedAtParams.fromJson(Map<String, dynamic> json) =>
       _$CreatedAtParamsFromJson(json);
 
@@ -53,12 +48,7 @@ class CreatedAtParams {
 
 @JsonSerializable()
 class UpdatedAtParams {
-  UpdatedAtParams({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  UpdatedAtParams({this.lt, this.gt, this.lte, this.gte});
   factory UpdatedAtParams.fromJson(Map<String, dynamic> json) =>
       _$UpdatedAtParamsFromJson(json);
 
