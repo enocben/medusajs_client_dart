@@ -14,7 +14,7 @@ AdminListInvitesRes _$AdminListInvitesResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminListInvitesResToJson(
-        AdminListInvitesRes instance) =>
-    <String, dynamic>{
-      'invites': instance.invites.map((e) => e.toJson()).toList(),
-    };
+  AdminListInvitesRes instance,
+) => <String, dynamic>{
+  'invites': instance.invites.map((e) => e.toJson()).toList(),
+};

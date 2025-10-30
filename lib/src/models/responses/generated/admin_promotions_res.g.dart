@@ -12,6 +12,4 @@ AdminPromotionsRes _$AdminPromotionsResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminPromotionsResToJson(AdminPromotionsRes instance) =>
-    <String, dynamic>{
-      'promotion': instance.promotion.toJson(),
-    };
+    <String, dynamic>{'promotion': instance.promotion.toJson()};

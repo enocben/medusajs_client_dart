@@ -1,10 +1,12 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/price.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class Price {
-  Price({
+  const Price({
     required this.currencyCode,
     required this.variantId,
     required this.amount,
@@ -24,8 +26,9 @@ class Price {
 }
 
 @JsonSerializable()
+@CopyWith()
 class PriceOptionalFields {
-  PriceOptionalFields({
+  const PriceOptionalFields({
     required this.id,
     required this.variantId,
     this.currencyCode,

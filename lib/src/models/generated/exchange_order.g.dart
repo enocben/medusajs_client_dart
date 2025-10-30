@@ -28,7 +28,8 @@ abstract class _$ExchangeOrderCWProxy {
   ExchangeOrder paymentStatus(ExchangeOrderPaymentStatus? paymentStatus);
 
   ExchangeOrder fulfillmentStatus(
-      ExchangeOrderFulfillmentStatus? fulfillmentStatus);
+    ExchangeOrderFulfillmentStatus? fulfillmentStatus,
+  );
 
   ExchangeOrder summary(ExchangeOrderSummary? summary);
 
@@ -192,8 +193,8 @@ class _$ExchangeOrderCWProxyImpl implements _$ExchangeOrderCWProxy {
 
   @override
   ExchangeOrder fulfillmentStatus(
-          ExchangeOrderFulfillmentStatus? fulfillmentStatus) =>
-      this(fulfillmentStatus: fulfillmentStatus);
+    ExchangeOrderFulfillmentStatus? fulfillmentStatus,
+  ) => this(fulfillmentStatus: fulfillmentStatus);
 
   @override
   ExchangeOrder summary(ExchangeOrderSummary? summary) =>
@@ -317,11 +318,10 @@ class _$ExchangeOrderCWProxyImpl implements _$ExchangeOrderCWProxy {
 
   @override
   ExchangeOrder paymentCollections(
-          List<PaymentCollection>? paymentCollections) =>
-      this(paymentCollections: paymentCollections);
+    List<PaymentCollection>? paymentCollections,
+  ) => this(paymentCollections: paymentCollections);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExchangeOrder(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -509,19 +509,19 @@ class _$ExchangeOrderCWProxyImpl implements _$ExchangeOrderCWProxy {
           : shippingTaxTotal as num?,
       originalShippingTotal:
           originalShippingTotal == const $CopyWithPlaceholder()
-              ? _value.originalShippingTotal
-              // ignore: cast_nullable_to_non_nullable
-              : originalShippingTotal as num?,
+          ? _value.originalShippingTotal
+          // ignore: cast_nullable_to_non_nullable
+          : originalShippingTotal as num?,
       originalShippingSubtotal:
           originalShippingSubtotal == const $CopyWithPlaceholder()
-              ? _value.originalShippingSubtotal
-              // ignore: cast_nullable_to_non_nullable
-              : originalShippingSubtotal as num?,
+          ? _value.originalShippingSubtotal
+          // ignore: cast_nullable_to_non_nullable
+          : originalShippingSubtotal as num?,
       originalShippingTaxTotal:
           originalShippingTaxTotal == const $CopyWithPlaceholder()
-              ? _value.originalShippingTaxTotal
-              // ignore: cast_nullable_to_non_nullable
-              : originalShippingTaxTotal as num?,
+          ? _value.originalShippingTaxTotal
+          // ignore: cast_nullable_to_non_nullable
+          : originalShippingTaxTotal as num?,
       status: status == const $CopyWithPlaceholder()
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
@@ -568,149 +568,144 @@ extension $ExchangeOrderCopyWith on ExchangeOrder {
 // JsonSerializableGenerator
 // **************************************************************************
 
-ExchangeOrder _$ExchangeOrderFromJson(Map<String, dynamic> json) =>
-    ExchangeOrder(
-      id: json['id'] as String,
-      version: json['version'] as num?,
-      regionId: json['region_id'] as String?,
-      customerId: json['customer_id'] as String?,
-      salesChannelId: json['sales_channel_id'] as String?,
-      email: json['email'] as String?,
-      currencyCode: json['currency_code'] as String?,
-      items: (json['items'] as List<dynamic>?)
-          ?.map((e) => ExchangeOrderItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      shippingMethods: (json['shipping_methods'] as List<dynamic>?)
-          ?.map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      paymentStatus: $enumDecodeNullable(
-          _$ExchangeOrderPaymentStatusEnumMap, json['payment_status']),
-      fulfillmentStatus: $enumDecodeNullable(
-          _$ExchangeOrderFulfillmentStatusEnumMap, json['fulfillment_status']),
-      summary: json['summary'] == null
-          ? null
-          : ExchangeOrderSummary.fromJson(
-              json['summary'] as Map<String, dynamic>),
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
-      originalItemTotal: json['original_item_total'] as num?,
-      originalItemSubtotal: json['original_item_subtotal'] as num?,
-      originalItemTaxTotal: json['original_item_tax_total'] as num?,
-      itemTotal: json['item_total'] as num?,
-      itemSubtotal: json['item_subtotal'] as num?,
-      itemTaxTotal: json['item_tax_total'] as num?,
-      originalTotal: json['original_total'] as num?,
-      originalSubtotal: json['original_subtotal'] as num?,
-      originalTaxTotal: json['original_tax_total'] as num?,
-      total: json['total'] as num?,
-      subtotal: json['subtotal'] as num?,
-      taxTotal: json['tax_total'] as num?,
-      discountTotal: json['discount_total'] as num?,
-      discountTaxTotal: json['discount_tax_total'] as num?,
-      giftCardTotal: json['gift_card_total'] as num?,
-      giftCardTaxTotal: json['gift_card_tax_total'] as num?,
-      shippingTotal: json['shipping_total'] as num?,
-      shippingSubtotal: json['shipping_subtotal'] as num?,
-      shippingTaxTotal: json['shipping_tax_total'] as num?,
-      originalShippingTotal: json['original_shipping_total'] as num?,
-      originalShippingSubtotal: json['original_shipping_subtotal'] as num?,
-      originalShippingTaxTotal: json['original_shipping_tax_total'] as num?,
-      status: json['status'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
-      transactions: (json['transactions'] as List<dynamic>?)
-          ?.map((e) =>
-              ExchangeOrderTransaction.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      displayId: json['display_id'] as num?,
-      billingAddress: json['billing_address'] == null
-          ? null
-          : Address.fromJson(json['billing_address'] as Map<String, dynamic>),
-      shippingAddress: json['shipping_address'] == null
-          ? null
-          : Address.fromJson(json['shipping_address'] as Map<String, dynamic>),
-      fulfillments: (json['fulfillments'] as List<dynamic>?)
-          ?.map((e) =>
-              ExchangeOrderFulfillment.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      paymentCollections: (json['payment_collections'] as List<dynamic>?)
-          ?.map((e) => PaymentCollection.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+ExchangeOrder _$ExchangeOrderFromJson(
+  Map<String, dynamic> json,
+) => ExchangeOrder(
+  id: json['id'] as String,
+  version: json['version'] as num?,
+  regionId: json['region_id'] as String?,
+  customerId: json['customer_id'] as String?,
+  salesChannelId: json['sales_channel_id'] as String?,
+  email: json['email'] as String?,
+  currencyCode: json['currency_code'] as String?,
+  items: (json['items'] as List<dynamic>?)
+      ?.map((e) => ExchangeOrderItem.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  shippingMethods: (json['shipping_methods'] as List<dynamic>?)
+      ?.map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  paymentStatus: $enumDecodeNullable(
+    _$ExchangeOrderPaymentStatusEnumMap,
+    json['payment_status'],
+  ),
+  fulfillmentStatus: $enumDecodeNullable(
+    _$ExchangeOrderFulfillmentStatusEnumMap,
+    json['fulfillment_status'],
+  ),
+  summary: json['summary'] == null
+      ? null
+      : ExchangeOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
+  createdAt: json['created_at'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  originalItemTotal: json['original_item_total'] as num?,
+  originalItemSubtotal: json['original_item_subtotal'] as num?,
+  originalItemTaxTotal: json['original_item_tax_total'] as num?,
+  itemTotal: json['item_total'] as num?,
+  itemSubtotal: json['item_subtotal'] as num?,
+  itemTaxTotal: json['item_tax_total'] as num?,
+  originalTotal: json['original_total'] as num?,
+  originalSubtotal: json['original_subtotal'] as num?,
+  originalTaxTotal: json['original_tax_total'] as num?,
+  total: json['total'] as num?,
+  subtotal: json['subtotal'] as num?,
+  taxTotal: json['tax_total'] as num?,
+  discountTotal: json['discount_total'] as num?,
+  discountTaxTotal: json['discount_tax_total'] as num?,
+  giftCardTotal: json['gift_card_total'] as num?,
+  giftCardTaxTotal: json['gift_card_tax_total'] as num?,
+  shippingTotal: json['shipping_total'] as num?,
+  shippingSubtotal: json['shipping_subtotal'] as num?,
+  shippingTaxTotal: json['shipping_tax_total'] as num?,
+  originalShippingTotal: json['original_shipping_total'] as num?,
+  originalShippingSubtotal: json['original_shipping_subtotal'] as num?,
+  originalShippingTaxTotal: json['original_shipping_tax_total'] as num?,
+  status: json['status'] as String?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
+  transactions: (json['transactions'] as List<dynamic>?)
+      ?.map((e) => ExchangeOrderTransaction.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  displayId: json['display_id'] as num?,
+  billingAddress: json['billing_address'] == null
+      ? null
+      : Address.fromJson(json['billing_address'] as Map<String, dynamic>),
+  shippingAddress: json['shipping_address'] == null
+      ? null
+      : Address.fromJson(json['shipping_address'] as Map<String, dynamic>),
+  fulfillments: (json['fulfillments'] as List<dynamic>?)
+      ?.map((e) => ExchangeOrderFulfillment.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  paymentCollections: (json['payment_collections'] as List<dynamic>?)
+      ?.map((e) => PaymentCollection.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
-Map<String, dynamic> _$ExchangeOrderToJson(ExchangeOrder instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.version case final value?) 'version': value,
-      if (instance.regionId case final value?) 'region_id': value,
-      if (instance.customerId case final value?) 'customer_id': value,
-      if (instance.salesChannelId case final value?) 'sales_channel_id': value,
-      if (instance.email case final value?) 'email': value,
-      if (instance.currencyCode case final value?) 'currency_code': value,
-      if (instance.items?.map((e) => e.toJson()).toList() case final value?)
-        'items': value,
-      if (instance.shippingMethods?.map((e) => e.toJson()).toList()
-          case final value?)
-        'shipping_methods': value,
-      if (_$ExchangeOrderPaymentStatusEnumMap[instance.paymentStatus]
-          case final value?)
-        'payment_status': value,
-      if (_$ExchangeOrderFulfillmentStatusEnumMap[instance.fulfillmentStatus]
-          case final value?)
-        'fulfillment_status': value,
-      if (instance.summary?.toJson() case final value?) 'summary': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.originalItemTotal case final value?)
-        'original_item_total': value,
-      if (instance.originalItemSubtotal case final value?)
-        'original_item_subtotal': value,
-      if (instance.originalItemTaxTotal case final value?)
-        'original_item_tax_total': value,
-      if (instance.itemTotal case final value?) 'item_total': value,
-      if (instance.itemSubtotal case final value?) 'item_subtotal': value,
-      if (instance.itemTaxTotal case final value?) 'item_tax_total': value,
-      if (instance.originalTotal case final value?) 'original_total': value,
-      if (instance.originalSubtotal case final value?)
-        'original_subtotal': value,
-      if (instance.originalTaxTotal case final value?)
-        'original_tax_total': value,
-      if (instance.total case final value?) 'total': value,
-      if (instance.subtotal case final value?) 'subtotal': value,
-      if (instance.taxTotal case final value?) 'tax_total': value,
-      if (instance.discountTotal case final value?) 'discount_total': value,
-      if (instance.discountTaxTotal case final value?)
-        'discount_tax_total': value,
-      if (instance.giftCardTotal case final value?) 'gift_card_total': value,
-      if (instance.giftCardTaxTotal case final value?)
-        'gift_card_tax_total': value,
-      if (instance.shippingTotal case final value?) 'shipping_total': value,
-      if (instance.shippingSubtotal case final value?)
-        'shipping_subtotal': value,
-      if (instance.shippingTaxTotal case final value?)
-        'shipping_tax_total': value,
-      if (instance.originalShippingTotal case final value?)
-        'original_shipping_total': value,
-      if (instance.originalShippingSubtotal case final value?)
-        'original_shipping_subtotal': value,
-      if (instance.originalShippingTaxTotal case final value?)
-        'original_shipping_tax_total': value,
-      if (instance.status case final value?) 'status': value,
-      if (instance.metadata case final value?) 'metadata': value,
-      if (instance.transactions?.map((e) => e.toJson()).toList()
-          case final value?)
-        'transactions': value,
-      if (instance.displayId case final value?) 'display_id': value,
-      if (instance.billingAddress?.toJson() case final value?)
-        'billing_address': value,
-      if (instance.shippingAddress?.toJson() case final value?)
-        'shipping_address': value,
-      if (instance.fulfillments?.map((e) => e.toJson()).toList()
-          case final value?)
-        'fulfillments': value,
-      if (instance.paymentCollections?.map((e) => e.toJson()).toList()
-          case final value?)
-        'payment_collections': value,
-    };
+Map<String, dynamic> _$ExchangeOrderToJson(
+  ExchangeOrder instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.version case final value?) 'version': value,
+  if (instance.regionId case final value?) 'region_id': value,
+  if (instance.customerId case final value?) 'customer_id': value,
+  if (instance.salesChannelId case final value?) 'sales_channel_id': value,
+  if (instance.email case final value?) 'email': value,
+  if (instance.currencyCode case final value?) 'currency_code': value,
+  if (instance.items?.map((e) => e.toJson()).toList() case final value?)
+    'items': value,
+  if (instance.shippingMethods?.map((e) => e.toJson()).toList()
+      case final value?)
+    'shipping_methods': value,
+  if (_$ExchangeOrderPaymentStatusEnumMap[instance.paymentStatus]
+      case final value?)
+    'payment_status': value,
+  if (_$ExchangeOrderFulfillmentStatusEnumMap[instance.fulfillmentStatus]
+      case final value?)
+    'fulfillment_status': value,
+  if (instance.summary?.toJson() case final value?) 'summary': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.originalItemTotal case final value?)
+    'original_item_total': value,
+  if (instance.originalItemSubtotal case final value?)
+    'original_item_subtotal': value,
+  if (instance.originalItemTaxTotal case final value?)
+    'original_item_tax_total': value,
+  if (instance.itemTotal case final value?) 'item_total': value,
+  if (instance.itemSubtotal case final value?) 'item_subtotal': value,
+  if (instance.itemTaxTotal case final value?) 'item_tax_total': value,
+  if (instance.originalTotal case final value?) 'original_total': value,
+  if (instance.originalSubtotal case final value?) 'original_subtotal': value,
+  if (instance.originalTaxTotal case final value?) 'original_tax_total': value,
+  if (instance.total case final value?) 'total': value,
+  if (instance.subtotal case final value?) 'subtotal': value,
+  if (instance.taxTotal case final value?) 'tax_total': value,
+  if (instance.discountTotal case final value?) 'discount_total': value,
+  if (instance.discountTaxTotal case final value?) 'discount_tax_total': value,
+  if (instance.giftCardTotal case final value?) 'gift_card_total': value,
+  if (instance.giftCardTaxTotal case final value?) 'gift_card_tax_total': value,
+  if (instance.shippingTotal case final value?) 'shipping_total': value,
+  if (instance.shippingSubtotal case final value?) 'shipping_subtotal': value,
+  if (instance.shippingTaxTotal case final value?) 'shipping_tax_total': value,
+  if (instance.originalShippingTotal case final value?)
+    'original_shipping_total': value,
+  if (instance.originalShippingSubtotal case final value?)
+    'original_shipping_subtotal': value,
+  if (instance.originalShippingTaxTotal case final value?)
+    'original_shipping_tax_total': value,
+  if (instance.status case final value?) 'status': value,
+  if (instance.metadata case final value?) 'metadata': value,
+  if (instance.transactions?.map((e) => e.toJson()).toList() case final value?)
+    'transactions': value,
+  if (instance.displayId case final value?) 'display_id': value,
+  if (instance.billingAddress?.toJson() case final value?)
+    'billing_address': value,
+  if (instance.shippingAddress?.toJson() case final value?)
+    'shipping_address': value,
+  if (instance.fulfillments?.map((e) => e.toJson()).toList() case final value?)
+    'fulfillments': value,
+  if (instance.paymentCollections?.map((e) => e.toJson()).toList()
+      case final value?)
+    'payment_collections': value,
+};
 
 const _$ExchangeOrderPaymentStatusEnumMap = {
   ExchangeOrderPaymentStatus.canceled: 'canceled',

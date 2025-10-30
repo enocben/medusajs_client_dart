@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -5,8 +6,9 @@ part 'generated/shipping_tax_rate.g.dart';
 
 /// This represents the tax rates applied on a shipping option.
 @JsonSerializable()
+@CopyWith()
 class ShippingTaxRate {
-  ShippingTaxRate({
+  const ShippingTaxRate({
     required this.shippingOptionId,
     this.shippingOption,
     required this.rateId,
@@ -21,23 +23,23 @@ class ShippingTaxRate {
   Map<String, dynamic> toJson() => _$ShippingTaxRateToJson(this);
 
   /// The ID of the shipping option.
-  late String shippingOptionId;
+  final String shippingOptionId;
 
   /// The details of the shipping option.
-  ShippingOption? shippingOption;
+  final ShippingOption? shippingOption;
 
   /// The ID of the associated tax rate.
-  late String rateId;
+  final String rateId;
 
   /// The details of the associated tax rate.
-  TaxRate? taxRate;
+  final TaxRate? taxRate;
 
   /// The date with timezone at which the resource was created.
-  String? createdAt;
+  final String? createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String? updatedAt;
+  final String? updatedAt;
 
   /// An optional key-value map with additional details.
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 }

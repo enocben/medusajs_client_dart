@@ -9,8 +9,8 @@ class AdminPostPublishableApiKeySalesChannelsBatchReq {
   });
 
   factory AdminPostPublishableApiKeySalesChannelsBatchReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostPublishableApiKeySalesChannelsBatchReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostPublishableApiKeySalesChannelsBatchReqFromJson(json);
 
   List<String> salesChannelIds;
 

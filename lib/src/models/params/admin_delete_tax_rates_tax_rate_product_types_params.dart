@@ -7,8 +7,8 @@ class AdminDeleteTaxRatesTaxRateProductTypesParams {
   AdminDeleteTaxRatesTaxRateProductTypesParams({this.fields, this.expand});
 
   factory AdminDeleteTaxRatesTaxRateProductTypesParams.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminDeleteTaxRatesTaxRateProductTypesParamsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminDeleteTaxRatesTaxRateProductTypesParamsFromJson(json);
 
   List<String>? fields;
   List<String>? expand;

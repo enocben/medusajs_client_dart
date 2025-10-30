@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_batch_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetBatchParams {
   AdminGetBatchParams({
     this.limit,
@@ -56,12 +58,7 @@ class AdminGetBatchParams {
 
 @JsonSerializable()
 class DateRange {
-  DateRange({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  DateRange({this.lt, this.gt, this.lte, this.gte});
   factory DateRange.fromJson(Map<String, dynamic> json) =>
       _$DateRangeFromJson(json);
 

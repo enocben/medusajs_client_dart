@@ -4,14 +4,11 @@ part 'generated/admin_update_payment_collections_req.g.dart';
 
 @JsonSerializable()
 class AdminUpdatePaymentCollectionsReq {
-  AdminUpdatePaymentCollectionsReq({
-    this.description,
-    this.metadata,
-  });
+  AdminUpdatePaymentCollectionsReq({this.description, this.metadata});
 
   factory AdminUpdatePaymentCollectionsReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminUpdatePaymentCollectionsReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminUpdatePaymentCollectionsReqFromJson(json);
 
   String? description;
   Map<String, dynamic>? metadata;

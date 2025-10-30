@@ -7,17 +7,17 @@ part of '../admin_order_edit_delete_res.dart';
 // **************************************************************************
 
 AdminOrderEditDeleteRes _$AdminOrderEditDeleteResFromJson(
-        Map<String, dynamic> json) =>
-    AdminOrderEditDeleteRes(
-      id: json['id'] as String,
-      object: json['object'] as String,
-      deleted: json['deleted'] as bool,
-    );
+  Map<String, dynamic> json,
+) => AdminOrderEditDeleteRes(
+  id: json['id'] as String,
+  object: json['object'] as String,
+  deleted: json['deleted'] as bool,
+);
 
 Map<String, dynamic> _$AdminOrderEditDeleteResToJson(
-        AdminOrderEditDeleteRes instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'object': instance.object,
-      'deleted': instance.deleted,
-    };
+  AdminOrderEditDeleteRes instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'object': instance.object,
+  'deleted': instance.deleted,
+};

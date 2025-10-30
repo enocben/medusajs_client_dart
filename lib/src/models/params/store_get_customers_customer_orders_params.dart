@@ -1,9 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 
 part 'generated/store_get_customers_customer_orders_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class StoreGetCustomersCustomerOrdersParams {
   StoreGetCustomersCustomerOrdersParams({
     required this.q,
@@ -27,8 +29,8 @@ class StoreGetCustomersCustomerOrdersParams {
   });
 
   factory StoreGetCustomersCustomerOrdersParams.fromJson(
-          Map<String, dynamic> json,) =>
-      _$StoreGetCustomersCustomerOrdersParamsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$StoreGetCustomersCustomerOrdersParamsFromJson(json);
 
   String q;
   String id;

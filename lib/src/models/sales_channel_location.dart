@@ -6,7 +6,7 @@ part 'generated/sales_channel_location.g.dart';
 /// This represents the association between a sales channel and a stock locations.
 @JsonSerializable()
 class SalesChannelLocation {
-  SalesChannelLocation({
+  const SalesChannelLocation({
     required this.id,
     required this.salesChannelId,
     required this.locationId,
@@ -21,23 +21,23 @@ class SalesChannelLocation {
   Map<String, dynamic> toJson() => _$SalesChannelLocationToJson(this);
 
   /// The Sales Channel Stock Location's ID
-  late String id;
+  final String id;
 
   /// The ID of the Sales Channel
-  late String salesChannelId;
+  final String salesChannelId;
 
   /// The ID of the Location Stock.
-  late String locationId;
+  final String locationId;
 
   /// The details of the sales channel the location is associated with.
-  SalesChannel? salesChannel;
+  final SalesChannel? salesChannel;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 }

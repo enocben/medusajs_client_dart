@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/product.dart';
 import 'package:medusa_js_dart/src/models/tax_rate.dart';
@@ -6,8 +7,9 @@ part 'generated/product_tax_rate.g.dart';
 
 /// This represents the association between a tax rate and a product to indicate that the product is taxed in a way different than the default.
 @JsonSerializable()
+@CopyWith()
 class ProductTaxRate {
-  ProductTaxRate({
+  const ProductTaxRate({
     required this.productId,
     this.product,
     required this.rateId,

@@ -6,9 +6,7 @@ part 'generated/promotion_rule_params.g.dart';
 
 @JsonSerializable()
 class PromotionRuleTypeParams {
-  PromotionRuleTypeParams({
-    required this.ruleType,
-  });
+  PromotionRuleTypeParams({required this.ruleType});
 
   factory PromotionRuleTypeParams.fromJson(Map<String, dynamic> json) =>
       _$PromotionRuleTypeParamsFromJson(json);

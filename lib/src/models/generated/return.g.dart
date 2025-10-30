@@ -116,7 +116,6 @@ class _$ReturnCWProxyImpl implements _$ReturnCWProxy {
   Return updatedAt(String updatedAt) => this(updatedAt: updatedAt);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Return(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -216,43 +215,43 @@ extension $ReturnCopyWith on Return {
 // **************************************************************************
 
 Return _$ReturnFromJson(Map<String, dynamic> json) => Return(
-      id: json['id'] as String,
-      status: $enumDecode(_$ReturnStatusEnumMap, json['status']),
-      items: (json['items'] as List<dynamic>?)
-          ?.map((e) => ReturnItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      canceledAt: json['canceled_at'] as String?,
-      orderVersion: json['order_version'] as num?,
-      displayId: json['display_id'] as num?,
-      receivedAt: json['received_at'] as String?,
-      claimId: json['claim_id'] as String?,
-      locationId: json['location_id'] as String?,
-      exchangeId: json['exchange_id'] as String?,
-      refundAmount: (json['refund_amount'] as num?)?.toDouble(),
-      noNotification: json['no_notification'] as bool?,
-      idempotencyKey: json['idempotency_key'] as String?,
-      createdAt: json['created_at'] as String,
-      updatedAt: json['updated_at'] as String,
-    );
+  id: json['id'] as String,
+  status: $enumDecode(_$ReturnStatusEnumMap, json['status']),
+  items: (json['items'] as List<dynamic>?)
+      ?.map((e) => ReturnItem.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  canceledAt: json['canceled_at'] as String?,
+  orderVersion: json['order_version'] as num?,
+  displayId: json['display_id'] as num?,
+  receivedAt: json['received_at'] as String?,
+  claimId: json['claim_id'] as String?,
+  locationId: json['location_id'] as String?,
+  exchangeId: json['exchange_id'] as String?,
+  refundAmount: (json['refund_amount'] as num?)?.toDouble(),
+  noNotification: json['no_notification'] as bool?,
+  idempotencyKey: json['idempotency_key'] as String?,
+  createdAt: json['created_at'] as String,
+  updatedAt: json['updated_at'] as String,
+);
 
 Map<String, dynamic> _$ReturnToJson(Return instance) => <String, dynamic>{
-      'id': instance.id,
-      'status': _$ReturnStatusEnumMap[instance.status]!,
-      if (instance.items?.map((e) => e.toJson()).toList() case final value?)
-        'items': value,
-      if (instance.canceledAt case final value?) 'canceled_at': value,
-      if (instance.orderVersion case final value?) 'order_version': value,
-      if (instance.displayId case final value?) 'display_id': value,
-      if (instance.receivedAt case final value?) 'received_at': value,
-      if (instance.claimId case final value?) 'claim_id': value,
-      if (instance.locationId case final value?) 'location_id': value,
-      if (instance.exchangeId case final value?) 'exchange_id': value,
-      if (instance.refundAmount case final value?) 'refund_amount': value,
-      if (instance.noNotification case final value?) 'no_notification': value,
-      if (instance.idempotencyKey case final value?) 'idempotency_key': value,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-    };
+  'id': instance.id,
+  'status': _$ReturnStatusEnumMap[instance.status]!,
+  if (instance.items?.map((e) => e.toJson()).toList() case final value?)
+    'items': value,
+  if (instance.canceledAt case final value?) 'canceled_at': value,
+  if (instance.orderVersion case final value?) 'order_version': value,
+  if (instance.displayId case final value?) 'display_id': value,
+  if (instance.receivedAt case final value?) 'received_at': value,
+  if (instance.claimId case final value?) 'claim_id': value,
+  if (instance.locationId case final value?) 'location_id': value,
+  if (instance.exchangeId case final value?) 'exchange_id': value,
+  if (instance.refundAmount case final value?) 'refund_amount': value,
+  if (instance.noNotification case final value?) 'no_notification': value,
+  if (instance.idempotencyKey case final value?) 'idempotency_key': value,
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+};
 
 const _$ReturnStatusEnumMap = {
   ReturnStatus.canceled: 'canceled',

@@ -91,7 +91,6 @@ class _$ShippingMethodAdjustmentCWProxyImpl
   ShippingMethodAdjustment code(String? code) => this(code: code);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ShippingMethodAdjustment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -167,31 +166,31 @@ extension $ShippingMethodAdjustmentCopyWith on ShippingMethodAdjustment {
 // **************************************************************************
 
 ShippingMethodAdjustment _$ShippingMethodAdjustmentFromJson(
-        Map<String, dynamic> json) =>
-    ShippingMethodAdjustment(
-      id: json['id'] as String,
-      shippingMethodId: json['shipping_method_id'] as String,
-      amount: json['amount'] as num?,
-      orderId: json['order_id'] as String?,
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
-      providerId: json['provider_id'] as String?,
-      promotionId: json['promotion_id'] as String?,
-      description: json['description'] as String?,
-      code: json['code'] as String?,
-    );
+  Map<String, dynamic> json,
+) => ShippingMethodAdjustment(
+  id: json['id'] as String,
+  shippingMethodId: json['shipping_method_id'] as String,
+  amount: json['amount'] as num?,
+  orderId: json['order_id'] as String?,
+  createdAt: json['created_at'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  providerId: json['provider_id'] as String?,
+  promotionId: json['promotion_id'] as String?,
+  description: json['description'] as String?,
+  code: json['code'] as String?,
+);
 
 Map<String, dynamic> _$ShippingMethodAdjustmentToJson(
-        ShippingMethodAdjustment instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'shipping_method_id': instance.shippingMethodId,
-      if (instance.amount case final value?) 'amount': value,
-      if (instance.orderId case final value?) 'order_id': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.providerId case final value?) 'provider_id': value,
-      if (instance.promotionId case final value?) 'promotion_id': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.code case final value?) 'code': value,
-    };
+  ShippingMethodAdjustment instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'shipping_method_id': instance.shippingMethodId,
+  if (instance.amount case final value?) 'amount': value,
+  if (instance.orderId case final value?) 'order_id': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.providerId case final value?) 'provider_id': value,
+  if (instance.promotionId case final value?) 'promotion_id': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.code case final value?) 'code': value,
+};

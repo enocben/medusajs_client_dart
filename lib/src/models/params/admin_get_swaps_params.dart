@@ -4,10 +4,7 @@ part 'generated/admin_get_swaps_params.g.dart';
 
 @JsonSerializable()
 class AdminGetSwapsParams {
-  AdminGetSwapsParams({
-    required this.limit,
-    required this.offset,
-  });
+  AdminGetSwapsParams({required this.limit, required this.offset});
   factory AdminGetSwapsParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetSwapsParamsFromJson(json);
 

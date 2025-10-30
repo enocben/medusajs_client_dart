@@ -17,8 +17,8 @@ class AdminPostDraftOrdersDraftOrderReq {
   });
 
   factory AdminPostDraftOrdersDraftOrderReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostDraftOrdersDraftOrderReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostDraftOrdersDraftOrderReqFromJson(json);
 
   String? regionId;
   String? countryCode;

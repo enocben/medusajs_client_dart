@@ -6,9 +6,7 @@ part 'generated/admin_shipping_options_res.g.dart';
 
 @JsonSerializable()
 class AdminShippingOptionsRes {
-  AdminShippingOptionsRes({
-    required this.shippingOption,
-  });
+  AdminShippingOptionsRes({required this.shippingOption});
   factory AdminShippingOptionsRes.fromJson(Map<String, dynamic> json) =>
       _$AdminShippingOptionsResFromJson(json);
 

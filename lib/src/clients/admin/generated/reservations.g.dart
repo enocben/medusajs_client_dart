@@ -129,7 +129,7 @@ class _ReservationsResource implements ReservationsResource {
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
     final _options = _setStreamType<AdminReservationsRes>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/admin/reservations/${reservationId}',

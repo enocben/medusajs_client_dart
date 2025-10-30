@@ -7,17 +7,17 @@ part of '../admin_delete_price_lists_price_list_products_prices_batch_req.dart';
 // **************************************************************************
 
 AdminDeletePriceListsPriceListProductsPricesBatchReq
-    _$AdminDeletePriceListsPriceListProductsPricesBatchReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminDeletePriceListsPriceListProductsPricesBatchReq(
-          productIds: (json['product_ids'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-        );
+_$AdminDeletePriceListsPriceListProductsPricesBatchReqFromJson(
+  Map<String, dynamic> json,
+) => AdminDeletePriceListsPriceListProductsPricesBatchReq(
+  productIds: (json['product_ids'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic>
-    _$AdminDeletePriceListsPriceListProductsPricesBatchReqToJson(
-            AdminDeletePriceListsPriceListProductsPricesBatchReq instance) =>
-        <String, dynamic>{
-          if (instance.productIds case final value?) 'product_ids': value,
-        };
+_$AdminDeletePriceListsPriceListProductsPricesBatchReqToJson(
+  AdminDeletePriceListsPriceListProductsPricesBatchReq instance,
+) => <String, dynamic>{
+  if (instance.productIds case final value?) 'product_ids': value,
+};

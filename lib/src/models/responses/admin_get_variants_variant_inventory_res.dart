@@ -9,8 +9,8 @@ class AdminGetVariantsVariantInventoryRes {
   AdminGetVariantsVariantInventoryRes({required this.variant});
 
   factory AdminGetVariantsVariantInventoryRes.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminGetVariantsVariantInventoryResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminGetVariantsVariantInventoryResFromJson(json);
 
   VariantInventory variant;
 

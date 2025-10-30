@@ -11,11 +11,12 @@ AdminCollectionsRes _$AdminCollectionsResFromJson(Map<String, dynamic> json) =>
       collection: json['collection'] == null
           ? null
           : ProductCollection.fromJson(
-              json['collection'] as Map<String, dynamic>),
+              json['collection'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$AdminCollectionsResToJson(
-        AdminCollectionsRes instance) =>
-    <String, dynamic>{
-      if (instance.collection?.toJson() case final value?) 'collection': value,
-    };
+  AdminCollectionsRes instance,
+) => <String, dynamic>{
+  if (instance.collection?.toJson() case final value?) 'collection': value,
+};

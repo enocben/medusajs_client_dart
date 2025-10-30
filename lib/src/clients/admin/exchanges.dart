@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_js_dart/src/models/responses/admin_exchanges_res.dart';
 import 'package:medusa_js_dart/src/models/responses/admin_exchanges_list_res.dart';
+import 'package:medusa_js_dart/src/models/responses/admin_exchanges_res.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'generated/exchanges.g.dart';

@@ -6,7 +6,7 @@ part 'generated/product_variant_inventory_item.g.dart';
 /// A Product Variant Inventory Item links variants with inventory items and denotes the required quantity of the variant.
 @JsonSerializable()
 class ProductVariantInventoryItem {
-  ProductVariantInventoryItem({
+  const ProductVariantInventoryItem({
     required this.id,
     required this.inventoryItemId,
     required this.variantId,

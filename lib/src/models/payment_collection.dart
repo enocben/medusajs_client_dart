@@ -12,7 +12,7 @@ part 'generated/payment_collection.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PaymentCollection {
-  PaymentCollection({
+  const PaymentCollection({
     required this.id,
     required this.currencyCode,
     required this.amount,

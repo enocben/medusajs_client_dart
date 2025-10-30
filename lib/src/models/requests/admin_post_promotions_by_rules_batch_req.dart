@@ -5,15 +5,11 @@ part 'generated/admin_post_promotions_by_rules_batch_req.g.dart';
 
 @JsonSerializable()
 class AdminPostPromotionsBuyRulesBatchReq {
-  AdminPostPromotionsBuyRulesBatchReq({
-    this.delete,
-    this.update,
-    this.create,
-  });
+  AdminPostPromotionsBuyRulesBatchReq({this.delete, this.update, this.create});
 
   factory AdminPostPromotionsBuyRulesBatchReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostPromotionsBuyRulesBatchReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostPromotionsBuyRulesBatchReqFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostPromotionsBuyRulesBatchReqToJson(this);

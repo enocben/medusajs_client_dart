@@ -5,7 +5,7 @@ part 'generated/return_reason.g.dart';
 /// A Return Reason is a value defined by an admin. It can be used on Return Items in order to indicate why a Line Item was returned.
 @JsonSerializable()
 class ReturnReason {
-  ReturnReason({
+  const ReturnReason({
     required this.id,
     required this.value,
     required this.label,

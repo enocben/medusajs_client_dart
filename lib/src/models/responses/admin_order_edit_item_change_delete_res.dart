@@ -11,8 +11,8 @@ class AdminOrderEditItemChangeDeleteRes {
   });
 
   factory AdminOrderEditItemChangeDeleteRes.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminOrderEditItemChangeDeleteResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminOrderEditItemChangeDeleteResFromJson(json);
 
   final String id;
   final String object;

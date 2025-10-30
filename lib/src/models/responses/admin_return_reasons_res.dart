@@ -6,9 +6,7 @@ part 'generated/admin_return_reasons_res.g.dart';
 
 @JsonSerializable()
 class AdminReturnReasonsRes {
-  AdminReturnReasonsRes({
-    required this.returnReason,
-  });
+  AdminReturnReasonsRes({required this.returnReason});
   factory AdminReturnReasonsRes.fromJson(Map<String, dynamic> json) =>
       _$AdminReturnReasonsResFromJson(json);
 

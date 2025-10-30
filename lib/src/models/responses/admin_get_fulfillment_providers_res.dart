@@ -15,7 +15,8 @@ class AdminGetFulfillmentProvidersRes {
   factory AdminGetFulfillmentProvidersRes.fromJson(Map<String, dynamic> json) =>
       _$AdminGetFulfillmentProvidersResFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminGetFulfillmentProvidersResToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminGetFulfillmentProvidersResToJson(this);
 
   final List<FulfillmentProvider> fulfillmentProviders;
 

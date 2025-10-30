@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_groups_group_customers_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetGroupsGroupCustomersParams {
   AdminGetGroupsGroupCustomersParams({
     this.limit,
@@ -16,7 +18,10 @@ class AdminGetGroupsGroupCustomersParams {
   String? expand;
   String? q;
 
-  factory AdminGetGroupsGroupCustomersParams.fromJson(Map<String, dynamic> json) => _$AdminGetGroupsGroupCustomersParamsFromJson(json);
+  factory AdminGetGroupsGroupCustomersParams.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminGetGroupsGroupCustomersParamsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminGetGroupsGroupCustomersParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminGetGroupsGroupCustomersParamsToJson(this);
 }

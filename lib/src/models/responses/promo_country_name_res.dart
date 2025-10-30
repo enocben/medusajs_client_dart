@@ -9,14 +9,13 @@ class PromoCountryNameRes {
     required this.values,
     required this.count,
     required this.offset,
-    required this.limit
+    required this.limit,
   });
 
   factory PromoCountryNameRes.fromJson(Map<String, dynamic> json) =>
       _$PromoCountryNameResFromJson(json);
 
   Map<String, dynamic> toJson() => _$PromoCountryNameResToJson(this);
-
 
   List<CountryCodeName> values;
   int count;

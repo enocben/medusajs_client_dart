@@ -8,7 +8,7 @@ part 'generated/return.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Return {
-  Return({
+  const Return({
     required this.id,
     required this.status,
     this.items,

@@ -7,14 +7,13 @@ part of '../store_get_product_categories_category_res.dart';
 // **************************************************************************
 
 StoreGetProductCategoriesCategoryRes
-    _$StoreGetProductCategoriesCategoryResFromJson(Map<String, dynamic> json) =>
-        StoreGetProductCategoriesCategoryRes(
-          productCategory: ProductCategory.fromJson(
-              json['product_category'] as Map<String, dynamic>),
-        );
+_$StoreGetProductCategoriesCategoryResFromJson(Map<String, dynamic> json) =>
+    StoreGetProductCategoriesCategoryRes(
+      productCategory: ProductCategory.fromJson(
+        json['product_category'] as Map<String, dynamic>,
+      ),
+    );
 
 Map<String, dynamic> _$StoreGetProductCategoriesCategoryResToJson(
-        StoreGetProductCategoriesCategoryRes instance) =>
-    <String, dynamic>{
-      'product_category': instance.productCategory.toJson(),
-    };
+  StoreGetProductCategoriesCategoryRes instance,
+) => <String, dynamic>{'product_category': instance.productCategory.toJson()};

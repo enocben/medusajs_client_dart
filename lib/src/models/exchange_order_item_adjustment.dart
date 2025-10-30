@@ -7,7 +7,7 @@ part 'generated/exchange_order_item_adjustment.g.dart';
 @JsonSerializable()
 @CopyWith()
 class ExchangeOrderItemAdjustment {
-  ExchangeOrderItemAdjustment({
+  const ExchangeOrderItemAdjustment({
     required this.id,
     required this.itemId,
     required this.amount,

@@ -7,16 +7,15 @@ part of '../admin_orders_order_line_item_reservation_req.dart';
 // **************************************************************************
 
 AdminOrdersOrderLineItemReservationReq
-    _$AdminOrdersOrderLineItemReservationReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminOrdersOrderLineItemReservationReq(
-          locationId: json['location_id'] as String,
-          quantity: (json['quantity'] as num).toInt(),
-        );
+_$AdminOrdersOrderLineItemReservationReqFromJson(Map<String, dynamic> json) =>
+    AdminOrdersOrderLineItemReservationReq(
+      locationId: json['location_id'] as String,
+      quantity: (json['quantity'] as num).toInt(),
+    );
 
 Map<String, dynamic> _$AdminOrdersOrderLineItemReservationReqToJson(
-        AdminOrdersOrderLineItemReservationReq instance) =>
-    <String, dynamic>{
-      'location_id': instance.locationId,
-      'quantity': instance.quantity,
-    };
+  AdminOrdersOrderLineItemReservationReq instance,
+) => <String, dynamic>{
+  'location_id': instance.locationId,
+  'quantity': instance.quantity,
+};

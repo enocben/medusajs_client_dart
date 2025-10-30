@@ -1,18 +1,21 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/shipping_option_detail.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class ShippingOptionDetail {
-  ShippingOptionDetail(
-      {required this.id,
-      this.label,
-      this.description,
-      this.code,
-      this.shippingOptionId,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt});
+  const ShippingOptionDetail({
+    required this.id,
+    this.label,
+    this.description,
+    this.code,
+    this.shippingOptionId,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+  });
   factory ShippingOptionDetail.fromJson(Map<String, dynamic> json) =>
       _$ShippingOptionDetailFromJson(json);
 

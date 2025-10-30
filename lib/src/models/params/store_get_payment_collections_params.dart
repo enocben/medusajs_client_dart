@@ -10,8 +10,8 @@ class StoreGetPaymentCollectionsParams {
   });
 
   factory StoreGetPaymentCollectionsParams.fromJson(
-          Map<String, dynamic> json,) =>
-      _$StoreGetPaymentCollectionsParamsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$StoreGetPaymentCollectionsParamsFromJson(json);
 
   final String? fields;
 

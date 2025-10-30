@@ -1,9 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 
 part 'generated/admin_get_promotions_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetPromotionsParams {
   AdminGetPromotionsParams({
     this.withDeleted,
@@ -20,7 +22,7 @@ class AdminGetPromotionsParams {
     this.createdAt,
     this.updatedAt,
     this.applicationMethod,
-    this.compaignId,
+    this.campaignId,
     this.code,
   });
 
@@ -62,7 +64,7 @@ class AdminGetPromotionsParams {
   final ApplicationMethodParam? applicationMethod;
 
   /// Filter by campaign IDs to retrieve their associated promotions.
-  final List<String>? compaignId;
+  final List<String>? campaignId;
 
   /// Filter by promotion codes.
   final List<String>? code;

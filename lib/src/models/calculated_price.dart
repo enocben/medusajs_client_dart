@@ -7,7 +7,7 @@ part 'generated/calculated_price.g.dart';
 @JsonSerializable()
 @CopyWith()
 class CalculatedPrice {
-  CalculatedPrice({
+  const CalculatedPrice({
     required this.id,
     this.calculatedAmount,
     this.originalAmount,

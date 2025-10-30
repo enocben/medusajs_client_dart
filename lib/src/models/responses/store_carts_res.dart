@@ -6,9 +6,7 @@ part 'generated/store_carts_res.g.dart';
 
 @JsonSerializable()
 class StoreCartsRes {
-  StoreCartsRes({
-    required this.cart,
-  });
+  StoreCartsRes({required this.cart});
   factory StoreCartsRes.fromJson(Map<String, dynamic> json) =>
       _$StoreCartsResFromJson(json);
 

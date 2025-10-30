@@ -7,12 +7,13 @@ part 'generated/promotion_campaign_budget.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PromotionCampaignBudget {
-  const PromotionCampaignBudget(
-      {required this.id,
-      required this.type,
-      required this.currencyCode,
-      required this.limit,
-      required this.used});
+  const PromotionCampaignBudget({
+    required this.id,
+    required this.type,
+    required this.currencyCode,
+    required this.limit,
+    required this.used,
+  });
 
   factory PromotionCampaignBudget.fromJson(Map<String, dynamic> json) =>
       _$PromotionCampaignBudgetFromJson(json);

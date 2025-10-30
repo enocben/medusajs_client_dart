@@ -28,11 +28,11 @@ Map<String, dynamic> _$StorePostCartReqToJson(StorePostCartReq instance) =>
     };
 
 CartItem _$CartItemFromJson(Map<String, dynamic> json) => CartItem(
-      variantId: json['variant_id'] as String,
-      quantity: (json['quantity'] as num).toInt(),
-    );
+  variantId: json['variant_id'] as String,
+  quantity: (json['quantity'] as num).toInt(),
+);
 
 Map<String, dynamic> _$CartItemToJson(CartItem instance) => <String, dynamic>{
-      'variant_id': instance.variantId,
-      'quantity': instance.quantity,
-    };
+  'variant_id': instance.variantId,
+  'quantity': instance.quantity,
+};

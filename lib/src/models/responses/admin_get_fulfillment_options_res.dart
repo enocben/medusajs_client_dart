@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/fulfillment_option.dart';
 
-
 part 'generated/admin_get_fulfillment_options_res.g.dart';
 
 @JsonSerializable()

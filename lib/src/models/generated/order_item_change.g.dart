@@ -18,7 +18,8 @@ OrderItemChange _$OrderItemChangeFromJson(Map<String, dynamic> json) =>
       originalLineItem: json['original_line_item'] == null
           ? null
           : LineItem.fromJson(
-              json['original_line_item'] as Map<String, dynamic>),
+              json['original_line_item'] as Map<String, dynamic>,
+            ),
       lineItemId: json['line_item_id'] as String?,
       lineItem: json['line_item'] == null
           ? null

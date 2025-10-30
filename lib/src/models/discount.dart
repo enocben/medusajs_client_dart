@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/discount_rule.dart';
 import 'package:medusa_js_dart/src/models/region.dart';
@@ -6,8 +7,9 @@ part 'generated/discount.g.dart';
 
 /// A discount can be applied to a cart for promotional purposes.
 @JsonSerializable()
+@CopyWith()
 class Discount {
-  Discount({
+  const Discount({
     required this.id,
     required this.code,
     required this.isDynamic,
@@ -33,56 +35,56 @@ class Discount {
   Map<String, dynamic> toJson() => _$DiscountToJson(this);
 
   /// The discount's ID
-  String id;
+  final String id;
 
   /// A unique code for the discount - this will be used by the customer to apply the discount
-  String code;
+  final String code;
 
   /// A flag to indicate if multiple instances of the discount can be generated. I.e. for newsletter discounts
-  bool isDynamic;
+  final bool isDynamic;
 
   /// The ID of the discount rule that defines how the discount will be applied to a cart.
-  String? ruleId;
+  final String? ruleId;
 
   /// The details of the discount rule that defines how the discount will be applied to a cart..
-  DiscountRule? rule;
+  final DiscountRule? rule;
 
   /// Whether the Discount has been disabled. Disabled discounts cannot be applied to carts
-  bool isDisabled;
+  final bool isDisabled;
 
   /// The Discount that the discount was created from. This will always be a dynamic discount
-  String? parentDiscountId;
+  final String? parentDiscountId;
 
   /// The details of the parent discount that this discount was created from.
-  Discount? parentDiscount;
+  final Discount? parentDiscount;
 
   /// The time at which the discount can be used.
-  String startsAt;
+  final String startsAt;
 
   /// The time at which the discount can no longer be used.
-  String? endsAt;
+  final String? endsAt;
 
   /// Duration the discount runs between
-  String? validDuration;
+  final String? validDuration;
 
   /// The details of the regions in which the Discount can be used.
-  List<Region>? regions;
+  final List<Region>? regions;
 
   /// The maximum number of times that a discount can be used.
-  int? usageLimit;
+  final int? usageLimit;
 
   /// The number of times a discount has been used.
-  int usageCount;
+  final int usageCount;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 }

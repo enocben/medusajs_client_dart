@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/address.dart';
 import 'package:medusa_js_dart/src/models/customer_group.dart';
@@ -7,8 +8,9 @@ part 'generated/customer.g.dart';
 
 /// A customer can make purchases in your store and manage their profile.
 @JsonSerializable()
+@CopyWith()
 class Customer {
-  Customer({
+  const Customer({
     required this.id,
     required this.email,
     this.firstName,

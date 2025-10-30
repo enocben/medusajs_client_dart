@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
@@ -5,6 +6,7 @@ import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 part 'generated/admin_get_sales_channels_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetSalesChannelsParams {
   AdminGetSalesChannelsParams({
     this.id,
@@ -21,7 +23,7 @@ class AdminGetSalesChannelsParams {
     this.fields,
     this.locationId,
     this.publishableKeyId,
-    this.isDisabled
+    this.isDisabled,
   });
 
   factory AdminGetSalesChannelsParams.fromJson(Map<String, dynamic> json) =>
@@ -44,6 +46,7 @@ class AdminGetSalesChannelsParams {
   final int? limit;
   final String? expand;
   final String? fields;
+
   /// Filter by a location ID to retrieve its associated sales channels.
   final List<String>? locationId;
 
@@ -52,5 +55,4 @@ class AdminGetSalesChannelsParams {
 
   /// Filter by whether the sales channel is disabled.
   final bool? isDisabled;
-
 }

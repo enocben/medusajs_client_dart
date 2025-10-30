@@ -12,7 +12,10 @@ class AdminPostTaxRatesTaxRateProductTypesParams {
   List<String> fields;
   List<String> expand;
 
-  factory AdminPostTaxRatesTaxRateProductTypesParams.fromJson(Map<String, dynamic> json) => _$AdminPostTaxRatesTaxRateProductTypesParamsFromJson(json);
+  factory AdminPostTaxRatesTaxRateProductTypesParams.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostTaxRatesTaxRateProductTypesParamsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostTaxRatesTaxRateProductTypesParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostTaxRatesTaxRateProductTypesParamsToJson(this);
 }

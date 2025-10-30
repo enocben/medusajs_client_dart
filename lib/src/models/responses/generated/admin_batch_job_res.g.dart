@@ -12,6 +12,4 @@ AdminBatchJobRes _$AdminBatchJobResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminBatchJobResToJson(AdminBatchJobRes instance) =>
-    <String, dynamic>{
-      'batch_job': instance.batchJob.toJson(),
-    };
+    <String, dynamic>{'batch_job': instance.batchJob.toJson()};

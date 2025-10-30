@@ -12,6 +12,4 @@ AdminTaxRatesRes _$AdminTaxRatesResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminTaxRatesResToJson(AdminTaxRatesRes instance) =>
-    <String, dynamic>{
-      'tax_rate': instance.taxRate.toJson(),
-    };
+    <String, dynamic>{'tax_rate': instance.taxRate.toJson()};

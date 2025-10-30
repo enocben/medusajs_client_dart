@@ -9,8 +9,8 @@ class AdminDeletePublishableApiKeySalesChannelsBatchReq {
   });
 
   factory AdminDeletePublishableApiKeySalesChannelsBatchReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminDeletePublishableApiKeySalesChannelsBatchReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminDeletePublishableApiKeySalesChannelsBatchReqFromJson(json);
 
   final List<String> salesChannelIds;
 

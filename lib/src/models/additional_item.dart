@@ -1,13 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/additional_item.g.dart';
 
-@JsonSerializable()
-
 /// Représente un nouvel article envoyé lors d'un échange Medusa.
 @JsonSerializable()
+@CopyWith()
 class AdditionalItem {
-  AdditionalItem({
+  const AdditionalItem({
     required this.id,
     required this.exchangeId,
     required this.orderId,

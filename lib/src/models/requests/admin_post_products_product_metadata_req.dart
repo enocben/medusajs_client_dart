@@ -9,7 +9,10 @@ class AdminPostProductsProductMetadataReq {
   final String key;
   final String value;
 
-  factory AdminPostProductsProductMetadataReq.fromJson(Map<String, dynamic> json) => _$AdminPostProductsProductMetadataReqFromJson(json);
+  factory AdminPostProductsProductMetadataReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductsProductMetadataReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostProductsProductMetadataReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostProductsProductMetadataReqToJson(this);
 }

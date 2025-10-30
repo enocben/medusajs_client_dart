@@ -16,7 +16,8 @@ class AdminPostOrdersOrderRefundsReq {
   String note;
   bool noNotification;
 
-  factory AdminPostOrdersOrderRefundsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderRefundsReqFromJson(json);
+  factory AdminPostOrdersOrderRefundsReq.fromJson(Map<String, dynamic> json) =>
+      _$AdminPostOrdersOrderRefundsReqFromJson(json);
 
   Map<String, dynamic> toJson() => _$AdminPostOrdersOrderRefundsReqToJson(this);
 }

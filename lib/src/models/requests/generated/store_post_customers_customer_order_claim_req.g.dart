@@ -7,14 +7,11 @@ part of '../store_post_customers_customer_order_claim_req.dart';
 // **************************************************************************
 
 StorePostCustomersCustomerOrderClaimReq
-    _$StorePostCustomersCustomerOrderClaimReqFromJson(
-            Map<String, dynamic> json) =>
-        StorePostCustomersCustomerOrderClaimReq(
-          (json['order_ids'] as List<dynamic>).map((e) => e as String).toList(),
-        );
+_$StorePostCustomersCustomerOrderClaimReqFromJson(Map<String, dynamic> json) =>
+    StorePostCustomersCustomerOrderClaimReq(
+      (json['order_ids'] as List<dynamic>).map((e) => e as String).toList(),
+    );
 
 Map<String, dynamic> _$StorePostCustomersCustomerOrderClaimReqToJson(
-        StorePostCustomersCustomerOrderClaimReq instance) =>
-    <String, dynamic>{
-      'order_ids': instance.orderIds,
-    };
+  StorePostCustomersCustomerOrderClaimReq instance,
+) => <String, dynamic>{'order_ids': instance.orderIds};

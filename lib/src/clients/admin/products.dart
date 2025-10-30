@@ -46,5 +46,5 @@ abstract class ProductsResource {
     @Extras() Map<String, String>? customHeaders,
   );
 
-// TODO: Add missing methods
+  // TODO: Add missing methods
 }

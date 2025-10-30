@@ -5,7 +5,7 @@ part 'generated/inventory_item.g.dart';
 
 @JsonSerializable()
 class InventoryItem {
-  InventoryItem({
+  const InventoryItem({
     required this.id,
     required this.createdAt,
     required this.updatedAt,
@@ -49,13 +49,13 @@ class InventoryItem {
 
   final String? material;
 
-  final int? weight;
+  final double? weight;
 
-  final int? length;
+  final double? length;
 
-  final int? height;
+  final double? height;
 
-  final int? width;
+  final double? width;
 
   final bool requiresShipping;
 

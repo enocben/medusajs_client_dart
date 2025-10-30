@@ -1,11 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/idempotency_key.g.dart';
 
 /// Idempotency Key is used to continue a process in case of any failure that might occur.
 @JsonSerializable()
+@CopyWith()
 class IdempotencyKey {
-  IdempotencyKey({
+  const IdempotencyKey({
     required this.id,
     required this.idempotencyKey,
     required this.createdAt,

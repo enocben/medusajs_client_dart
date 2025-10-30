@@ -1,11 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/product_tag.g.dart';
 
 /// A Product Tag can be added to Products for easy filtering and grouping.
 @JsonSerializable()
+@CopyWith()
 class ProductTag {
-  ProductTag({
+  const ProductTag({
     required this.id,
     required this.value,
     required this.createdAt,

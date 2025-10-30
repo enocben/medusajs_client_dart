@@ -42,4 +42,14 @@ class ExchangeOrderSummary {
 
   /// The order's total without the credit-line total.
   final num accountingTotal;
+
+  List<Object?> get props => [
+    paidTotal,
+    refundedTotal,
+    pendingDifference,
+    currentOrderTotal,
+    originalOrderTotal,
+    transactionTotal,
+    accountingTotal,
+  ];
 }

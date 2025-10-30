@@ -7,18 +7,20 @@ part 'generated/tax_region.g.dart';
 @JsonSerializable()
 @CopyWith()
 class TaxRegion {
-  TaxRegion(
-      {required this.id,
-      required this.countryCode,
-      this.provinceCode,
-      this.metadata,
-      this.parentId,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt,
-      this.createdBy,
-      this.children,
-      this.taxRates});
+  TaxRegion({
+    required this.id,
+    required this.countryCode,
+    this.provinceCode,
+    this.metadata,
+    this.parentId,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+    this.createdBy,
+    this.children,
+    this.taxRates,
+    this.providerId,
+  });
 
   factory TaxRegion.fromJson(Map<String, dynamic> json) =>
       _$TaxRegionFromJson(json);
@@ -58,4 +60,6 @@ class TaxRegion {
 
   /// The tax region's rates.
   List<TaxRate>? taxRates;
+
+  String? providerId;
 }

@@ -1,4 +1,1 @@
-enum Domain {
-  admin,
-  store,
-}
+enum Domain { admin, store }

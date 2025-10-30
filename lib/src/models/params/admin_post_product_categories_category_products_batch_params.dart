@@ -12,7 +12,10 @@ class AdminPostProductCategoriesCategoryProductsBatchParams {
   String? expand;
   String? fields;
 
-  factory AdminPostProductCategoriesCategoryProductsBatchParams.fromJson(Map<String, dynamic> json) => _$AdminPostProductCategoriesCategoryProductsBatchParamsFromJson(json);
+  factory AdminPostProductCategoriesCategoryProductsBatchParams.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductCategoriesCategoryProductsBatchParamsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostProductCategoriesCategoryProductsBatchParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostProductCategoriesCategoryProductsBatchParamsToJson(this);
 }

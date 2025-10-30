@@ -1,11 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/price_list.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class PriceList {
-  PriceList({
+  const PriceList({
     required this.id,
     required this.title,
     required this.description,
@@ -24,15 +26,15 @@ class PriceList {
 
   Map<String, dynamic> toJson() => _$PriceListToJson(this);
 
-  String id;
-  String title;
-  String description;
-  PriceListType type;
-  PriceListStatus status;
-  String? startsAt;
-  String? endsAt;
-  List<MoneyAmount> prices;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
+  final String id;
+  final String title;
+  final String description;
+  final PriceListType type;
+  final PriceListStatus status;
+  final String? startsAt;
+  final String? endsAt;
+  final List<MoneyAmount> prices;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
 }

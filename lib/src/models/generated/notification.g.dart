@@ -7,20 +7,20 @@ part of '../notification.dart';
 // **************************************************************************
 
 Notification _$NotificationFromJson(Map<String, dynamic> json) => Notification(
-      id: json['id'] as String,
-      to: json['to'] as String,
-      channel: json['channel'] as String,
-      template: json['template'] as String?,
-      providerId: json['provider_id'] as String?,
-      createdAt: json['created_at'] as String?,
-      externalId: json['external_id'] as String?,
-      originalNotificationId: json['original_notification_id'] as String?,
-      receiverId: json['receiver_id'] as String?,
-      resourceId: json['resource_id'] as String?,
-      resourceType: json['resource_type'] as String?,
-      triggerType: json['trigger_type'] as String?,
-      data: json['data'] as Map<String, dynamic>?,
-    );
+  id: json['id'] as String,
+  to: json['to'] as String,
+  channel: json['channel'] as String,
+  template: json['template'] as String?,
+  providerId: json['provider_id'] as String?,
+  createdAt: json['created_at'] as String?,
+  externalId: json['external_id'] as String?,
+  originalNotificationId: json['original_notification_id'] as String?,
+  receiverId: json['receiver_id'] as String?,
+  resourceId: json['resource_id'] as String?,
+  resourceType: json['resource_type'] as String?,
+  triggerType: json['trigger_type'] as String?,
+  data: json['data'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$NotificationToJson(Notification instance) =>
     <String, dynamic>{

@@ -21,13 +21,12 @@ AdminPostRegionsReq _$AdminPostRegionsReqFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminPostRegionsReqToJson(
-        AdminPostRegionsReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'currency_code': instance.currencyCode,
-      if (instance.paymentProviders case final value?)
-        'payment_providers': value,
-      if (instance.countries case final value?) 'countries': value,
-      if (instance.isTaxInclusive case final value?) 'is_tax_inclusive': value,
-      if (instance.automaticTaxes case final value?) 'automatic_taxes': value,
-    };
+  AdminPostRegionsReq instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'currency_code': instance.currencyCode,
+  if (instance.paymentProviders case final value?) 'payment_providers': value,
+  if (instance.countries case final value?) 'countries': value,
+  if (instance.isTaxInclusive case final value?) 'is_tax_inclusive': value,
+  if (instance.automaticTaxes case final value?) 'automatic_taxes': value,
+};

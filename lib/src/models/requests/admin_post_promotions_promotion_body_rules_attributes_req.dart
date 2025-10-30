@@ -11,8 +11,8 @@ class AdminPostPromotionsPromotionBodyRulesAttributesReq {
   });
 
   factory AdminPostPromotionsPromotionBodyRulesAttributesReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostPromotionsPromotionBodyRulesAttributesReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostPromotionsPromotionBodyRulesAttributesReqFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostPromotionsPromotionBodyRulesAttributesReqToJson(this);

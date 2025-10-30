@@ -52,7 +52,8 @@ abstract class _$ProductVariantCWProxy {
   ProductVariant options(List<ProductOptionValue>? options);
 
   ProductVariant inventoryItems(
-      List<ProductVariantInventoryItem>? inventoryItems);
+    List<ProductVariantInventoryItem>? inventoryItems,
+  );
 
   ProductVariant createdAt(String createdAt);
 
@@ -185,8 +186,8 @@ class _$ProductVariantCWProxyImpl implements _$ProductVariantCWProxy {
 
   @override
   ProductVariant inventoryItems(
-          List<ProductVariantInventoryItem>? inventoryItems) =>
-      this(inventoryItems: inventoryItems);
+    List<ProductVariantInventoryItem>? inventoryItems,
+  ) => this(inventoryItems: inventoryItems);
 
   @override
   ProductVariant createdAt(String createdAt) => this(createdAt: createdAt);
@@ -210,7 +211,6 @@ class _$ProductVariantCWProxyImpl implements _$ProductVariantCWProxy {
       this(calculatedPrice: calculatedPrice);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProductVariant(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -410,8 +410,10 @@ ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
           ?.map((e) => ProductOptionValue.fromJson(e as Map<String, dynamic>))
           .toList(),
       inventoryItems: (json['inventory_items'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductVariantInventoryItem.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) =>
+                ProductVariantInventoryItem.fromJson(e as Map<String, dynamic>),
+          )
           .toList(),
       createdAt: json['created_at'] as String,
       updatedAt: json['updated_at'] as String,
@@ -421,44 +423,45 @@ ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
       calculatedPrice: json['calculated_price'] == null
           ? null
           : CalculatedPrice.fromJson(
-              json['calculated_price'] as Map<String, dynamic>),
+              json['calculated_price'] as Map<String, dynamic>,
+            ),
     );
 
-Map<String, dynamic> _$ProductVariantToJson(ProductVariant instance) =>
-    <String, dynamic>{
-      if (instance.calculatedPrice?.toJson() case final value?)
-        'calculated_price': value,
-      'id': instance.id,
-      'title': instance.title,
-      'product_id': instance.productId,
-      if (instance.product?.toJson() case final value?) 'product': value,
-      if (instance.prices?.map((e) => e.toJson()).toList() case final value?)
-        'prices': value,
-      if (instance.sku case final value?) 'sku': value,
-      if (instance.barcode case final value?) 'barcode': value,
-      if (instance.ean case final value?) 'ean': value,
-      if (instance.upc case final value?) 'upc': value,
-      if (instance.variantRank case final value?) 'variant_rank': value,
-      if (instance.inventoryQuantity case final value?)
-        'inventory_quantity': value,
-      'allow_backorder': instance.allowBackorder,
-      'manage_inventory': instance.manageInventory,
-      if (instance.hsCode case final value?) 'hs_code': value,
-      if (instance.originCountry case final value?) 'origin_country': value,
-      if (instance.midCode case final value?) 'mid_code': value,
-      if (instance.material case final value?) 'material': value,
-      if (instance.weight case final value?) 'weight': value,
-      if (instance.length case final value?) 'length': value,
-      if (instance.height case final value?) 'height': value,
-      if (instance.width case final value?) 'width': value,
-      if (instance.options?.map((e) => e.toJson()).toList() case final value?)
-        'options': value,
-      if (instance.inventoryItems?.map((e) => e.toJson()).toList()
-          case final value?)
-        'inventory_items': value,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      if (instance.deletedAt case final value?) 'deleted_at': value,
-      if (instance.metadata case final value?) 'metadata': value,
-      if (instance.purchasable case final value?) 'purchasable': value,
-    };
+Map<String, dynamic> _$ProductVariantToJson(
+  ProductVariant instance,
+) => <String, dynamic>{
+  if (instance.calculatedPrice?.toJson() case final value?)
+    'calculated_price': value,
+  'id': instance.id,
+  'title': instance.title,
+  'product_id': instance.productId,
+  if (instance.product?.toJson() case final value?) 'product': value,
+  if (instance.prices?.map((e) => e.toJson()).toList() case final value?)
+    'prices': value,
+  if (instance.sku case final value?) 'sku': value,
+  if (instance.barcode case final value?) 'barcode': value,
+  if (instance.ean case final value?) 'ean': value,
+  if (instance.upc case final value?) 'upc': value,
+  if (instance.variantRank case final value?) 'variant_rank': value,
+  if (instance.inventoryQuantity case final value?) 'inventory_quantity': value,
+  'allow_backorder': instance.allowBackorder,
+  'manage_inventory': instance.manageInventory,
+  if (instance.hsCode case final value?) 'hs_code': value,
+  if (instance.originCountry case final value?) 'origin_country': value,
+  if (instance.midCode case final value?) 'mid_code': value,
+  if (instance.material case final value?) 'material': value,
+  if (instance.weight case final value?) 'weight': value,
+  if (instance.length case final value?) 'length': value,
+  if (instance.height case final value?) 'height': value,
+  if (instance.width case final value?) 'width': value,
+  if (instance.options?.map((e) => e.toJson()).toList() case final value?)
+    'options': value,
+  if (instance.inventoryItems?.map((e) => e.toJson()).toList()
+      case final value?)
+    'inventory_items': value,
+  'created_at': instance.createdAt,
+  'updated_at': instance.updatedAt,
+  if (instance.deletedAt case final value?) 'deleted_at': value,
+  if (instance.metadata case final value?) 'metadata': value,
+  if (instance.purchasable case final value?) 'purchasable': value,
+};

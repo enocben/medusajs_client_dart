@@ -5,15 +5,16 @@ part 'generated/geo_zones.g.dart';
 
 @JsonSerializable()
 class GeoZones {
-  GeoZones(
-      {required this.id,
-      required this.type,
-      this.countryCode,
-      this.provinceCode,
-      this.city,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt});
+  const GeoZones({
+    required this.id,
+    required this.type,
+    this.countryCode,
+    this.provinceCode,
+    this.city,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+  });
 
   factory GeoZones.fromJson(Map<String, dynamic> json) =>
       _$GeoZonesFromJson(json);

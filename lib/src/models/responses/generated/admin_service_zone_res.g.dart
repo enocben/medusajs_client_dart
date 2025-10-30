@@ -8,12 +8,11 @@ part of '../admin_service_zone_res.dart';
 
 AdminServiceZoneRes _$AdminServiceZoneResFromJson(Map<String, dynamic> json) =>
     AdminServiceZoneRes(
-      serviceZone:
-          ServiceZone.fromJson(json['service_zone'] as Map<String, dynamic>),
+      serviceZone: ServiceZone.fromJson(
+        json['service_zone'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$AdminServiceZoneResToJson(
-        AdminServiceZoneRes instance) =>
-    <String, dynamic>{
-      'service_zone': instance.serviceZone.toJson(),
-    };
+  AdminServiceZoneRes instance,
+) => <String, dynamic>{'service_zone': instance.serviceZone.toJson()};

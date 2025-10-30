@@ -9,41 +9,43 @@ part 'generated/priced_shipping_option.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PricedShippingOption {
-  PricedShippingOption(this.shippingProfile,
-      {required this.id,
-      required this.name,
-      required this.priceType,
-      required this.shippingProfileId,
-      this.serviceZoneId,
-      this.serviceZone,
-      this.providerId,
-      this.provider,
-      this.shippingOptionTypeId,
-      this.type,
-      this.rules,
-      this.prices,
-      this.data,
-      this.createdAt,
-      this.updatedAt,
-      this.deletedAt,
-      this.metadata,
-      this.priceInclTax,
-      this.taxRates,
-      this.taxAmount});
+  const PricedShippingOption(
+    this.shippingProfile, {
+    required this.id,
+    required this.name,
+    required this.priceType,
+    required this.shippingProfileId,
+    this.serviceZoneId,
+    this.serviceZone,
+    this.providerId,
+    this.provider,
+    this.shippingOptionTypeId,
+    this.type,
+    this.rules,
+    this.prices,
+    this.data,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+    this.metadata,
+    this.priceInclTax,
+    this.taxRates,
+    this.taxAmount,
+  });
 
   factory PricedShippingOption.fromJson(Map<String, dynamic> json) =>
       _$PricedShippingOptionFromJson(json);
 
   /// The shipping option's ID.
-  String id;
+  final String id;
 
   /// The shipping option's name.
-  String name;
+  final String name;
 
   /// The shipping option's price type.
   /// If it's flat, the price is fixed and is set in the prices property.
   /// If it's calculated, the price is calculated on checkout by the associated fulfillment provider.
-  PriceType priceType;
+  final PriceType priceType;
 
   /// The ID of the service zone this option belongs to.
   final String? serviceZoneId;
@@ -77,33 +79,29 @@ class PricedShippingOption {
   final List<ShippingOptionPrice>? prices;
 
   /// The shipping option's data, useful for the fulfillment provider handling fulfillments created from this option.
-  Map<String, dynamic>? data;
+  final Map<String, dynamic>? data;
 
-  double? priceInclTax;
-  List<PricedShippingOptionTaxRate>? taxRates;
-  double? taxAmount;
-  String? createdAt;
-  String? updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
+  final double? priceInclTax;
+  final List<PricedShippingOptionTaxRate>? taxRates;
+  final double? taxAmount;
+  final String? createdAt;
+  final String? updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
 
   Map<String, dynamic> toJson() => _$PricedShippingOptionToJson(this);
 }
 
 @JsonSerializable()
 class PricedShippingOptionTaxRate {
-  PricedShippingOptionTaxRate({
-    this.rate,
-    this.name,
-    this.code,
-  });
+  PricedShippingOptionTaxRate({this.rate, this.name, this.code});
 
   factory PricedShippingOptionTaxRate.fromJson(Map<String, dynamic> json) =>
       _$PricedShippingOptionTaxRateFromJson(json);
 
   Map<String, dynamic> toJson() => _$PricedShippingOptionTaxRateToJson(this);
 
-  double? rate;
-  String? name;
-  String? code;
+  final double? rate;
+  final String? name;
+  final String? code;
 }

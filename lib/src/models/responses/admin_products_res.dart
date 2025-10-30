@@ -6,9 +6,7 @@ part 'generated/admin_products_res.g.dart';
 
 @JsonSerializable()
 class AdminProductsRes {
-  AdminProductsRes({
-    required this.product,
-  });
+  AdminProductsRes({required this.product});
   factory AdminProductsRes.fromJson(Map<String, dynamic> json) =>
       _$AdminProductsResFromJson(json);
 

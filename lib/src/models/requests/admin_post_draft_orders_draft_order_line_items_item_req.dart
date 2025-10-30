@@ -12,8 +12,8 @@ class AdminPostDraftOrdersDraftOrderLineItemsItemReq {
   });
 
   factory AdminPostDraftOrdersDraftOrderLineItemsItemReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostDraftOrdersDraftOrderLineItemsItemReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostDraftOrdersDraftOrderLineItemsItemReqFromJson(json);
 
   double? unitPrice;
   String? title;

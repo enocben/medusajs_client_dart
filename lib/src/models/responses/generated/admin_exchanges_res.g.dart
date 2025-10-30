@@ -12,6 +12,4 @@ AdminExchangesRes _$AdminExchangesResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminExchangesResToJson(AdminExchangesRes instance) =>
-    <String, dynamic>{
-      'exchange': instance.exchange.toJson(),
-    };
+    <String, dynamic>{'exchange': instance.exchange.toJson()};

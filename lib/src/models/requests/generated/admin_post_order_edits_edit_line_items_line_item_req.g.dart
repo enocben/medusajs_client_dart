@@ -7,14 +7,12 @@ part of '../admin_post_order_edits_edit_line_items_line_item_req.dart';
 // **************************************************************************
 
 AdminPostOrderEditsEditLineItemsLineItemReq
-    _$AdminPostOrderEditsEditLineItemsLineItemReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminPostOrderEditsEditLineItemsLineItemReq(
-          quantity: (json['quantity'] as num).toInt(),
-        );
+_$AdminPostOrderEditsEditLineItemsLineItemReqFromJson(
+  Map<String, dynamic> json,
+) => AdminPostOrderEditsEditLineItemsLineItemReq(
+  quantity: (json['quantity'] as num).toInt(),
+);
 
 Map<String, dynamic> _$AdminPostOrderEditsEditLineItemsLineItemReqToJson(
-        AdminPostOrderEditsEditLineItemsLineItemReq instance) =>
-    <String, dynamic>{
-      'quantity': instance.quantity,
-    };
+  AdminPostOrderEditsEditLineItemsLineItemReq instance,
+) => <String, dynamic>{'quantity': instance.quantity};

@@ -4,10 +4,7 @@ part 'generated/return_shipping.g.dart';
 
 @JsonSerializable()
 class ReturnShipping {
-  ReturnShipping({
-    this.optionId,
-    this.price,
-  });
+  const ReturnShipping({this.optionId, this.price});
   factory ReturnShipping.fromJson(Map<String, dynamic> json) =>
       _$ReturnShippingFromJson(json);
 

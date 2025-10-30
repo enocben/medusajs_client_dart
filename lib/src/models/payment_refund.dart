@@ -7,7 +7,7 @@ part 'generated/payment_refund.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PaymentRefund {
-  PaymentRefund({
+  const PaymentRefund({
     required this.id,
     required this.amount,
     required this.createdAt,

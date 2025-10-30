@@ -6,7 +6,7 @@ part 'generated/promotion_attribute.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PromotionAttribute {
-  PromotionAttribute({
+  const PromotionAttribute({
     required this.id,
     required this.value,
     required this.label,
@@ -37,7 +37,7 @@ class PromotionAttribute {
 @JsonSerializable()
 @CopyWith()
 class PromotionAttributeOperator {
-  PromotionAttributeOperator({
+  const PromotionAttributeOperator({
     required this.id,
     required this.value,
     required this.label,

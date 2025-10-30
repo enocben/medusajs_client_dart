@@ -56,7 +56,6 @@ class _$PromotionCampaignBudgetCWProxyImpl
   PromotionCampaignBudget used(num used) => this(used: used);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionCampaignBudget(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -107,24 +106,24 @@ extension $PromotionCampaignBudgetCopyWith on PromotionCampaignBudget {
 // **************************************************************************
 
 PromotionCampaignBudget _$PromotionCampaignBudgetFromJson(
-        Map<String, dynamic> json) =>
-    PromotionCampaignBudget(
-      id: json['id'] as String,
-      type: $enumDecode(_$PromotionBudgetTypeEnumMap, json['type']),
-      currencyCode: json['currency_code'] as String?,
-      limit: json['limit'] as num?,
-      used: json['used'] as num,
-    );
+  Map<String, dynamic> json,
+) => PromotionCampaignBudget(
+  id: json['id'] as String,
+  type: $enumDecode(_$PromotionBudgetTypeEnumMap, json['type']),
+  currencyCode: json['currency_code'] as String?,
+  limit: json['limit'] as num?,
+  used: json['used'] as num,
+);
 
 Map<String, dynamic> _$PromotionCampaignBudgetToJson(
-        PromotionCampaignBudget instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'type': _$PromotionBudgetTypeEnumMap[instance.type]!,
-      if (instance.currencyCode case final value?) 'currency_code': value,
-      if (instance.limit case final value?) 'limit': value,
-      'used': instance.used,
-    };
+  PromotionCampaignBudget instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'type': _$PromotionBudgetTypeEnumMap[instance.type]!,
+  if (instance.currencyCode case final value?) 'currency_code': value,
+  if (instance.limit case final value?) 'limit': value,
+  'used': instance.used,
+};
 
 const _$PromotionBudgetTypeEnumMap = {
   PromotionBudgetType.spend: 'spend',

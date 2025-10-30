@@ -14,7 +14,10 @@ class AdminPostOrdersOrderShippingMethodsReq {
   String optionId;
   Map<String, dynamic> data;
 
-  factory AdminPostOrdersOrderShippingMethodsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderShippingMethodsReqFromJson(json);
+  factory AdminPostOrdersOrderShippingMethodsReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostOrdersOrderShippingMethodsReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderShippingMethodsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostOrdersOrderShippingMethodsReqToJson(this);
 }

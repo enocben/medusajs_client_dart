@@ -1,11 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/exchange_transaction.g.dart';
 
 /// Represents a transaction belonging to an Exchange in Medusa.
 @JsonSerializable()
+@CopyWith()
 class ExchangeTransaction {
-  ExchangeTransaction({
+  const ExchangeTransaction({
     required this.id,
     required this.orderId,
     required this.amount,
@@ -17,7 +19,8 @@ class ExchangeTransaction {
     this.updatedAt,
   });
 
-  factory ExchangeTransaction.fromJson(Map<String, dynamic> json) => _$ExchangeTransactionFromJson(json);
+  factory ExchangeTransaction.fromJson(Map<String, dynamic> json) =>
+      _$ExchangeTransactionFromJson(json);
   Map<String, dynamic> toJson() => _$ExchangeTransactionToJson(this);
 
   /// The transaction's ID.

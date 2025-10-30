@@ -17,10 +17,7 @@ abstract class _$PromotionRRuleValueCWProxy {
   /// ```dart
   /// PromotionRRuleValue(...).copyWith(id: 12, name: "My name")
   /// ````
-  PromotionRRuleValue call({
-    String value,
-    String label,
-  });
+  PromotionRRuleValue call({String value, String label});
 }
 
 /// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPromotionRRuleValue.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPromotionRRuleValue.copyWith.fieldName(...)`
@@ -36,7 +33,6 @@ class _$PromotionRRuleValueCWProxyImpl implements _$PromotionRRuleValueCWProxy {
   PromotionRRuleValue label(String label) => this(label: label);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionRRuleValue(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -78,8 +74,5 @@ PromotionRRuleValue _$PromotionRRuleValueFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$PromotionRRuleValueToJson(
-        PromotionRRuleValue instance) =>
-    <String, dynamic>{
-      'value': instance.value,
-      'label': instance.label,
-    };
+  PromotionRRuleValue instance,
+) => <String, dynamic>{'value': instance.value, 'label': instance.label};

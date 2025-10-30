@@ -1,11 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/priced_variant.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class PricedVariant extends ProductVariant {
-  PricedVariant({
+  const PricedVariant({
     required super.id,
     required super.title,
     required super.productId,
@@ -34,8 +36,8 @@ class PricedVariant extends ProductVariant {
     super.deletedAt,
     super.metadata,
     super.purchasable,
+    super.calculatedPrice,
     this.originalPrice,
-    this.calculatedPrice,
     this.originalPriceInclTax,
     this.calculatedPriceInclTax,
     this.originalTax,
@@ -48,13 +50,10 @@ class PricedVariant extends ProductVariant {
   @override
   Map<String, dynamic> toJson() => _$PricedVariantToJson(this);
 
-  /// The calculated price's details.
-  @override
-  CalculatedPrice? calculatedPrice;
-  double? originalPrice;
-  double? originalPriceInclTax;
-  double? calculatedPriceInclTax;
-  double? originalTax;
-  double? calculatedTax;
-  List<TaxRate> taxRates;
+  final double? originalPrice;
+  final double? originalPriceInclTax;
+  final double? calculatedPriceInclTax;
+  final double? originalTax;
+  final double? calculatedTax;
+  final List<TaxRate> taxRates;
 }

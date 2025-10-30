@@ -1,9 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/admin_get_tax_regions_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetTaxRegionsParams {
   AdminGetTaxRegionsParams({
     this.withDeleted,

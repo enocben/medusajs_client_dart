@@ -18,7 +18,7 @@ abstract class SalesChannelsResource {
   @POST('/admin/sales-channels')
   Future<AdminSalesChannelsRes> create(
     @Body() AdminPostSalesChannelsReq request, {
-      @Queries() AdminGetFieldsParams? query,
+    @Queries() AdminGetFieldsParams? query,
     @Extras() Map<String, String>? customHeaders,
   });
 
@@ -31,24 +31,22 @@ abstract class SalesChannelsResource {
   @POST('/admin/sales-channels/{salesChannelId}')
   Future<AdminSalesChannelsRes> update(
     @Path('salesChannelId') String salesChannelId,
-    @Body() AdminPostSalesChannelsSalesChannelReq body,
-    {
-      @Queries() AdminGetFieldsParams? query,
-      @Extras() Map<String, String>? customHeaders,}
-  );
+    @Body() AdminPostSalesChannelsSalesChannelReq body, {
+    @Queries() AdminGetFieldsParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @POST('/admin/sales-channels/{salesChannelId}/products')
   Future<AdminSalesChannelsRes> manageProducts(
     @Path('salesChannelId') String salesChannelId,
-    @Body() AdminPostSalesChannelsManageProductsReq body,
-    {
-      @Queries() AdminGetFieldsParams? query,
-      @Extras() Map<String, String>? customHeaders,}
-  );
+    @Body() AdminPostSalesChannelsManageProductsReq body, {
+    @Queries() AdminGetFieldsParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @DELETE('/admin/sales-channels/{salesChannelId}')
   Future<AdminSalesChannelsDeleteRes> delete(
-    @Path('salesChannelId') String salesChannelId,
-    {@Extras() Map<String, String>? customHeaders,}
-  );
+    @Path('salesChannelId') String salesChannelId, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 }

@@ -13,8 +13,5 @@ AdminPostInvitesReq _$AdminPostInvitesReqFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminPostInvitesReqToJson(
-        AdminPostInvitesReq instance) =>
-    <String, dynamic>{
-      'user': instance.user,
-      'role': instance.role,
-    };
+  AdminPostInvitesReq instance,
+) => <String, dynamic>{'user': instance.user, 'role': instance.role};

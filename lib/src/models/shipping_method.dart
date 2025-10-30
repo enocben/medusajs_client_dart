@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/cart.dart';
 import 'package:medusa_js_dart/src/models/claim_order.dart';
@@ -12,23 +13,18 @@ import 'package:medusa_js_dart/src/models/swap.dart';
 part 'generated/shipping_method.g.dart';
 
 /// A Shipping Method represents a way in which an Order or Return can be shipped.
-/// Shipping Methods are created from a Shipping Option, but may contain additional
-/// details that can be necessary for the Fulfillment Provider to handle the shipment.
 /// If the shipping method is created for a return, it may be associated with a claim
 /// or a swap that the return is
-
 @JsonSerializable()
-
-/// Represents a shipping method used to send the new (outbound) items in a Medusa Exchange.
-@JsonSerializable()
+@CopyWith()
 class ShippingMethod {
-  ShippingMethod({
+  const ShippingMethod({
     required this.id,
     required this.shippingOptionId,
-    this.orderId,
-    this.order,
     this.claimOrderId,
     this.claimOrder,
+    this.orderId,
+    this.order,
     this.cartId,
     this.cart,
     this.swapId,

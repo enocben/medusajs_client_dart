@@ -14,7 +14,10 @@ class AdminPostOrdersOrderClaimsClaimFulfillmentsReq {
   bool noNotification;
   String locationId;
 
-  factory AdminPostOrdersOrderClaimsClaimFulfillmentsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderClaimsClaimFulfillmentsReqFromJson(json);
+  factory AdminPostOrdersOrderClaimsClaimFulfillmentsReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostOrdersOrderClaimsClaimFulfillmentsReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderClaimsClaimFulfillmentsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostOrdersOrderClaimsClaimFulfillmentsReqToJson(this);
 }

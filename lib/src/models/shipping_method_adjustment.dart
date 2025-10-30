@@ -7,7 +7,7 @@ part 'generated/shipping_method_adjustment.g.dart';
 @JsonSerializable()
 @CopyWith()
 class ShippingMethodAdjustment {
-  ShippingMethodAdjustment({
+  const ShippingMethodAdjustment({
     required this.id,
     required this.shippingMethodId,
     this.amount,

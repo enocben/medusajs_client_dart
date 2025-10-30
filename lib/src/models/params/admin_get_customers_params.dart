@@ -1,9 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 
 part 'generated/admin_get_customers_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetCustomersParams {
   AdminGetCustomersParams({
     this.limit,
@@ -36,9 +38,7 @@ class AdminGetCustomersParams {
 
 @JsonSerializable()
 class AdminGetCustomerParams {
-  AdminGetCustomerParams({
-    this.fields,
-  });
+  AdminGetCustomerParams({this.fields});
   factory AdminGetCustomerParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetCustomerParamsFromJson(json);
 

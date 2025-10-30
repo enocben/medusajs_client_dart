@@ -4,12 +4,7 @@ part 'generated/store_post_search_req.g.dart';
 
 @JsonSerializable()
 class StorePostSearchReq {
-  StorePostSearchReq({
-    this.q,
-    this.offset,
-    this.limit,
-    this.filter,
-  });
+  StorePostSearchReq({this.q, this.offset, this.limit, this.filter});
   factory StorePostSearchReq.fromJson(Map<String, dynamic> json) =>
       _$StorePostSearchReqFromJson(json);
 

@@ -51,6 +51,72 @@ class _InventoryItemsResource implements InventoryItemsResource {
   }
 
   @override
+  Future<AdminInventoryItemsRes> retrieve(
+    String inventoryItemId, {
+    AdminGetInventoryItemsItemParams? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders?.toJson() ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<AdminInventoryItemsRes>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/inventory-items/${inventoryItemId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminInventoryItemsRes _value;
+    try {
+      _value = AdminInventoryItemsRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AdminGetInventoryLevelsRes> listLocationLevels(
+    String inventoryItemId, {
+    AdminGetInventoryLevelsParams? query,
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<AdminGetInventoryLevelsRes>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/inventory-items/${inventoryItemId}/location-levels',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminGetInventoryLevelsRes _value;
+    try {
+      _value = AdminGetInventoryLevelsRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<AdminInventoryItemsRes> create(
     AdminPostInventoryItemsInventoryItemReq payload, {
     AdminPostInventoryItemsParams? query,
@@ -69,38 +135,6 @@ class _InventoryItemsResource implements InventoryItemsResource {
           .compose(
             _dio.options,
             '/admin/inventory-items',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminInventoryItemsRes _value;
-    try {
-      _value = AdminInventoryItemsRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminInventoryItemsRes> retrieve(
-    String inventoryItemId, {
-    AdminGetInventoryItemsItemParams? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders?.toJson() ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminInventoryItemsRes>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/inventory-items/${inventoryItemId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -146,70 +180,6 @@ class _InventoryItemsResource implements InventoryItemsResource {
     late AdminInventoryItemsRes _value;
     try {
       _value = AdminInventoryItemsRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminInventoryItemsDeleteRes> delete(
-    String inventoryItemId,
-    Map<String, String>? customHeaders,
-  ) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminInventoryItemsDeleteRes>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/inventory-items/${inventoryItemId}',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminInventoryItemsDeleteRes _value;
-    try {
-      _value = AdminInventoryItemsDeleteRes.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AdminGetInventoryLevelsRes> listLocationLevels(
-    String inventoryItemId, {
-    Map<String, String>? customHeaders,
-  }) async {
-    final _extra = <String, dynamic>{};
-    _extra.addAll(customHeaders ?? <String, dynamic>{});
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminGetInventoryLevelsRes>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/inventory-items/${inventoryItemId}/location-levels',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminGetInventoryLevelsRes _value;
-    try {
-      _value = AdminGetInventoryLevelsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -291,7 +261,106 @@ class _InventoryItemsResource implements InventoryItemsResource {
   }
 
   @override
-  Future<AdminInventoryItemsRes> deleteLocationLevel(
+  Future<AdminManageInventoryLevelsGeneralRes> manageInventoryLevelsGeneral(
+    AdminPostManageInventoryLevelsGeneral body, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<AdminManageInventoryLevelsGeneralRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/inventory-items/location-levels/batch',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminManageInventoryLevelsGeneralRes _value;
+    try {
+      _value = AdminManageInventoryLevelsGeneralRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AdminManageInventoryLevelsRes> manageInventoryLevels(
+    String inventoryItemId,
+    AdminPostManageInventoryLevels body, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<AdminManageInventoryLevelsRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/inventory-items/${inventoryItemId}/location-levels/batch',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminManageInventoryLevelsRes _value;
+    try {
+      _value = AdminManageInventoryLevelsRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AdminDeleteRes> delete(
+    String inventoryItemId,
+    Map<String, String>? customHeaders,
+  ) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<AdminDeleteRes>(
+      Options(method: 'DELETE', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/inventory-items/${inventoryItemId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminDeleteRes _value;
+    try {
+      _value = AdminDeleteRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AdminDeleteRes> deleteLocationLevel(
     String inventoryItemId,
     String locationId, {
     Map<String, String>? customHeaders,
@@ -302,7 +371,7 @@ class _InventoryItemsResource implements InventoryItemsResource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminInventoryItemsRes>(
+    final _options = _setStreamType<AdminDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -313,9 +382,9 @@ class _InventoryItemsResource implements InventoryItemsResource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminInventoryItemsRes _value;
+    late AdminDeleteRes _value;
     try {
-      _value = AdminInventoryItemsRes.fromJson(_result.data!);
+      _value = AdminDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -11,8 +11,8 @@ class AdminProductTypesDeleteProductTypeRes {
   });
 
   factory AdminProductTypesDeleteProductTypeRes.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminProductTypesDeleteProductTypeResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminProductTypesDeleteProductTypeResFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminProductTypesDeleteProductTypeResToJson(this);

@@ -5,9 +5,7 @@ part 'generated/tax_region_res.g.dart';
 
 @JsonSerializable()
 class TaxRegionRes {
-  TaxRegionRes({
-    required this.taxRegion,
-  });
+  TaxRegionRes({required this.taxRegion});
 
   factory TaxRegionRes.fromJson(Map<String, dynamic> json) =>
       _$TaxRegionResFromJson(json);

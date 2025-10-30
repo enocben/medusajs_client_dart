@@ -14,9 +14,9 @@ AdminPostBatchesReq _$AdminPostBatchesReqFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminPostBatchesReqToJson(
-        AdminPostBatchesReq instance) =>
-    <String, dynamic>{
-      'type': instance.type,
-      'context': instance.context,
-      'dry_run': instance.dryRun,
-    };
+  AdminPostBatchesReq instance,
+) => <String, dynamic>{
+  'type': instance.type,
+  'context': instance.context,
+  'dry_run': instance.dryRun,
+};

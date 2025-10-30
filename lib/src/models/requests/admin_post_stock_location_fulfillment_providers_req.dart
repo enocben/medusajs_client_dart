@@ -4,13 +4,11 @@ part 'generated/admin_post_stock_location_fulfillment_providers_req.g.dart';
 
 @JsonSerializable()
 class AdminPostStockLocationFulfillmentProvidersReq {
-  AdminPostStockLocationFulfillmentProvidersReq({
-    this.add,
-    this.remove,
-  });
+  AdminPostStockLocationFulfillmentProvidersReq({this.add, this.remove});
 
-  factory AdminPostStockLocationFulfillmentProvidersReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminPostStockLocationFulfillmentProvidersReqFromJson(json);
+  factory AdminPostStockLocationFulfillmentProvidersReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostStockLocationFulfillmentProvidersReqFromJson(json);
 
   /// The fulfillment providers to add to the stock location.
   final List<String>? add;
@@ -18,5 +16,6 @@ class AdminPostStockLocationFulfillmentProvidersReq {
   /// The fulfillment providers to remove from the stock location.
   final List<String>? remove;
 
-  Map<String, dynamic> toJson() => _$AdminPostStockLocationFulfillmentProvidersReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostStockLocationFulfillmentProvidersReqToJson(this);
 }

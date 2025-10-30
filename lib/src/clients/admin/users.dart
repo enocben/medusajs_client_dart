@@ -33,12 +33,16 @@ abstract class UsersResource {
 
   @POST('/admin/users/{userId}')
   Future<AdminUserRes> update(
-      @Path('userId') String userId, @Body() AdminUpdateUserRequest body,
-      {@Extras() Map<String, String>? customHeaders});
+    @Path('userId') String userId,
+    @Body() AdminUpdateUserRequest body, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @DELETE('/admin/users/{userId}')
-  Future<AdminDeleteUserRes> delete(@Path('userId') String userId,
-      {@Extras() Map<String, String>? customHeaders});
+  Future<AdminDeleteUserRes> delete(
+    @Path('userId') String userId, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @GET('/admin/users/me')
   Future<AdminUserRes> getMe({@Extras() Map<String, String>? customHeaders});

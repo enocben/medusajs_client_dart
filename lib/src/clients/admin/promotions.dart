@@ -77,12 +77,10 @@ abstract class PromotionsResource {
 
   @GET('/admin/promotions/{id}/{ruleType}')
   Future<AdminGetPromotionRulesRes> listRules(
-    @Path('id') String id, 
-    @Path('ruleType') String ruleType,
-    {
+    @Path('id') String id,
+    @Path('ruleType') String ruleType, {
     @Extras() Map<String, String>? customHeaders,
   });
-
 
   @POST('/admin/promotions/{id}')
   Future<AdminPromotionsRes> update(

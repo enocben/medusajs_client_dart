@@ -15,10 +15,12 @@ class AdminPostShippingOptionsOptionReq {
     this.rules,
     this.data,
   });
-  factory AdminPostShippingOptionsOptionReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminPostShippingOptionsOptionReqFromJson(json);
+  factory AdminPostShippingOptionsOptionReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostShippingOptionsOptionReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostShippingOptionsOptionReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostShippingOptionsOptionReqToJson(this);
 
   /// The shipping option's name.
   String? name;
@@ -26,8 +28,8 @@ class AdminPostShippingOptionsOptionReq {
   /// The ID of the associated shipping profile.
   String? shippingProfileId;
 
-  /// The shipping option's price type. 
-  /// If flat, the shipping option has a fixed price set in prices. 
+  /// The shipping option's price type.
+  /// If flat, the shipping option has a fixed price set in prices.
   /// Otherwise, the shipping option's price is calculated by the fulfillment provider.
   String? priceType;
 
@@ -36,7 +38,6 @@ class AdminPostShippingOptionsOptionReq {
 
   /// The shipping option type's details.
   ShippingOptionTypeReq? type;
-
 
   /// The shipping option's prices.
   List<ShippingOptionUpdatePriceReq>? prices;
@@ -49,12 +50,8 @@ class AdminPostShippingOptionsOptionReq {
 }
 
 @JsonSerializable()
-class ShippingOptionUpdatePriceReq{
-  const ShippingOptionUpdatePriceReq({
-    this.currencyCode,
-    this.amount,
-    this.id
-  });
+class ShippingOptionUpdatePriceReq {
+  const ShippingOptionUpdatePriceReq({this.currencyCode, this.amount, this.id});
 
   factory ShippingOptionUpdatePriceReq.fromJson(Map<String, dynamic> json) =>
       _$ShippingOptionUpdatePriceReqFromJson(json);
@@ -70,4 +67,3 @@ class ShippingOptionUpdatePriceReq{
   /// The ID of an existing price.
   final String? id;
 }
-

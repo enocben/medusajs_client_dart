@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/currency.dart' show Currency;
 
@@ -5,8 +6,9 @@ part 'generated/supported_currencies.g.dart';
 
 /// Currency
 @JsonSerializable()
+@CopyWith()
 class SupportedCurrencies {
-  SupportedCurrencies({
+  const SupportedCurrencies({
     required this.id,
     required this.currencyCode,
     required this.storeId,
@@ -44,5 +46,4 @@ class SupportedCurrencies {
 
   /// The date the currency was deleted.
   final String? deletedAt;
-
 }

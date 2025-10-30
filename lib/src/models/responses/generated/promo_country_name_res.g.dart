@@ -17,10 +17,10 @@ PromoCountryNameRes _$PromoCountryNameResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$PromoCountryNameResToJson(
-        PromoCountryNameRes instance) =>
-    <String, dynamic>{
-      'values': instance.values.map((e) => e.toJson()).toList(),
-      'count': instance.count,
-      'offset': instance.offset,
-      'limit': instance.limit,
-    };
+  PromoCountryNameRes instance,
+) => <String, dynamic>{
+  'values': instance.values.map((e) => e.toJson()).toList(),
+  'count': instance.count,
+  'offset': instance.offset,
+  'limit': instance.limit,
+};

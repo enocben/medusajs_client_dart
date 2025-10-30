@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/models.dart' show SupportedCurrencies;
 
@@ -5,8 +6,9 @@ part 'generated/store.g.dart';
 
 /// A store holds the main settings of the commerce shop. By default, only one store is created and used within the Medusa backend. It holds settings related to the name of the store, available currencies, and more.
 @JsonSerializable()
+@CopyWith()
 class Store {
-  Store({
+  const Store({
     required this.id,
     required this.name,
     required this.supportedCurrencies,

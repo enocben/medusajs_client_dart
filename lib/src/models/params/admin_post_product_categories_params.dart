@@ -9,7 +9,10 @@ class AdminPostProductCategoriesParams {
   final String? expand;
   final String? fields;
 
-  factory AdminPostProductCategoriesParams.fromJson(Map<String, dynamic> json) => _$AdminPostProductCategoriesParamsFromJson(json);
+  factory AdminPostProductCategoriesParams.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductCategoriesParamsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostProductCategoriesParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostProductCategoriesParamsToJson(this);
 }

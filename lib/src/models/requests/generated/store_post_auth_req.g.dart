@@ -13,7 +13,4 @@ StorePostAuthReq _$StorePostAuthReqFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$StorePostAuthReqToJson(StorePostAuthReq instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'password': instance.password,
-    };
+    <String, dynamic>{'email': instance.email, 'password': instance.password};

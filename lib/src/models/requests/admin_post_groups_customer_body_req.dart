@@ -6,9 +6,7 @@ part 'generated/admin_post_groups_customer_body_req.g.dart';
 class AdminPostGroupsCustomerBodyReq {
   AdminPostGroupsCustomerBodyReq({this.add, this.remove});
 
-  factory AdminPostGroupsCustomerBodyReq.fromJson(
-    Map<String, dynamic> json,
-  ) =>
+  factory AdminPostGroupsCustomerBodyReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostGroupsCustomerBodyReqFromJson(json);
 
   /// The customer groups to add the customer to.

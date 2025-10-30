@@ -12,6 +12,4 @@ AdminPriceListRes _$AdminPriceListResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminPriceListResToJson(AdminPriceListRes instance) =>
-    <String, dynamic>{
-      'price_list': instance.priceList.toJson(),
-    };
+    <String, dynamic>{'price_list': instance.priceList.toJson()};

@@ -5,7 +5,7 @@ part 'generated/service_zone.g.dart';
 
 @JsonSerializable()
 class ServiceZone {
-  ServiceZone({
+  const ServiceZone({
     required this.id,
     required this.name,
     this.fulfillmentSetId,

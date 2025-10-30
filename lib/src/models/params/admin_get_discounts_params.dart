@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
@@ -5,6 +6,7 @@ import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 part 'generated/admin_get_discounts_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetDiscountsParams {
   AdminGetDiscountsParams({
     required this.q,
@@ -37,10 +39,7 @@ class AdminGetDiscountsParams {
 
 @JsonSerializable()
 class Rule {
-  Rule({
-    required this.type,
-    required this.allocation,
-  });
+  Rule({required this.type, required this.allocation});
   factory Rule.fromJson(Map<String, dynamic> json) => _$RuleFromJson(json);
 
   Map<String, dynamic> toJson() => _$RuleToJson(this);

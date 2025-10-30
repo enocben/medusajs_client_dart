@@ -7,14 +7,12 @@ part of '../admin_post_publishable_api_keys_publishable_api_key_req.dart';
 // **************************************************************************
 
 AdminPostPublishableApiKeysPublishableApiKeyReq
-    _$AdminPostPublishableApiKeysPublishableApiKeyReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminPostPublishableApiKeysPublishableApiKeyReq(
-          title: json['title'] as String,
-        );
+_$AdminPostPublishableApiKeysPublishableApiKeyReqFromJson(
+  Map<String, dynamic> json,
+) => AdminPostPublishableApiKeysPublishableApiKeyReq(
+  title: json['title'] as String,
+);
 
 Map<String, dynamic> _$AdminPostPublishableApiKeysPublishableApiKeyReqToJson(
-        AdminPostPublishableApiKeysPublishableApiKeyReq instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-    };
+  AdminPostPublishableApiKeysPublishableApiKeyReq instance,
+) => <String, dynamic>{'title': instance.title};

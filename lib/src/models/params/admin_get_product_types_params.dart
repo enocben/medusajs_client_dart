@@ -1,9 +1,11 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 
 part 'generated/admin_get_product_types_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetProductTypesParams {
   AdminGetProductTypesParams({
     this.limit,

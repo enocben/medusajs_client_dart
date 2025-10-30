@@ -7,19 +7,19 @@ part of '../admin_get_gift_cards_params.dart';
 // **************************************************************************
 
 AdminGetGiftCardsParams _$AdminGetGiftCardsParamsFromJson(
-        Map<String, dynamic> json) =>
-    AdminGetGiftCardsParams(
-      offset: (json['offset'] as num).toInt(),
-      limit: (json['limit'] as num).toInt(),
-      q: json['q'] as String,
-      order: json['order'] as String,
-    );
+  Map<String, dynamic> json,
+) => AdminGetGiftCardsParams(
+  offset: (json['offset'] as num).toInt(),
+  limit: (json['limit'] as num).toInt(),
+  q: json['q'] as String,
+  order: json['order'] as String,
+);
 
 Map<String, dynamic> _$AdminGetGiftCardsParamsToJson(
-        AdminGetGiftCardsParams instance) =>
-    <String, dynamic>{
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'q': instance.q,
-      'order': instance.order,
-    };
+  AdminGetGiftCardsParams instance,
+) => <String, dynamic>{
+  'offset': instance.offset,
+  'limit': instance.limit,
+  'q': instance.q,
+  'order': instance.order,
+};

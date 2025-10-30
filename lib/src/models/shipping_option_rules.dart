@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
@@ -5,8 +6,9 @@ part 'generated/shipping_option_rules.g.dart';
 
 /// A Shipping Profile has a set of defined Shipping Options that can be used to fulfill a given set of Products. For example, gift cards are shipped differently than physical products, so a shipping profile with the type `gift_card` groups together the shipping options that can only be used for gift cards.
 @JsonSerializable()
+@CopyWith()
 class ShippingOptionRules {
-  ShippingOptionRules({
+  const ShippingOptionRules({
     required this.id,
     this.attribute,
     this.operator,

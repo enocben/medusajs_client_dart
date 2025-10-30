@@ -8,7 +8,10 @@ class AdminPostSalesChannelsChannelStockLocationsReq {
 
   final String locationId;
 
-  factory AdminPostSalesChannelsChannelStockLocationsReq.fromJson(Map<String, dynamic> json) => _$AdminPostSalesChannelsChannelStockLocationsReqFromJson(json);
+  factory AdminPostSalesChannelsChannelStockLocationsReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostSalesChannelsChannelStockLocationsReqFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AdminPostSalesChannelsChannelStockLocationsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostSalesChannelsChannelStockLocationsReqToJson(this);
 }

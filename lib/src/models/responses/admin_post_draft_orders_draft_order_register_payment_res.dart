@@ -6,13 +6,11 @@ part 'generated/admin_post_draft_orders_draft_order_register_payment_res.g.dart'
 
 @JsonSerializable()
 class AdminPostDraftOrdersDraftOrderRegisterPaymentRes {
-  AdminPostDraftOrdersDraftOrderRegisterPaymentRes({
-    required this.order,
-  });
+  AdminPostDraftOrdersDraftOrderRegisterPaymentRes({required this.order});
 
   factory AdminPostDraftOrdersDraftOrderRegisterPaymentRes.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostDraftOrdersDraftOrderRegisterPaymentResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostDraftOrdersDraftOrderRegisterPaymentResFromJson(json);
 
   final Order order;
 

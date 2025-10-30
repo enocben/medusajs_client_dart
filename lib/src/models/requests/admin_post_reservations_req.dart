@@ -5,11 +5,11 @@ part 'generated/admin_post_reservations_req.g.dart';
 @JsonSerializable()
 class AdminPostReservationsReq {
   AdminPostReservationsReq({
-    required this.line_itemId,
+    this.lineItemId,
     required this.locationId,
-    required this.inventory_itemId,
+    required this.inventoryItemId,
     required this.quantity,
-    required this.description,
+    this.description,
     this.metadata,
   });
   factory AdminPostReservationsReq.fromJson(Map<String, dynamic> json) =>
@@ -17,10 +17,12 @@ class AdminPostReservationsReq {
 
   Map<String, dynamic> toJson() => _$AdminPostReservationsReqToJson(this);
 
-  final String line_itemId;
+  @JsonKey(name: 'line_item_id')
+  final String? lineItemId;
   final String locationId;
-  final String inventory_itemId;
+  @JsonKey(name: 'inventory_item_id')
+  final String inventoryItemId;
   final int quantity;
-  final String description;
+  final String? description;
   final Map<String, dynamic>? metadata;
 }

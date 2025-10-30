@@ -45,11 +45,15 @@ abstract class TaxRatesResource {
   });
 
   @DELETE('/admin/tax-rates/{taxRateId}')
-  Future<AdminTaxRatesDeleteRes> delete(@Path('taxRateId') String taxRateId,
-      {@Extras() Map<String, String>? customHeaders});
+  Future<AdminTaxRatesDeleteRes> delete(
+    @Path('taxRateId') String taxRateId, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @DELETE('/admin/tax-rates/{taxRateId}/rules/{ruleId}')
   Future<AdminTaxRatesDeleteRes> deleteRule(
-      @Path('taxRateId') String taxRateId, @Path('ruleId') String ruleId,
-      {@Extras() Map<String, String>? customHeaders});
+    @Path('taxRateId') String taxRateId,
+    @Path('ruleId') String ruleId, {
+    @Extras() Map<String, String>? customHeaders,
+  });
 }

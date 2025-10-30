@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/price.dart';
-import 'package:medusa_js_dart/src/models/product_variant_option.dart';
 
 part 'generated/admin_post_products_req.g.dart';
 
@@ -67,10 +66,7 @@ class AdminPostProductsReq {
 
 @JsonSerializable()
 class AdminPostProductsReqType {
-  AdminPostProductsReqType({
-    this.id,
-    required this.value,
-  });
+  AdminPostProductsReqType({this.id, required this.value});
   factory AdminPostProductsReqType.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductsReqTypeFromJson(json);
 
@@ -82,10 +78,7 @@ class AdminPostProductsReqType {
 
 @JsonSerializable()
 class AdminPostProductsReqTag {
-  AdminPostProductsReqTag({
-    this.id,
-    required this.value,
-  });
+  AdminPostProductsReqTag({this.id, required this.value});
   factory AdminPostProductsReqTag.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductsReqTagFromJson(json);
 
@@ -97,14 +90,11 @@ class AdminPostProductsReqTag {
 
 @JsonSerializable()
 class AdminPostProductsReqSalesChannel {
-  AdminPostProductsReqSalesChannel({
-    required this.id,
-  });
+  AdminPostProductsReqSalesChannel({required this.id});
 
   factory AdminPostProductsReqSalesChannel.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$AdminPostProductsReqSalesChannelFromJson(json);
+  ) => _$AdminPostProductsReqSalesChannelFromJson(json);
 
   String id;
 
@@ -114,9 +104,7 @@ class AdminPostProductsReqSalesChannel {
 
 @JsonSerializable()
 class AdminPostProductsReqCategory {
-  AdminPostProductsReqCategory({
-    required this.id,
-  });
+  AdminPostProductsReqCategory({required this.id});
   factory AdminPostProductsReqCategory.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductsReqCategoryFromJson(json);
 
@@ -141,8 +129,8 @@ class AdminPostProductsReqOption {
 class AdminPostProductsProductReqOption {
   AdminPostProductsProductReqOption({this.title, this.values});
   factory AdminPostProductsProductReqOption.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostProductsProductReqOptionFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostProductsProductReqOptionFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostProductsProductReqOptionToJson(this);

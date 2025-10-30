@@ -7,7 +7,7 @@ part 'generated/shipping_method_detail.g.dart';
 @JsonSerializable()
 @CopyWith()
 class ShippingMethodDetail {
-  ShippingMethodDetail({
+  const ShippingMethodDetail({
     required this.id,
     required this.shippingMethodId,
     this.shippingMethod,

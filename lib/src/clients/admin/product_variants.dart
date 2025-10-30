@@ -9,6 +9,12 @@ abstract class ProductsVariantsResource {
   factory ProductsVariantsResource(Dio dio, {String baseUrl}) =
       _ProductsVariantsResource;
 
+  @GET('/admin/product-variants')
+  Future<AdminProductsListVariantsRes> list({
+    @Queries() AdminGetProductsVariantsParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
+
   @GET('/admin/products/{id}/variants/{variant_id}')
   Future<AdminVariantsRes> retrieve(
     @Path('id') String id,

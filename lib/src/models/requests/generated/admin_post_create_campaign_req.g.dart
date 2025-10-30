@@ -8,7 +8,8 @@ part of '../admin_post_create_campaign_req.dart';
 
 abstract class _$AdminPostCreateCampaignReqCWProxy {
   AdminPostCreateCampaignReq additionalData(
-      Map<String, dynamic>? additionalData);
+    Map<String, dynamic>? additionalData,
+  );
 
   AdminPostCreateCampaignReq promotions(List<String>? promotions);
 
@@ -51,8 +52,8 @@ class _$AdminPostCreateCampaignReqCWProxyImpl
 
   @override
   AdminPostCreateCampaignReq additionalData(
-          Map<String, dynamic>? additionalData) =>
-      this(additionalData: additionalData);
+    Map<String, dynamic>? additionalData,
+  ) => this(additionalData: additionalData);
 
   @override
   AdminPostCreateCampaignReq promotions(List<String>? promotions) =>
@@ -81,7 +82,6 @@ class _$AdminPostCreateCampaignReqCWProxyImpl
   AdminPostCreateCampaignReq name(String? name) => this(name: name);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AdminPostCreateCampaignReq(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -180,7 +180,6 @@ class _$AdminPostCampaignBudgetReqCWProxyImpl
       this(currencyCode: currencyCode);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AdminPostCampaignBudgetReq(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -221,52 +220,53 @@ extension $AdminPostCampaignBudgetReqCopyWith on AdminPostCampaignBudgetReq {
 // **************************************************************************
 
 AdminPostCreateCampaignReq _$AdminPostCreateCampaignReqFromJson(
-        Map<String, dynamic> json) =>
-    AdminPostCreateCampaignReq(
-      additionalData: json['additional_data'] as Map<String, dynamic>?,
-      promotions: (json['promotions'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      startsAt: json['starts_at'] as String?,
-      endsAt: json['ends_at'] as String?,
-      budget: json['budget'] == null
-          ? null
-          : AdminPostCampaignBudgetReq.fromJson(
-              json['budget'] as Map<String, dynamic>),
-      description: json['description'] as String?,
-      campaignIdentifier: json['campaign_identifier'] as String?,
-      name: json['name'] as String?,
-    );
+  Map<String, dynamic> json,
+) => AdminPostCreateCampaignReq(
+  additionalData: json['additional_data'] as Map<String, dynamic>?,
+  promotions: (json['promotions'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  startsAt: json['starts_at'] as String?,
+  endsAt: json['ends_at'] as String?,
+  budget: json['budget'] == null
+      ? null
+      : AdminPostCampaignBudgetReq.fromJson(
+          json['budget'] as Map<String, dynamic>,
+        ),
+  description: json['description'] as String?,
+  campaignIdentifier: json['campaign_identifier'] as String?,
+  name: json['name'] as String?,
+);
 
 Map<String, dynamic> _$AdminPostCreateCampaignReqToJson(
-        AdminPostCreateCampaignReq instance) =>
-    <String, dynamic>{
-      if (instance.additionalData case final value?) 'additional_data': value,
-      if (instance.promotions case final value?) 'promotions': value,
-      if (instance.startsAt case final value?) 'starts_at': value,
-      if (instance.endsAt case final value?) 'ends_at': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.campaignIdentifier case final value?)
-        'campaign_identifier': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.budget?.toJson() case final value?) 'budget': value,
-    };
+  AdminPostCreateCampaignReq instance,
+) => <String, dynamic>{
+  if (instance.additionalData case final value?) 'additional_data': value,
+  if (instance.promotions case final value?) 'promotions': value,
+  if (instance.startsAt case final value?) 'starts_at': value,
+  if (instance.endsAt case final value?) 'ends_at': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.campaignIdentifier case final value?)
+    'campaign_identifier': value,
+  if (instance.name case final value?) 'name': value,
+  if (instance.budget?.toJson() case final value?) 'budget': value,
+};
 
 AdminPostCampaignBudgetReq _$AdminPostCampaignBudgetReqFromJson(
-        Map<String, dynamic> json) =>
-    AdminPostCampaignBudgetReq(
-      type: $enumDecode(_$PromotionBudgetTypeEnumMap, json['type']),
-      limit: json['limit'] as num?,
-      currencyCode: json['currency_code'] as String?,
-    );
+  Map<String, dynamic> json,
+) => AdminPostCampaignBudgetReq(
+  type: $enumDecode(_$PromotionBudgetTypeEnumMap, json['type']),
+  limit: json['limit'] as num?,
+  currencyCode: json['currency_code'] as String?,
+);
 
 Map<String, dynamic> _$AdminPostCampaignBudgetReqToJson(
-        AdminPostCampaignBudgetReq instance) =>
-    <String, dynamic>{
-      'type': _$PromotionBudgetTypeEnumMap[instance.type]!,
-      if (instance.limit case final value?) 'limit': value,
-      if (instance.currencyCode case final value?) 'currency_code': value,
-    };
+  AdminPostCampaignBudgetReq instance,
+) => <String, dynamic>{
+  'type': _$PromotionBudgetTypeEnumMap[instance.type]!,
+  if (instance.limit case final value?) 'limit': value,
+  if (instance.currencyCode case final value?) 'currency_code': value,
+};
 
 const _$PromotionBudgetTypeEnumMap = {
   PromotionBudgetType.spend: 'spend',

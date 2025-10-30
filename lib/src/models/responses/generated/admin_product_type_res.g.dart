@@ -8,12 +8,11 @@ part of '../admin_product_type_res.dart';
 
 AdminProductTypeRes _$AdminProductTypeResFromJson(Map<String, dynamic> json) =>
     AdminProductTypeRes(
-      productType:
-          ProductType.fromJson(json['product_type'] as Map<String, dynamic>),
+      productType: ProductType.fromJson(
+        json['product_type'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$AdminProductTypeResToJson(
-        AdminProductTypeRes instance) =>
-    <String, dynamic>{
-      'product_type': instance.productType.toJson(),
-    };
+  AdminProductTypeRes instance,
+) => <String, dynamic>{'product_type': instance.productType.toJson()};

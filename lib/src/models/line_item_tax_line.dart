@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/line_item.dart';
 
@@ -5,8 +6,9 @@ part 'generated/line_item_tax_line.g.dart';
 
 /// A Line Item Tax Line represents the taxes applied on a line item.
 @JsonSerializable()
+@CopyWith()
 class LineItemTaxLine {
-  LineItemTaxLine({
+  const LineItemTaxLine({
     required this.id,
     this.code,
     required this.name,
@@ -23,29 +25,29 @@ class LineItemTaxLine {
   Map<String, dynamic> toJson() => _$LineItemTaxLineToJson(this);
 
   /// The line item tax line's ID
-  String id;
+  final String id;
 
   /// A code to identify the tax type by
-  String? code;
+  final String? code;
 
   /// A human friendly name for the tax
-  String name;
+  final String name;
 
   /// The numeric rate to charge tax by
-  double rate;
+  final double rate;
 
   /// The ID of the line item
-  String itemId;
+  final String itemId;
 
   /// The details of the line item.
-  LineItem? item;
+  final LineItem? item;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 }

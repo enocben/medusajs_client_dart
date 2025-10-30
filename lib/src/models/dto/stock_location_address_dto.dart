@@ -5,7 +5,7 @@ part 'generated/stock_location_address_dto.g.dart';
 @JsonSerializable()
 class StockLocationAddressDTO {
   StockLocationAddressDTO({
-    this.id,
+    required this.id,
     this.address_1,
     this.address_2,
     this.company,
@@ -15,8 +15,8 @@ class StockLocationAddressDTO {
     this.postalCode,
     this.province,
     this.metadata,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.updatedAt,
     this.deletedAt,
   });
 
@@ -25,7 +25,7 @@ class StockLocationAddressDTO {
 
   Map<String, dynamic> toJson() => _$StockLocationAddressDTOToJson(this);
 
-  String? id;
+  String id;
   String? address_1;
   String? address_2;
   String? company;

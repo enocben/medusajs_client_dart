@@ -5,10 +5,7 @@ part 'generated/multiple_errors.g.dart';
 
 @JsonSerializable()
 class MultipleErrors {
-  MultipleErrors({
-    this.errors,
-    this.message,
-  });
+  MultipleErrors({this.errors, this.message});
   factory MultipleErrors.fromJson(Map<String, dynamic> json) =>
       _$MultipleErrorsFromJson(json);
 

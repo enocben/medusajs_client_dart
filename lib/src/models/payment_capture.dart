@@ -7,7 +7,7 @@ part 'generated/payment_capture.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PaymentCapture {
-  PaymentCapture({
+  const PaymentCapture({
     required this.id,
     required this.amount,
     required this.createdAt,

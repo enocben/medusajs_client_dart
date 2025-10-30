@@ -5,9 +5,7 @@ part 'generated/admin_service_zone_res.g.dart';
 
 @JsonSerializable()
 class AdminServiceZoneRes {
-  AdminServiceZoneRes({
-    required this.serviceZone,
-  });
+  AdminServiceZoneRes({required this.serviceZone});
   factory AdminServiceZoneRes.fromJson(Map<String, dynamic> json) =>
       _$AdminServiceZoneResFromJson(json);
 

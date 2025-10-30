@@ -5,7 +5,7 @@ part 'generated/response_inventory_item.g.dart';
 
 @JsonSerializable()
 class ResponseInventoryItem extends InventoryItemDTO {
-  ResponseInventoryItem({
+  const ResponseInventoryItem({
     required super.id,
     required super.sku,
     super.hsCode,
@@ -30,7 +30,7 @@ class ResponseInventoryItem extends InventoryItemDTO {
   factory ResponseInventoryItem.fromJson(Map<String, dynamic> json) =>
       _$ResponseInventoryItemFromJson(json);
 
-  List<LocationLevel>? locationLevels;
+  final List<LocationLevel>? locationLevels;
 
   @override
   Map<String, dynamic> toJson() => _$ResponseInventoryItemToJson(this);
@@ -38,7 +38,7 @@ class ResponseInventoryItem extends InventoryItemDTO {
 
 @JsonSerializable()
 class LocationLevel extends InventoryItemDTO {
-  LocationLevel({
+  const LocationLevel({
     required super.id,
     required super.sku,
     super.hsCode,
@@ -59,11 +59,12 @@ class LocationLevel extends InventoryItemDTO {
     super.deletedAt,
     required this.availableQuantity,
   });
+
   factory LocationLevel.fromJson(Map<String, dynamic> json) =>
       _$LocationLevelFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$LocationLevelToJson(this);
 
-  int availableQuantity;
+  final int availableQuantity;
 }

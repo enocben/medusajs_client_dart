@@ -12,6 +12,4 @@ AdminDiscountsRes _$AdminDiscountsResFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AdminDiscountsResToJson(AdminDiscountsRes instance) =>
-    <String, dynamic>{
-      'discount': instance.discount.toJson(),
-    };
+    <String, dynamic>{'discount': instance.discount.toJson()};

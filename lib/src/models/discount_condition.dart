@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/customer_group.dart';
 import 'package:medusa_js_dart/src/models/discount_rule.dart';
@@ -10,8 +11,9 @@ part 'generated/discount_condition.g.dart';
 
 /// Holds rule conditions for when a discount is applicable
 @JsonSerializable()
+@CopyWith()
 class DiscountCondition {
-  DiscountCondition({
+  const DiscountCondition({
     required this.id,
     required this.type,
     required this.operator,
@@ -33,44 +35,44 @@ class DiscountCondition {
   Map<String, dynamic> toJson() => _$DiscountConditionToJson(this);
 
   /// The discount condition's ID
-  String id;
+  final String id;
 
   /// The type of the condition. The type affects the available resources associated with the condition. For example, if the type is `products`, that means the `products` relation will hold the products associated with this condition and other relations will be empty.
-  String type;
+  final String type;
 
   /// The operator of the condition. `in` indicates that discountable resources are within the specified resources. `notIn` indicates that discountable resources are everything but the specified resources.
-  String operator;
+  final String operator;
 
   /// The ID of the discount rule associated with the condition
-  String discountRuleId;
+  final String discountRuleId;
 
   /// The details of the discount rule associated with the condition.
-  DiscountRule? discountRule;
+  final DiscountRule? discountRule;
 
   /// products associated with this condition if `type` is `products`.
-  List<Product>? products;
+  final List<Product>? products;
 
   /// Product types associated with this condition if `type` is `productTypes`.
-  List<ProductType>? productTypes;
+  final List<ProductType>? productTypes;
 
   /// Product tags associated with this condition if `type` is `productTags`.
-  List<ProductTag>? productTags;
+  final List<ProductTag>? productTags;
 
   /// Product collections associated with this condition if `type` is `productCollections`.
-  List<ProductCollection>? productCollections;
+  final List<ProductCollection>? productCollections;
 
   /// Customer groups associated with this condition if `type` is `customerGroups`.
-  List<CustomerGroup>? customerGroups;
+  final List<CustomerGroup>? customerGroups;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 }

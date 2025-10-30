@@ -25,10 +25,7 @@ class StorePostCartReq {
 
 @JsonSerializable()
 class CartItem {
-  CartItem({
-    required this.variantId,
-    required this.quantity,
-  });
+  CartItem({required this.variantId, required this.quantity});
   factory CartItem.fromJson(Map<String, dynamic> json) =>
       _$CartItemFromJson(json);
 

@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_regions_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetRegionsParams {
   AdminGetRegionsParams({
     this.q,
@@ -32,12 +34,7 @@ class AdminGetRegionsParams {
 
 @JsonSerializable()
 class CreatedAtFilter {
-  CreatedAtFilter({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  CreatedAtFilter({this.lt, this.gt, this.lte, this.gte});
 
   factory CreatedAtFilter.fromJson(Map<String, dynamic> json) =>
       _$CreatedAtFilterFromJson(json);
@@ -52,12 +49,7 @@ class CreatedAtFilter {
 
 @JsonSerializable()
 class UpdatedAtFilter {
-  UpdatedAtFilter({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  UpdatedAtFilter({this.lt, this.gt, this.lte, this.gte});
 
   factory UpdatedAtFilter.fromJson(Map<String, dynamic> json) =>
       _$UpdatedAtFilterFromJson(json);
@@ -72,12 +64,7 @@ class UpdatedAtFilter {
 
 @JsonSerializable()
 class DeletedAtFilter {
-  DeletedAtFilter({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  DeletedAtFilter({this.lt, this.gt, this.lte, this.gte});
 
   factory DeletedAtFilter.fromJson(Map<String, dynamic> json) =>
       _$DeletedAtFilterFromJson(json);

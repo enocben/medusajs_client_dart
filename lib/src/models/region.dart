@@ -6,7 +6,7 @@ part 'generated/region.g.dart';
 
 @JsonSerializable()
 class Region {
-  Region({
+  const Region({
     required this.id,
     required this.name,
     required this.currencyCode,
@@ -23,14 +23,14 @@ class Region {
 
   Map<String, dynamic> toJson() => _$RegionToJson(this);
 
-  String id;
-  String name;
-  String currencyCode;
-  bool automaticTaxes;
-  List<Country>? countries;
-  List<PaymentProvider>? paymentProviders;
-  String createdAt;
-  String updatedAt;
-  String? deletedAt;
-  Map<String, dynamic>? metadata;
+  final String id;
+  final String name;
+  final String currencyCode;
+  final bool automaticTaxes;
+  final List<Country>? countries;
+  final List<PaymentProvider>? paymentProviders;
+  final String createdAt;
+  final String updatedAt;
+  final String? deletedAt;
+  final Map<String, dynamic>? metadata;
 }

@@ -29,9 +29,11 @@ abstract class ProductCategoriesResource {
   });
 
   @POST('/admin/product-categories/{id}')
-  Future<AdminProductCategoriesCategoryRes> update(@Path('id') String id,
-      {@Body() required AdminPostProductCategoriesCategoryReq body,
-      @Extras() Map<String, String>? customHeaders});
+  Future<AdminProductCategoriesCategoryRes> update(
+    @Path('id') String id, {
+    @Body() required AdminPostProductCategoriesCategoryReq body,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @DELETE('/admin/product-categories/{id}')
   Future<AdminProductCategoriesCategoryDeleteRes> delete(

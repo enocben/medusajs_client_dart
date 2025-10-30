@@ -131,7 +131,6 @@ class _$PaymentCollectionCWProxyImpl implements _$PaymentCollectionCWProxy {
       this(authorizedAmount: authorizedAmount);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PaymentCollection(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -266,30 +265,30 @@ PaymentCollection _$PaymentCollectionFromJson(Map<String, dynamic> json) =>
       authorizedAmount: json['authorized_amount'] as num?,
     );
 
-Map<String, dynamic> _$PaymentCollectionToJson(PaymentCollection instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'currency_code': instance.currencyCode,
-      'amount': instance.amount,
-      'status': instance.status,
-      if (instance.paymentProviders?.map((e) => e.toJson()).toList()
-          case final value?)
-        'payment_providers': value,
-      if (instance.payments?.map((e) => e.toJson()).toList() case final value?)
-        'payments': value,
-      if (instance.paymentSessions?.map((e) => e.toJson()).toList()
-          case final value?)
-        'payment_sessions': value,
-      if (instance.refunds?.map((e) => e.toJson()).toList() case final value?)
-        'refunds': value,
-      if (instance.captures?.map((e) => e.toJson()).toList() case final value?)
-        'captures': value,
-      if (instance.metadata case final value?) 'metadata': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.completedAt case final value?) 'completed_at': value,
-      if (instance.refundedAmount case final value?) 'refunded_amount': value,
-      if (instance.capturedAmount case final value?) 'captured_amount': value,
-      if (instance.authorizedAmount case final value?)
-        'authorized_amount': value,
-    };
+Map<String, dynamic> _$PaymentCollectionToJson(
+  PaymentCollection instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'currency_code': instance.currencyCode,
+  'amount': instance.amount,
+  'status': instance.status,
+  if (instance.paymentProviders?.map((e) => e.toJson()).toList()
+      case final value?)
+    'payment_providers': value,
+  if (instance.payments?.map((e) => e.toJson()).toList() case final value?)
+    'payments': value,
+  if (instance.paymentSessions?.map((e) => e.toJson()).toList()
+      case final value?)
+    'payment_sessions': value,
+  if (instance.refunds?.map((e) => e.toJson()).toList() case final value?)
+    'refunds': value,
+  if (instance.captures?.map((e) => e.toJson()).toList() case final value?)
+    'captures': value,
+  if (instance.metadata case final value?) 'metadata': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.completedAt case final value?) 'completed_at': value,
+  if (instance.refundedAmount case final value?) 'refunded_amount': value,
+  if (instance.capturedAmount case final value?) 'captured_amount': value,
+  if (instance.authorizedAmount case final value?) 'authorized_amount': value,
+};

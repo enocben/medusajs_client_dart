@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/admin_get_inventory_items_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetInventoryItemsParams {
   AdminGetInventoryItemsParams({
     this.offset,
@@ -50,8 +52,7 @@ class AdminGetInventoryItemsParams {
 }
 
 @JsonSerializable()
-class LocationLevelsReqParam{
-      
+class LocationLevelsReqParam {
   LocationLevelsReqParam({required this.locationId});
 
   factory LocationLevelsReqParam.fromJson(Map<String, dynamic> json) =>

@@ -1,3 +1,4 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/customer_group.dart';
 import 'package:medusa_js_dart/src/models/discount_condition.dart';
@@ -6,9 +7,10 @@ part 'generated/discount_condition_customer_group.g.dart';
 
 /// Associates a discount condition with a customer group
 @JsonSerializable()
+@CopyWith()
 class DiscountConditionCustomerGroup {
   /// Constructor
-  DiscountConditionCustomerGroup({
+  const DiscountConditionCustomerGroup({
     required this.customerGroupId,
     required this.conditionId,
     this.customerGroup,
@@ -21,25 +23,25 @@ class DiscountConditionCustomerGroup {
       _$DiscountConditionCustomerGroupFromJson(json);
 
   /// The ID of the Customer Group
-  String customerGroupId;
+  final String customerGroupId;
 
   /// The ID of the Discount Condition
-  String conditionId;
+  final String conditionId;
 
   /// Available if the relation `customerGroup` is expanded.
-  CustomerGroup? customerGroup;
+  final CustomerGroup? customerGroup;
 
   /// Available if the relation `discountCondition` is expanded.
-  DiscountCondition? discountCondition;
+  final DiscountCondition? discountCondition;
 
   /// The date with timezone at which the resource was created.
-  String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 
   Map<String, dynamic> toJson() => _$DiscountConditionCustomerGroupToJson(this);
 }

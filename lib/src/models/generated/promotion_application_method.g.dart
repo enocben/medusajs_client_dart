@@ -20,7 +20,8 @@ abstract class _$PromotionApplicationMethodCWProxy {
   PromotionApplicationMethod currencyCode(String? currencyCode);
 
   PromotionApplicationMethod allocation(
-      ApplicationMethodAllocation? allocation);
+    ApplicationMethodAllocation? allocation,
+  );
 
   PromotionApplicationMethod targetType(PromotionTargetType? targetType);
 
@@ -85,8 +86,8 @@ class _$PromotionApplicationMethodCWProxyImpl
 
   @override
   PromotionApplicationMethod allocation(
-          ApplicationMethodAllocation? allocation) =>
-      this(allocation: allocation);
+    ApplicationMethodAllocation? allocation,
+  ) => this(allocation: allocation);
 
   @override
   PromotionApplicationMethod targetType(PromotionTargetType? targetType) =>
@@ -109,7 +110,6 @@ class _$PromotionApplicationMethodCWProxyImpl
       this(promotion: promotion);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PromotionApplicationMethod(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -195,55 +195,58 @@ extension $PromotionApplicationMethodCopyWith on PromotionApplicationMethod {
 // **************************************************************************
 
 PromotionApplicationMethod _$PromotionApplicationMethodFromJson(
-        Map<String, dynamic> json) =>
-    PromotionApplicationMethod(
-      id: json['id'] as String,
-      applyToQuantity: json['apply_to_quantity'] as num?,
-      buyRulesMinQuantity: json['buy_rules_min_quantity'] as num?,
-      maxQuantity: json['max_quantity'] as num?,
-      value: json['value'] as num?,
-      currencyCode: json['currency_code'] as String?,
-      allocation: $enumDecodeNullable(
-          _$ApplicationMethodAllocationEnumMap, json['allocation']),
-      targetType: $enumDecodeNullable(
-          _$PromotionTargetTypeEnumMap, json['target_type']),
-      type: $enumDecodeNullable(
-          _$PromotionApplicationMethodTypeEnumMap, json['type']),
-      buyRules: (json['buy_rules'] as List<dynamic>?)
-          ?.map((e) => PromotionRule.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      targetRules: (json['target_rules'] as List<dynamic>?)
-          ?.map((e) => PromotionRule.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      promotion: json['promotion'] as Map<String, dynamic>?,
-    );
+  Map<String, dynamic> json,
+) => PromotionApplicationMethod(
+  id: json['id'] as String,
+  applyToQuantity: json['apply_to_quantity'] as num?,
+  buyRulesMinQuantity: json['buy_rules_min_quantity'] as num?,
+  maxQuantity: json['max_quantity'] as num?,
+  value: json['value'] as num?,
+  currencyCode: json['currency_code'] as String?,
+  allocation: $enumDecodeNullable(
+    _$ApplicationMethodAllocationEnumMap,
+    json['allocation'],
+  ),
+  targetType: $enumDecodeNullable(
+    _$PromotionTargetTypeEnumMap,
+    json['target_type'],
+  ),
+  type: $enumDecodeNullable(
+    _$PromotionApplicationMethodTypeEnumMap,
+    json['type'],
+  ),
+  buyRules: (json['buy_rules'] as List<dynamic>?)
+      ?.map((e) => PromotionRule.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  targetRules: (json['target_rules'] as List<dynamic>?)
+      ?.map((e) => PromotionRule.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  promotion: json['promotion'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$PromotionApplicationMethodToJson(
-        PromotionApplicationMethod instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.applyToQuantity case final value?)
-        'apply_to_quantity': value,
-      if (instance.buyRulesMinQuantity case final value?)
-        'buy_rules_min_quantity': value,
-      if (instance.maxQuantity case final value?) 'max_quantity': value,
-      if (instance.currencyCode case final value?) 'currency_code': value,
-      if (instance.value case final value?) 'value': value,
-      if (_$ApplicationMethodAllocationEnumMap[instance.allocation]
-          case final value?)
-        'allocation': value,
-      if (_$PromotionTargetTypeEnumMap[instance.targetType] case final value?)
-        'target_type': value,
-      if (_$PromotionApplicationMethodTypeEnumMap[instance.type]
-          case final value?)
-        'type': value,
-      if (instance.buyRules?.map((e) => e.toJson()).toList() case final value?)
-        'buy_rules': value,
-      if (instance.targetRules?.map((e) => e.toJson()).toList()
-          case final value?)
-        'target_rules': value,
-      if (instance.promotion case final value?) 'promotion': value,
-    };
+  PromotionApplicationMethod instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.applyToQuantity case final value?) 'apply_to_quantity': value,
+  if (instance.buyRulesMinQuantity case final value?)
+    'buy_rules_min_quantity': value,
+  if (instance.maxQuantity case final value?) 'max_quantity': value,
+  if (instance.currencyCode case final value?) 'currency_code': value,
+  if (instance.value case final value?) 'value': value,
+  if (_$ApplicationMethodAllocationEnumMap[instance.allocation]
+      case final value?)
+    'allocation': value,
+  if (_$PromotionTargetTypeEnumMap[instance.targetType] case final value?)
+    'target_type': value,
+  if (_$PromotionApplicationMethodTypeEnumMap[instance.type] case final value?)
+    'type': value,
+  if (instance.buyRules?.map((e) => e.toJson()).toList() case final value?)
+    'buy_rules': value,
+  if (instance.targetRules?.map((e) => e.toJson()).toList() case final value?)
+    'target_rules': value,
+  if (instance.promotion case final value?) 'promotion': value,
+};
 
 const _$ApplicationMethodAllocationEnumMap = {
   ApplicationMethodAllocation.each: 'each',

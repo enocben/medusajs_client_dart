@@ -30,8 +30,8 @@ class AdminPostShippingOptionsReq {
   /// The ID of the associated shipping profile.
   String shippingProfileId;
 
-  /// The shipping option's price type. 
-  /// If flat, the shipping option has a fixed price set in prices. 
+  /// The shipping option's price type.
+  /// If flat, the shipping option has a fixed price set in prices.
   /// Otherwise, the shipping option's price is calculated by the fulfillment provider.
   String priceType;
 
@@ -41,7 +41,6 @@ class AdminPostShippingOptionsReq {
   /// The shipping option type's details.
   ShippingOptionTypeReq type;
 
-
   /// The shipping option's prices.
   List<ShippingOptionPriceReq> prices;
 
@@ -50,16 +49,14 @@ class AdminPostShippingOptionsReq {
 
   /// The shipping option's data, useful for the fulfillment provider handling its processing.
   Map<String, dynamic>? data;
-
 }
 
-
 @JsonSerializable()
-class ShippingOptionTypeReq{
+class ShippingOptionTypeReq {
   const ShippingOptionTypeReq({
     required this.label,
     required this.description,
-    required this.code
+    required this.code,
   });
 
   factory ShippingOptionTypeReq.fromJson(Map<String, dynamic> json) =>
@@ -73,10 +70,10 @@ class ShippingOptionTypeReq{
 }
 
 @JsonSerializable()
-class ShippingOptionPriceReq{
+class ShippingOptionPriceReq {
   const ShippingOptionPriceReq({
     required this.currencyCode,
-    required this.amount
+    required this.amount,
   });
 
   factory ShippingOptionPriceReq.fromJson(Map<String, dynamic> json) =>
@@ -89,7 +86,7 @@ class ShippingOptionPriceReq{
 }
 
 @JsonSerializable()
-class ShippingOptionRuleReq{
+class ShippingOptionRuleReq {
   const ShippingOptionRuleReq({
     required this.operator,
     required this.attribute,

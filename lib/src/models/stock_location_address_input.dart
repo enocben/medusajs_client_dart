@@ -1,10 +1,12 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/stock_location_address_input.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class StockLocationAddressInput {
-  StockLocationAddressInput({
+  const StockLocationAddressInput({
     required this.address_1,
     this.address_2,
     this.city,
@@ -21,13 +23,13 @@ class StockLocationAddressInput {
 
   Map<String, dynamic> toJson() => _$StockLocationAddressInputToJson(this);
 
-  String address_1;
-  String? address_2;
-  String? city;
-  String countryCode;
-  String? company;
-  String? phone;
-  String? postalCode;
-  String? province;
-  Map<String, dynamic>? metadata;
+  final String address_1;
+  final String? address_2;
+  final String? city;
+  final String countryCode;
+  final String? company;
+  final String? phone;
+  final String? postalCode;
+  final String? province;
+  final Map<String, dynamic>? metadata;
 }

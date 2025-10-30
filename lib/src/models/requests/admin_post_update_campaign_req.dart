@@ -7,15 +7,16 @@ part 'generated/admin_post_update_campaign_req.g.dart';
 @JsonSerializable()
 @CopyWith()
 class AdminPostUpdateCampaignReq extends AdminPostCampaignReq {
-  AdminPostUpdateCampaignReq(
-      {super.additionalData,
-      super.promotions,
-      super.startsAt,
-      super.endsAt,
-      this.budget,
-      super.description,
-      super.campaignIdentifier,
-      super.name});
+  AdminPostUpdateCampaignReq({
+    super.additionalData,
+    super.promotions,
+    super.startsAt,
+    super.endsAt,
+    this.budget,
+    super.description,
+    super.campaignIdentifier,
+    super.name,
+  });
 
   factory AdminPostUpdateCampaignReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostUpdateCampaignReqFromJson(json);
@@ -32,8 +33,8 @@ class AdminPostUpdateCampaignBudgetReq {
   AdminPostUpdateCampaignBudgetReq({required this.limit});
 
   factory AdminPostUpdateCampaignBudgetReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$AdminPostUpdateCampaignBudgetReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostUpdateCampaignBudgetReqFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$AdminPostUpdateCampaignBudgetReqToJson(this);

@@ -7,17 +7,15 @@ part of '../store_post_payment_collections_batch_sessions_authorize_req.dart';
 // **************************************************************************
 
 StorePostPaymentCollectionsBatchSessionsAuthorizeReq
-    _$StorePostPaymentCollectionsBatchSessionsAuthorizeReqFromJson(
-            Map<String, dynamic> json) =>
-        StorePostPaymentCollectionsBatchSessionsAuthorizeReq(
-          sessionIds: (json['session_ids'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-        );
+_$StorePostPaymentCollectionsBatchSessionsAuthorizeReqFromJson(
+  Map<String, dynamic> json,
+) => StorePostPaymentCollectionsBatchSessionsAuthorizeReq(
+  sessionIds: (json['session_ids'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic>
-    _$StorePostPaymentCollectionsBatchSessionsAuthorizeReqToJson(
-            StorePostPaymentCollectionsBatchSessionsAuthorizeReq instance) =>
-        <String, dynamic>{
-          'session_ids': instance.sessionIds,
-        };
+_$StorePostPaymentCollectionsBatchSessionsAuthorizeReqToJson(
+  StorePostPaymentCollectionsBatchSessionsAuthorizeReq instance,
+) => <String, dynamic>{'session_ids': instance.sessionIds};

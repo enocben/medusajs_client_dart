@@ -1,8 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/store_get_collections_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class StoreGetCollectionsParams {
   StoreGetCollectionsParams({
     this.offset,
@@ -29,12 +31,7 @@ class StoreGetCollectionsParams {
 
 @JsonSerializable()
 class CreatedAtParams {
-  CreatedAtParams({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  CreatedAtParams({this.lt, this.gt, this.lte, this.gte});
   factory CreatedAtParams.fromJson(Map<String, dynamic> json) =>
       _$CreatedAtParamsFromJson(json);
 
@@ -51,12 +48,7 @@ class CreatedAtParams {
 
 @JsonSerializable()
 class UpdatedAtParams {
-  UpdatedAtParams({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  UpdatedAtParams({this.lt, this.gt, this.lte, this.gte});
   factory UpdatedAtParams.fromJson(Map<String, dynamic> json) =>
       _$UpdatedAtParamsFromJson(json);
 

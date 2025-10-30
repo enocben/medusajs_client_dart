@@ -4,20 +4,21 @@ part 'generated/admin_post_address_req.g.dart';
 
 @JsonSerializable()
 class AdminPostAddressReq {
-  AdminPostAddressReq(
-      {this.phone,
-      this.postalCode,
-      this.province,
-      this.countryCode,
-      this.city,
-      this.address_2,
-      this.address_1,
-      this.firstName,
-      this.lastName,
-      this.company,
-      this.isDefaultBilling,
-      this.isDefaultShipping,
-      this.addressName});
+  AdminPostAddressReq({
+    this.phone,
+    this.postalCode,
+    this.province,
+    this.countryCode,
+    this.city,
+    this.address_2,
+    this.address_1,
+    this.firstName,
+    this.lastName,
+    this.company,
+    this.isDefaultBilling,
+    this.isDefaultShipping,
+    this.addressName,
+  });
   factory AdminPostAddressReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostAddressReqFromJson(json);
 

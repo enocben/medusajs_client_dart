@@ -78,7 +78,6 @@ class _$ShippingMethodDetailCWProxyImpl
   ShippingMethodDetail claimId(String? claimId) => this(claimId: claimId);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ShippingMethodDetail(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -144,27 +143,27 @@ extension $ShippingMethodDetailCopyWith on ShippingMethodDetail {
 // **************************************************************************
 
 ShippingMethodDetail _$ShippingMethodDetailFromJson(
-        Map<String, dynamic> json) =>
-    ShippingMethodDetail(
-      id: json['id'] as String,
-      shippingMethodId: json['shipping_method_id'] as String,
-      shippingMethod: json['shipping_method'],
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
-      returnId: json['return_id'] as String?,
-      exchangeId: json['exchange_id'] as String?,
-      claimId: json['claim_id'] as String?,
-    );
+  Map<String, dynamic> json,
+) => ShippingMethodDetail(
+  id: json['id'] as String,
+  shippingMethodId: json['shipping_method_id'] as String,
+  shippingMethod: json['shipping_method'],
+  createdAt: json['created_at'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  returnId: json['return_id'] as String?,
+  exchangeId: json['exchange_id'] as String?,
+  claimId: json['claim_id'] as String?,
+);
 
 Map<String, dynamic> _$ShippingMethodDetailToJson(
-        ShippingMethodDetail instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'shipping_method_id': instance.shippingMethodId,
-      if (instance.shippingMethod case final value?) 'shipping_method': value,
-      if (instance.createdAt case final value?) 'created_at': value,
-      if (instance.updatedAt case final value?) 'updated_at': value,
-      if (instance.returnId case final value?) 'return_id': value,
-      if (instance.exchangeId case final value?) 'exchange_id': value,
-      if (instance.claimId case final value?) 'claim_id': value,
-    };
+  ShippingMethodDetail instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'shipping_method_id': instance.shippingMethodId,
+  if (instance.shippingMethod case final value?) 'shipping_method': value,
+  if (instance.createdAt case final value?) 'created_at': value,
+  if (instance.updatedAt case final value?) 'updated_at': value,
+  if (instance.returnId case final value?) 'return_id': value,
+  if (instance.exchangeId case final value?) 'exchange_id': value,
+  if (instance.claimId case final value?) 'claim_id': value,
+};

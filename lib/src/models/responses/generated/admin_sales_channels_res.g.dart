@@ -7,14 +7,13 @@ part of '../admin_sales_channels_res.dart';
 // **************************************************************************
 
 AdminSalesChannelsRes _$AdminSalesChannelsResFromJson(
-        Map<String, dynamic> json) =>
-    AdminSalesChannelsRes(
-      salesChannel:
-          SalesChannel.fromJson(json['sales_channel'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => AdminSalesChannelsRes(
+  salesChannel: SalesChannel.fromJson(
+    json['sales_channel'] as Map<String, dynamic>,
+  ),
+);
 
 Map<String, dynamic> _$AdminSalesChannelsResToJson(
-        AdminSalesChannelsRes instance) =>
-    <String, dynamic>{
-      'sales_channel': instance.salesChannel.toJson(),
-    };
+  AdminSalesChannelsRes instance,
+) => <String, dynamic>{'sales_channel': instance.salesChannel.toJson()};

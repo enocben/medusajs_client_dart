@@ -19,11 +19,7 @@ abstract class _$AdminOperatorCWProxy {
   /// ```dart
   /// AdminOperator(...).copyWith(id: 12, name: "My name")
   /// ````
-  AdminOperator call({
-    String id,
-    RulesOperator value,
-    String label,
-  });
+  AdminOperator call({String id, RulesOperator value, String label});
 }
 
 /// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfAdminOperator.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfAdminOperator.copyWith.fieldName(...)`
@@ -42,7 +38,6 @@ class _$AdminOperatorCWProxyImpl implements _$AdminOperatorCWProxy {
   AdminOperator label(String label) => this(label: label);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `AdminOperator(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage

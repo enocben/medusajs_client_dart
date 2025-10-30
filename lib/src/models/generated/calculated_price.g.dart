@@ -24,7 +24,8 @@ abstract class _$CalculatedPriceCWProxy {
   CalculatedPrice calculatedPrice(Map<String, dynamic>? calculatedPrice);
 
   CalculatedPrice isOriginalPriceTaxInclusive(
-      bool? isOriginalPriceTaxInclusive);
+    bool? isOriginalPriceTaxInclusive,
+  );
 
   CalculatedPrice isOriginalPricePriceList(bool? isOriginalPricePriceList);
 
@@ -33,7 +34,8 @@ abstract class _$CalculatedPriceCWProxy {
   CalculatedPrice calculatedAmountWithTax(num? calculatedAmountWithTax);
 
   CalculatedPrice isCalculatedPriceTaxInclusive(
-      bool? isCalculatedPriceTaxInclusive);
+    bool? isCalculatedPriceTaxInclusive,
+  );
 
   CalculatedPrice isCalculatedPricePriceList(bool? isCalculatedPricePriceList);
 
@@ -100,8 +102,8 @@ class _$CalculatedPriceCWProxyImpl implements _$CalculatedPriceCWProxy {
 
   @override
   CalculatedPrice isOriginalPriceTaxInclusive(
-          bool? isOriginalPriceTaxInclusive) =>
-      this(isOriginalPriceTaxInclusive: isOriginalPriceTaxInclusive);
+    bool? isOriginalPriceTaxInclusive,
+  ) => this(isOriginalPriceTaxInclusive: isOriginalPriceTaxInclusive);
 
   @override
   CalculatedPrice isOriginalPricePriceList(bool? isOriginalPricePriceList) =>
@@ -117,16 +119,15 @@ class _$CalculatedPriceCWProxyImpl implements _$CalculatedPriceCWProxy {
 
   @override
   CalculatedPrice isCalculatedPriceTaxInclusive(
-          bool? isCalculatedPriceTaxInclusive) =>
-      this(isCalculatedPriceTaxInclusive: isCalculatedPriceTaxInclusive);
+    bool? isCalculatedPriceTaxInclusive,
+  ) => this(isCalculatedPriceTaxInclusive: isCalculatedPriceTaxInclusive);
 
   @override
   CalculatedPrice isCalculatedPricePriceList(
-          bool? isCalculatedPricePriceList) =>
-      this(isCalculatedPricePriceList: isCalculatedPricePriceList);
+    bool? isCalculatedPricePriceList,
+  ) => this(isCalculatedPricePriceList: isCalculatedPricePriceList);
 
   @override
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CalculatedPrice(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -168,14 +169,14 @@ class _$CalculatedPriceCWProxyImpl implements _$CalculatedPriceCWProxy {
           : currencyCode as String?,
       originalAmountWithTax:
           originalAmountWithTax == const $CopyWithPlaceholder()
-              ? _value.originalAmountWithTax
-              // ignore: cast_nullable_to_non_nullable
-              : originalAmountWithTax as num?,
+          ? _value.originalAmountWithTax
+          // ignore: cast_nullable_to_non_nullable
+          : originalAmountWithTax as num?,
       originalAmountWithoutTax:
           originalAmountWithoutTax == const $CopyWithPlaceholder()
-              ? _value.originalAmountWithoutTax
-              // ignore: cast_nullable_to_non_nullable
-              : originalAmountWithoutTax as num?,
+          ? _value.originalAmountWithoutTax
+          // ignore: cast_nullable_to_non_nullable
+          : originalAmountWithoutTax as num?,
       originalPrice: originalPrice == const $CopyWithPlaceholder()
           ? _value.originalPrice
           // ignore: cast_nullable_to_non_nullable
@@ -186,34 +187,34 @@ class _$CalculatedPriceCWProxyImpl implements _$CalculatedPriceCWProxy {
           : calculatedPrice as Map<String, dynamic>?,
       isOriginalPriceTaxInclusive:
           isOriginalPriceTaxInclusive == const $CopyWithPlaceholder()
-              ? _value.isOriginalPriceTaxInclusive
-              // ignore: cast_nullable_to_non_nullable
-              : isOriginalPriceTaxInclusive as bool?,
+          ? _value.isOriginalPriceTaxInclusive
+          // ignore: cast_nullable_to_non_nullable
+          : isOriginalPriceTaxInclusive as bool?,
       isOriginalPricePriceList:
           isOriginalPricePriceList == const $CopyWithPlaceholder()
-              ? _value.isOriginalPricePriceList
-              // ignore: cast_nullable_to_non_nullable
-              : isOriginalPricePriceList as bool?,
+          ? _value.isOriginalPricePriceList
+          // ignore: cast_nullable_to_non_nullable
+          : isOriginalPricePriceList as bool?,
       calculatedAmountWithoutTax:
           calculatedAmountWithoutTax == const $CopyWithPlaceholder()
-              ? _value.calculatedAmountWithoutTax
-              // ignore: cast_nullable_to_non_nullable
-              : calculatedAmountWithoutTax as num?,
+          ? _value.calculatedAmountWithoutTax
+          // ignore: cast_nullable_to_non_nullable
+          : calculatedAmountWithoutTax as num?,
       calculatedAmountWithTax:
           calculatedAmountWithTax == const $CopyWithPlaceholder()
-              ? _value.calculatedAmountWithTax
-              // ignore: cast_nullable_to_non_nullable
-              : calculatedAmountWithTax as num?,
+          ? _value.calculatedAmountWithTax
+          // ignore: cast_nullable_to_non_nullable
+          : calculatedAmountWithTax as num?,
       isCalculatedPriceTaxInclusive:
           isCalculatedPriceTaxInclusive == const $CopyWithPlaceholder()
-              ? _value.isCalculatedPriceTaxInclusive
-              // ignore: cast_nullable_to_non_nullable
-              : isCalculatedPriceTaxInclusive as bool?,
+          ? _value.isCalculatedPriceTaxInclusive
+          // ignore: cast_nullable_to_non_nullable
+          : isCalculatedPriceTaxInclusive as bool?,
       isCalculatedPricePriceList:
           isCalculatedPricePriceList == const $CopyWithPlaceholder()
-              ? _value.isCalculatedPricePriceList
-              // ignore: cast_nullable_to_non_nullable
-              : isCalculatedPricePriceList as bool?,
+          ? _value.isCalculatedPricePriceList
+          // ignore: cast_nullable_to_non_nullable
+          : isCalculatedPricePriceList as bool?,
     );
   }
 }
@@ -228,50 +229,49 @@ extension $CalculatedPriceCopyWith on CalculatedPrice {
 // JsonSerializableGenerator
 // **************************************************************************
 
-CalculatedPrice _$CalculatedPriceFromJson(Map<String, dynamic> json) =>
-    CalculatedPrice(
-      id: json['id'] as String,
-      calculatedAmount: json['calculated_amount'] as num?,
-      originalAmount: json['original_amount'] as num?,
-      currencyCode: json['currency_code'] as String?,
-      originalAmountWithTax: json['original_amount_with_tax'] as num?,
-      originalAmountWithoutTax: json['original_amount_without_tax'] as num?,
-      originalPrice: json['original_price'] as Map<String, dynamic>?,
-      calculatedPrice: json['calculated_price'] as Map<String, dynamic>?,
-      isOriginalPriceTaxInclusive:
-          json['is_original_price_tax_inclusive'] as bool?,
-      isOriginalPricePriceList: json['is_original_price_price_list'] as bool?,
-      calculatedAmountWithoutTax: json['calculated_amount_without_tax'] as num?,
-      calculatedAmountWithTax: json['calculated_amount_with_tax'] as num?,
-      isCalculatedPriceTaxInclusive:
-          json['is_calculated_price_tax_inclusive'] as bool?,
-      isCalculatedPricePriceList:
-          json['is_calculated_price_price_list'] as bool?,
-    );
+CalculatedPrice _$CalculatedPriceFromJson(
+  Map<String, dynamic> json,
+) => CalculatedPrice(
+  id: json['id'] as String,
+  calculatedAmount: json['calculated_amount'] as num?,
+  originalAmount: json['original_amount'] as num?,
+  currencyCode: json['currency_code'] as String?,
+  originalAmountWithTax: json['original_amount_with_tax'] as num?,
+  originalAmountWithoutTax: json['original_amount_without_tax'] as num?,
+  originalPrice: json['original_price'] as Map<String, dynamic>?,
+  calculatedPrice: json['calculated_price'] as Map<String, dynamic>?,
+  isOriginalPriceTaxInclusive: json['is_original_price_tax_inclusive'] as bool?,
+  isOriginalPricePriceList: json['is_original_price_price_list'] as bool?,
+  calculatedAmountWithoutTax: json['calculated_amount_without_tax'] as num?,
+  calculatedAmountWithTax: json['calculated_amount_with_tax'] as num?,
+  isCalculatedPriceTaxInclusive:
+      json['is_calculated_price_tax_inclusive'] as bool?,
+  isCalculatedPricePriceList: json['is_calculated_price_price_list'] as bool?,
+);
 
-Map<String, dynamic> _$CalculatedPriceToJson(CalculatedPrice instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      if (instance.calculatedAmount case final value?)
-        'calculated_amount': value,
-      if (instance.originalAmount case final value?) 'original_amount': value,
-      if (instance.currencyCode case final value?) 'currency_code': value,
-      if (instance.originalAmountWithTax case final value?)
-        'original_amount_with_tax': value,
-      if (instance.originalAmountWithoutTax case final value?)
-        'original_amount_without_tax': value,
-      if (instance.originalPrice case final value?) 'original_price': value,
-      if (instance.calculatedPrice case final value?) 'calculated_price': value,
-      if (instance.isOriginalPriceTaxInclusive case final value?)
-        'is_original_price_tax_inclusive': value,
-      if (instance.isOriginalPricePriceList case final value?)
-        'is_original_price_price_list': value,
-      if (instance.calculatedAmountWithoutTax case final value?)
-        'calculated_amount_without_tax': value,
-      if (instance.calculatedAmountWithTax case final value?)
-        'calculated_amount_with_tax': value,
-      if (instance.isCalculatedPriceTaxInclusive case final value?)
-        'is_calculated_price_tax_inclusive': value,
-      if (instance.isCalculatedPricePriceList case final value?)
-        'is_calculated_price_price_list': value,
-    };
+Map<String, dynamic> _$CalculatedPriceToJson(
+  CalculatedPrice instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  if (instance.calculatedAmount case final value?) 'calculated_amount': value,
+  if (instance.originalAmount case final value?) 'original_amount': value,
+  if (instance.currencyCode case final value?) 'currency_code': value,
+  if (instance.originalAmountWithTax case final value?)
+    'original_amount_with_tax': value,
+  if (instance.originalAmountWithoutTax case final value?)
+    'original_amount_without_tax': value,
+  if (instance.originalPrice case final value?) 'original_price': value,
+  if (instance.calculatedPrice case final value?) 'calculated_price': value,
+  if (instance.isOriginalPriceTaxInclusive case final value?)
+    'is_original_price_tax_inclusive': value,
+  if (instance.isOriginalPricePriceList case final value?)
+    'is_original_price_price_list': value,
+  if (instance.calculatedAmountWithoutTax case final value?)
+    'calculated_amount_without_tax': value,
+  if (instance.calculatedAmountWithTax case final value?)
+    'calculated_amount_with_tax': value,
+  if (instance.isCalculatedPriceTaxInclusive case final value?)
+    'is_calculated_price_tax_inclusive': value,
+  if (instance.isCalculatedPricePriceList case final value?)
+    'is_calculated_price_price_list': value,
+};

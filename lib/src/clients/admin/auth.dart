@@ -16,9 +16,7 @@ abstract class AuthResource {
   });
 
   @DELETE('/admin/auth')
-  Future<void> deleteSession({
-    @Extras() Map<String, String>? customHeaders,
-  });
+  Future<void> deleteSession({@Extras() Map<String, String>? customHeaders});
 
   @POST('/admin/auth')
   Future<AdminAuthRes> createSession(

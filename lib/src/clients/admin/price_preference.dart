@@ -9,9 +9,11 @@ part 'generated/price_preference.g.dart';
 
 @RestApi()
 abstract class PricePreferenceResource {
-  factory PricePreferenceResource(Dio dio,
-      {String? baseUrl,
-      ParseErrorLogger? errorLogger}) = _PricePreferenceResource;
+  factory PricePreferenceResource(
+    Dio dio, {
+    String? baseUrl,
+    ParseErrorLogger? errorLogger,
+  }) = _PricePreferenceResource;
 
   @GET('/admin/price-preferences')
   Future<AdminGetPricePreferenceRes> list({

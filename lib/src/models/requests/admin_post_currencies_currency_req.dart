@@ -4,9 +4,7 @@ part 'generated/admin_post_currencies_currency_req.g.dart';
 
 @JsonSerializable()
 class AdminPostCurrenciesCurrencyReq {
-  AdminPostCurrenciesCurrencyReq({
-    this.includesTax,
-  });
+  AdminPostCurrenciesCurrencyReq({this.includesTax});
 
   factory AdminPostCurrenciesCurrencyReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostCurrenciesCurrencyReqFromJson(json);

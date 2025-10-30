@@ -4,15 +4,11 @@ part 'generated/admin_post_collections_collection_req.g.dart';
 
 @JsonSerializable()
 class AdminPostCollectionsCollectionReq {
-  AdminPostCollectionsCollectionReq({
-    this.title,
-    this.handle,
-    this.metadata,
-  });
+  AdminPostCollectionsCollectionReq({this.title, this.handle, this.metadata});
 
   factory AdminPostCollectionsCollectionReq.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostCollectionsCollectionReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostCollectionsCollectionReqFromJson(json);
 
   String? title;
   String? handle;

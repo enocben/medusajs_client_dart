@@ -1,29 +1,31 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/src/models/params/date_filter.dart';
 
 part 'generated/admin_get_price_list_pagination_params.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class AdminGetPriceListPaginationParams {
-  const AdminGetPriceListPaginationParams(
-      {this.limit,
-      this.offset,
-      this.fields,
-      this.order,
-      this.id,
-      this.q,
-      this.status,
-      this.name,
-      this.customerGroups,
-      this.type,
-      this.startsAt,
-      this.endsAt,
-      this.rulesCount});
+  const AdminGetPriceListPaginationParams({
+    this.limit,
+    this.offset,
+    this.fields,
+    this.order,
+    this.id,
+    this.q,
+    this.status,
+    this.name,
+    this.customerGroups,
+    this.type,
+    this.startsAt,
+    this.endsAt,
+    this.rulesCount,
+  });
 
   factory AdminGetPriceListPaginationParams.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$AdminGetPriceListPaginationParamsFromJson(json);
+  ) => _$AdminGetPriceListPaginationParamsFromJson(json);
 
   final int? limit;
   final int? offset;

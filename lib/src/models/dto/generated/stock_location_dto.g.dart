@@ -14,7 +14,8 @@ StockLocationDTO _$StockLocationDTOFromJson(Map<String, dynamic> json) =>
       address: json['address'] == null
           ? null
           : StockLocationAddressDTO.fromJson(
-              json['address'] as Map<String, dynamic>),
+              json['address'] as Map<String, dynamic>,
+            ),
       metadata: json['metadata'] as Map<String, dynamic>?,
       createdAt: json['created_at'] as String?,
       updatedAt: json['updated_at'] as String?,

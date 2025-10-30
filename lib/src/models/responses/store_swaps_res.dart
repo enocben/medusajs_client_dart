@@ -6,9 +6,7 @@ part 'generated/store_swaps_res.g.dart';
 
 @JsonSerializable()
 class StoreSwapsRes {
-  StoreSwapsRes({
-    required this.swap,
-  });
+  StoreSwapsRes({required this.swap});
   factory StoreSwapsRes.fromJson(Map<String, dynamic> json) =>
       _$StoreSwapsResFromJson(json);
 

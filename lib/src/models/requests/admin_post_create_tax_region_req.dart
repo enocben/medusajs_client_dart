@@ -4,13 +4,14 @@ part 'generated/admin_post_create_tax_region_req.g.dart';
 
 @JsonSerializable()
 class AdminPostCreateTaxRegionReq {
-  AdminPostCreateTaxRegionReq(
-      {required this.countryCode,
-      this.providerId,
-      this.metadata,
-      this.defaultTaxRate,
-      this.parentId,
-      this.provinceCode});
+  AdminPostCreateTaxRegionReq({
+    required this.countryCode,
+    this.providerId,
+    this.metadata,
+    this.defaultTaxRate,
+    this.parentId,
+    this.provinceCode,
+  });
 
   factory AdminPostCreateTaxRegionReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostCreateTaxRegionReqFromJson(json);
@@ -40,12 +41,13 @@ class AdminPostCreateTaxRegionReq {
 
 @JsonSerializable()
 class DefaultTaxRateReq {
-  DefaultTaxRateReq(
-      {required this.code,
-      required this.name,
-      this.metadata,
-      this.isCombinable,
-      this.rate});
+  DefaultTaxRateReq({
+    required this.code,
+    required this.name,
+    this.metadata,
+    this.isCombinable,
+    this.rate,
+  });
 
   factory DefaultTaxRateReq.fromJson(Map<String, dynamic> json) =>
       _$DefaultTaxRateReqFromJson(json);

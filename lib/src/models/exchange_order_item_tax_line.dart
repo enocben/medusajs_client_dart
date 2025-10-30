@@ -1,11 +1,13 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'generated/exchange_order_item_tax_line.g.dart';
 
 /// Represents a tax line for an ExchangeOrderItem (different from the standard TaxLine).
 @JsonSerializable()
+@CopyWith()
 class ExchangeOrderItemTaxLine {
-  ExchangeOrderItemTaxLine({
+  const ExchangeOrderItemTaxLine({
     required this.id,
     required this.itemId,
     this.total,

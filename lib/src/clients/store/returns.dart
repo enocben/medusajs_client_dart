@@ -10,7 +10,5 @@ abstract class ReturnsResource {
   factory ReturnsResource(Dio dio, {String baseUrl}) = _ReturnsResource;
 
   @POST('/store/returns')
-  Future<StoreReturnsRes> create(
-    @Body() StorePostReturnsReq? data,
-  );
+  Future<StoreReturnsRes> create(@Body() StorePostReturnsReq? data);
 }

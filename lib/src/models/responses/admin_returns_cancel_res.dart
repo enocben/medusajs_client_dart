@@ -6,9 +6,7 @@ part 'generated/admin_returns_cancel_res.g.dart';
 
 @JsonSerializable()
 class AdminReturnsCancelRes {
-  AdminReturnsCancelRes({
-    required this.order,
-  });
+  AdminReturnsCancelRes({required this.order});
   factory AdminReturnsCancelRes.fromJson(Map<String, dynamic> json) =>
       _$AdminReturnsCancelResFromJson(json);
 

@@ -8,7 +8,7 @@ part 'generated/exchange_order.g.dart';
 @JsonSerializable()
 @CopyWith()
 class ExchangeOrder {
-  ExchangeOrder({
+  const ExchangeOrder({
     required this.id,
     this.version,
     this.regionId,

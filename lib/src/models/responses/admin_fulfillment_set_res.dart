@@ -5,9 +5,7 @@ part 'generated/admin_fulfillment_set_res.g.dart';
 
 @JsonSerializable()
 class AdminFulfillmentSetRes {
-  AdminFulfillmentSetRes({
-    required this.fulfillmentSet,
-  });
+  AdminFulfillmentSetRes({required this.fulfillmentSet});
   factory AdminFulfillmentSetRes.fromJson(Map<String, dynamic> json) =>
       _$AdminFulfillmentSetResFromJson(json);
 

@@ -37,40 +37,49 @@ abstract class CustomersResource {
 
   @POST('/admin/customers/{customerId}/customer-groups')
   Future<AdminCustomersRes> addRemoveCustomerInGroup(
-      @Path('customerId') String customerId,
-      @Body() AdminPostGroupsCustomerBodyReq body,
-      {@Queries() AdminGetCustomerParams? query,
-      @Extras() Map<String, String>? customHeaders});
+    @Path('customerId') String customerId,
+    @Body() AdminPostGroupsCustomerBodyReq body, {
+    @Queries() AdminGetCustomerParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @POST('/admin/customers/{customerId}/addresses')
   Future<AdminCustomersRes> addAddress(
-      @Path('customerId') String customerId, @Body() AdminPostAddressReq body,
-      {@Queries() AdminGetAddressParams? query,
-      @Extras() Map<String, String>? customHeaders});
+    @Path('customerId') String customerId,
+    @Body() AdminPostAddressReq body, {
+    @Queries() AdminGetAddressParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @GET('/admin/customers/{customerId}/addresses')
   Future<AdminCustomersAddressesListRes> listAddresses(
-      @Path('customerId') String customerId,
-      {@Queries() AdminGetAddressesParams? query,
-      @Extras() Map<String, String>? customHeaders});
+    @Path('customerId') String customerId, {
+    @Queries() AdminGetAddressesParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @GET('/admin/customers/{customerId}/addresses/{addressId}')
   Future<AdminCustomerAddressRes> getAddress(
-      @Path('customerId') String customerId,
-      @Path('addressId') String addressId,
-      {@Queries() AdminGetAddressesParams? query,
-      @Extras() Map<String, String>? customHeaders});
+    @Path('customerId') String customerId,
+    @Path('addressId') String addressId, {
+    @Queries() AdminGetAddressesParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @GET('/admin/customers/{customerId}/addresses/{addressId}')
-  Future<AdminCustomersRes> updateAddress(@Path('customerId') String customerId,
-      @Path('addressId') String addressId, @Body() AdminPostAddressReq body,
-      {@Queries() AdminGetAddressParams? query,
-      @Extras() Map<String, String>? customHeaders});
+  Future<AdminCustomersRes> updateAddress(
+    @Path('customerId') String customerId,
+    @Path('addressId') String addressId,
+    @Body() AdminPostAddressReq body, {
+    @Queries() AdminGetAddressParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 
   @DELETE('/admin/customers/{customerId}/addresses/{addressId}')
   Future<AdminDeleteCustomerAddressRes> deleteAddress(
-      @Path('customerId') String customerId,
-      @Path('addressId') String addressId,
-      {@Queries() AdminGetAddressParams? query,
-      @Extras() Map<String, String>? customHeaders});
+    @Path('customerId') String customerId,
+    @Path('addressId') String addressId, {
+    @Queries() AdminGetAddressParams? query,
+    @Extras() Map<String, String>? customHeaders,
+  });
 }

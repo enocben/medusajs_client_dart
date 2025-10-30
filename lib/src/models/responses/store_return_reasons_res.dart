@@ -6,9 +6,7 @@ part 'generated/store_return_reasons_res.g.dart';
 
 @JsonSerializable()
 class StoreReturnReasonsRes {
-  StoreReturnReasonsRes({
-    required this.returnReason,
-  });
+  StoreReturnReasonsRes({required this.returnReason});
   factory StoreReturnReasonsRes.fromJson(Map<String, dynamic> json) =>
       _$StoreReturnReasonsResFromJson(json);
 

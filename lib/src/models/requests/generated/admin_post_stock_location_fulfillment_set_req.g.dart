@@ -7,16 +7,12 @@ part of '../admin_post_stock_location_fulfillment_set_req.dart';
 // **************************************************************************
 
 AdminPostStockLocationFulfillmentSetReq
-    _$AdminPostStockLocationFulfillmentSetReqFromJson(
-            Map<String, dynamic> json) =>
-        AdminPostStockLocationFulfillmentSetReq(
-          name: json['name'] as String,
-          type: json['type'] as String,
-        );
+_$AdminPostStockLocationFulfillmentSetReqFromJson(Map<String, dynamic> json) =>
+    AdminPostStockLocationFulfillmentSetReq(
+      name: json['name'] as String,
+      type: json['type'] as String,
+    );
 
 Map<String, dynamic> _$AdminPostStockLocationFulfillmentSetReqToJson(
-        AdminPostStockLocationFulfillmentSetReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'type': instance.type,
-    };
+  AdminPostStockLocationFulfillmentSetReq instance,
+) => <String, dynamic>{'name': instance.name, 'type': instance.type};

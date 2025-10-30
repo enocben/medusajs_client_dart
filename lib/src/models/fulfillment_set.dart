@@ -1,18 +1,20 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
 
 part 'generated/fulfillment_set.g.dart';
 
 @JsonSerializable()
+@CopyWith()
 class FulfillmentSet {
-  FulfillmentSet({
+  const FulfillmentSet({
     required this.id,
     this.name,
     this.type,
     this.location,
     this.serviceZones,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.updatedAt,
     this.deletedAt,
   });
 

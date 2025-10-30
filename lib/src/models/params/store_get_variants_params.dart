@@ -39,12 +39,7 @@ class StoreGetVariantsParams {
 
 @JsonSerializable()
 class InventoryQuantity {
-  InventoryQuantity({
-    this.lt,
-    this.gt,
-    this.lte,
-    this.gte,
-  });
+  InventoryQuantity({this.lt, this.gt, this.lte, this.gte});
   factory InventoryQuantity.fromJson(Map<String, dynamic> json) =>
       _$InventoryQuantityFromJson(json);
 

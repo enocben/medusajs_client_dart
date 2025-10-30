@@ -6,10 +6,7 @@ part 'generated/promotion_rrule_value.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PromotionRRuleValue {
-  PromotionRRuleValue({
-    required this.value,
-    required this.label,
-  });
+  const PromotionRRuleValue({required this.value, required this.label});
 
   factory PromotionRRuleValue.fromJson(Map<String, dynamic> json) =>
       _$PromotionRRuleValueFromJson(json);

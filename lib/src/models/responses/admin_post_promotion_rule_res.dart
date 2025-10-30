@@ -5,11 +5,7 @@ part 'generated/admin_post_promotion_rule_res.g.dart';
 
 @JsonSerializable()
 class AdminPostPromotionRuleRes {
-  AdminPostPromotionRuleRes({
-    this.created,
-    this.updated,
-    this.deleted,
-  });
+  AdminPostPromotionRuleRes({this.created, this.updated, this.deleted});
 
   factory AdminPostPromotionRuleRes.fromJson(Map<String, dynamic> json) =>
       _$AdminPostPromotionRuleResFromJson(json);

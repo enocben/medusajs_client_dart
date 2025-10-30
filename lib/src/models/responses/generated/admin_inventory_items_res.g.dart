@@ -7,14 +7,13 @@ part of '../admin_inventory_items_res.dart';
 // **************************************************************************
 
 AdminInventoryItemsRes _$AdminInventoryItemsResFromJson(
-        Map<String, dynamic> json) =>
-    AdminInventoryItemsRes(
-      inventoryItem: InventoryItem.fromJson(
-          json['inventory_item'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => AdminInventoryItemsRes(
+  inventoryItem: InventoryItem.fromJson(
+    json['inventory_item'] as Map<String, dynamic>,
+  ),
+);
 
 Map<String, dynamic> _$AdminInventoryItemsResToJson(
-        AdminInventoryItemsRes instance) =>
-    <String, dynamic>{
-      'inventory_item': instance.inventoryItem.toJson(),
-    };
+  AdminInventoryItemsRes instance,
+) => <String, dynamic>{'inventory_item': instance.inventoryItem.toJson()};
